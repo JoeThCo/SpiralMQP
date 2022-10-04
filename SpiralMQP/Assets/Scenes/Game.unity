@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dungeonMin: 5
   dungeonMax: 10
-  tileSize: 3
+  tileSize: 2
   floorTile: {fileID: 1730074970277085777, guid: f8c97e05a7690e542952414d7e5bb504, type: 3}
   wallTile: {fileID: 606561851798008686, guid: b563290ff13b10c4aa022ad35f9b56e4, type: 3}
 --- !u!4 &595938868
@@ -304,7 +304,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -385,6 +385,14 @@ PrefabInstance:
     - target: {fileID: 7832518066170434181, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832518066170434182, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832518066170434182, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
+      propertyPath: m_Interpolate
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
