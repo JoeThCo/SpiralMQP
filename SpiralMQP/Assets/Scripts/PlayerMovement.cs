@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
-    [SerializeField] float speed;
+    [Header("Compenets")]
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] Camera cam;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [Header("Values")]
+    [SerializeField] float speed;
 
     private void FixedUpdate()
     {
