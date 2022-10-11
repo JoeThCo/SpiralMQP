@@ -9,12 +9,12 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        ShowMenu(startMenu);       
+        ShowMenu(startMenu);
     }
 
-    public void ShowMenu(string s) 
+    public void ShowMenu(string s)
     {
-        foreach (Menu m in InSceneMenus) 
+        foreach (Menu m in InSceneMenus)
         {
             m.gameObject.SetActive(m.GetMenuName().Equals(s));
         }
