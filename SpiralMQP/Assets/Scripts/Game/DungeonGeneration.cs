@@ -38,7 +38,7 @@ public class DungeonGeneration : MonoBehaviour
         halfTileSize = (float)(tileSize * .5f);
 
         makeRoom(xAxisSize, yAxisSize);
-        Debug.LogFormat("Room: xAxisSize {0} yAxisSize {1}", xAxisSize, yAxisSize);
+        Debug.LogFormat("Room: ({0},{1})", xAxisSize, yAxisSize);
     }
 
     public bool getIsPlaying() { return isPlaying; }
