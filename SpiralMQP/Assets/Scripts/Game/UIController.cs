@@ -26,7 +26,7 @@ public class UIController : MonoBehaviour
 
     public void PauseController()
     {
-        if (dungeonGeneration.getIsPlaying())
+        if (GameManager.Instance.isPlaying)
         {
             if (isPaused)
             {
@@ -60,7 +60,7 @@ public class UIController : MonoBehaviour
 
     public void OnGameOver()
     {
-        dungeonGeneration.setIsPlaying(false);
+        GameManager.Instance.isPlaying = false;
         menuController.ShowMenu("GameOver");
     }
 

@@ -18,11 +18,16 @@ public class PlayerMovement : MonoBehaviour
     public float MovementSpeed;
     public bool CanMove = true;
 
+    [Header("Shield")]
+    public KeyCode ShieldKey = KeyCode.Q;
+    public GameObject Shield;
+
     Vector2 inputDir;
 
     private void Awake()
     {
         SetDodgeParticles(false);
+        SetShield(false);
     }
 
     private void FixedUpdate()
@@ -41,11 +46,18 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(DodgeI());
         }
+
+        SetShield(Input.GetKey(ShieldKey));
     }
 
     void MovePlayer()
     {
         playerRigidbody.position = Vector2.MoveTowards(playerRigidbody.position, playerRigidbody.position + inputDir, MovementSpeed * Time.deltaTime);
+    }
+
+    void SetShield(bool state)
+    {
+        Shield.SetActive(state);
     }
 
     void SetDodgeParticles(bool state)
@@ -58,15 +70,13 @@ public class PlayerMovement : MonoBehaviour
     {
         CanDodge = false;
         CanMove = false;
-        //can be danaged = false
-
         SetDodgeParticles(true);
+        //can be danaged = false
 
         playerRigidbody.AddForce(inputDir * DodgePower, ForceMode2D.Impulse);
         yield return new WaitForSeconds(DodgeTime);
 
         //can be danaged = true
-
         SetDodgeParticles(false);
         CanMove = true;
         CanDodge = true;

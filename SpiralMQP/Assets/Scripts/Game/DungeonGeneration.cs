@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class DungeonGeneration : MonoBehaviour
 {
     [Header("Values")]
-    [SerializeField] bool isPlaying = true;
     [Range(10, 35)] [SerializeField] int dungeonMin;
     [Range(10, 35)] [SerializeField] int dungeonMax;
     [Header("Prefabs")]
@@ -40,10 +39,6 @@ public class DungeonGeneration : MonoBehaviour
         makeRoom(xAxisSize, yAxisSize);
         Debug.LogFormat("Room: ({0},{1})", xAxisSize, yAxisSize);
     }
-
-    public bool getIsPlaying() { return isPlaying; }
-
-    public void setIsPlaying(bool state) { isPlaying = state; }
 
     void makeRoom(int xAxisSize, int yAxisSize)
     {
