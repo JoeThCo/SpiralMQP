@@ -533,11 +533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuName: Pause
---- !u!50 &261902771 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 7832518066170434182, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-  m_PrefabInstance: {fileID: 7832518067094048673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &455008489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,11 +1042,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuName: Game
---- !u!20 &942551108 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 5105672655764685294, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-  m_PrefabInstance: {fileID: 7832518067094048673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148042113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1199,52 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1966218044753717299, guid: ee807182c8e53954dacfd01fc0cbcd97, type: 3}
   m_PrefabInstance: {fileID: 1966218043860952972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1760521672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1760521673}
+  - component: {fileID: 1760521674}
+  m_Layer: 0
+  m_Name: DebugController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1760521673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760521672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1760521674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760521672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1e39dd921904f4eab830f99e70eaab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeDebugModeKey: 300
+  isDebugMode: 0
 --- !u!1001 &1781423389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2066,22 +2102,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5105672655764685294, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: orthographic size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5105672655764685294, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.9150943
-      objectReference: {fileID: 0}
-    - target: {fileID: 5105672655764685294, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.8423414
-      objectReference: {fileID: 0}
-    - target: {fileID: 5105672655764685294, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.41869882
-      objectReference: {fileID: 0}
     - target: {fileID: 7832518066170434180, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2129,26 +2149,6 @@ PrefabInstance:
     - target: {fileID: 7832518066170434181, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832518066170434182, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832518066170434182, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: m_Interpolate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832518066170434183, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 261902771}
-    - target: {fileID: 7832518066170434183, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 942551108}
-    - target: {fileID: 7832518066788651686, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8826cc7366bea1b43bc2db403621e2ff, type: 3}

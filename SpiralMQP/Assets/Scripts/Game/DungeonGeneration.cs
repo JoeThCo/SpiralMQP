@@ -85,7 +85,7 @@ public class DungeonGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (DebugController.Instance.isDebugMode && Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("Game");
         }
