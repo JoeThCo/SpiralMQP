@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         SetDodgeParticles(false);
         SetShield(false);
     }
+    [SerializeField] Animator playerAnimator;
+
 
     private void FixedUpdate()
     {
@@ -110,6 +112,10 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 GetDir()
     {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        float horizontalDirection = Input.GetAxisRaw("Horizontal");
+        float verticalDirection = Input.GetAxisRaw("Vertical");
+        playerAnimator.SetInteger("xdirection", (int)horizontalDirection);
+        playerAnimator.SetInteger("ydirection", (int)verticalDirection);
+        return new Vector2(horizontalDirection, verticalDirection);
     }
 }
