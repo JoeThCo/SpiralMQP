@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Compenents")]
+    [SerializeField] Animator playerAnimator;
     [SerializeField] Rigidbody2D playerRigidbody;
 
     [Header("Dodge")]
@@ -31,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
         SetDodgeParticles(false);
         SetShield(false);
     }
-    [SerializeField] Animator playerAnimator;
-
 
     private void FixedUpdate()
     {
