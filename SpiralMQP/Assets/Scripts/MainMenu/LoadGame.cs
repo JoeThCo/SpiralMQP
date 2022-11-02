@@ -7,14 +7,27 @@ using UnityEngine.UI;
 
 public class LoadGame : MonoBehaviour
 {
-    void Start () {
-		Button btn = gameObject.GetComponent<Button>();
-		btn.onClick.AddListener(Load);
-	}
+    // void Start () {
+	// 	Button btn = gameObject.GetComponent<Button>();
+	// 	btn.onClick.AddListener(LoadMain);
+	// }
 
     // Load Game Scene
-    void Load()
+    public void LoadGameScene()
     {
         SceneManager.LoadScene("Game");
+    }
+
+
+     // Load Game Scene
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+     // Load Game Scene
+    public void LoadMain()
+    {
+        SceneManager.LoadScene("Main");
     }
 }
