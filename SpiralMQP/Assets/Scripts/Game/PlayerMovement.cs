@@ -19,8 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public bool CanMove = true;
 
     [Header("Shield")]
+    public bool CanShield = true;
     public KeyCode ShieldKey = KeyCode.Q;
     public GameObject Shield;
+    public float ShieldCoolDownTime;
 
     Vector2 inputDir;
 
@@ -47,7 +49,19 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(DodgeI());
         }
 
-        SetShield(Input.GetKey(ShieldKey));
+        if (CanShield)
+        {
+            if (Input.GetKeyDown(ShieldKey))
+            {
+                SetShield(true);
+            }
+
+            if (Input.GetKeyUp(ShieldKey))
+            {
+                SetShield(false);
+                StartCoroutine(ShieldI());
+            }
+        }
     }
 
     void MovePlayer()
@@ -58,12 +72,22 @@ public class PlayerMovement : MonoBehaviour
     void SetShield(bool state)
     {
         Shield.SetActive(state);
+        CanMove = !state;
     }
 
     void SetDodgeParticles(bool state)
     {
         var emission = DodgeParticles.emission;
         emission.enabled = state;
+    }
+
+    IEnumerator ShieldI()
+    {
+        CanShield = false;
+
+        yield return new WaitForSeconds(ShieldCoolDownTime);
+
+        CanShield = true;
     }
 
     IEnumerator DodgeI()

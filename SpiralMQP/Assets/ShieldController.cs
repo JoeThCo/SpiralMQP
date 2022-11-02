@@ -13,16 +13,17 @@ public class ShieldController : MonoBehaviour
         MaxHealth = Health;
     }
 
-    void OnSheildHit()
+    void OnSheildHit(GameObject collisionObj)
     {
         Health--;
+        Destroy(collisionObj);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (GameManager.IsInLayerMask(collision.gameObject, CollisionLayers))
         {
-            OnSheildHit();
+            OnSheildHit(collision.gameObject);
         }
     }
 }
