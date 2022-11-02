@@ -2,37 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : MonoBehaviour {
+public class MeleeAttack : MonoBehaviour
+{
+    public KeyCode MeleeKey = KeyCode.E;
+
     public int AttackCoolDown = 2;
-    public int AttackCountDown;
+    private float AttackCoolDownCounter;
+
     public float AttackRange = 0.5f;
-    public Transform AttackPoint;
+
     public LayerMask EnemyLayers;
 
-    void Start() {
-        AttackCountDown = AttackCoolDown;
+    void Start()
+    {
+        AttackCoolDownCounter = AttackCoolDown;
     }
-    void Update() {
-        AttackCountDown--;
-        if(Input.GetKeyDown(KeyCode.Q)){
-            if(AttackCountDown <= 0){
+
+    void Update()
+    {
+        if (AttackCoolDown < AttackCoolDownCounter)
+        {
+            AttackCoolDownCounter += Time.deltaTime;
+        }
+        else
+        {
+            if (Input.GetKeyDown(MeleeKey))
+            {
                 Attack();
-                AttackCountDown = AttackCoolDown;
+                AttackCoolDownCounter = 0;
             }
         }
     }
 
-    void Attack() {
-        Debug.Log("attack");
-        Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
-        foreach(Collider2D enemy in hitEnemys){
+    void Attack()
+    {
+        Debug.Log("Attack");
+        Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(transform.position, AttackRange, EnemyLayers);
+        foreach (Collider2D enemy in hitEnemys)
+        {
             Debug.Log("Hit");
         }
     }
 
-    void OnDrawGizmosSelected(){
-        if(AttackPoint == null)
-        return;
-        Gizmos.DrawWireSphere(AttackPoint.position,AttackRange);
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
 }
