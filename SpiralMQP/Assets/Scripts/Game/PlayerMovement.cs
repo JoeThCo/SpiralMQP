@@ -10,14 +10,20 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Values")]
     [SerializeField] float speed;
+    [SerializeField] Animator playerAnimator;
+
 
     private void FixedUpdate()
     {
-        rb.position = Vector2.MoveTowards(rb.position, rb.position + GetDir(), speed * Time.deltaTime);
+        rb.position = Vector2.MoveTowards(rb.position, rb.position + GetDir(), speed * Time.fixedDeltaTime);
     }
 
     Vector2 GetDir()
     {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        float horizontalDirection = Input.GetAxisRaw("Horizontal");
+        float verticalDirection = Input.GetAxisRaw("Vertical");
+        playerAnimator.SetInteger("xdirection", (int)horizontalDirection);
+        playerAnimator.SetInteger("ydirection", (int)verticalDirection);
+        return new Vector2(horizontalDirection, verticalDirection);
     }
 }
