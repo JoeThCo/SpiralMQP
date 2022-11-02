@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1fde4c0aa9c7b448557257de270ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 2655279566932236004}
   playerRigidbody: {fileID: 2655279566932236015}
   CanDodge: 1
   DodgeKey: 32
@@ -179,7 +180,6 @@ MonoBehaviour:
   ShieldKey: 113
   Shield: {fileID: 2655279566823214338}
   ShieldCoolDownTime: 1
-  playerAnimator: {fileID: 2655279566932236004}
 --- !u!50 &2655279566932236015
 Rigidbody2D:
   serializedVersion: 4
@@ -225,7 +225,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.5}
   m_EdgeRadius: 0
 --- !u!212 &2655279566932236002
 SpriteRenderer:
@@ -390,13 +390,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2655279566932236001}
     m_Modifications:
+    - target: {fileID: 9163106587452512044, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9163106587452512045, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9163106587452512045, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.89
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9163106587452512045, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -432,6 +436,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163106587452512045, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163106587452512047, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163106587452512047, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
+      propertyPath: NoiseModule.separateAxes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163106587452512047, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163106587452512047, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9163106587452512050, guid: 50d2f8e96d1b2ea49bccbeb7efcda0ec, type: 3}

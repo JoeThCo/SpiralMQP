@@ -76,13 +76,4 @@ public class DungeonGeneration : MonoBehaviour
     {
         return Random.Range(dungeonMin, dungeonMax);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (DebugController.Instance.isDebugMode && Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("Game");
-        }
-    }
 }

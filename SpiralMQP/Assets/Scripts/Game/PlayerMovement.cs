@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        PlayerAnimatorController(inputDir);
+
         if (CanDodge && Input.GetKeyDown(DodgeKey) && inputDir != Vector2.zero)
         {
             StartCoroutine(DodgeI());
@@ -109,12 +111,23 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.velocity = Vector2.zero;
     }
 
+    void PlayerAnimatorController(Vector2 dir)
+    {
+        if (CanMove)
+        {
+            playerAnimator.SetInteger("xdirection", (int)dir.x);
+            playerAnimator.SetInteger("ydirection", (int)dir.y);
+        }
+        else
+        {
+            playerAnimator.SetInteger("xdirection", 0);
+            playerAnimator.SetInteger("ydirection", 0);
+        }
+
+    }
+
     Vector2 GetDir()
     {
-        float horizontalDirection = Input.GetAxisRaw("Horizontal");
-        float verticalDirection = Input.GetAxisRaw("Vertical");
-        playerAnimator.SetInteger("xdirection", (int)horizontalDirection);
-        playerAnimator.SetInteger("ydirection", (int)verticalDirection);
-        return new Vector2(horizontalDirection, verticalDirection);
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 }

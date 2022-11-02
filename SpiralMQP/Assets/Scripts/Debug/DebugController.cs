@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DebugController : MonoBehaviour
 {
+    public bool isDebugMode = false;
     public KeyCode ChangeDebugModeKey = KeyCode.Numlock;
+    public TextMeshProUGUI DebugText;
+
     public static DebugController Instance;
 
-    public bool isDebugMode = true;
 
     private void Start()
     {
@@ -16,6 +19,8 @@ public class DebugController : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
+
+            SetDebugText(false);
         }
         else
         {
@@ -23,20 +28,19 @@ public class DebugController : MonoBehaviour
         }
     }
 
+    void SetDebugText(bool state)
+    {
+        DebugText.gameObject.SetActive(state);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(ChangeDebugModeKey))
         {
             isDebugMode = !isDebugMode;
-            Debug.LogWarningFormat("Debug Mode: {0}", isDebugMode);
-        }
-    }
 
-    private void OnGUI()
-    {
-        if (isDebugMode)
-        {
-            GUI.Label(new Rect(10, 10, 100, 20), "Debug mode enabled!");
+            SetDebugText(isDebugMode);
+            Debug.LogWarningFormat("Debug Mode: {0}", isDebugMode);
         }
     }
 }
