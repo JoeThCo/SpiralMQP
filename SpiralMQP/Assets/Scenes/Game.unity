@@ -2127,6 +2127,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2655279566932236000, guid: b89f0b71d643e8141a0e5be1e6e1035f, type: 3}
+      propertyPath: DodgeTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655279566932236000, guid: b89f0b71d643e8141a0e5be1e6e1035f, type: 3}
+      propertyPath: DodgeCoolDownTime
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2655279566932236001, guid: b89f0b71d643e8141a0e5be1e6e1035f, type: 3}
       propertyPath: m_RootOrder
       value: 5

@@ -9,15 +9,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D playerRigidbody;
 
     [Header("Dodge")]
-    public bool CanDodge;
+    public bool CanDodge = true;
     public KeyCode DodgeKey = KeyCode.Space;
     public int DodgePower;
     public float DodgeTime;
+    public float DodgeCoolDownTime;
     public ParticleSystem DodgeParticles;
 
     [Header("Movement")]
-    public float MovementSpeed;
     public bool CanMove = true;
+    public float MovementSpeed;
 
     [Header("Shield")]
     public bool CanShield = true;
@@ -106,9 +107,11 @@ public class PlayerMovement : MonoBehaviour
         //can be danaged = true
         SetDodgeParticles(false);
         CanMove = true;
-        CanDodge = true;
-
         playerRigidbody.velocity = Vector2.zero;
+
+        yield return new WaitForSeconds(DodgeCoolDownTime);
+
+        CanDodge = true;
     }
 
     void PlayerAnimatorController(Vector2 dir)
@@ -123,7 +126,6 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetInteger("xdirection", 0);
             playerAnimator.SetInteger("ydirection", 0);
         }
-
     }
 
     Vector2 GetDir()

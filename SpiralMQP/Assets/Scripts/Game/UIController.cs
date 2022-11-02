@@ -8,12 +8,10 @@ public class UIController : MonoBehaviour
     private bool isPaused = false;
 
     MenuController menuController;
-    DungeonGeneration dungeonGeneration;
 
     private void Start()
     {
         menuController = GetComponent<MenuController>();
-        dungeonGeneration = FindObjectOfType<DungeonGeneration>();
     }
 
     private void Update()

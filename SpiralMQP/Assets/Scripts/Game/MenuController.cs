@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField] string startMenu;
-    [SerializeField] List<Menu> InSceneMenus;
+    [SerializeField] private string startMenu;
+    [SerializeField] private List<Menu> InSceneMenus;
 
     private void Start()
     {

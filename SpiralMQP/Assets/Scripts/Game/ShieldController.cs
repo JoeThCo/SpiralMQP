@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
+    public int ShieldHealth;
+    private int shieldMaxHealth;
+
     public LayerMask CollisionLayers;
-    public int Health;
-    private int MaxHealth;
 
     private void Awake()
     {
-        MaxHealth = Health;
+        shieldMaxHealth = ShieldHealth;
     }
 
     void OnSheildHit(GameObject collisionObj)
     {
-        Health--;
+        ShieldHealth--;
         Destroy(collisionObj);
     }
 

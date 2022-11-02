@@ -6,25 +6,18 @@ using UnityEngine.SceneManagement;
 public class DungeonGeneration : MonoBehaviour
 {
     [Header("Values")]
-    [Range(10, 35)] [SerializeField] int dungeonMin;
-    [Range(10, 35)] [SerializeField] int dungeonMax;
+    [Range(10, 35)] [SerializeField] private int dungeonMin;
+    [Range(10, 35)] [SerializeField] private int dungeonMax;
     [Header("Prefabs")]
-    [SerializeField] GameObject floorTile;
-    [SerializeField] GameObject wallTile;
-    //[SerializeField] GameObject doorTile; after first
+    [SerializeField] private GameObject floorTile;
+    [SerializeField] private GameObject wallTile;
 
-    float tileSize = 1;
+    private float tileSize = 1;
 
     private float halfFloorSizeX;
     private float halfFloorSizeY;
 
     private float halfTileSize;
-
-    //todo
-    //make room of variable size --done
-    //spawn tiles in correct spots --done
-    //set the player to certain cords
-    //spawn a door in
 
     void Start()
     {
@@ -38,6 +31,11 @@ public class DungeonGeneration : MonoBehaviour
 
         makeRoom(xAxisSize, yAxisSize);
         Debug.LogFormat("Room: ({0},{1})", xAxisSize, yAxisSize);
+    }
+
+    void initValues()
+    {
+
     }
 
     void makeRoom(int xAxisSize, int yAxisSize)
