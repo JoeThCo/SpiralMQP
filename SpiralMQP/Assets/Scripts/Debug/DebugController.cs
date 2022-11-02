@@ -20,7 +20,8 @@ public class DebugController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
 
-            SetDebugText(false);
+            isDebugMode = false;
+            SetDebugText(isDebugMode);
         }
         else
         {
