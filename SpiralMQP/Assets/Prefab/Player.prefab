@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 2655279566932236003}
   - component: {fileID: 2655279566932236002}
   - component: {fileID: 2655279566932236004}
+  - component: {fileID: 422863051263917547}
+  - component: {fileID: 2868157820885922308}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -173,9 +175,10 @@ MonoBehaviour:
   DodgeKey: 32
   DodgePower: 15
   DodgeTime: 0.3
+  DodgeCoolDownTime: 0
   DodgeParticles: {fileID: 6624960348319986126}
-  MovementSpeed: 5
   CanMove: 1
+  MovementSpeed: 5
   CanShield: 1
   ShieldKey: 113
   Shield: {fileID: 2655279566823214338}
@@ -299,6 +302,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &422863051263917547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655279566932236014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7152aea06d98d4499bd16f0f97e69dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeleeKey: 101
+  AttackCoolDown: 2
+  AttackRange: 0.5
+  EnemyLayers:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &2868157820885922308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655279566932236014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1cd24afa2e34f499936445dd337f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootDirection: {x: 0, y: 0, z: 0}
+  AttackCoolDown: 1
+  AttackCoolDownCounter: 0
+  ProjectilePrefab: {fileID: 183738871980724886, guid: 6eba135607c554d03b8fefd3f0b12908, type: 3}
+  LaunchOffset: {fileID: 0}
 --- !u!1 &2655279568306195478
 GameObject:
   m_ObjectHideFlags: 0
