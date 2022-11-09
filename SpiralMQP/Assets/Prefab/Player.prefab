@@ -43,7 +43,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.93155813, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.6509804, g: 0.4627451, b: 0.34117648, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 2655279566932236003}
   - component: {fileID: 2655279566932236002}
   - component: {fileID: 2655279566932236004}
+  - component: {fileID: 8499305208139963671}
   - component: {fileID: 422863051263917547}
   - component: {fileID: 2868157820885922308}
   m_Layer: 6
@@ -176,7 +177,9 @@ MonoBehaviour:
   DodgePower: 15
   DodgeTime: 0.3
   DodgeCoolDownTime: 0
+  DodgeCoolDownTime: 0
   DodgeParticles: {fileID: 6624960348319986126}
+  CanMove: 1
   CanMove: 1
   MovementSpeed: 5
   CanShield: 1
