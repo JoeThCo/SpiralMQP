@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float SelfDestroyTime = 5.0f;
+    public float SelfDestroyTime = 10.0f;
 
-    public float Speed = 4.5f;
+    public float Speed = 1.0f;
     
     public Vector3 Direction;
 
@@ -14,8 +14,11 @@ public class Projectile : MonoBehaviour
 
     public LayerMask EnemyLayers;
 
+    public LayerMask PlayerLayer;
+
     void Start(){
         Destroy(gameObject, SelfDestroyTime);
+        Debug.Log(Direction);
     }
 
     void Update(){
@@ -25,8 +28,10 @@ public class Projectile : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {    
         Debug.Log("Projectile hit");
-        collision.collider.gameObject.GetComponent<OnHit>().Hit();
-        //Destroy this gameobject
+        if(collision.collider.gameObject.layer == EnemyLayers){
+            collision.collider.gameObject.GetComponent<OnHit>().Hit();
+        }
+        if(collision.collider.gameObject.layer != PlayerLayer)
         Destroy(gameObject);
     }
 }

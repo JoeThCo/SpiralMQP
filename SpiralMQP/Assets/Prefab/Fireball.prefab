@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4273972262091870914}
   - component: {fileID: -9169071484794476833}
   - component: {fileID: 4837989233654894541}
-  - component: {fileID: 1909250498171345649}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183738871980724886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.099, y: -0.203, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -131,23 +130,7 @@ MonoBehaviour:
   ExplodeRange: 0.5
   EnemyLayers:
     serializedVersion: 2
-    m_Bits: 0
---- !u!114 &1909250498171345649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183738871980724886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e814be94e332249b48d6390451b96362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SelfDestroyTime: 5
-  Speed: 4.5
-  Direction: {x: 0, y: 0, z: 0}
-  ExplodeRange: 0.5
-  EnemyLayers:
+    m_Bits: 8
+  PlayerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
