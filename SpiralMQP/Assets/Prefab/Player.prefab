@@ -43,7 +43,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.93155813, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.6509804, g: 0.4627451, b: 0.34117648, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 2655279566932236003}
   - component: {fileID: 2655279566932236002}
   - component: {fileID: 2655279566932236004}
+  - component: {fileID: 8499305208139963671}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -173,9 +174,10 @@ MonoBehaviour:
   DodgeKey: 32
   DodgePower: 15
   DodgeTime: 0.3
+  DodgeCoolDownTime: 0
   DodgeParticles: {fileID: 6624960348319986126}
-  MovementSpeed: 5
   CanMove: 1
+  MovementSpeed: 5
   CanShield: 1
   ShieldKey: 113
   Shield: {fileID: 2655279566823214338}
@@ -299,6 +301,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8499305208139963671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655279566932236014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4c6b5ad96f28c45950fa58c267b20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPage: {fileID: 0}
+  myKey: 105
+  capacity: 15
 --- !u!1 &2655279568306195478
 GameObject:
   m_ObjectHideFlags: 0
