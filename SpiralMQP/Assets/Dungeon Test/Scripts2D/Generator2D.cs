@@ -39,6 +39,8 @@ public class Generator2D : MonoBehaviour
     [SerializeField] [Range(1f, 3f)] float waitTime = 2.5f;
 
     [Header("Dungeon Size")]
+    [SerializeField] float tileSize = 1;
+
     [SerializeField] [Range(10, 250)] int size = 15;
     [SerializeField] [Range(10, 500)] int roomCount = 100;
     [SerializeField] [Range(0f, 1f)] float hallwayChance = 0.125f;
@@ -255,19 +257,18 @@ public class Generator2D : MonoBehaviour
         }
     }
 
-    void PlaceCube(Vector2Int position, Vector2Int local, Vector2Int size, Transform parentTranform)
+    void PlaceCube(Vector2Int position, Vector2Int local, Transform parentTranform, Room room = null)
     {
         Vector3 cord = new Vector3(position.x, 0, position.y) + new Vector3(local.x, 0, local.y);
 
         GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
-        go.transform.localScale = new Vector3(size.x, 1, size.y);
+        go.transform.localScale = new Vector3(tileSize, 1, tileSize);
 
         SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
 
         if (sr)
         {
-            //sr.color = color;
-            SetSprite(sr, local, grid[position + local]);
+            SetSprite(sr, local, grid[position + local], room);
         }
     }
 
@@ -280,36 +281,36 @@ public class Generator2D : MonoBehaviour
         {
             for (int x = 0; x < room.bounds.size.x; x++)
             {
-                PlaceCube(room.bounds.position, new Vector2Int(x, y), Vector2Int.one, roomParent.transform);
+                PlaceCube(room.bounds.position, new Vector2Int(x, y), roomParent.transform, room);
             }
         }
     }
 
     void PlaceHallway(Vector2Int location, Transform hallwayParent)
     {
-        PlaceCube(location, Vector2Int.zero, new Vector2Int(1, 1), hallwayParent);
+        PlaceCube(location, Vector2Int.zero, hallwayParent);
     }
 
-    void SetSprite(SpriteRenderer sr, Vector2Int local, CellType cellType)
+    void SetSprite(SpriteRenderer sr, Vector2Int local, CellType cellType, Room room)
     {
         //Debug.LogFormat("Local: {0} Celltype {1}", local, cellType);
 
         if (cellType == CellType.Room)
         {
-            SetRoomSprites(sr, local);
+            SetRoomSprites(sr, local, room);
         }
         else if (cellType == CellType.Hallway)
         {
-            SetHallwaySprites(sr, local);
+            SetHallwaySprites(sr, local, room);
         }
     }
 
-    void SetHallwaySprites(SpriteRenderer sr, Vector2Int local)
+    void SetHallwaySprites(SpriteRenderer sr, Vector2Int local, Room room)
     {
         sr.sprite = middleRoomTile;
     }
 
-    void SetRoomSprites(SpriteRenderer sr, Vector2Int local)
+    void SetRoomSprites(SpriteRenderer sr, Vector2Int local, Room room)
     {
         if (local.x == 0)
         {

@@ -164,8 +164,8 @@ MonoBehaviour:
   cubePrefab: {fileID: 6445798320188234072, guid: f3553738a8b6f4342b016dcb9364ceff, type: 3}
   minYTile: {fileID: -757113043, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
   minXTile: {fileID: 736721702, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
-  maxYTile: {fileID: 0}
-  maxXTile: {fileID: 0}
+  maxYTile: {fileID: -2063050846, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
+  maxXTile: {fileID: 1860900561, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
   middleRoomTile: {fileID: -863214528, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
 --- !u!4 &203877985
 Transform:
