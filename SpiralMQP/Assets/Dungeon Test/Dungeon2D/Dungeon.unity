@@ -97,8 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: c6f0017d9c3eefc40927adcda33955b7,
-    type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: c6f0017d9c3eefc40927adcda33955b7, type: 2}
   m_LightingSettings: {fileID: 1969570161}
 --- !u!196 &4
 NavMeshSettings:
@@ -153,19 +152,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0763b230d22fd334bbc9441aed267b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRepeatGeneration: 1
-  isRandomSeed: 1
+  isRepeatGeneration: 0
+  isRandomSeed: 0
   seed: 0
   waitTime: 2
-  size: 250
-  roomCount: 500
-  hallwayChance: 0.5
-  roomMinSize: 10
-  roomMaxSize: 25
-  cubePrefab: {fileID: 6445798320188234072, guid: f3553738a8b6f4342b016dcb9364ceff,
-    type: 3}
-  roomColor: {r: 1, g: 0, b: 0, a: 1}
-  hallwayColor: {r: 0, g: 0, b: 1, a: 1}
+  size: 25
+  roomCount: 100
+  hallwayChance: 0.15
+  roomMinSize: 5
+  roomMaxSize: 10
+  cubePrefab: {fileID: 6445798320188234072, guid: f3553738a8b6f4342b016dcb9364ceff, type: 3}
+  minYTile: {fileID: -757113043, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
+  minXTile: {fileID: 736721702, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
+  maxYTile: {fileID: 0}
+  maxXTile: {fileID: 0}
+  middleRoomTile: {fileID: -863214528, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
 --- !u!4 &203877985
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061073680}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 15, y: 30, z: 15}
+  m_LocalPosition: {x: 15, y: 25, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

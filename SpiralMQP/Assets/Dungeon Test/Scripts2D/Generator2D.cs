@@ -50,10 +50,13 @@ public class Generator2D : MonoBehaviour
     [Header("Tile")]
     [SerializeField] GameObject cubePrefab;
 
-    [SerializeField]
-    Color roomColor;
-    [SerializeField]
-    Color hallwayColor;
+    [SerializeField] Sprite minYTile;
+    [SerializeField] Sprite minXTile;
+    [Space(10)]
+    [SerializeField] Sprite maxYTile;
+    [SerializeField] Sprite maxXTile;
+    [Space(10)]
+    [SerializeField] Sprite middleRoomTile;
 
     Random random;
     Grid2D<CellType> grid;
@@ -66,7 +69,9 @@ public class Generator2D : MonoBehaviour
         Generate();
 
         if (isRepeatGeneration)
+        {
             StartCoroutine(RepeatGenerate());
+        }
     }
 
     IEnumerator RepeatGenerate()
@@ -131,12 +136,13 @@ public class Generator2D : MonoBehaviour
             if (add)
             {
                 rooms.Add(newRoom);
-                PlaceRoom(newRoom.bounds.position, newRoom.bounds.size);
 
                 foreach (var pos in newRoom.bounds.allPositionsWithin)
                 {
                     grid[pos] = CellType.Room;
                 }
+
+                PlaceRoom(newRoom);
             }
         }
     }
@@ -191,6 +197,9 @@ public class Generator2D : MonoBehaviour
             var startPos = new Vector2Int((int)startPosf.x, (int)startPosf.y);
             var endPos = new Vector2Int((int)endPosf.x, (int)endPosf.y);
 
+            GameObject hallwayParent = new GameObject();
+            hallwayParent.name = "Hallway";
+
             var path = aStar.FindPath(startPos, endPos, (DungeonPathfinder2D.Node a, DungeonPathfinder2D.Node b) =>
             {
                 var pathCost = new DungeonPathfinder2D.PathCost();
@@ -219,6 +228,7 @@ public class Generator2D : MonoBehaviour
             {
                 for (int i = 0; i < path.Count; i++)
                 {
+
                     var current = path[i];
 
                     if (grid[current] == CellType.None)
@@ -238,33 +248,80 @@ public class Generator2D : MonoBehaviour
                 {
                     if (grid[pos] == CellType.Hallway)
                     {
-                        PlaceHallway(pos);
+                        PlaceHallway(pos, hallwayParent.transform);
                     }
                 }
             }
         }
     }
 
-    void PlaceCube(Vector2Int location, Vector2Int size, Color color)
+    void PlaceCube(Vector2Int position, Vector2Int local, Vector2Int size, Transform parentTranform)
     {
-        GameObject go = Instantiate(cubePrefab, new Vector3(location.x, 0, location.y), Quaternion.identity, transform);
+        Vector3 cord = new Vector3(position.x, 0, position.y) + new Vector3(local.x, 0, local.y);
+
+        GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
         go.transform.localScale = new Vector3(size.x, 1, size.y);
 
         SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
 
         if (sr)
         {
-            sr.color = color;
+            //sr.color = color;
+            SetSprite(sr, local, grid[position + local]);
         }
     }
 
-    void PlaceRoom(Vector2Int location, Vector2Int size)
+    void PlaceRoom(Room room)
     {
-        PlaceCube(location, size, roomColor);
+        GameObject roomParent = new GameObject();
+        roomParent.name = "Room";
+
+        for (int y = 0; y < room.bounds.size.y; y++)
+        {
+            for (int x = 0; x < room.bounds.size.x; x++)
+            {
+                PlaceCube(room.bounds.position, new Vector2Int(x, y), Vector2Int.one, roomParent.transform);
+            }
+        }
     }
 
-    void PlaceHallway(Vector2Int location)
+    void PlaceHallway(Vector2Int location, Transform hallwayParent)
     {
-        PlaceCube(location, new Vector2Int(1, 1), hallwayColor);
+        PlaceCube(location, Vector2Int.zero, new Vector2Int(1, 1), hallwayParent);
+    }
+
+    void SetSprite(SpriteRenderer sr, Vector2Int local, CellType cellType)
+    {
+        //Debug.LogFormat("Local: {0} Celltype {1}", local, cellType);
+
+        if (cellType == CellType.Room)
+        {
+            SetRoomSprites(sr, local);
+        }
+        else if (cellType == CellType.Hallway)
+        {
+            SetHallwaySprites(sr, local);
+        }
+    }
+
+    void SetHallwaySprites(SpriteRenderer sr, Vector2Int local)
+    {
+        sr.sprite = middleRoomTile;
+    }
+
+    void SetRoomSprites(SpriteRenderer sr, Vector2Int local)
+    {
+        if (local.x == 0)
+        {
+            sr.sprite = minXTile;
+        }
+        else if (local.y == 0)
+        {
+            sr.sprite = minYTile;
+        }
+        else
+        {
+            sr.sprite = middleRoomTile;
+        }
     }
 }
