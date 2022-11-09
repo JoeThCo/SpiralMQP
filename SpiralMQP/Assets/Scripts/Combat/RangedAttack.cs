@@ -46,6 +46,6 @@ public class RangedAttack : MonoBehaviour
         Quaternion rotation = transform.rotation;
         GameObject Projectile = Instantiate(ProjectilePrefab, pos, rotation);
         Projectile.GetComponent<Projectile>().Direction = shootDirection;
-        Physics2D.IgnoreCollision(Projectile.GetComponent<Collider2D>(),GetComponent<Collider2D>());
+        Physics2D.IgnoreCollision(Projectile.GetComponent<Collider2D>(),gameObject.GetComponent<Collider2D>());
     }
 }

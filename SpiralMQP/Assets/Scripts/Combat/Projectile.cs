@@ -18,7 +18,13 @@ public class Projectile : MonoBehaviour
 
     void Start(){
         Destroy(gameObject, SelfDestroyTime);
-        Debug.Log(Direction);
+        double angle = Mathf.Atan(Direction.y/Direction.x)*180.0/3.1416;
+        if(Direction.x>0){
+            transform.rotation = Quaternion.Euler(0, 0, 180+(float)angle);
+        } else{
+            transform.rotation = Quaternion.Euler(0, 0, (float)angle);
+        }
+
     }
 
     void Update(){
@@ -31,7 +37,9 @@ public class Projectile : MonoBehaviour
         if(collision.collider.gameObject.layer == EnemyLayers){
             collision.collider.gameObject.GetComponent<OnHit>().Hit();
         }
-        if(collision.collider.gameObject.layer != PlayerLayer)
+        if(collision.collider.gameObject.layer == PlayerLayer){
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(),collision.collider.GetComponent<Collider2D>());
+        }
         Destroy(gameObject);
     }
 }
