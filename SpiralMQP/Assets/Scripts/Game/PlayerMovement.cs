@@ -99,12 +99,12 @@ public class PlayerMovement : MonoBehaviour
         CanDodge = false;
         CanMove = false;
         SetDodgeParticles(true);
-        //can be danaged = false
+        //can be damaged = false
 
         playerRigidbody.AddForce(inputDir * DodgePower, ForceMode2D.Impulse);
         yield return new WaitForSeconds(DodgeTime);
 
-        //can be danaged = true
+        //can be damaged = true
         SetDodgeParticles(false);
         CanMove = true;
         playerRigidbody.velocity = Vector2.zero;
