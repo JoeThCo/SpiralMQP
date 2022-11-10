@@ -167,6 +167,9 @@ MonoBehaviour:
   yWallTile: {fileID: 526166153, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
   cornerTile: {fileID: -539330079, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
   middleTile: {fileID: -863214528, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
+  hallWayStraight: {fileID: -1453541877, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
+  hallwayCorner: {fileID: 1578772779, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
+  hallwayEnd: {fileID: 1938239155, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
 --- !u!4 &203877985
 Transform:
   m_ObjectHideFlags: 0

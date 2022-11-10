@@ -30,6 +30,42 @@ public class Generator2D : MonoBehaviour
         }
     }
 
+    class Hallway
+    {
+        public List<Vector2Int> path;
+        public List<Vector2Int> walls;
+
+        public Hallway(List<Vector2Int> path)
+        {
+            this.path = path;
+            walls = new List<Vector2Int>();
+        }
+
+        public int PathSize() { return path.Count; }
+
+        public int WallsSize() { return walls.Count; }
+
+        public void AddWall(Vector2Int wallCord)
+        {
+            walls.Add(wallCord);
+        }
+
+        public void AddPath(Vector2Int pathCord)
+        {
+            path.Add(pathCord);
+        }
+
+        public Vector2Int GetWall(int i)
+        {
+            return walls[i];
+        }
+
+        public Vector2Int GetPath(int i)
+        {
+            return path[i];
+        }
+    }
+
     [Header("Debug")]
     [SerializeField] bool isRepeatGeneration;
     [Space(10)]
@@ -60,9 +96,16 @@ public class Generator2D : MonoBehaviour
 
     [SerializeField] Sprite middleTile;
 
+    [Header("Hallway")]
+    [SerializeField] Sprite hallWayStraight;
+    [SerializeField] Sprite hallwayCorner;
+    [SerializeField] Sprite hallwayEnd;
+
+
     Random random;
     Grid2D<CellType> grid;
     List<Room> rooms;
+    List<Hallway> hallways;
     Delaunay2D delaunay;
     HashSet<Prim.Edge> selectedEdges;
 
@@ -95,6 +138,7 @@ public class Generator2D : MonoBehaviour
 
         grid = new Grid2D<CellType>(size, Vector2Int.zero);
         rooms = new List<Room>();
+        hallways = new List<Hallway>();
 
         PlaceRooms();
         Triangulate();
@@ -199,8 +243,6 @@ public class Generator2D : MonoBehaviour
             var startPos = new Vector2Int((int)startPosf.x, (int)startPosf.y);
             var endPos = new Vector2Int((int)endPosf.x, (int)endPosf.y);
 
-            GameObject hallwayParent = new GameObject();
-            hallwayParent.name = "Hallway";
 
             var path = aStar.FindPath(startPos, endPos, (DungeonPathfinder2D.Node a, DungeonPathfinder2D.Node b) =>
             {
@@ -228,6 +270,8 @@ public class Generator2D : MonoBehaviour
 
             if (path != null)
             {
+                Hallway hallway = new Hallway(path);
+
                 for (int i = 0; i < path.Count; i++)
                 {
                     var current = path[i];
@@ -235,46 +279,53 @@ public class Generator2D : MonoBehaviour
                     if (grid[current] == CellType.None)
                     {
                         grid[current] = CellType.Hallway;
-                    }
+                        hallway.AddPath(current);
 
-                    if (i > 0)
-                    {
-                        var prev = path[i - 1];
-
-                        var delta = current - prev;
-                    }
-                }
-
-                //place a hallway around all empty tiles that surrond the path
-                foreach (var pos in path)
-                {
-                    if (grid[pos] == CellType.Hallway)
-                    {
-                        PlaceHallway(pos, hallwayParent.transform);
-
-                        foreach (Vector2Int cord in GetCellNeighbors(CellType.None, pos))
+                        foreach (Vector2Int cord in GetCellNeighbors(CellType.None, current))
                         {
-                            PlaceHallway(cord, hallwayParent.transform);
+                            if (grid[cord] == CellType.None)
+                            {
+                                grid[cord] = CellType.Hallway;
+                                hallway.AddWall(cord);
+                            }
                         }
                     }
                 }
+
+                PlaceHallway(hallway);
+                hallways.Add(hallway);
             }
         }
     }
 
-    void PlaceCube(Vector2Int position, Vector2Int local, Transform parentTranform, Room room = null)
+    void PlaceCube(Vector2Int local, Transform parentTranform, Hallway hallway)
     {
-        Vector3 cord = new Vector3(position.x, 0, position.y) + new Vector3(local.x, 0, local.y);
+        Vector3 cord = new Vector3(local.x, 0, local.y);
 
         GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
 
         SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
-        Vector2Int cords = position + local;
 
         if (sr)
         {
-            SetSprite(sr, cords, room, grid[cords]);
+            SetSprite(sr, local, hallway);
+        }
+    }
+
+    void PlaceCube(Vector2Int local, Transform parentTranform, Room room)
+    {
+        Vector3 cord = new Vector3(room.bounds.position.x, 0, room.bounds.position.y) + new Vector3(local.x, 0, local.y);
+
+        GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
+        go.transform.localScale = new Vector3(tileSize, 1, tileSize);
+
+        SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
+        Vector2Int cords = room.bounds.position + local;
+
+        if (sr)
+        {
+            SetSprite(sr, cords, room);
         }
     }
 
@@ -287,59 +338,35 @@ public class Generator2D : MonoBehaviour
         {
             for (int x = 0; x < room.bounds.size.x; x++)
             {
-                PlaceCube(room.bounds.position, new Vector2Int(x, y), roomParent.transform, room);
+                PlaceCube(new Vector2Int(x, y), roomParent.transform, room);
             }
         }
     }
 
-    void PlaceHallway(Vector2Int location, Transform hallwayParent)
+    void PlaceHallway(Hallway hallway)
     {
-        PlaceCube(location, Vector2Int.zero, hallwayParent);
-    }
+        GameObject hallwayParent = new GameObject();
+        hallwayParent.name = "Hallway";
 
-    void SetSprite(SpriteRenderer sr, Vector2Int cords, Room room, CellType cellType)
-    {
-        if (cellType == CellType.Room)
+        for (int i = 0; i < hallway.PathSize(); i++)
         {
-            SetRoomSprites(sr, cords, room);
-        }
-        else if (cellType == CellType.Hallway)
-        {
-            SetHallwaySprites(sr, cords, room);
-        }
-    }
-
-    List<Vector2Int> GetCellNeighbors(CellType cellType, Vector2Int input)
-    {
-        List<Vector2Int> output = new List<Vector2Int>();
-
-        for (int y = -1; y <= 1; y++)
-        {
-            for (int x = -1; x <= 1; x++)
-            {
-                if (x != 0 || y != 0)
-                {
-                    Vector2Int cords = input + new Vector2Int(x, y);
-
-                    if (grid[cords] == cellType)
-                    {
-                        output.Add(input + new Vector2Int(x, y));
-                    }
-                }
-            }
+            PlaceCube(hallway.GetPath(i), hallwayParent.transform, hallway);
         }
 
-        return output;
+        for (int i = 0; i < hallway.WallsSize(); i++)
+        {
+            PlaceCube(hallway.GetWall(i), hallwayParent.transform, hallway);
+        }
     }
 
-    void SetHallwaySprites(SpriteRenderer sr, Vector2Int cords, Room room)
+    void SetSprite(SpriteRenderer sr, Vector2Int cords, Hallway hallway)
     {
         int count = GetCellNeighbors(CellType.Hallway, cords).Count;
 
         sr.sprite = middleTile;
     }
 
-    void SetRoomSprites(SpriteRenderer sr, Vector2Int cords, Room room)
+    void SetSprite(SpriteRenderer sr, Vector2Int cords, Room room)
     {
         int count = GetCellNeighbors(CellType.Room, cords).Count;
 
@@ -371,5 +398,27 @@ public class Generator2D : MonoBehaviour
         {
             sr.sprite = middleTile;
         }
+    }
+
+    List<Vector2Int> GetCellNeighbors(CellType cellType, Vector2Int input)
+    {
+        List<Vector2Int> output = new List<Vector2Int>();
+
+        for (int y = -1; y <= 1; y++)
+        {
+            for (int x = -1; x <= 1; x++)
+            {
+                if (x != 0 || y != 0)
+                {
+                    Vector2Int cords = input + new Vector2Int(x, y);
+
+                    if (grid[cords] == cellType)
+                    {
+                        output.Add(input + new Vector2Int(x, y));
+                    }
+                }
+            }
+        }
+        return output;
     }
 }
