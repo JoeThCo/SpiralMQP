@@ -52,13 +52,13 @@ public class Generator2D : MonoBehaviour
     [Header("Tile")]
     [SerializeField] GameObject cubePrefab;
 
-    [SerializeField] Sprite minYTile;
-    [SerializeField] Sprite minXTile;
-    [Space(10)]
-    [SerializeField] Sprite maxYTile;
-    [SerializeField] Sprite maxXTile;
-    [Space(10)]
-    [SerializeField] Sprite middleRoomTile;
+    [Header("Walls")]
+    [SerializeField] Sprite xWallTile;
+    [SerializeField] Sprite yWallTile;
+
+    [SerializeField] Sprite cornerTile;
+
+    [SerializeField] Sprite middleTile;
 
     Random random;
     Grid2D<CellType> grid;
@@ -230,7 +230,6 @@ public class Generator2D : MonoBehaviour
             {
                 for (int i = 0; i < path.Count; i++)
                 {
-
                     var current = path[i];
 
                     if (grid[current] == CellType.None)
@@ -246,11 +245,17 @@ public class Generator2D : MonoBehaviour
                     }
                 }
 
+                //place a hallway around all empty tiles that surrond the path
                 foreach (var pos in path)
                 {
                     if (grid[pos] == CellType.Hallway)
                     {
                         PlaceHallway(pos, hallwayParent.transform);
+
+                        foreach (Vector2Int cord in GetCellNeighbors(CellType.None, pos))
+                        {
+                            PlaceHallway(cord, hallwayParent.transform);
+                        }
                     }
                 }
             }
@@ -265,10 +270,11 @@ public class Generator2D : MonoBehaviour
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
 
         SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
+        Vector2Int cords = position + local;
 
         if (sr)
         {
-            SetSprite(sr, local, grid[position + local], room);
+            SetSprite(sr, cords, room, grid[cords]);
         }
     }
 
@@ -291,38 +297,79 @@ public class Generator2D : MonoBehaviour
         PlaceCube(location, Vector2Int.zero, hallwayParent);
     }
 
-    void SetSprite(SpriteRenderer sr, Vector2Int local, CellType cellType, Room room)
+    void SetSprite(SpriteRenderer sr, Vector2Int cords, Room room, CellType cellType)
     {
-        //Debug.LogFormat("Local: {0} Celltype {1}", local, cellType);
-
         if (cellType == CellType.Room)
         {
-            SetRoomSprites(sr, local, room);
+            SetRoomSprites(sr, cords, room);
         }
         else if (cellType == CellType.Hallway)
         {
-            SetHallwaySprites(sr, local, room);
+            SetHallwaySprites(sr, cords, room);
         }
     }
 
-    void SetHallwaySprites(SpriteRenderer sr, Vector2Int local, Room room)
+    List<Vector2Int> GetCellNeighbors(CellType cellType, Vector2Int input)
     {
-        sr.sprite = middleRoomTile;
+        List<Vector2Int> output = new List<Vector2Int>();
+
+        for (int y = -1; y <= 1; y++)
+        {
+            for (int x = -1; x <= 1; x++)
+            {
+                if (x != 0 || y != 0)
+                {
+                    Vector2Int cords = input + new Vector2Int(x, y);
+
+                    if (grid[cords] == cellType)
+                    {
+                        output.Add(input + new Vector2Int(x, y));
+                    }
+                }
+            }
+        }
+
+        return output;
     }
 
-    void SetRoomSprites(SpriteRenderer sr, Vector2Int local, Room room)
+    void SetHallwaySprites(SpriteRenderer sr, Vector2Int cords, Room room)
     {
-        if (local.x == 0)
+        int count = GetCellNeighbors(CellType.Hallway, cords).Count;
+
+        sr.sprite = middleTile;
+    }
+
+    void SetRoomSprites(SpriteRenderer sr, Vector2Int cords, Room room)
+    {
+        int count = GetCellNeighbors(CellType.Room, cords).Count;
+
+        //corner
+        if (count == 3)
         {
-            sr.sprite = minXTile;
+            sr.flipX = cords.x != room.bounds.min.x;
+            sr.flipY = cords.y != room.bounds.min.y;
+
+            sr.sprite = cornerTile;
         }
-        else if (local.y == 0)
+        //wall
+        else if (count == 5)
         {
-            sr.sprite = minYTile;
+            if (cords.x == room.bounds.min.x || cords.x == room.bounds.max.x - 1)
+            {
+                sr.sprite = xWallTile;
+                sr.flipX = cords.x != room.bounds.min.x;
+            }
+
+            if (cords.y == room.bounds.min.y || cords.y == room.bounds.max.y - 1)
+            {
+                sr.sprite = yWallTile;
+                sr.flipY = cords.y != room.bounds.min.y;
+            }
         }
-        else
+        //middle
+        else if (count == 8)
         {
-            sr.sprite = middleRoomTile;
+            sr.sprite = middleTile;
         }
     }
 }
