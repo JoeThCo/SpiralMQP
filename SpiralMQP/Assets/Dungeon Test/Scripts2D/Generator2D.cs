@@ -33,31 +33,17 @@ public class Generator2D : MonoBehaviour
     class Hallway
     {
         public List<Vector2Int> path;
-        public List<Vector2Int> walls;
 
         public Hallway(List<Vector2Int> path)
         {
             this.path = path;
-            walls = new List<Vector2Int>();
         }
 
         public int PathSize() { return path.Count; }
 
-        public int WallsSize() { return walls.Count; }
-
-        public void AddWall(Vector2Int wallCord)
-        {
-            walls.Add(wallCord);
-        }
-
         public void AddPath(Vector2Int pathCord)
         {
             path.Add(pathCord);
-        }
-
-        public Vector2Int GetWall(int i)
-        {
-            return walls[i];
         }
 
         public Vector2Int GetPath(int i)
@@ -287,7 +273,6 @@ public class Generator2D : MonoBehaviour
                             if (grid[cord] == CellType.None)
                             {
                                 grid[cord] = CellType.Hallway;
-                                hallway.AddWall(cord);
                             }
                         }
                     }
@@ -352,11 +337,6 @@ public class Generator2D : MonoBehaviour
         for (int i = 1; i < hallway.PathSize() - 1; i++)
         {
             PlaceCube(hallway.GetPath(i - 1), hallway.GetPath(i), hallwayParent.transform, hallway);
-        }
-
-        for (int i = 1; i < hallway.WallsSize() - 1; i++)
-        {
-            PlaceCube(hallway.GetWall(i - 1), hallway.GetWall(i), hallwayParent.transform, hallway);
         }
     }
 
