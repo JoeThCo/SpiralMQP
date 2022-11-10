@@ -48,14 +48,14 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerAnimatorController(inputDir);
 
-        if (CanDodge && Input.GetKeyDown(DodgeKey) && inputDir != Vector2.zero)
+        if (Input.GetKeyDown(DodgeKey) && CanDodge && inputDir != Vector2.zero)
         {
             StartCoroutine(DodgeI());
         }
 
         if (CanShield)
         {
-            if (Input.GetKeyDown(ShieldKey))
+            if (Input.GetKeyDown(ShieldKey) && CanDodge && CanMove)
             {
                 SetShield(true);
             }
@@ -109,8 +109,9 @@ public class PlayerMovement : MonoBehaviour
         CanMove = true;
         playerRigidbody.velocity = Vector2.zero;
 
-        yield return new WaitForSeconds(DodgeCoolDownTime);
+        SetShield(Input.GetKey(ShieldKey));
 
+        yield return new WaitForSeconds(DodgeCoolDownTime);
         CanDodge = true;
     }
 
