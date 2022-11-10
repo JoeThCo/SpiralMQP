@@ -142,6 +142,7 @@ public class Generator2D : MonoBehaviour
 
         PlaceRooms();
         Triangulate();
+
         CreateHallways();
         PathfindHallways();
     }
@@ -298,9 +299,9 @@ public class Generator2D : MonoBehaviour
         }
     }
 
-    void PlaceCube(Vector2Int local, Transform parentTranform, Hallway hallway)
+    void PlaceCube(Vector2Int current, Vector2Int previous, Transform parentTranform, Hallway hallway)
     {
-        Vector3 cord = new Vector3(local.x, 0, local.y);
+        Vector3 cord = new Vector3(current.x, 0, current.y);
 
         GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
@@ -309,7 +310,7 @@ public class Generator2D : MonoBehaviour
 
         if (sr)
         {
-            SetSprite(sr, local, hallway);
+            SetSprite(sr, current, previous);
         }
     }
 
@@ -348,21 +349,19 @@ public class Generator2D : MonoBehaviour
         GameObject hallwayParent = new GameObject();
         hallwayParent.name = "Hallway";
 
-        for (int i = 0; i < hallway.PathSize(); i++)
+        for (int i = 1; i < hallway.PathSize() - 1; i++)
         {
-            PlaceCube(hallway.GetPath(i), hallwayParent.transform, hallway);
+            PlaceCube(hallway.GetPath(i - 1), hallway.GetPath(i), hallwayParent.transform, hallway);
         }
 
-        for (int i = 0; i < hallway.WallsSize(); i++)
+        for (int i = 1; i < hallway.WallsSize() - 1; i++)
         {
-            PlaceCube(hallway.GetWall(i), hallwayParent.transform, hallway);
+            PlaceCube(hallway.GetWall(i - 1), hallway.GetWall(i), hallwayParent.transform, hallway);
         }
     }
 
-    void SetSprite(SpriteRenderer sr, Vector2Int cords, Hallway hallway)
+    void SetSprite(SpriteRenderer sr, Vector2Int current, Vector2Int previous)
     {
-        int count = GetCellNeighbors(CellType.Hallway, cords).Count;
-
         sr.sprite = middleTile;
     }
 
