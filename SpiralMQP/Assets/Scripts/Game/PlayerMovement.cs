@@ -52,14 +52,14 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerAnimatorController(inputDir);
 
-        if (CanDodge && Input.GetKeyDown(DodgeKey) && inputDir != Vector2.zero)
+        if (Input.GetKeyDown(DodgeKey) && CanDodge && inputDir != Vector2.zero)
         {
             StartCoroutine(DodgeI());
         }
 
         if (CanShield)
         {
-            if (Input.GetKeyDown(ShieldKey))
+            if (Input.GetKeyDown(ShieldKey) && CanDodge && CanMove)
             {
                 SetShield(true);
             }
@@ -103,18 +103,19 @@ public class PlayerMovement : MonoBehaviour
         CanDodge = false;
         CanMove = false;
         SetDodgeParticles(true);
-        //can be danaged = false
+        //can be damaged = false
 
         playerRigidbody.AddForce(inputDir * DodgePower, ForceMode2D.Impulse);
         yield return new WaitForSeconds(DodgeTime);
 
-        //can be danaged = true
+        //can be damaged = true
         SetDodgeParticles(false);
         CanMove = true;
         playerRigidbody.velocity = Vector2.zero;
 
-        yield return new WaitForSeconds(DodgeCoolDownTime);
+        SetShield(Input.GetKey(ShieldKey));
 
+        yield return new WaitForSeconds(DodgeCoolDownTime);
         CanDodge = true;
     }
 
