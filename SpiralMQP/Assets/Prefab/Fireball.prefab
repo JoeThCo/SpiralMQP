@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4569855811252762931}
   - component: {fileID: 4273972262091870914}
-  - component: {fileID: -9169071484794476833}
   - component: {fileID: 4837989233654894541}
-  m_Layer: 0
+  - component: {fileID: 4290141113053569575}
+  m_Layer: 9
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 337215391
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c3bd7682c79764b50b2587e5fba24556, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -86,32 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-9169071484794476833
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183738871980724886}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.03, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.26, y: 0.65999997, z: 0.58, w: 0.24}
-    pivot: {x: 0.30684754, y: 0.69961256}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.13}
-  m_EdgeRadius: 0
 --- !u!114 &4837989233654894541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDestroyTime: 5
-  Speed: 4.5
+  Speed: 10
   Direction: {x: 0, y: 0, z: 0}
   ExplodeRange: 0.5
   EnemyLayers:
@@ -134,3 +108,29 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!61 &4290141113053569575
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183738871980724886}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0044546816, y: 0.004731305}
+  m_SpriteTilingProperty:
+    border: {x: 0.26, y: 0.65999997, z: 0.58, w: 0.24}
+    pivot: {x: 0.30684754, y: 0.69961256}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1017856, y: 0.097294316}
+  m_EdgeRadius: 0

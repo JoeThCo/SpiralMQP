@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float SelfDestroyTime = 10.0f;
 
+    [Range(1.0f, 20.0f)]
     public float Speed = 1.0f;
     
     public Vector3 Direction;
@@ -32,14 +33,10 @@ public class Projectile : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision)
-    {    
+    {
         Debug.Log("Projectile hit");
-        if(collision.collider.gameObject.layer == EnemyLayers){
-            collision.collider.gameObject.GetComponent<OnHit>().Hit();
-        }
-        if(collision.collider.gameObject.layer == PlayerLayer){
-            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(),collision.collider.GetComponent<Collider2D>());
-        }
+        collision.collider.gameObject.GetComponent<OnHit>().Hit();
+        Debug.Log(collision.collider.gameObject);
         Destroy(gameObject);
     }
 }
