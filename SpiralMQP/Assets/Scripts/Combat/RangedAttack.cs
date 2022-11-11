@@ -18,7 +18,6 @@ public class RangedAttack : MonoBehaviour
     {
         AttackCoolDownCounter = AttackCoolDown;
     }
-
     void Update()
     {
         if (AttackCoolDown < AttackCoolDownCounter)
@@ -40,13 +39,13 @@ public class RangedAttack : MonoBehaviour
         shootDirection = Input.mousePosition;
         shootDirection.z = 0.0f;
         shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-        shootDirection = shootDirection - transform.position;
+        shootDirection = shootDirection-transform.position;
         shootDirection.z = 0.0f;
         shootDirection.Normalize();
         Vector3 pos = transform.position;
         Quaternion rotation = transform.rotation;
         GameObject Projectile = Instantiate(ProjectilePrefab, pos + shootDirection/2, rotation);
         Projectile.GetComponent<Projectile>().Direction = shootDirection;
-        Physics2D.IgnoreCollision(Projectile.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
+        //Physics2D.IgnoreCollision(Projectile.GetComponent<Collider2D>(),gameObject.GetComponent<Collider2D>());
     }
 }
