@@ -47,14 +47,12 @@ public class Generator2D : MonoBehaviour
 
         public void AddPath(Vector2Int pathCord)
         {
-            if (!path.Contains(pathCord))
-                path.Add(pathCord);
+            path.Add(pathCord);
         }
 
         public void AddWall(Vector2Int wallCord)
         {
-            if (!path.Contains(wallCord))
-                wall.Add(wallCord);
+            wall.Add(wallCord);
         }
 
         public Vector2Int GetWall(int i)
