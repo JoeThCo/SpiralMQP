@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.EventSystems;
 
 public class InventoryItem : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class InventoryItem : MonoBehaviour
     // create event action delegates to handle different events
     public event Action<InventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseBtnClick;
 
-
     private void Awake() 
     {
         ResetData();
@@ -25,7 +25,7 @@ public class InventoryItem : MonoBehaviour
 
     public void ResetData()
     {
-        this.itemImage.gameObject.SetActive(false); // hide item image
+        itemImage.gameObject.SetActive(false); // hide item image
         empty = true;
     }
 
@@ -36,7 +36,44 @@ public class InventoryItem : MonoBehaviour
 
     public void SetData(Sprite sprite, int quantity)
     {
+        itemImage.gameObject.SetActive(true);
+        itemImage.sprite = sprite;
+        txt_quantity.text = quantity + "";
+        empty = false;
+    }
 
+    public void Select()
+    {
+        borderImage.enabled = true;
     }
     
+    public void OnBeginDrag()
+    {
+        if(empty) return; // if the item is empty, dragging does nothing
+        OnItemBeginDrag?.Invoke(this);
+    }
+
+    public void OnDrop()
+    {
+        OnItemDroppedOn?.Invoke(this);
+    }
+
+    public void OnEndDrag()
+    {
+        OnItemEndDrag?.Invoke(this);
+    }
+
+    public void OnPointerClick(BaseEventData data)
+    {
+        if (empty) return; // if the item is empty, clicking does nothing
+        
+        // tracking mouse click event data
+        PointerEventData pointerData = (PointerEventData)data;
+        if (pointerData.button == PointerEventData.InputButton.Right) 
+        {
+            OnRightMouseBtnClick?.Invoke(this);
+        }
+        else OnItemClicked?.Invoke(this);
+    }
+
 }
