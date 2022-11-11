@@ -47,12 +47,14 @@ public class Generator2D : MonoBehaviour
 
         public void AddPath(Vector2Int pathCord)
         {
-            path.Add(pathCord);
+            if (!path.Contains(pathCord))
+                path.Add(pathCord);
         }
 
-        public void AddWall(Vector2Int pathCord)
+        public void AddWall(Vector2Int wallCord)
         {
-            wall.Add(pathCord);
+            if (!path.Contains(wallCord))
+                wall.Add(wallCord);
         }
 
         public Vector2Int GetWall(int i)
@@ -103,14 +105,9 @@ public class Generator2D : MonoBehaviour
     [SerializeField] Sprite yWallTile;
 
     [SerializeField] Sprite cornerTile;
-
     [SerializeField] Sprite middleTile;
 
-    [Header("Hallway")]
-    [SerializeField] Sprite hallWayStraight;
-    [SerializeField] Sprite hallwayCorner;
-    [SerializeField] Sprite hallwayEnd;
-
+    [SerializeField] Sprite DebugTile;
 
     Random random;
     Grid2D<CellType> grid;
@@ -287,41 +284,46 @@ public class Generator2D : MonoBehaviour
                 {
                     var current = path[i];
 
-                    //for the hallway
-                    //each path is hallway
-                    //each neighbor of the hallway that is none is a wall
-
                     if (grid[current] == CellType.None)
                     {
                         grid[current] = CellType.Hallway;
                         hallway.AddPath(current);
-
-                        foreach (Vector2Int cord in GetCellNeighbors(CellType.None, current))
-                        {
-                            grid[cord] = CellType.Hallway;
-                            hallway.AddWall(cord);
-                        }
                     }
                 }
-
-                PlaceHallway(hallway);
                 hallways.Add(hallway);
             }
         }
+
+        foreach (Hallway hallway in hallways)
+        {
+            foreach (Vector2Int cord in hallway.path)
+            {
+                List<Vector2Int> adjNeighbors = GetCellNeighbors(CellType.None, cord);
+
+                foreach (Vector2Int neighbor in adjNeighbors)
+                {
+                    //Debug.LogFormat("Cord {0} Neighbor {1} Count {2}", cord, neighbor, adjNeighbors.Count);
+                    grid[neighbor] = CellType.Wall;
+                    hallway.AddWall(neighbor);
+                }
+            }
+            PlaceHallway(hallway);
+        }
     }
 
-    void PlaceCube(Vector2Int current, Vector2Int previous, Transform parentTranform, Hallway hallway)
+    void PlaceCube(Vector2Int current, Transform parentTranform)
     {
         Vector3 cord = new Vector3(current.x, 0, current.y);
 
         GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
+        go.name = current.ToString();
 
         SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
 
         if (sr)
         {
-            SetSprite(sr, current, previous, hallway);
+            SetSprite(sr, current);
         }
     }
 
@@ -331,6 +333,7 @@ public class Generator2D : MonoBehaviour
 
         GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
+        go.name = local.ToString();
 
         SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
         Vector2Int cords = room.bounds.position + local;
@@ -360,33 +363,32 @@ public class Generator2D : MonoBehaviour
         GameObject hallwayParent = new GameObject();
         hallwayParent.name = "Hallway";
 
-        for (int i = 1; i < hallway.PathCount() - 1; i++)
+        for (int i = 0; i < hallway.PathCount(); i++)
         {
-            PlaceCube(hallway.GetPath(i - 1), hallway.GetPath(i), hallwayParent.transform, hallway);
+            PlaceCube(hallway.GetPath(i), hallwayParent.transform);
         }
 
-        for (int i = 1; i < hallway.WallCount() - 1; i++)
+        for (int i = 0; i < hallway.WallCount(); i++)
         {
-            PlaceCube(hallway.GetWall(i - 1), hallway.GetWall(i), hallwayParent.transform, hallway);
+            PlaceCube(hallway.GetWall(i), hallwayParent.transform);
         }
     }
 
-    void SetSprite(SpriteRenderer sr, Vector2Int current, Vector2Int previous, Hallway hallway)
+    void SetSprite(SpriteRenderer sr, Vector2Int current)
     {
-        if (grid[current] == CellType.Room)
+        CellType currentCell = grid[current];
+
+        if (currentCell == CellType.Room)
         {
             sr.sprite = middleTile;
         }
-        else if (grid[current] == CellType.Hallway)
+        else if (currentCell == CellType.Hallway)
         {
-            if (hallway.InPath(current))
-            {
-                sr.sprite = hallWayStraight;
-            }
-            else
-            {
-                sr.sprite = middleTile;
-            }
+            sr.sprite = middleTile;
+        }
+        else if (currentCell == CellType.Wall)
+        {
+            sr.sprite = DebugTile;
         }
     }
 
