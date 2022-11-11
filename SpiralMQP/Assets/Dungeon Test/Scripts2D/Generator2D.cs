@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Generator2D : MonoBehaviour
 {
+    #region Classes
+
     enum CellType
     {
         None,
@@ -76,6 +78,8 @@ public class Generator2D : MonoBehaviour
         }
     }
 
+    #endregion
+
     [Header("Debug")]
     [SerializeField] bool isRepeatGeneration;
     [Space(10)]
@@ -133,13 +137,9 @@ public class Generator2D : MonoBehaviour
     void Generate()
     {
         if (isRandomSeed)
-        {
             random = new Random();
-        }
         else
-        {
             random = new Random(seed);
-        }
 
         grid = new Grid2D<CellType>(size, Vector2Int.zero);
         rooms = new List<Room>();
@@ -150,6 +150,32 @@ public class Generator2D : MonoBehaviour
 
         CreateHallways();
         PathfindHallways();
+
+        SpawnWorld();
+    }
+
+    void SpawnWorld()
+    {
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                var pos = new Vector2Int(x, y);
+
+                if (grid[pos] == CellType.Room)
+                {
+                    //spawn room at pos
+                }
+                else if (grid[pos] == CellType.Hallway)
+                {
+                    //spawn hallway at pos
+                }
+                else if (grid[pos] == CellType.Wall)
+                {
+                    //spawn wall at pos
+                }
+            }
+        }
     }
 
     void PlaceRooms()
@@ -300,7 +326,6 @@ public class Generator2D : MonoBehaviour
 
                 foreach (Vector2Int neighbor in adjNeighbors)
                 {
-                    //Debug.LogFormat("Cord {0} Neighbor {1} Count {2}", cord, neighbor, adjNeighbors.Count);
                     grid[neighbor] = CellType.Wall;
                     hallway.AddWall(neighbor);
                 }
