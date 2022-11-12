@@ -165,14 +165,17 @@ public class Generator2D : MonoBehaviour
                 if (grid[pos] == CellType.Room)
                 {
                     //spawn room at pos
+                    PlaceTile(pos);
                 }
                 else if (grid[pos] == CellType.Hallway)
                 {
                     //spawn hallway at pos
+                    PlaceTile(pos);
                 }
                 else if (grid[pos] == CellType.Wall)
                 {
                     //spawn wall at pos
+                    PlaceTile(pos);
                 }
             }
         }
@@ -217,10 +220,15 @@ public class Generator2D : MonoBehaviour
 
                 foreach (var pos in newRoom.bounds.allPositionsWithin)
                 {
-                    grid[pos] = CellType.Room;
+                    if (pos.x == newRoom.bounds.min.x || pos.y == newRoom.bounds.min.y || pos.x == newRoom.bounds.max.x - 1 || pos.y == newRoom.bounds.max.y - 1)
+                    {
+                        grid[pos] = CellType.Wall;
+                    }
+                    else 
+                    {
+                        grid[pos] = CellType.Room;
+                    }
                 }
-
-                PlaceRoom(newRoom);
             }
         }
     }
@@ -330,71 +338,20 @@ public class Generator2D : MonoBehaviour
                     hallway.AddWall(neighbor);
                 }
             }
-            PlaceHallway(hallway);
         }
     }
 
-    void PlaceCube(Vector2Int current, Transform parentTranform)
+    void PlaceTile(Vector2Int cords) 
     {
-        Vector3 cord = new Vector3(current.x, 0, current.y);
+        Vector3 current = new Vector3(cords.x, 0, cords.y);
 
-        GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
+        GameObject go = Instantiate(cubePrefab, current, Quaternion.identity, transform);
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
         go.name = current.ToString();
 
         SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
 
-        if (sr)
-        {
-            SetSprite(sr, current);
-        }
-    }
-
-    void PlaceCube(Vector2Int local, Transform parentTranform, Room room)
-    {
-        Vector3 cord = new Vector3(room.bounds.position.x, 0, room.bounds.position.y) + new Vector3(local.x, 0, local.y);
-
-        GameObject go = Instantiate(cubePrefab, cord, Quaternion.identity, parentTranform);
-        go.transform.localScale = new Vector3(tileSize, 1, tileSize);
-        go.name = local.ToString();
-
-        SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
-        Vector2Int cords = room.bounds.position + local;
-
-        if (sr)
-        {
-            SetSprite(sr, cords, room);
-        }
-    }
-
-    void PlaceRoom(Room room)
-    {
-        GameObject roomParent = new GameObject();
-        roomParent.name = "Room";
-
-        for (int y = 0; y < room.bounds.size.y; y++)
-        {
-            for (int x = 0; x < room.bounds.size.x; x++)
-            {
-                PlaceCube(new Vector2Int(x, y), roomParent.transform, room);
-            }
-        }
-    }
-
-    void PlaceHallway(Hallway hallway)
-    {
-        GameObject hallwayParent = new GameObject();
-        hallwayParent.name = "Hallway";
-
-        for (int i = 0; i < hallway.PathCount(); i++)
-        {
-            PlaceCube(hallway.GetPath(i), hallwayParent.transform);
-        }
-
-        for (int i = 0; i < hallway.WallCount(); i++)
-        {
-            PlaceCube(hallway.GetWall(i), hallwayParent.transform);
-        }
+        SetSprite(sr, cords);
     }
 
     void SetSprite(SpriteRenderer sr, Vector2Int current)
