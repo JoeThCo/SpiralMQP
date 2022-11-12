@@ -11,17 +11,13 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dodge")]
     public bool CanDodge = true;
     public KeyCode DodgeKey = KeyCode.Space;
-    [Range(10,15)]
     public int DodgePower;
-    [Range(0.2f,0.35f)]
     public float DodgeTime;
     public float DodgeCoolDownTime;
     public ParticleSystem DodgeParticles;
 
     [Header("Movement")]
     public bool CanMove = true;
-
-    [Range(3.5f, 5.0f)]
     public float MovementSpeed;
 
     [Header("Shield")]
