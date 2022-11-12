@@ -276,31 +276,17 @@ public class Generator2D : MonoBehaviour
 
             if (path != null)
             {
-                Hallway hallway = new Hallway(path);
-
-                for (int i = 0; i < path.Count; i++)
+                foreach (Vector2Int cord in path)
                 {
-                    var current = path[i];
-                    var cellType = grid[current];
-
-                    if (cellType == CellType.None)
+                    if (grid[cord] != CellType.Room)
                     {
-                        grid[current] = CellType.Hallway;
+                        grid[cord] = CellType.Hallway;
                     }
-                }
-                hallways.Add(hallway);
-            }
-        }
 
-        foreach (Hallway hallway in hallways)
-        {
-            foreach (Vector2Int cord in hallway.path)
-            {
-                List<Vector2Int> adjNeighbors = GetCellNeighbors(CellType.None, cord);
-
-                foreach (Vector2Int neighbor in adjNeighbors)
-                {
-                    grid[neighbor] = CellType.Wall;
+                    foreach (Vector2Int neighbor in GetCellNeighbors(CellType.None, cord))
+                    {
+                        grid[neighbor] = CellType.Wall;
+                    }
                 }
             }
         }
@@ -328,11 +314,11 @@ public class Generator2D : MonoBehaviour
         }
         else if (currentCell == CellType.Hallway)
         {
-            sr.sprite = middleTile;
+            sr.sprite = DebugTile;
         }
         else if (currentCell == CellType.Wall)
         {
-            sr.sprite = DebugTile;
+            sr.sprite = xWallTile;
         }
     }
 
