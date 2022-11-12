@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class Generator2D : MonoBehaviour
 {
     #region Classes
-
     enum CellType
     {
         None,
@@ -36,45 +35,10 @@ public class Generator2D : MonoBehaviour
     class Hallway
     {
         public List<Vector2Int> path;
-        public List<Vector2Int> wall = new List<Vector2Int>();
 
         public Hallway(List<Vector2Int> path)
         {
             this.path = path;
-        }
-
-        public int PathCount() { return path.Count; }
-
-        public int WallCount() { return wall.Count; }
-
-        public void AddPath(Vector2Int pathCord)
-        {
-            path.Add(pathCord);
-        }
-
-        public void AddWall(Vector2Int wallCord)
-        {
-            wall.Add(wallCord);
-        }
-
-        public Vector2Int GetWall(int i)
-        {
-            return wall[i];
-        }
-
-        public Vector2Int GetPath(int i)
-        {
-            return path[i];
-        }
-
-        public bool InPath(Vector2Int check)
-        {
-            return path.Contains(check);
-        }
-
-        public bool InWalls(Vector2Int check)
-        {
-            return wall.Contains(check);
         }
     }
 
@@ -224,7 +188,7 @@ public class Generator2D : MonoBehaviour
                     {
                         grid[pos] = CellType.Wall;
                     }
-                    else 
+                    else
                     {
                         grid[pos] = CellType.Room;
                     }
@@ -283,7 +247,7 @@ public class Generator2D : MonoBehaviour
             var startPos = new Vector2Int((int)startPosf.x, (int)startPosf.y);
             var endPos = new Vector2Int((int)endPosf.x, (int)endPosf.y);
 
-
+            #region A*
             var path = aStar.FindPath(startPos, endPos, (DungeonPathfinder2D.Node a, DungeonPathfinder2D.Node b) =>
             {
                 var pathCost = new DungeonPathfinder2D.PathCost();
@@ -308,6 +272,8 @@ public class Generator2D : MonoBehaviour
                 return pathCost;
             });
 
+            #endregion
+
             if (path != null)
             {
                 Hallway hallway = new Hallway(path);
@@ -315,11 +281,11 @@ public class Generator2D : MonoBehaviour
                 for (int i = 0; i < path.Count; i++)
                 {
                     var current = path[i];
+                    var cellType = grid[current];
 
-                    if (grid[current] == CellType.None)
+                    if (cellType == CellType.None)
                     {
                         grid[current] = CellType.Hallway;
-                        hallway.AddPath(current);
                     }
                 }
                 hallways.Add(hallway);
@@ -335,22 +301,20 @@ public class Generator2D : MonoBehaviour
                 foreach (Vector2Int neighbor in adjNeighbors)
                 {
                     grid[neighbor] = CellType.Wall;
-                    hallway.AddWall(neighbor);
                 }
             }
         }
     }
 
-    void PlaceTile(Vector2Int cords) 
+    void PlaceTile(Vector2Int cords)
     {
         Vector3 current = new Vector3(cords.x, 0, cords.y);
 
         GameObject go = Instantiate(cubePrefab, current, Quaternion.identity, transform);
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
-        go.name = current.ToString();
+        go.name = cords.ToString();
 
         SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
-
         SetSprite(sr, cords);
     }
 
