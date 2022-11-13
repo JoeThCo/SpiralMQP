@@ -6,6 +6,8 @@ public class MeleeAttack : MonoBehaviour
 {
     public KeyCode MeleeKey = KeyCode.E;
 
+    [SerializeField] Animator playerAnimator;
+
     public int AttackCoolDown = 2;
     private float AttackCoolDownCounter;
 
@@ -28,6 +30,7 @@ public class MeleeAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(MeleeKey))
             {
+                playerAnimator.SetTrigger("tr_Melee"); // start player melee animation
                 Attack();
                 AttackCoolDownCounter = 0;
             }

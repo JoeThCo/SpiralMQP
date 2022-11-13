@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     public bool CanMove = true;
+    
+    // used for melee animation to distinguish current facing direciton
+    // 0: left   1: right
+    private int direction = 1;
 
     [Range(3.5f, 5.0f)]
     public float MovementSpeed;
@@ -122,8 +126,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CanMove)
         {
+             if (dir.x > 0)
+            {
+                direction = 1; // set character facing direction to right
+            }
+            if (dir.x < 0)
+            {
+                direction = 0; // set character facing direction to left
+            }
             playerAnimator.SetInteger("xdirection", (int)dir.x);
             playerAnimator.SetInteger("ydirection", (int)dir.y);
+            playerAnimator.SetInteger("direction", direction);
         }
         else
         {

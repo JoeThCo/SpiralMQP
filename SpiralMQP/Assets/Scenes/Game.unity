@@ -3076,10 +3076,6 @@ PrefabInstance:
       propertyPath: inventoryPage
       value: 
       objectReference: {fileID: 355768363}
-    - target: {fileID: 5651908543571873482, guid: b89f0b71d643e8141a0e5be1e6e1035f, type: 3}
-      propertyPath: AttackRange
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8027844348558747072, guid: b89f0b71d643e8141a0e5be1e6e1035f, type: 3}
       propertyPath: m_RootOrder
       value: 7
