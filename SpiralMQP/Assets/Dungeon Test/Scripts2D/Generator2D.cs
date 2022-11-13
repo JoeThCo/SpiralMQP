@@ -50,18 +50,18 @@ public class Generator2D : MonoBehaviour
     [SerializeField] bool isRandomSeed;
     [SerializeField] int seed;
     [Space(10)]
-    [SerializeField] [Range(1f, 3f)] float waitTime = 2.5f;
+    [SerializeField][Range(1f, 3f)] float waitTime = 2.5f;
 
     [Header("Dungeon Size")]
     [SerializeField] float tileSize = 1;
 
-    [SerializeField] [Range(10, 250)] int size = 15;
-    [SerializeField] [Range(10, 500)] int roomCount = 100;
-    [SerializeField] [Range(0f, 1f)] float hallwayChance = 0.125f;
+    [SerializeField][Range(10, 250)] int size = 15;
+    [SerializeField][Range(10, 500)] int roomCount = 100;
+    [SerializeField][Range(0f, 1f)] float hallwayChance = 0.125f;
 
     [Header("Room Size")]
-    [SerializeField] [Range(1, 10)] int roomMinSize;
-    [SerializeField] [Range(5, 25)] int roomMaxSize;
+    [SerializeField][Range(1, 10)] int roomMinSize;
+    [SerializeField][Range(5, 25)] int roomMaxSize;
 
     [Header("Tile")]
     [SerializeField] GameObject cubePrefab;
@@ -278,7 +278,7 @@ public class Generator2D : MonoBehaviour
             {
                 foreach (Vector2Int cord in path)
                 {
-                    if (grid[cord] != CellType.Room)
+                    if (grid[cord] != CellType.None)
                     {
                         grid[cord] = CellType.Hallway;
                     }
@@ -290,6 +290,8 @@ public class Generator2D : MonoBehaviour
                 }
             }
         }
+
+        Debug.Log(grid[new Vector2Int(6, 8)]);
     }
 
     void PlaceTile(Vector2Int cords)

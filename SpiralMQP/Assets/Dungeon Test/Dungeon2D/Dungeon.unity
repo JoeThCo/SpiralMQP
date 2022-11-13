@@ -157,7 +157,7 @@ MonoBehaviour:
   seed: 0
   waitTime: 2
   tileSize: 1
-  size: 100
+  size: 25
   roomCount: 100
   hallwayChance: 0.15
   roomMinSize: 5
