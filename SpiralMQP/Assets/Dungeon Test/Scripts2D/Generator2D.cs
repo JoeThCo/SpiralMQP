@@ -126,19 +126,8 @@ public class Generator2D : MonoBehaviour
             {
                 var pos = new Vector2Int(x, y);
 
-                if (grid[pos] == CellType.Room)
+                if (grid[pos] != CellType.None) 
                 {
-                    //spawn room at pos
-                    PlaceTile(pos);
-                }
-                else if (grid[pos] == CellType.Hallway)
-                {
-                    //spawn hallway at pos
-                    PlaceTile(pos);
-                }
-                else if (grid[pos] == CellType.Wall)
-                {
-                    //spawn wall at pos
                     PlaceTile(pos);
                 }
             }
@@ -290,8 +279,6 @@ public class Generator2D : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log(grid[new Vector2Int(6, 8)]);
     }
 
     void PlaceTile(Vector2Int cords)
