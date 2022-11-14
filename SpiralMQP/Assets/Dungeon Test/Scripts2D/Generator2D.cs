@@ -34,14 +34,26 @@ public class Generator2D : MonoBehaviour
 
     class Hallway
     {
-        public List<Vector2Int> path;
+        private List<Vector2Int> path;
+        private List<Vector2Int> walls;
+
+        public List<Vector2Int> GetPath() { return path; }
+        public List<Vector2Int> GetWalls() { return walls; }
+
+        public void AddToWallList(Vector2Int cord)
+        {
+            if (!walls.Contains(cord))
+            {
+                walls.Add(cord);
+            }
+        }
 
         public Hallway(List<Vector2Int> path)
         {
             this.path = path;
+            walls = new List<Vector2Int>();
         }
     }
-
     #endregion
 
     [Header("Debug")]
@@ -115,21 +127,38 @@ public class Generator2D : MonoBehaviour
         CreateHallways();
         PathfindHallways();
 
-        SpawnWorld();
+        //SpawnWorld();
+        SpawnWorldWithClasses();
     }
 
-    void SpawnWorld()
+    void SpawnWorldWithClasses()
     {
-        for (int y = 0; y < size; y++)
+        foreach (Room room in rooms)
         {
-            for (int x = 0; x < size; x++)
-            {
-                var pos = new Vector2Int(x, y);
+            GameObject roomObj = new GameObject();
+            roomObj.name = "Room";
+            roomObj.transform.parent = transform;
 
-                if (grid[pos] != CellType.None) 
-                {
-                    PlaceTile(pos);
-                }
+            foreach (Vector2Int cord in room.bounds.allPositionsWithin)
+            {
+                PlaceTile(cord, roomObj);
+            }
+        }
+
+        foreach (Hallway hallway in hallways)
+        {
+            GameObject hallwayObj = new GameObject();
+            hallwayObj.name = "Hallway";
+            hallwayObj.transform.parent = transform;
+
+            foreach (Vector2Int cord in hallway.GetPath())
+            {
+                PlaceTile(cord, hallwayObj);
+            }
+
+            foreach (Vector2Int cord in hallway.GetWalls())
+            {
+                SetSprite(PlaceTile(cord, hallwayObj), cord);
             }
         }
     }
@@ -265,6 +294,9 @@ public class Generator2D : MonoBehaviour
 
             if (path != null)
             {
+                Hallway hallway = new Hallway(path);
+                hallways.Add(hallway);
+
                 foreach (Vector2Int cord in path)
                 {
                     if (grid[cord] != CellType.None)
@@ -275,22 +307,22 @@ public class Generator2D : MonoBehaviour
                     foreach (Vector2Int neighbor in GetCellNeighbors(CellType.None, cord))
                     {
                         grid[neighbor] = CellType.Wall;
+                        hallway.AddToWallList(neighbor);
                     }
                 }
             }
         }
     }
 
-    void PlaceTile(Vector2Int cords)
+    SpriteRenderer PlaceTile(Vector2Int cords, GameObject parent)
     {
         Vector3 current = new Vector3(cords.x, 0, cords.y);
 
-        GameObject go = Instantiate(cubePrefab, current, Quaternion.identity, transform);
+        GameObject go = Instantiate(cubePrefab, current, Quaternion.identity, parent.transform);
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
         go.name = cords.ToString();
 
-        SpriteRenderer sr = go.GetComponentInChildren<SpriteRenderer>();
-        SetSprite(sr, cords);
+        return go.GetComponentInChildren<SpriteRenderer>();
     }
 
     void SetSprite(SpriteRenderer sr, Vector2Int current)
@@ -311,17 +343,34 @@ public class Generator2D : MonoBehaviour
         }
     }
 
-    void SetSprite(SpriteRenderer sr, Vector2Int cords, Room room)
+    void SetSprite(SpriteRenderer sr, Vector2Int current, Room room)
+    {
+        CellType currentCell = grid[current];
+
+        if (currentCell == CellType.Room)
+        {
+            sr.sprite = middleTile;
+        }
+        else if (currentCell == CellType.Hallway)
+        {
+            sr.sprite = DebugTile;
+        }
+        else if (currentCell == CellType.Wall)
+        {
+            sr.sprite = xWallTile;
+        }
+    }
+
+    void SetWallSprite(SpriteRenderer sr, Vector2Int cords, Room room)
     {
         int count = GetCellNeighbors(CellType.Room, cords).Count;
 
         //corner
         if (count == 3)
         {
+            sr.sprite = cornerTile;
             sr.flipX = cords.x != room.bounds.min.x;
             sr.flipY = cords.y != room.bounds.min.y;
-
-            sr.sprite = cornerTile;
         }
         //wall
         else if (count == 5)
