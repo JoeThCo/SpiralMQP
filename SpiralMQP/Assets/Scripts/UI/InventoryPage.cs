@@ -12,14 +12,16 @@ public class InventoryPage : MonoBehaviour
     [SerializeField] MouseFollower mouseFollower;
 
     [Header("Test")]
-    public Sprite _image;
+    public Sprite _image, _image2;
     public int _quantity;
     public string _title, _description;
+
+    private int currentDraggingItemIndex = -1;
 
 
     List<InventoryItem> listOfItems = new List<InventoryItem>();
 
-    private void Awake() 
+    private void Awake()
     {
         itemDescription.ResetDescription();
     }
@@ -43,32 +45,47 @@ public class InventoryPage : MonoBehaviour
     }
 
     #region All eventhandler fucntions
-    private void HandleShowItemActions(InventoryItem obj)
+    private void HandleShowItemActions(InventoryItem item)
     {
-        
+
     }
 
-    private void HandleSwap(InventoryItem obj)
+    private void HandleSwap(InventoryItem item)
     {
-        
+        int index = listOfItems.IndexOf(item);
+        if (index == -1)
+        {
+            mouseFollower.Toggle(false);
+            currentDraggingItemIndex = -1;
+            return;
+        }
+
+        listOfItems[currentDraggingItemIndex].SetData(index == 0 ? _image : _image2, index == 0 ? _quantity : _quantity + 1);
+        listOfItems[index].SetData(currentDraggingItemIndex == 0 ? _image : _image2, currentDraggingItemIndex == 0 ? _quantity : _quantity + 1);
+        mouseFollower.Toggle(false);
+        currentDraggingItemIndex = -1;
     }
 
-    private void HandleEndDrag(InventoryItem obj)
+    private void HandleEndDrag(InventoryItem item)
     {
         mouseFollower.Toggle(false);
     }
 
-    private void HandleBeginDrag(InventoryItem obj)
+    private void HandleBeginDrag(InventoryItem item)
     {
+        int index = listOfItems.IndexOf(item);
+        if (index == -1) return;
+        currentDraggingItemIndex = index;
+
         mouseFollower.Toggle(true);
-        mouseFollower.SetData(_image, _quantity);
+        mouseFollower.SetData(index == 0 ? _image : _image2, index == 0 ? _quantity : _quantity + 1);
     }
 
-    private void HandleItemSelection(InventoryItem obj)
+    private void HandleItemSelection(InventoryItem item)
     {
         // for test
         listOfItems[0].Select();
-        itemDescription.SetDescription(_image,_title,_description);
+        itemDescription.SetDescription(_image, _title, _description);
         Debug.Log("pass");
     }
     #endregion
@@ -78,7 +95,8 @@ public class InventoryPage : MonoBehaviour
         gameObject.SetActive(true);
         itemDescription.ResetDescription();
 
-        listOfItems[0].SetData(_image,_quantity); // for test
+        listOfItems[0].SetData(_image, _quantity); // for test
+        listOfItems[1].SetData(_image2, _quantity + 1);
     }
 
     // hide UI

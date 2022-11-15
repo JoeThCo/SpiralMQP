@@ -1454,12 +1454,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1159701448}
     m_Modifications:
+    - target: {fileID: 2572963325633873420, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2793409464434179152, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
       propertyPath: m_Name
       value: ItemUI
       objectReference: {fileID: 0}
-    - target: {fileID: 2793409464434179158, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 2793409464434179152, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2793409464434179158, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
@@ -1566,6 +1570,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -18.1161
       objectReference: {fileID: 0}
+    - target: {fileID: 6203808111952426986, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471709619361612198, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8109262418185254696, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1602,7 +1614,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2793409464434179152, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
   m_PrefabInstance: {fileID: 934588656}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &934588659
+--- !u!225 &934588664
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3116,6 +3128,10 @@ PrefabInstance:
       propertyPath: _image
       value: 
       objectReference: {fileID: 21300000, guid: 24a409a4a3568e642bcac7dc48b3483a, type: 3}
+    - target: {fileID: 7087520221913208654, guid: b05499f58b19f5e4ab97cc3277978e17, type: 3}
+      propertyPath: _image2
+      value: 
+      objectReference: {fileID: 21300000, guid: adc8726bd16bf4c628c7d2c595ad498c, type: 3}
     - target: {fileID: 7087520221913208654, guid: b05499f58b19f5e4ab97cc3277978e17, type: 3}
       propertyPath: mouseFollower
       value: 
