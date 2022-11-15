@@ -158,7 +158,7 @@ public class Generator2D : MonoBehaviour
 
             foreach (Vector2Int cord in hallway.GetWalls())
             {
-                SetSprite(PlaceTile(cord, hallwayObj), cord);
+                PlaceTile(cord, hallwayObj);
             }
         }
     }
@@ -179,7 +179,7 @@ public class Generator2D : MonoBehaviour
 
             bool add = true;
             Room newRoom = new Room(location, roomSize);
-            Room buffer = new Room(location + new Vector2Int(-1, -1), roomSize + new Vector2Int(2, 2));
+            Room buffer = new Room(location + new Vector2Int(-2, -2), roomSize + new Vector2Int(3, 3));
 
             foreach (var room in rooms)
             {
@@ -314,7 +314,7 @@ public class Generator2D : MonoBehaviour
         }
     }
 
-    SpriteRenderer PlaceTile(Vector2Int cords, GameObject parent)
+    void PlaceTile(Vector2Int cords, GameObject parent)
     {
         Vector3 current = new Vector3(cords.x, 0, cords.y);
 
@@ -322,76 +322,85 @@ public class Generator2D : MonoBehaviour
         go.transform.localScale = new Vector3(tileSize, 1, tileSize);
         go.name = cords.ToString();
 
-        return go.GetComponentInChildren<SpriteRenderer>();
+        SetSprite(go.GetComponentInChildren<SpriteRenderer>(), cords);
     }
 
-    void SetSprite(SpriteRenderer sr, Vector2Int current)
+    void SetSprite(SpriteRenderer sr, Vector2Int cords)
     {
-        CellType currentCell = grid[current];
+        CellType currentCell = grid[cords];
 
-        if (currentCell == CellType.Room)
+        if (currentCell == CellType.Room || currentCell == CellType.Hallway)
         {
             sr.sprite = middleTile;
-        }
-        else if (currentCell == CellType.Hallway)
-        {
-            sr.sprite = DebugTile;
         }
         else if (currentCell == CellType.Wall)
         {
-            sr.sprite = xWallTile;
+            SetWallSprite(sr, cords);
         }
     }
 
-    void SetSprite(SpriteRenderer sr, Vector2Int current, Room room)
+    void SetWallSprite(SpriteRenderer sr, Vector2Int cords)
     {
-        CellType currentCell = grid[current];
+        CellType above = grid[cords + Vector2Int.up];
+        CellType right = grid[cords + Vector2Int.right];
+        CellType below = grid[cords + Vector2Int.down];
+        CellType left = grid[cords + Vector2Int.left];
 
-        if (currentCell == CellType.Room)
-        {
-            sr.sprite = middleTile;
-        }
-        else if (currentCell == CellType.Hallway)
-        {
-            sr.sprite = DebugTile;
-        }
-        else if (currentCell == CellType.Wall)
+
+        if (above == CellType.Wall && below == CellType.Wall)
         {
             sr.sprite = xWallTile;
+            sr.flipX = right == CellType.None || left != CellType.None;
+        }
+        else if (left == CellType.Wall && right == CellType.Wall)
+        {
+            sr.sprite = yWallTile;
+            sr.flipY = above == CellType.None || below != CellType.None;
+        }
+        else 
+        {
+            int noneCells = GetAdjacentNeighbors(CellType.None, cords).Count;
+            int roomCells = GetAdjacentNeighbors(CellType.Room, cords).Count;
+            
+            if (noneCells == 0 || roomCells == 2)
+            {
+                sr.sprite = middleTile;
+            }
+            else 
+            {
+                sr.sprite = cornerTile;
+
+                sr.flipY = above == CellType.None || below != CellType.None;
+                sr.flipX = right == CellType.None || left != CellType.None;
+            }
         }
     }
 
-    void SetWallSprite(SpriteRenderer sr, Vector2Int cords, Room room)
+    List<Vector2Int> GetAdjacentNeighbors(CellType cellType, Vector2Int input)
     {
-        int count = GetCellNeighbors(CellType.Room, cords).Count;
+        List<Vector2Int> output = new List<Vector2Int>();
 
-        //corner
-        if (count == 3)
+        if (grid[input + Vector2Int.up] == cellType)
         {
-            sr.sprite = cornerTile;
-            sr.flipX = cords.x != room.bounds.min.x;
-            sr.flipY = cords.y != room.bounds.min.y;
+            output.Add(input + Vector2Int.up);
         }
-        //wall
-        else if (count == 5)
-        {
-            if (cords.x == room.bounds.min.x || cords.x == room.bounds.max.x - 1)
-            {
-                sr.sprite = xWallTile;
-                sr.flipX = cords.x != room.bounds.min.x;
-            }
 
-            if (cords.y == room.bounds.min.y || cords.y == room.bounds.max.y - 1)
-            {
-                sr.sprite = yWallTile;
-                sr.flipY = cords.y != room.bounds.min.y;
-            }
-        }
-        //middle
-        else if (count == 8)
+        if (grid[input + Vector2Int.down] == cellType)
         {
-            sr.sprite = middleTile;
+            output.Add(input + Vector2Int.down);
         }
+
+        if (grid[input + Vector2Int.right] == cellType)
+        {
+            output.Add(input + Vector2Int.right);
+        }
+
+        if (grid[input + Vector2Int.left] == cellType)
+        {
+            output.Add(input + Vector2Int.left);
+        }
+
+        return output;
     }
 
     List<Vector2Int> GetCellNeighbors(CellType cellType, Vector2Int input)

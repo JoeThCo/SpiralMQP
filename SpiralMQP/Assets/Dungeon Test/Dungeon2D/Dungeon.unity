@@ -157,11 +157,11 @@ MonoBehaviour:
   seed: 0
   waitTime: 2
   tileSize: 1
-  size: 25
+  size: 50
   roomCount: 100
   hallwayChance: 0.15
   roomMinSize: 5
-  roomMaxSize: 20
+  roomMaxSize: 10
   cubePrefab: {fileID: 6445798320188234072, guid: f3553738a8b6f4342b016dcb9364ceff, type: 3}
   xWallTile: {fileID: 1170755416, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
   yWallTile: {fileID: 526166153, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
@@ -218,8 +218,8 @@ Camera:
   m_GameObject: {fileID: 1061073680}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.2784314, g: 0.1764706, b: 0.23529412, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
