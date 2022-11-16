@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     public float ShieldCoolDownTime;
     public Vector2 inputDir;
     private SpriteRenderer Sprite;
+    public KeyCode InteractionKey = KeyCode.F;
+    public LayerMask ObjectLayers;
 
     private void Awake()
     {
@@ -75,6 +77,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 SetShield(false);
                 StartCoroutine(ShieldI());
+            }
+        }
+
+        if(Input.GetKeyDown(InteractionKey)){
+            Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(transform.position, 1.5f, ObjectLayers);
+            foreach (Collider2D obj in objectsInRange)
+            {
+                Debug.Log("Sesame Open!");
+                obj.gameObject.GetComponent<ChestController>().Open();
             }
         }
     }

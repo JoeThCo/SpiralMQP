@@ -43,7 +43,6 @@ public class MeleeAttack : MonoBehaviour
         Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(transform.position, AttackRange, EnemyLayers);
         foreach (Collider2D enemy in hitEnemys)
         {
-            Debug.Log("Hit");
             enemy.gameObject.transform.parent.gameObject.GetComponent<OnHit>().Hit();
         }
     }

@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     public LayerMask PlayerLayer;
     void Start(){
         Destroy(gameObject, SelfDestroyTime);
-        double angle = Mathf.Atan(Direction.y/Direction.x)*180.0/3.1416;
+        double angle = Mathf.Atan(Velocity.y/Velocity.x)*180.0/3.1416;
         if(Direction.x>0){
             transform.rotation = Quaternion.Euler(0, 0, 180+(float)angle);
         } else{
