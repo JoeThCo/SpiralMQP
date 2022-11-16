@@ -11,12 +11,9 @@ public class InventoryPage : MonoBehaviour
     [SerializeField] InventoryDescription itemDescription;
     [SerializeField] MouseFollower mouseFollower;
 
-    [Header("Test")]
-    public Sprite _image, _image2;
-    public int _quantity;
-    public string _title, _description;
-
     private int currentDraggingItemIndex = -1;
+    public event Action<int> OnDescriptionRequested, OnItemActionRequested, OnStartDragging;
+    public event Action<int, int> OnSwapItems;
 
 
     List<InventoryItem> listOfItems = new List<InventoryItem>();
@@ -44,6 +41,14 @@ public class InventoryPage : MonoBehaviour
         }
     }
 
+    public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity)
+    {
+        if (listOfItems.Count > itemIndex)
+        {
+            listOfItems[itemIndex].SetData(itemImage, itemQuantity);
+        }
+    }
+
     #region All eventhandler fucntions
     private void HandleShowItemActions(InventoryItem item)
     {
@@ -53,22 +58,20 @@ public class InventoryPage : MonoBehaviour
     private void HandleSwap(InventoryItem item)
     {
         int index = listOfItems.IndexOf(item);
-        if (index == -1)
-        {
-            mouseFollower.Toggle(false);
-            currentDraggingItemIndex = -1;
-            return;
-        }
+        if (index == -1) return;
 
-        listOfItems[currentDraggingItemIndex].SetData(index == 0 ? _image : _image2, index == 0 ? _quantity : _quantity + 1);
-        listOfItems[index].SetData(currentDraggingItemIndex == 0 ? _image : _image2, currentDraggingItemIndex == 0 ? _quantity : _quantity + 1);
+        OnSwapItems?.Invoke(currentDraggingItemIndex, index);
+    }
+
+    private void ResetDraggingItem()
+    {
         mouseFollower.Toggle(false);
         currentDraggingItemIndex = -1;
     }
 
     private void HandleEndDrag(InventoryItem item)
     {
-        mouseFollower.Toggle(false);
+        ResetDraggingItem();
     }
 
     private void HandleBeginDrag(InventoryItem item)
@@ -76,33 +79,48 @@ public class InventoryPage : MonoBehaviour
         int index = listOfItems.IndexOf(item);
         if (index == -1) return;
         currentDraggingItemIndex = index;
+        HandleItemSelection(item);
+        OnStartDragging?.Invoke(index);
+    }
 
+    public void CreateDraggedItem(Sprite sprite, int quantity)
+    {
         mouseFollower.Toggle(true);
-        mouseFollower.SetData(index == 0 ? _image : _image2, index == 0 ? _quantity : _quantity + 1);
+        mouseFollower.SetData(sprite, quantity);
     }
 
     private void HandleItemSelection(InventoryItem item)
     {
-        // for test
-        listOfItems[0].Select();
-        itemDescription.SetDescription(_image, _title, _description);
-        Debug.Log("pass");
+        int index = listOfItems.IndexOf(item);
+        if (index == -1) return;
+        OnDescriptionRequested?.Invoke(index);
     }
     #endregion
     // show UI
     public void Show()
     {
         gameObject.SetActive(true);
-        itemDescription.ResetDescription();
+        ResetSelection();
+    }
 
-        listOfItems[0].SetData(_image, _quantity); // for test
-        listOfItems[1].SetData(_image2, _quantity + 1);
+    private void ResetSelection()
+    {
+        itemDescription.ResetDescription();
+        DeselectAllItems();
+    }
+
+    private void DeselectAllItems()
+    {
+        foreach (InventoryItem item in listOfItems)
+        {
+            item.Deselect();
+        }
     }
 
     // hide UI
     public void Hide()
     {
-        mouseFollower.Toggle(false);
+        ResetDraggingItem();
         gameObject.SetActive(false);
     }
 }

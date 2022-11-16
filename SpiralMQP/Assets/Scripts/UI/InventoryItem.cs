@@ -49,8 +49,6 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHand
 
     public void OnPointerClick(PointerEventData pointerData)
     {
-        if (empty) return; // if the item is empty, clicking does nothing
-
         // tracking mouse click event data
         if (pointerData.button == PointerEventData.InputButton.Right)
         {
