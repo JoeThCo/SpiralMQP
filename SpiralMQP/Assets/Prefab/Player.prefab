@@ -4960,11 +4960,12 @@ MonoBehaviour:
   DodgeCoolDownTime: 0.25
   DodgeParticles: {fileID: 1171293254613254895}
   CanMove: 1
-  MovementSpeed: 5
+  MovementSpeed: 8.67
   CanShield: 1
   ShieldKey: 113
   Shield: {fileID: 8027844348936207907}
   ShieldCoolDownTime: 1
+  inputDir: {x: 0, y: 0}
 --- !u!50 &8027844348558747086
 Rigidbody2D:
   serializedVersion: 4
@@ -4999,7 +5000,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008298606, y: 0.009237438}
+  m_Offset: {x: 0.008298613, y: -0.09211293}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5010,7 +5011,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31951338, y: 0.4604184}
+  m_Size: {x: 0.30229872, y: 0.25771767}
   m_EdgeRadius: 0
 --- !u!212 &8027844348558747075
 SpriteRenderer:
@@ -5050,8 +5051,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 337215391
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -1420960536, guid: 82befa445b6d74d70904943743230185, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5098,7 +5099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MeleeKey: 101
   AttackCoolDown: 2
-  AttackRange: 0.5
+  AttackRange: 1.5
   EnemyLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -5114,7 +5115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1cd24afa2e34f499936445dd337f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDirection: {x: 0, y: 0, z: 0}
+  ShootDirection: {x: 0, y: 0, z: 0}
+  ProjectileSpeed: 10
+  ShootVelocity: {x: 0, y: 0, z: 0}
   AttackCoolDown: 1
   AttackCoolDownCounter: 0
   ProjectilePrefab: {fileID: 183738871980724886, guid: 6eba135607c554d03b8fefd3f0b12908, type: 3}

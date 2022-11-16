@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float SelfDestroyTime = 10.0f;
-
-    [Range(1.0f, 20.0f)]
-    public float Speed = 1.0f;
-    
+    public float SelfDestroyTime = 10.0f;    
+    public Vector3 Velocity;
     public Vector3 Direction;
 
-    public float ExplodeRange = 0.5f;
-
     public LayerMask EnemyLayers;
-
     public LayerMask PlayerLayer;
-
     void Start(){
         Destroy(gameObject, SelfDestroyTime);
         double angle = Mathf.Atan(Direction.y/Direction.x)*180.0/3.1416;
@@ -25,18 +18,16 @@ public class Projectile : MonoBehaviour
         } else{
             transform.rotation = Quaternion.Euler(0, 0, (float)angle);
         }
-
     }
 
     void Update(){
-        transform.position += Direction * Time.deltaTime * Speed;
+        transform.position += Velocity * Time.deltaTime;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Projectile hit");
-        collision.collider.gameObject.GetComponent<OnHit>().Hit();
-        Debug.Log(collision.collider.gameObject);
+        if(collision.collider.gameObject.transform.parent)
+            collision.collider.gameObject.transform.parent.gameObject.GetComponent<OnHit>().Hit();
         Destroy(gameObject);
     }
 }

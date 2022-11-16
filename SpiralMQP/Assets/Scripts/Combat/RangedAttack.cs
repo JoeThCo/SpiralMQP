@@ -4,48 +4,53 @@ using UnityEngine;
 
 public class RangedAttack : MonoBehaviour
 {
-    public Vector3 shootDirection;
+    public Vector3 ShootDirection;
 
-    public float AttackCoolDown = 1.0f;
+    public float ProjectileSpeed = 10.0f;
 
-    public float AttackCoolDownCounter;
+    public Vector3 ShootVelocity;
+
+    public float AttackCoolDown = 0.3f;
+
+    public bool CanShoot = true;
+
+    public bool OnDash = false;
 
     public GameObject ProjectilePrefab;
 
     public Transform LaunchOffset;
 
-    void Start()
-    {
-        AttackCoolDownCounter = AttackCoolDown;
-    }
+    
     void Update()
     {
-        if (AttackCoolDown < AttackCoolDownCounter)
+        if (Input.GetMouseButtonDown(0)&&CanShoot&&!OnDash)
         {
-            AttackCoolDownCounter += Time.deltaTime;
-        }
-        else
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Launch();
-                AttackCoolDownCounter = 0;
-            }
+            StartCoroutine(Launch());
         }
     }
 
-    void Launch()
+    IEnumerator Launch()
     {
-        shootDirection = Input.mousePosition;
-        shootDirection.z = 0.0f;
-        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-        shootDirection = shootDirection-transform.position;
-        shootDirection.z = 0.0f;
-        shootDirection.Normalize();
+        // Get direction
+        ShootDirection = Input.mousePosition;
+        ShootDirection.z = 0.0f;
+        ShootDirection = Camera.main.ScreenToWorldPoint(ShootDirection);
+        ShootDirection = ShootDirection-transform.position;
+        ShootDirection.z = 0.0f;
+        ShootDirection.Normalize();
+        ShootVelocity = ShootDirection*ProjectileSpeed;
+        // Adding Player Movement component
+        Vector2 playerVelocity = gameObject.GetComponent<PlayerMovement>().inputDir*gameObject.GetComponent<PlayerMovement>().MovementSpeed;
+        ShootVelocity += new Vector3(playerVelocity.x,playerVelocity.y,0.0f)*0.5f;
+        // Launch at player position
         Vector3 pos = transform.position;
         Quaternion rotation = transform.rotation;
-        GameObject Projectile = Instantiate(ProjectilePrefab, pos + shootDirection/2, rotation);
-        Projectile.GetComponent<Projectile>().Direction = shootDirection;
-        //Physics2D.IgnoreCollision(Projectile.GetComponent<Collider2D>(),gameObject.GetComponent<Collider2D>());
+        GameObject Projectile = Instantiate(ProjectilePrefab, pos + ShootDirection/2, rotation);
+        Projectile.GetComponent<Projectile>().Velocity = ShootVelocity;
+        Projectile.GetComponent<Projectile>().Direction = ShootDirection;
+
+        CanShoot = false;
+        yield return new WaitForSeconds(AttackCoolDown);
+        CanShoot = true;
     }
 }

@@ -41,7 +41,7 @@ public class MeleeAttack : MonoBehaviour
         foreach (Collider2D enemy in hitEnemys)
         {
             Debug.Log("Hit");
-            enemy.gameObject.GetComponent<OnHit>().Hit();
+            enemy.gameObject.transform.parent.gameObject.GetComponent<OnHit>().Hit();
         }
     }
 

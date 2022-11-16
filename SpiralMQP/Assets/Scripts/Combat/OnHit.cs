@@ -6,28 +6,29 @@ public class OnHit : MonoBehaviour
 {
     public Sprite hitSprite;
     public Sprite idleSprite;
-    public bool IsHit = false;
-    public int HitCD = 60;
+    bool IsHit = false;
+    float HitTime = 1.0f;
+
+
     
-    public void Start(){
+    void Start(){
         idleSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
-    public void Update(){
-        if(IsHit == true){
-            HitCD--;
-        }
-        if(HitCD <= 0){
-            GetComponent<SpriteRenderer>().color = Color.white;
-            gameObject.GetComponent<SpriteRenderer>().sprite = idleSprite;
-            IsHit = false;
-        }
-    }
+    
     public void Hit(){
         Debug.Log("enemy hit");
+        if(!IsHit)
+            StartCoroutine(HitAnimation());
+    }
+
+    IEnumerator HitAnimation(){
+        IsHit = true;
         GetComponent<SpriteRenderer>().color = Color.red;
         gameObject.GetComponent<SpriteRenderer>().sprite = hitSprite;
-        IsHit = true;
-        HitCD = 60;
+        yield return new WaitForSeconds(HitTime);
+        GetComponent<SpriteRenderer>().color = Color.white;
+        gameObject.GetComponent<SpriteRenderer>().sprite = idleSprite;
+        IsHit = false;
     }
 }
