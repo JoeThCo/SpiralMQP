@@ -157,11 +157,11 @@ MonoBehaviour:
   seed: 0
   waitTime: 2
   tileSize: 2
-  size: 25
+  size: 100
   roomCount: 100
   hallwayChance: 0.15
-  roomMinSize: 5
-  roomMaxSize: 10
+  roomMinSize: 10
+  roomMaxSize: 20
   cubePrefab: {fileID: 6445798320188234072, guid: f3553738a8b6f4342b016dcb9364ceff, type: 3}
   xWallTile: {fileID: 1170755416, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
   yWallTile: {fileID: 526166153, guid: 89c2b283608a4c54b8d715698410675c, type: 3}
