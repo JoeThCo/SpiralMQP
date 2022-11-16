@@ -4912,7 +4912,6 @@ GameObject:
   - component: {fileID: 8027844348558747077}
   - component: {fileID: 5651908543571873482}
   - component: {fileID: 7817242917089050917}
-  - component: {fileID: 5454372983426642723}
   - component: {fileID: 5454372983426642714}
   m_Layer: 6
   m_Name: Player
@@ -5098,8 +5097,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MeleeKey: 101
+  playerAnimator: {fileID: 8027844348558747077}
   AttackCoolDown: 2
-  AttackRange: 1.5
+  AttackRange: 2
   EnemyLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -5122,24 +5122,6 @@ MonoBehaviour:
   AttackCoolDownCounter: 0
   ProjectilePrefab: {fileID: 183738871980724886, guid: 6eba135607c554d03b8fefd3f0b12908, type: 3}
   LaunchOffset: {fileID: 0}
---- !u!114 &5454372983426642723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8027844348558747087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7152aea06d98d4499bd16f0f97e69dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MeleeKey: 101
-  AttackCoolDown: 1
-  AttackRange: 1.25
-  EnemyLayers:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &5454372983426642714
 MonoBehaviour:
   m_ObjectHideFlags: 0
