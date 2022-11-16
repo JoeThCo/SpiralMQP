@@ -65,7 +65,7 @@ public class Generator2D : MonoBehaviour
     [SerializeField][Range(1f, 3f)] float waitTime = 2.5f;
 
     [Header("Dungeon Size")]
-    [SerializeField] float tileSize = 1;
+    [SerializeField][Range(1f, 3f)] float tileSize = 1;
 
     [SerializeField][Range(10, 250)] int size = 15;
     [SerializeField][Range(10, 500)] int roomCount = 100;
@@ -316,10 +316,11 @@ public class Generator2D : MonoBehaviour
 
     void PlaceTile(Vector2Int cords, GameObject parent)
     {
-        Vector3 current = new Vector3(cords.x, 0, cords.y);
+        //Vector3 current = new Vector3(cords.x, 0, cords.y);
+        Vector3 worlds = new Vector3(cords.x, cords.y, 0);
 
-        GameObject go = Instantiate(cubePrefab, current, Quaternion.identity, parent.transform);
-        go.transform.localScale = new Vector3(tileSize, 1, tileSize);
+        GameObject go = Instantiate(cubePrefab, worlds * tileSize, Quaternion.identity, parent.transform);
+        go.transform.localScale = new Vector3(tileSize, tileSize, 1);
         go.name = cords.ToString();
 
         SetSprite(go.GetComponentInChildren<SpriteRenderer>(), cords);
@@ -338,7 +339,6 @@ public class Generator2D : MonoBehaviour
             SetWallSprite(sr, cords);
         }
     }
-
     void SetWallSprite(SpriteRenderer sr, Vector2Int cords)
     {
         CellType above = grid[cords + Vector2Int.up];
@@ -346,27 +346,25 @@ public class Generator2D : MonoBehaviour
         CellType below = grid[cords + Vector2Int.down];
         CellType left = grid[cords + Vector2Int.left];
 
-
-        if (above == CellType.Wall && below == CellType.Wall)
+        if (above == CellType.Wall && below == CellType.Wall && right != CellType.Wall && left != CellType.Wall)
         {
             sr.sprite = xWallTile;
             sr.flipX = right == CellType.None || left != CellType.None;
         }
-        else if (left == CellType.Wall && right == CellType.Wall)
+        else if (left == CellType.Wall && right == CellType.Wall && above != CellType.Wall && below != CellType.Wall)
         {
             sr.sprite = yWallTile;
             sr.flipY = above == CellType.None || below != CellType.None;
         }
-        else 
+        else
         {
             int noneCells = GetAdjacentNeighbors(CellType.None, cords).Count;
-            int roomCells = GetAdjacentNeighbors(CellType.Room, cords).Count;
-            
-            if (noneCells == 0 || roomCells == 2)
+
+            if (noneCells == 0)
             {
                 sr.sprite = middleTile;
             }
-            else 
+            else
             {
                 sr.sprite = cornerTile;
 
@@ -375,7 +373,32 @@ public class Generator2D : MonoBehaviour
             }
         }
     }
+    List<Vector2Int> GetInverseAdjacentNeighbors(CellType cellType, Vector2Int input)
+    {
+        List<Vector2Int> output = new List<Vector2Int>();
 
+        if (grid[input + Vector2Int.up] != cellType)
+        {
+            output.Add(input + Vector2Int.up);
+        }
+
+        if (grid[input + Vector2Int.down] != cellType)
+        {
+            output.Add(input + Vector2Int.down);
+        }
+
+        if (grid[input + Vector2Int.right] != cellType)
+        {
+            output.Add(input + Vector2Int.right);
+        }
+
+        if (grid[input + Vector2Int.left] != cellType)
+        {
+            output.Add(input + Vector2Int.left);
+        }
+
+        return output;
+    }
     List<Vector2Int> GetAdjacentNeighbors(CellType cellType, Vector2Int input)
     {
         List<Vector2Int> output = new List<Vector2Int>();
@@ -402,7 +425,6 @@ public class Generator2D : MonoBehaviour
 
         return output;
     }
-
     List<Vector2Int> GetCellNeighbors(CellType cellType, Vector2Int input)
     {
         List<Vector2Int> output = new List<Vector2Int>();
