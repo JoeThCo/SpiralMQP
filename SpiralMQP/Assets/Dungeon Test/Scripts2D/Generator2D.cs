@@ -57,23 +57,19 @@ public class Generator2D : MonoBehaviour
     #endregion
 
     [Header("Debug")]
-    [SerializeField] bool isRepeatGeneration;
-    [Space(10)]
     [SerializeField] bool isRandomSeed;
     [SerializeField] int seed;
-    [Space(10)]
-    [SerializeField][Range(1f, 3f)] float waitTime = 2.5f;
 
     [Header("Dungeon Size")]
-    [SerializeField][Range(1f, 3f)] float tileSize = 1;
+    [SerializeField] [Range(1f, 3f)] float tileSize = 1;
 
-    [SerializeField][Range(10, 250)] int size = 15;
-    [SerializeField][Range(10, 500)] int roomCount = 100;
-    [SerializeField][Range(0f, 1f)] float hallwayChance = 0.125f;
+    [SerializeField] [Range(10, 250)] int size = 15;
+    [SerializeField] [Range(10, 500)] int roomCount = 100;
+    [SerializeField] [Range(0f, 1f)] float hallwayChance = 0.125f;
 
     [Header("Room Size")]
-    [SerializeField][Range(1, 10)] int roomMinSize;
-    [SerializeField][Range(5, 25)] int roomMaxSize;
+    [SerializeField] [Range(1, 10)] int roomMinSize;
+    [SerializeField] [Range(5, 25)] int roomMaxSize;
 
     [Header("Tile")]
     [SerializeField] GameObject cubePrefab;
@@ -97,21 +93,23 @@ public class Generator2D : MonoBehaviour
     void Start()
     {
         Generate();
+    }
 
-        if (isRepeatGeneration)
+    public void Clear()
+    {
+        while (transform.childCount != 0) 
         {
-            StartCoroutine(RepeatGenerate());
+            foreach (Transform t in transform)
+            {
+                DestroyImmediate(t.gameObject);
+            }
         }
     }
 
-    IEnumerator RepeatGenerate()
+    public void Generate()
     {
-        yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene("Dungeon");
-    }
+        Clear();
 
-    void Generate()
-    {
         if (isRandomSeed)
             random = new Random();
         else
