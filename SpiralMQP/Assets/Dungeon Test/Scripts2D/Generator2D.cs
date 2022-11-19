@@ -74,14 +74,8 @@ public class Generator2D : MonoBehaviour
 
     [Header("Tile")]
     [SerializeField] GameObject cubePrefab;
-
-    [Header("Walls")]
-    [SerializeField] Sprite xWallTile;
-    [SerializeField] Sprite yWallTile;
-
-    [SerializeField] Sprite cornerTile;
-    [SerializeField] Sprite middleTile;
-
+    [SerializeField] TilePaletteSO tilePallete;
+    [Space(15)]
     [SerializeField] Sprite DebugTile;
 
     Random random;
@@ -335,7 +329,7 @@ public class Generator2D : MonoBehaviour
 
         if (currentCell == CellType.Room || currentCell == CellType.Hallway)
         {
-            sr.sprite = middleTile;
+            sr.sprite = tilePallete.middleTile;
         }
         else if (currentCell == CellType.Wall)
         {
@@ -364,14 +358,14 @@ public class Generator2D : MonoBehaviour
 
         if (above == CellType.Wall && below == CellType.Wall && right != CellType.Wall && left != CellType.Wall)
         {
-            sr.sprite = xWallTile;
+            sr.sprite = tilePallete.xWallTile;
             sr.flipX = right == CellType.None || left != CellType.None;
 
             outputGrid[cords] = CellType.Wall;
         }
         else if (left == CellType.Wall && right == CellType.Wall && above != CellType.Wall && below != CellType.Wall)
         {
-            sr.sprite = yWallTile;
+            sr.sprite = tilePallete.yWallTile;
             sr.flipY = above == CellType.None || below != CellType.None;
 
             outputGrid[cords] = CellType.Wall;
@@ -382,13 +376,13 @@ public class Generator2D : MonoBehaviour
 
             if (noneCells == 0)
             {
-                sr.sprite = middleTile;
+                sr.sprite = tilePallete.middleTile;
 
                 outputGrid[cords] = CellType.Room;
             }
             else
             {
-                sr.sprite = cornerTile;
+                sr.sprite = tilePallete.cornerTile;
 
                 sr.flipY = above == CellType.None || below != CellType.None;
                 sr.flipX = right == CellType.None || left != CellType.None;
