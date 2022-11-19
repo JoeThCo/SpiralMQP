@@ -4,6 +4,7 @@ using UnityEngine;
 using Random = System.Random;
 using Graphs;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Generator2D : MonoBehaviour
 {
@@ -63,7 +64,7 @@ public class Generator2D : MonoBehaviour
     [Header("Dungeon Size")]
     [SerializeField] [Range(1f, 3f)] float tileSize = 1;
 
-    [SerializeField] [Range(10, 250)] int size = 15;
+    [SerializeField] [Range(50, 250)] int size = 15;
     [SerializeField] [Range(10, 500)] int roomCount = 100;
     [SerializeField] [Range(0f, 1f)] float hallwayChance = 0.125f;
 
@@ -85,6 +86,7 @@ public class Generator2D : MonoBehaviour
 
     Random random;
     Grid2D<CellType> grid;
+    Grid2D<CellType> outputGrid;
     List<Room> rooms;
     List<Hallway> hallways;
     Delaunay2D delaunay;
@@ -97,7 +99,7 @@ public class Generator2D : MonoBehaviour
 
     public void Clear()
     {
-        while (transform.childCount != 0) 
+        while (transform.childCount != 0)
         {
             foreach (Transform t in transform)
             {
@@ -116,6 +118,8 @@ public class Generator2D : MonoBehaviour
             random = new Random(seed);
 
         grid = new Grid2D<CellType>(size, Vector2Int.zero);
+        outputGrid = new Grid2D<CellType>(size, Vector2Int.zero);
+
         rooms = new List<Room>();
         hallways = new List<Hallway>();
 
@@ -131,6 +135,7 @@ public class Generator2D : MonoBehaviour
 
     void SpawnWorldWithClasses()
     {
+
         foreach (Room room in rooms)
         {
             GameObject roomObj = new GameObject();
@@ -337,22 +342,39 @@ public class Generator2D : MonoBehaviour
             SetWallSprite(sr, cords);
         }
     }
+
     void SetWallSprite(SpriteRenderer sr, Vector2Int cords)
     {
-        CellType above = grid[cords + Vector2Int.up];
-        CellType right = grid[cords + Vector2Int.right];
-        CellType below = grid[cords + Vector2Int.down];
-        CellType left = grid[cords + Vector2Int.left];
+        CellType above = CellType.None;
+        CellType below = CellType.None;
+        CellType right = CellType.None;
+        CellType left = CellType.None;
+
+        if (isValid(cords + Vector2Int.up))
+            above = grid[cords + Vector2Int.up];
+
+        if (isValid(cords + Vector2Int.down))
+            below = grid[cords + Vector2Int.down];
+
+        if (isValid(cords + Vector2Int.right))
+            right = grid[cords + Vector2Int.right];
+
+        if (isValid(cords + Vector2Int.left))
+            left = grid[cords + Vector2Int.left];
 
         if (above == CellType.Wall && below == CellType.Wall && right != CellType.Wall && left != CellType.Wall)
         {
             sr.sprite = xWallTile;
             sr.flipX = right == CellType.None || left != CellType.None;
+
+            outputGrid[cords] = CellType.Wall;
         }
         else if (left == CellType.Wall && right == CellType.Wall && above != CellType.Wall && below != CellType.Wall)
         {
             sr.sprite = yWallTile;
             sr.flipY = above == CellType.None || below != CellType.None;
+
+            outputGrid[cords] = CellType.Wall;
         }
         else
         {
@@ -361,6 +383,8 @@ public class Generator2D : MonoBehaviour
             if (noneCells == 0)
             {
                 sr.sprite = middleTile;
+
+                outputGrid[cords] = CellType.Room;
             }
             else
             {
@@ -368,57 +392,39 @@ public class Generator2D : MonoBehaviour
 
                 sr.flipY = above == CellType.None || below != CellType.None;
                 sr.flipX = right == CellType.None || left != CellType.None;
+
+                outputGrid[cords] = CellType.Wall;
             }
         }
     }
-    List<Vector2Int> GetInverseAdjacentNeighbors(CellType cellType, Vector2Int input)
+
+    bool isValid(Vector2Int cords)
     {
-        List<Vector2Int> output = new List<Vector2Int>();
-
-        if (grid[input + Vector2Int.up] != cellType)
-        {
-            output.Add(input + Vector2Int.up);
-        }
-
-        if (grid[input + Vector2Int.down] != cellType)
-        {
-            output.Add(input + Vector2Int.down);
-        }
-
-        if (grid[input + Vector2Int.right] != cellType)
-        {
-            output.Add(input + Vector2Int.right);
-        }
-
-        if (grid[input + Vector2Int.left] != cellType)
-        {
-            output.Add(input + Vector2Int.left);
-        }
-
-        return output;
+        return cords.x >= 0 && cords.x < size && cords.y >= 0 && cords.y < size;
     }
-    List<Vector2Int> GetAdjacentNeighbors(CellType cellType, Vector2Int input)
+
+    List<Vector2Int> GetAdjacentNeighbors(CellType cellType, Vector2Int cords)
     {
         List<Vector2Int> output = new List<Vector2Int>();
 
-        if (grid[input + Vector2Int.up] == cellType)
+        if (isValid(cords + Vector2Int.up) && grid[cords + Vector2Int.up] == cellType)
         {
-            output.Add(input + Vector2Int.up);
+            output.Add(cords + Vector2Int.up);
         }
 
-        if (grid[input + Vector2Int.down] == cellType)
+        if (isValid(cords + Vector2Int.down) && grid[cords + Vector2Int.down] == cellType)
         {
-            output.Add(input + Vector2Int.down);
+            output.Add(cords + Vector2Int.down);
         }
 
-        if (grid[input + Vector2Int.right] == cellType)
+        if (isValid(cords + Vector2Int.right) && grid[cords + Vector2Int.right] == cellType)
         {
-            output.Add(input + Vector2Int.right);
+            output.Add(cords + Vector2Int.right);
         }
 
-        if (grid[input + Vector2Int.left] == cellType)
+        if (isValid(cords + Vector2Int.left) && grid[cords + Vector2Int.left] == cellType)
         {
-            output.Add(input + Vector2Int.left);
+            output.Add(cords + Vector2Int.left);
         }
 
         return output;
@@ -435,7 +441,7 @@ public class Generator2D : MonoBehaviour
                 {
                     Vector2Int cords = input + new Vector2Int(x, y);
 
-                    if (grid[cords] == cellType)
+                    if (isValid(cords) && grid[cords] == cellType)
                     {
                         output.Add(input + new Vector2Int(x, y));
                     }
