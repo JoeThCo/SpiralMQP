@@ -3,70 +3,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class InventorySO : ScriptableObject
+namespace Inventory.Model
 {
-    [SerializeField] List<InventoryItemStruct> inventoryItems;
-    [field: SerializeField] public int size { get; set; } = 10;
-    
-    public void Initialize()
+    [CreateAssetMenu]
+    public class InventorySO : ScriptableObject
     {
-        inventoryItems = new List<InventoryItemStruct>();
-        for (int i = 0; i < size; i++)
-        {
-            inventoryItems.Add(InventoryItemStruct.GetEmptyItem());
-        }
-    }
+        [SerializeField] List<InventoryItemStruct> inventoryItems;
+        [field: SerializeField] public int size { get; set; } = 10;
 
-    public void AddItem(ItemSO item, int quantity)
-    {
-        for (int i = 0; i < inventoryItems.Count; i++)
+        public void Initialize()
         {
-            if (inventoryItems[i].isEmpty)
+            inventoryItems = new List<InventoryItemStruct>();
+            for (int i = 0; i < size; i++)
             {
-                inventoryItems[i] = new InventoryItemStruct
-                {
-                    item = item,
-                    quantity = quantity
-                };
+                inventoryItems.Add(InventoryItemStruct.GetEmptyItem());
             }
         }
-    }
 
-    public Dictionary<int, InventoryItemStruct> GetCurrentInventoryState()
-    {
-        Dictionary<int, InventoryItemStruct> returnValue = new Dictionary<int, InventoryItemStruct>();
-        for (int i = 0; i < inventoryItems.Count; i++)
+        public void AddItem(ItemSO item, int quantity)
         {
-            if (inventoryItems[i].isEmpty) continue;
-            returnValue[i] = inventoryItems[i];
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (inventoryItems[i].isEmpty)
+                {
+                    inventoryItems[i] = new InventoryItemStruct
+                    {
+                        item = item,
+                        quantity = quantity
+                    };
+                }
+            }
         }
-        return returnValue;
-    }
 
-    public InventoryItemStruct GetItemAt(int itemIndex)
-    {
-        return inventoryItems[itemIndex];
-    }
-}
-
-[Serializable]
-public struct InventoryItemStruct
-{
-    public int quantity;
-    public ItemSO item;
-    public bool isEmpty => item == null;
-
-    public InventoryItemStruct ChangeQuantity(int newQuantity)
-    {
-        return new InventoryItemStruct
+        public Dictionary<int, InventoryItemStruct> GetCurrentInventoryState()
         {
-            item  = this.item,
-            quantity = newQuantity
-        };
+            Dictionary<int, InventoryItemStruct> returnValue = new Dictionary<int, InventoryItemStruct>();
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (inventoryItems[i].isEmpty) continue;
+                returnValue[i] = inventoryItems[i];
+            }
+            return returnValue;
+        }
+
+        public InventoryItemStruct GetItemAt(int itemIndex)
+        {
+            return inventoryItems[itemIndex];
+        }
     }
 
-    public static InventoryItemStruct GetEmptyItem() => new InventoryItemStruct{item = null, quantity = 0};
-    
-}
+    [Serializable]
+    public struct InventoryItemStruct
+    {
+        public int quantity;
+        public ItemSO item;
+        public bool isEmpty => item == null;
 
+        public InventoryItemStruct ChangeQuantity(int newQuantity)
+        {
+            return new InventoryItemStruct
+            {
+                item = item,
+                quantity = newQuantity
+            };
+        }
+
+        public static InventoryItemStruct GetEmptyItem() => new InventoryItemStruct { item = null, quantity = 0 };
+
+    }
+}

@@ -5,31 +5,34 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class InventoryDescription : MonoBehaviour
+namespace Inventory.UI
 {
-    [SerializeField] Image itemImage;
-    [SerializeField] TMP_Text title;
-    [SerializeField] TMP_Text description;
-
-    private void Awake() 
+    public class InventoryDescription : MonoBehaviour
     {
-        ResetDescription();
-    }
+        [SerializeField] Image itemImage;
+        [SerializeField] TMP_Text title;
+        [SerializeField] TMP_Text description;
 
-    // used to initialize or reset the description for any UI item
-    public void ResetDescription()
-    {
-        itemImage.gameObject.SetActive(false);
-        title.text = "";
-        description.text = "";
-    }
+        private void Awake()
+        {
+            ResetDescription();
+        }
 
-    // used to set new description for any UI item
-    public void SetDescription(Sprite sprite, string itemName, string itemDescription)
-    {
-        itemImage.gameObject.SetActive(true);
-        itemImage.sprite = sprite;
-        title.text = itemName;
-        description.text = itemDescription;
+        // used to initialize or reset the description for any UI item
+        public void ResetDescription()
+        {
+            itemImage.gameObject.SetActive(false);
+            title.text = "";
+            description.text = "";
+        }
+
+        // used to set new description for any UI item
+        public void SetDescription(Sprite sprite, string itemName, string itemDescription)
+        {
+            itemImage.gameObject.SetActive(true);
+            itemImage.sprite = sprite;
+            title.text = itemName;
+            description.text = itemDescription;
+        }
     }
-} 
+}

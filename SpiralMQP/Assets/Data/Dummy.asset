@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 99
-  <Name>k__BackingField: You
+  <ItemName>k__BackingField: Dummy
   <Description>k__BackingField: The old version of you.
   <ItemImage>k__BackingField: {fileID: 1881650175, guid: 33e19af5afe6ac14ea80bd20ef8f06fd, type: 3}

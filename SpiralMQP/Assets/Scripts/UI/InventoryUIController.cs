@@ -1,73 +1,78 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Inventory.Model;
+using Inventory.UI;
 using UnityEngine;
 
-public class InventoryUIController : MonoBehaviour
+namespace Inventory
 {
-    [SerializeField] InventoryPage inventoryPage;
-    [SerializeField] InventorySO inventoryData;
-
-    // initialize the inventory at start
-    private void Start()
+    public class InventoryUIController : MonoBehaviour
     {
-        PrepareUI();
-        //inventoryData.Initialize();
-    }
+        [SerializeField] InventoryPage inventoryPage;
+        [SerializeField] InventorySO inventoryData;
 
-    private void PrepareUI()
-    {
-        inventoryPage?.InitializedInventoryUI(inventoryData.size); // check if null
-        inventoryPage.OnDescriptionRequested += HandleDescriptionRequest;
-        inventoryPage.OnSwapItems += HandleSwapItems;
-        inventoryPage.OnStartDragging += HandleDragging;
-        inventoryPage.OnItemActionRequested += HandleItemActionRequest;
-    }
-
-    private void HandleItemActionRequest(int itemIndex)
-    {
-        
-    }
-
-    private void HandleDragging(int itemIndex)
-    {
-        
-    }
-
-    private void HandleSwapItems(int itemIndex_1, int itemIndex_2)
-    {
-        
-    }
-
-    private void HandleDescriptionRequest(int itemIndex)
-    {
-        InventoryItemStruct inventoryItem = inventoryData.GetItemAt(itemIndex);
-        if (inventoryItem.isEmpty)
+        // initialize the inventory at start
+        private void Start()
         {
-            inventoryPage.ResetSelection();
-            return;
+            PrepareUI();
+            //inventoryData.Initialize();
         }
 
-        ItemSO item = inventoryItem.item;
-        inventoryPage.UpdateDescription(itemIndex, item.ItemImage, item.name, item.Description);
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
+        private void PrepareUI()
         {
-            // toggle on and off inventory UI accordingly
-            if (inventoryPage.isActiveAndEnabled == false)
+            inventoryPage?.InitializedInventoryUI(inventoryData.size); // check if null
+            inventoryPage.OnDescriptionRequested += HandleDescriptionRequest;
+            inventoryPage.OnSwapItems += HandleSwapItems;
+            inventoryPage.OnStartDragging += HandleDragging;
+            inventoryPage.OnItemActionRequested += HandleItemActionRequest;
+        }
+
+        private void HandleItemActionRequest(int itemIndex)
+        {
+
+        }
+
+        private void HandleDragging(int itemIndex)
+        {
+
+        }
+
+        private void HandleSwapItems(int itemIndex_1, int itemIndex_2)
+        {
+
+        }
+
+        private void HandleDescriptionRequest(int itemIndex)
+        {
+            InventoryItemStruct inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.isEmpty)
             {
-                inventoryPage.Show();
-                foreach (var item in inventoryData.GetCurrentInventoryState())
-                {
-                    inventoryPage.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity);
-                }
+                inventoryPage.ResetSelection();
+                return;
             }
-            else inventoryPage.Hide();
+
+            ItemSO item = inventoryItem.item;
+            inventoryPage.UpdateDescription(itemIndex, item.ItemImage, item.ItemName, item.Description);
         }
 
+        // Update is called once per frame
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                // toggle on and off inventory UI accordingly
+                if (inventoryPage.isActiveAndEnabled == false)
+                {
+                    inventoryPage.Show();
+                    foreach (var item in inventoryData.GetCurrentInventoryState())
+                    {
+                        inventoryPage.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity);
+                    }
+                }
+                else inventoryPage.Hide();
+            }
+
+        }
     }
 }
