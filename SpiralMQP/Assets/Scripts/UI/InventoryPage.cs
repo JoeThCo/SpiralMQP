@@ -103,7 +103,7 @@ public class InventoryPage : MonoBehaviour
         ResetSelection();
     }
 
-    private void ResetSelection()
+    public void ResetSelection()
     {
         itemDescription.ResetDescription();
         DeselectAllItems();
@@ -122,5 +122,12 @@ public class InventoryPage : MonoBehaviour
     {
         ResetDraggingItem();
         gameObject.SetActive(false);
+    }
+
+    public void UpdateDescription(int itemIndex, Sprite itemImage, string name, string description)
+    {
+        itemDescription.SetDescription(itemImage,name,description);
+        DeselectAllItems();
+        listOfItems[itemIndex].Select();
     }
 }
