@@ -11,12 +11,33 @@ namespace Inventory
     {
         [SerializeField] InventoryPage inventoryPage;
         [SerializeField] InventorySO inventoryData;
+        public List<InventoryItemStruct> initialItems = new List<InventoryItemStruct>(); // for test purpose 
 
         // initialize the inventory at start
         private void Start()
         {
             PrepareUI();
-            //inventoryData.Initialize();
+            PrepareInventoryData();
+        }
+
+        private void PrepareInventoryData()
+        {
+            inventoryData.Initialize();
+            inventoryData.OnInventoryUpdated += UpdateInventoryUI;
+            foreach (InventoryItemStruct item in initialItems)
+            {
+                if (item.isEmpty) continue;
+                inventoryData.AddItem(item);
+            }
+        }
+
+        private void UpdateInventoryUI(Dictionary<int, InventoryItemStruct> inventoryState)
+        {
+            inventoryPage.ResetAllItems();
+            foreach (var item in inventoryState)
+            {
+                inventoryPage.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity);
+            }
         }
 
         private void PrepareUI()
@@ -35,12 +56,16 @@ namespace Inventory
 
         private void HandleDragging(int itemIndex)
         {
+            InventoryItemStruct inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.isEmpty) return;
+
+            inventoryPage.CreateDraggedItem(inventoryItem.item.ItemImage, inventoryItem.quantity);
 
         }
 
         private void HandleSwapItems(int itemIndex_1, int itemIndex_2)
         {
-
+            inventoryData.SwapItems(itemIndex_1, itemIndex_2);
         }
 
         private void HandleDescriptionRequest(int itemIndex)
