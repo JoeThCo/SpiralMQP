@@ -707,6 +707,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 3644570777033817115, guid: 77c9523a820751b4a9e37a4817e18d17, type: 3}
   contentPanel: {fileID: 7087520221316289814}
+  itemDescription: {fileID: 3453340040738651775}
+  _image: {fileID: 21300000, guid: adc8726bd16bf4c628c7d2c595ad498c, type: 3}
+  _quantity: 1
+  _title: Sword of Oblivion
+  _description: Destroy Everything that's cut by this sword. No exception.
 --- !u!1 &7087520221797398707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,8 +1213,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7087520221365546806}
   m_HandleRect: {fileID: 7087520221365546807}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1480,6 +1485,7 @@ GameObject:
   - component: {fileID: 7087520223235334491}
   - component: {fileID: 7087520223235334488}
   - component: {fileID: 7087520223235334489}
+  - component: {fileID: 3453340040738651775}
   m_Layer: 6
   m_Name: Description
   m_TagString: Untagged
@@ -1593,3 +1599,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3453340040738651775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087520223235334495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb441f90c3d9c1489162f3434a9c192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 7087520221320272746}
+  title: {fileID: 7087520222516211477}
+  description: {fileID: 7087520221262415185}
