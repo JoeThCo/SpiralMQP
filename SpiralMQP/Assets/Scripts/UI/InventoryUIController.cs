@@ -11,6 +11,8 @@ namespace Inventory
     {
         [SerializeField] InventoryPage inventoryPage;
         [SerializeField] InventorySO inventoryData;
+        [SerializeField] LayerMask ItemLayer;
+
         public List<InventoryItemStruct> initialItems = new List<InventoryItemStruct>(); // for test purpose 
 
         // initialize the inventory at start
@@ -96,6 +98,20 @@ namespace Inventory
                     }
                 }
                 else inventoryPage.Hide();
+            }
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Collider2D[] items = Physics2D.OverlapCircleAll(transform.position, 2.0f, ItemLayer);
+                foreach (Collider2D item in items)
+                {
+                    if(item.gameObject.GetComponent<CollectableItemController>()){
+                        if(inventoryData.AddItem(item.gameObject.GetComponent<CollectableItemController>().Item,1))
+                        {
+                            Destroy(item.gameObject);
+                        }
+                    }
+                }
             }
 
         }
