@@ -73,7 +73,9 @@ public class Generator2D : MonoBehaviour
     [SerializeField] [Range(5, 25)] int roomMaxSize;
 
     [Header("Tile")]
-    [SerializeField] GameObject cubePrefab;
+    [SerializeField] GameObject tilePrefab;
+    [SerializeField] GameObject wallPrefab;
+
     [SerializeField] TilePaletteSO tilePallete;
     [Space(15)]
     [SerializeField] Sprite DebugTile;
@@ -125,11 +127,35 @@ public class Generator2D : MonoBehaviour
 
         //SpawnWorld();
         SpawnWorldWithClasses();
+
+        PlaceWalls();
+    }
+
+    void PlaceWalls()
+    {
+        GameObject allWalls = new GameObject();
+        allWalls.name = "allWalls";
+        allWalls.transform.parent = transform;
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                Vector2Int position = new Vector2Int(x, y);
+
+                if (outputGrid[position] == CellType.Wall)
+                {
+                    foreach (Vector2Int cord in GetAdjacentNeighbors(CellType.None, position))
+                    {
+                        spawnWall(cord, allWalls);
+                    }
+                }
+            }
+        }
     }
 
     void SpawnWorldWithClasses()
     {
-
         foreach (Room room in rooms)
         {
             GameObject roomObj = new GameObject();
@@ -138,7 +164,7 @@ public class Generator2D : MonoBehaviour
 
             foreach (Vector2Int cord in room.bounds.allPositionsWithin)
             {
-                PlaceTile(cord, roomObj);
+                spawnTile(cord, roomObj);
             }
         }
 
@@ -150,12 +176,12 @@ public class Generator2D : MonoBehaviour
 
             foreach (Vector2Int cord in hallway.GetPath())
             {
-                PlaceTile(cord, hallwayObj);
+                spawnTile(cord, hallwayObj);
             }
 
             foreach (Vector2Int cord in hallway.GetWalls())
             {
-                PlaceTile(cord, hallwayObj);
+                spawnTile(cord, hallwayObj);
             }
         }
     }
@@ -311,16 +337,24 @@ public class Generator2D : MonoBehaviour
         }
     }
 
-    void PlaceTile(Vector2Int cords, GameObject parent)
+    void spawnTile(Vector2Int cords, GameObject parent)
     {
-        //Vector3 current = new Vector3(cords.x, 0, cords.y);
         Vector3 worlds = new Vector3(cords.x, cords.y, 0);
 
-        GameObject go = Instantiate(cubePrefab, worlds * tileSize, Quaternion.identity, parent.transform);
+        GameObject go = Instantiate(tilePrefab, worlds * tileSize, Quaternion.identity, parent.transform);
         go.transform.localScale = new Vector3(tileSize, tileSize, 1);
         go.name = cords.ToString();
 
         SetSprite(go.GetComponentInChildren<SpriteRenderer>(), cords);
+    }
+
+    void spawnWall(Vector2Int cords, GameObject parent)
+    {
+        Vector3 worlds = new Vector3(cords.x, cords.y, 0);
+
+        GameObject go = Instantiate(wallPrefab, worlds * tileSize, Quaternion.identity, parent.transform);
+        go.transform.localScale = new Vector3(tileSize, tileSize, 1);
+        go.name = "Wall" + cords.ToString();
     }
 
     void SetSprite(SpriteRenderer sr, Vector2Int cords)
