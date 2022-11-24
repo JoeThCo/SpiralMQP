@@ -125,7 +125,6 @@ public class Generator2D : MonoBehaviour
         CreateHallways();
         PathfindHallways();
 
-        //SpawnWorld();
         SpawnWorldWithClasses();
 
         PlaceWalls();
@@ -156,7 +155,7 @@ public class Generator2D : MonoBehaviour
 
     void SpawnWorldWithClasses()
     {
-        foreach (Room room in rooms)
+        foreach (Room room in rooms) 
         {
             GameObject roomObj = new GameObject();
             roomObj.name = "Room";
@@ -213,8 +212,8 @@ public class Generator2D : MonoBehaviour
                 }
             }
 
-            if (newRoom.bounds.xMin < 0 || newRoom.bounds.xMax >= size
-                || newRoom.bounds.yMin < 0 || newRoom.bounds.yMax >= size)
+            if (newRoom.bounds.xMin < 1 || newRoom.bounds.xMax >= size
+                || newRoom.bounds.yMin < 1 || newRoom.bounds.yMax >= size)
             {
                 add = false;
             }
