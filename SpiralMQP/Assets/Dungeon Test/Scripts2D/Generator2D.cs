@@ -14,7 +14,9 @@ public class Generator2D : MonoBehaviour
         None,
         Room,
         Hallway,
-        Wall
+        Wall,
+        Start,
+        End
     }
 
     class Room
@@ -26,10 +28,31 @@ public class Generator2D : MonoBehaviour
             bounds = new RectInt(location, size);
         }
 
+        public Vector2Int GetCordInRoom(Random random)
+        {
+            int x = random.Next(bounds.min.x + 1, bounds.max.x - 1);
+            int y = random.Next(bounds.min.y + 1, bounds.max.y - 1);
+
+            return new Vector2Int(x, y);
+        }
+
         public static bool Intersect(Room a, Room b)
         {
             return !((a.bounds.position.x >= (b.bounds.position.x + b.bounds.size.x)) || ((a.bounds.position.x + a.bounds.size.x) <= b.bounds.position.x)
                 || (a.bounds.position.y >= (b.bounds.position.y + b.bounds.size.y)) || ((a.bounds.position.y + a.bounds.size.y) <= b.bounds.position.y));
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            Room room = (Room)obj;
+
+            return room.bounds.position.x == bounds.position.x && room.bounds.position.y == bounds.position.y;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 
@@ -75,8 +98,10 @@ public class Generator2D : MonoBehaviour
     [Header("Tile")]
     [SerializeField] GameObject tilePrefab;
     [SerializeField] GameObject wallPrefab;
-
+    [Space(15)]
     [SerializeField] TilePaletteSO tilePallete;
+    [SerializeField] Sprite startSprite;
+    [SerializeField] Sprite endSprite;
     [Space(15)]
     [SerializeField] Sprite DebugTile;
 
@@ -87,6 +112,7 @@ public class Generator2D : MonoBehaviour
     List<Hallway> hallways;
     Delaunay2D delaunay;
     HashSet<Prim.Edge> selectedEdges;
+    List<Prim.Edge> mst;
 
     void Start()
     {
@@ -146,7 +172,7 @@ public class Generator2D : MonoBehaviour
                 {
                     foreach (Vector2Int cord in GetAdjacentNeighbors(CellType.None, position))
                     {
-                        spawnWall(cord, allWalls);
+                        SpawnWall(cord, allWalls);
                     }
                 }
             }
@@ -155,15 +181,34 @@ public class Generator2D : MonoBehaviour
 
     void SpawnWorldWithClasses()
     {
-        foreach (Room room in rooms) 
+        Room startRoom = rooms[0];
+        Room endRoom = rooms[random.Next(0, rooms.Count - 1)];
+
+        while (startRoom.Equals(endRoom))
+        {
+            endRoom = rooms[random.Next(0, rooms.Count - 1)];
+        }
+
+        foreach (Room room in rooms)
         {
             GameObject roomObj = new GameObject();
             roomObj.name = "Room";
             roomObj.transform.parent = transform;
 
+            //start
+            if (room.Equals(startRoom))
+            {
+                grid[room.GetCordInRoom(random)] = CellType.Start;
+            }
+
+            if (room.Equals(endRoom))
+            {
+                grid[room.GetCordInRoom(random)] = CellType.End;
+            }
+
             foreach (Vector2Int cord in room.bounds.allPositionsWithin)
             {
-                spawnTile(cord, roomObj);
+                SpawnTile(cord, roomObj);
             }
         }
 
@@ -175,12 +220,12 @@ public class Generator2D : MonoBehaviour
 
             foreach (Vector2Int cord in hallway.GetPath())
             {
-                spawnTile(cord, hallwayObj);
+                SpawnTile(cord, hallwayObj);
             }
 
             foreach (Vector2Int cord in hallway.GetWalls())
             {
-                spawnTile(cord, hallwayObj);
+                SpawnTile(cord, hallwayObj);
             }
         }
     }
@@ -258,9 +303,9 @@ public class Generator2D : MonoBehaviour
             edges.Add(new Prim.Edge(edge.U, edge.V));
         }
 
-        List<Prim.Edge> mst = Prim.MinimumSpanningTree(edges, edges[0].U);
-
+        mst = Prim.MinimumSpanningTree(edges, edges[0].U);
         selectedEdges = new HashSet<Prim.Edge>(mst);
+
         var remainingEdges = new HashSet<Prim.Edge>(edges);
         remainingEdges.ExceptWith(selectedEdges);
 
@@ -279,8 +324,8 @@ public class Generator2D : MonoBehaviour
 
         foreach (var edge in selectedEdges)
         {
-            var startRoom = (edge.U as Vertex<Room>).Item;
-            var endRoom = (edge.V as Vertex<Room>).Item;
+            Room startRoom = (edge.U as Vertex<Room>).Item;
+            Room endRoom = (edge.V as Vertex<Room>).Item;
 
             var startPosf = startRoom.bounds.center;
             var endPosf = endRoom.bounds.center;
@@ -336,7 +381,7 @@ public class Generator2D : MonoBehaviour
         }
     }
 
-    void spawnTile(Vector2Int cords, GameObject parent)
+    void SpawnTile(Vector2Int cords, GameObject parent)
     {
         Vector3 worlds = new Vector3(cords.x, cords.y, 0);
 
@@ -347,7 +392,7 @@ public class Generator2D : MonoBehaviour
         SetSprite(go.GetComponentInChildren<SpriteRenderer>(), cords);
     }
 
-    void spawnWall(Vector2Int cords, GameObject parent)
+    void SpawnWall(Vector2Int cords, GameObject parent)
     {
         Vector3 worlds = new Vector3(cords.x, cords.y, 0);
 
@@ -367,6 +412,16 @@ public class Generator2D : MonoBehaviour
         else if (currentCell == CellType.Wall)
         {
             SetWallSprite(sr, cords);
+        }
+        else if (currentCell == CellType.Start)
+        {
+            sr.sprite = startSprite;
+            sr.color = Color.green;
+        }
+        else if (currentCell == CellType.End)
+        {
+            sr.sprite = endSprite;
+            sr.color = Color.red;
         }
     }
 
