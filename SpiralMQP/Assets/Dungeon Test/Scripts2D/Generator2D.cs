@@ -184,9 +184,12 @@ public class Generator2D : MonoBehaviour
         Room startRoom = rooms[0];
         Room endRoom = rooms[random.Next(0, rooms.Count - 1)];
 
-        while (startRoom.Equals(endRoom))
+        float dist = Vector2Int.Distance(startRoom.bounds.position, endRoom.bounds.position);
+
+        while (startRoom.Equals(endRoom) || dist < (float)(size * .5f))
         {
             endRoom = rooms[random.Next(0, rooms.Count - 1)];
+            dist = Vector2Int.Distance(startRoom.bounds.position, endRoom.bounds.position);
         }
 
         foreach (Room room in rooms)
