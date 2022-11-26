@@ -91,9 +91,11 @@ public class Generator2D : MonoBehaviour
     [SerializeField] [Range(10, 500)] int roomCount = 100;
     [SerializeField] [Range(0f, 1f)] float hallwayChance = 0.125f;
 
-    [Header("Room Size")]
+    [Header("Sizes")]
     [SerializeField] [Range(1, 10)] int roomMinSize;
     [SerializeField] [Range(5, 25)] int roomMaxSize;
+
+    [SerializeField] [Range(1, 3)] int hallwaySize;
 
     [Header("Tile")]
     [SerializeField] GameObject tilePrefab;
@@ -153,10 +155,9 @@ public class Generator2D : MonoBehaviour
 
         SpawnWorldWithClasses();
 
-        PlaceWalls();
+        PlaceWallCollision();
     }
-
-    void PlaceWalls()
+    void PlaceWallCollision()
     {
         GameObject allWalls = new GameObject();
         allWalls.name = "allWalls";
@@ -183,7 +184,6 @@ public class Generator2D : MonoBehaviour
     {
         Room startRoom = rooms[0];
         Room endRoom = rooms[random.Next(0, rooms.Count - 1)];
-
         float dist = Vector2Int.Distance(startRoom.bounds.position, endRoom.bounds.position);
 
         while (startRoom.Equals(endRoom) || dist < (float)(size * .5f))
@@ -204,6 +204,7 @@ public class Generator2D : MonoBehaviour
                 grid[room.GetCordInRoom(random)] = CellType.Start;
             }
 
+            //end
             if (room.Equals(endRoom))
             {
                 grid[room.GetCordInRoom(random)] = CellType.End;
@@ -374,10 +375,13 @@ public class Generator2D : MonoBehaviour
                         grid[cord] = CellType.Hallway;
                     }
 
-                    foreach (Vector2Int neighbor in GetCellNeighbors(CellType.None, cord))
+                    foreach (Vector2Int neighbor in GetCellNeighbors(CellType.None, cord, hallwaySize))
                     {
-                        grid[neighbor] = CellType.Wall;
-                        hallway.AddToWallList(neighbor);
+                        if (isValid(neighbor, hallwaySize))
+                        {
+                            grid[neighbor] = CellType.Wall;
+                            hallway.AddToWallList(neighbor);
+                        }
                     }
                 }
             }
@@ -408,9 +412,15 @@ public class Generator2D : MonoBehaviour
     {
         CellType currentCell = grid[cords];
 
-        if (currentCell == CellType.Room || currentCell == CellType.Hallway)
+        if (currentCell == CellType.Room)
         {
             sr.sprite = tilePallete.middleTile;
+            outputGrid[cords] = CellType.Room;
+        }
+        else if (currentCell == CellType.Hallway)
+        {
+            sr.sprite = tilePallete.middleTile;
+            outputGrid[cords] = CellType.Hallway;
         }
         else if (currentCell == CellType.Wall)
         {
@@ -420,11 +430,15 @@ public class Generator2D : MonoBehaviour
         {
             sr.sprite = startSprite;
             sr.color = Color.green;
+
+            outputGrid[cords] = CellType.Start;
         }
         else if (currentCell == CellType.End)
         {
             sr.sprite = endSprite;
             sr.color = Color.red;
+
+            outputGrid[cords] = CellType.End;
         }
     }
 
@@ -488,6 +502,11 @@ public class Generator2D : MonoBehaviour
         return cords.x >= 0 && cords.x < size && cords.y >= 0 && cords.y < size;
     }
 
+    bool isValid(Vector2Int cords, int min)
+    {
+        return cords.x >= min && cords.x < size - min && cords.y >= min && cords.y < size - min;
+    }
+
     List<Vector2Int> GetAdjacentNeighbors(CellType cellType, Vector2Int cords)
     {
         List<Vector2Int> output = new List<Vector2Int>();
@@ -514,13 +533,13 @@ public class Generator2D : MonoBehaviour
 
         return output;
     }
-    List<Vector2Int> GetCellNeighbors(CellType cellType, Vector2Int input)
+    List<Vector2Int> GetCellNeighbors(CellType cellType, Vector2Int input, int size)
     {
         List<Vector2Int> output = new List<Vector2Int>();
 
-        for (int y = -1; y <= 1; y++)
+        for (int y = -size; y <= size; y++)
         {
-            for (int x = -1; x <= 1; x++)
+            for (int x = -size; x <= size; x++)
             {
                 if (x != 0 || y != 0)
                 {
