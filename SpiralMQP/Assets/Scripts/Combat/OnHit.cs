@@ -7,7 +7,7 @@ public class OnHit : MonoBehaviour
     public Sprite hitSprite;
     public Sprite idleSprite;
     bool IsHit = false;
-    float HitTime = 1.0f;
+    float HitTime = 0.3f;
 
 
     
