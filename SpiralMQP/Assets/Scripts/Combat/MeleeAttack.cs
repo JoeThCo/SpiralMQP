@@ -11,7 +11,7 @@ public class MeleeAttack : MonoBehaviour
     public int AttackCoolDown = 2;
     private float AttackCoolDownCounter;
 
-    public float AttackRange = 1.0f;
+    public float AttackRange = 0.5f;
 
     public LayerMask EnemyLayers;
 
