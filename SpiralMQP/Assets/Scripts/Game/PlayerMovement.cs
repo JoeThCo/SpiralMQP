@@ -12,7 +12,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dodge")]
     public bool CanDodge = true;
     public KeyCode DodgeKey = KeyCode.Space;
+    [Range(10,15)]
     public int DodgePower;
+    [Range(0.2f,0.35f)]
     public float DodgeTime;
     public float DodgeCoolDownTime;
     public ParticleSystem DodgeParticles;
