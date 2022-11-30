@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Inventory.Model;
 
 public class ChestController : MonoBehaviour
 {
     private SpriteRenderer Sprite;
-    public Animator ChestAnimator;
-    public bool Opened = false;
+    [SerializeField] Animator ChestAnimator;
+    [SerializeField] bool Opened = false;
+    [SerializeField] ItemSO Item;
+    [SerializeField] GameObject CollectableItemPrefab;
+
     void Start()
     {
         Sprite = GetComponent<SpriteRenderer>();
@@ -20,6 +24,10 @@ public class ChestController : MonoBehaviour
     {
         ChestAnimator.SetBool("Open", true);
         Opened = true;
+        Vector3 pos = transform.position + new Vector3(-1.0f,-1.0f,0.0f);
+        Quaternion rotation = transform.rotation;
+        GameObject CollectableItem = Instantiate(CollectableItemPrefab, pos, rotation);
+        CollectableItem.GetComponent<CollectableItemController>().Item = Item;
     }
 
     public void Close()

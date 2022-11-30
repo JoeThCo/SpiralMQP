@@ -22,7 +22,7 @@ namespace Inventory.Model
             }
         }
 
-        public void AddItem(ItemSO item, int quantity)
+        public bool AddItem(ItemSO item, int quantity)
         {
             for (int i = 0; i < inventoryItems.Count; i++)
             {
@@ -33,9 +33,10 @@ namespace Inventory.Model
                         item = item,
                         quantity = quantity
                     };
-                    return;
+                    return true;
                 }
             }
+            return false;
         }
 
         public void AddItem(InventoryItemStruct item)

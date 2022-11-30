@@ -169,3 +169,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChestAnimator: {fileID: 4070340408236520800}
   Opened: 0
+  Item: {fileID: 11400000, guid: ecf4a8235eeba7d48a180e82310e6880, type: 2}
+  CollectableItemPrefab: {fileID: 1625909076374785029, guid: 01f43af3ace274c908711588055ee8ce, type: 3}
