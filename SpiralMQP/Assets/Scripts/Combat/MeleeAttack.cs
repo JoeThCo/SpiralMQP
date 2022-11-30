@@ -6,10 +6,12 @@ public class MeleeAttack : MonoBehaviour
 {
     public KeyCode MeleeKey = KeyCode.E;
 
+    [SerializeField] Animator playerAnimator;
+
     public int AttackCoolDown = 2;
     private float AttackCoolDownCounter;
 
-    public float AttackRange = 0.5f;
+    public float AttackRange = 1.0f;
 
     public LayerMask EnemyLayers;
 
@@ -28,6 +30,7 @@ public class MeleeAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(MeleeKey))
             {
+                playerAnimator.SetTrigger("tr_Melee"); // start player melee animation
                 Attack();
                 AttackCoolDownCounter = 0;
             }
@@ -36,11 +39,10 @@ public class MeleeAttack : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("Attack");
         Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(transform.position, AttackRange, EnemyLayers);
         foreach (Collider2D enemy in hitEnemys)
         {
-            Debug.Log("Hit");
+            enemy.gameObject.transform.parent.gameObject.GetComponent<OnHit>().Hit();
         }
     }
 
