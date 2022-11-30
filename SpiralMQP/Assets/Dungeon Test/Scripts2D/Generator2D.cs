@@ -90,6 +90,7 @@ public class Generator2D : MonoBehaviour
     [SerializeField] [Range(50, 250)] int size = 15;
     [SerializeField] [Range(10, 500)] int roomCount = 100;
     [SerializeField] [Range(0f, 1f)] float hallwayChance = 0.125f;
+    [SerializeField] [Range(0f, 1f)] float enemyChance = .01f;
 
     [Header("Sizes")]
     [SerializeField] [Range(1, 10)] int roomMinSize;
@@ -106,6 +107,10 @@ public class Generator2D : MonoBehaviour
     [SerializeField] Sprite endSprite;
     [Space(15)]
     [SerializeField] Sprite DebugTile;
+
+    [Header("Beings")]
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject[] enemies;
 
     Random random;
     Grid2D<CellType> grid;
@@ -201,14 +206,21 @@ public class Generator2D : MonoBehaviour
             //start
             if (room.Equals(startRoom))
             {
-                grid[room.GetCordInRoom(random)] = CellType.Start;
-            }
+                Vector2Int startCords = room.GetCordInRoom(random);
 
+                grid[startCords] = CellType.Start;
+                SpawnPlayer(startCords);
+            }
             //end
-            if (room.Equals(endRoom))
+            else if (room.Equals(endRoom))
             {
                 grid[room.GetCordInRoom(random)] = CellType.End;
             }
+            else if (random.NextDouble() < enemyChance)
+            {
+                SpawnBaddie(room.GetCordInRoom(random), roomObj);
+            }
+
 
             foreach (Vector2Int cord in room.bounds.allPositionsWithin)
             {
@@ -406,6 +418,20 @@ public class Generator2D : MonoBehaviour
         GameObject go = Instantiate(wallPrefab, worlds * tileSize, Quaternion.identity, parent.transform);
         go.transform.localScale = new Vector3(tileSize, tileSize, 1);
         go.name = "Wall" + cords.ToString();
+    }
+
+    void SpawnBaddie(Vector2Int cords, GameObject parent)
+    {
+        Vector3 worlds = new Vector3(cords.x, cords.y, 0);
+        GameObject enemy = enemies[random.Next(0, enemies.Length)];
+
+        GameObject go = Instantiate(enemy, worlds * tileSize, Quaternion.identity, parent.transform);
+    }
+
+    void SpawnPlayer(Vector2Int cords)
+    {
+        Vector3 worlds = new Vector3(cords.x, cords.y, 0);
+        GameObject go = Instantiate(player, worlds * tileSize, Quaternion.identity, transform);
     }
 
     void SetSprite(SpriteRenderer sr, Vector2Int cords)

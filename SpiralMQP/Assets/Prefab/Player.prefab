@@ -5140,7 +5140,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPage: {fileID: 0}
-  capacity: 15
+  inventoryData: {fileID: 11400000, guid: fa340b1cf2f7e02459d8470a3effac33, type: 2}
+  ItemLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  initialItems:
+  - quantity: 1
+    item: {fileID: 11400000, guid: ecf4a8235eeba7d48a180e82310e6880, type: 2}
+  - quantity: 0
+    item: {fileID: 0}
+  - quantity: 7
+    item: {fileID: 11400000, guid: 14cbde9e593b1b44caafc1f0daa981a0, type: 2}
+  - quantity: 8
+    item: {fileID: 11400000, guid: 14cbde9e593b1b44caafc1f0daa981a0, type: 2}
 --- !u!1 &8027844348916905993
 GameObject:
   m_ObjectHideFlags: 0
