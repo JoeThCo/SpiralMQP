@@ -3,20 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Baddie
+  - Game Over
+  - Friendly Fire
+  - MapObjects
+  - CollectableItem
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Backgroud
+    uniqueID: 1769853341
+    locked: 0
+  - name: Backwall
+    uniqueID: 3553140385
+    locked: 0
+  - name: Character
+    uniqueID: 337215391
+    locked: 0
+  - name: FrontWall
+    uniqueID: 1307516939
     locked: 0
