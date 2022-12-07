@@ -12,16 +12,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dodge")]
     public bool CanDodge = true;
     public KeyCode DodgeKey = KeyCode.Space;
-    [Range(10,15)]
+    public AudioClip dashAudio;
+    [Range(10, 15)]
     public int DodgePower;
-    [Range(0.2f,0.35f)]
+    [Range(0.2f, 0.35f)]
     public float DodgeTime;
     public float DodgeCoolDownTime;
     public ParticleSystem DodgeParticles;
 
     [Header("Movement")]
     public bool CanMove = true;
-    
+
     // used for melee animation to distinguish current facing direciton
     // 0: left   1: right
     private int direction = 1;
@@ -39,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode InteractionKey = KeyCode.F;
     public LayerMask ObjectLayers;
 
+    [Header("Audio")]
+    public AudioClip playerFootstep;
+    public float footStepDistance;
+    private float distanceMoved;
+
     private void Awake()
     {
         SetDodgeParticles(false);
@@ -53,7 +59,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (CanMove)
         {
-            MovePlayer();
+            MovePlayer(inputDir);
+
+            if (inputDir != Vector2.zero)
+            {
+                Footsteps();
+            }
         }
     }
 
@@ -80,7 +91,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(InteractionKey)){
+        if (Input.GetKeyDown(InteractionKey))
+        {
             Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(transform.position, 1.5f, ObjectLayers);
             foreach (Collider2D obj in objectsInRange)
             {
@@ -90,10 +102,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void MovePlayer()
+    void MovePlayer(Vector2 inputDir)
     {
         playerRigidbody.position = Vector2.MoveTowards(playerRigidbody.position, playerRigidbody.position + inputDir, MovementSpeed * Time.deltaTime);
         UpdateSortingOrder();
+    }
+
+    void Footsteps()
+    {
+        distanceMoved += Time.deltaTime;
+
+        if (distanceMoved > footStepDistance)
+        {
+            SoundManager.PlayOneShot(playerFootstep, gameObject);
+            distanceMoved = 0;
+        }
     }
 
     void SetShield(bool state)
@@ -122,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
         CanDodge = false;
         CanMove = false;
         SetDodgeParticles(true);
+        SoundManager.PlayOneShot(dashAudio, gameObject);
         //can be danaged = false
 
         playerRigidbody.AddForce(inputDir * DodgePower, ForceMode2D.Impulse);
@@ -142,8 +166,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CanMove)
         {
-            
-             if (dir.x > 0)
+
+            if (dir.x > 0)
             {
                 direction = 1; // set character facing direction to right
             }
@@ -169,10 +193,11 @@ public class PlayerMovement : MonoBehaviour
         return dir;
     }
 
-    void UpdateSortingOrder(){
+    void UpdateSortingOrder()
+    {
         if (Sprite)
         {
-            Sprite.sortingOrder = (int)(-transform.position.y*100.0f);
+            Sprite.sortingOrder = (int)(-transform.position.y * 100.0f);
         }
     }
 }

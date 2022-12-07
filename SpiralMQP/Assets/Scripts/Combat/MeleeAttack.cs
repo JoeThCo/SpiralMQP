@@ -6,13 +6,14 @@ public class MeleeAttack : MonoBehaviour
 {
     public KeyCode MeleeKey = KeyCode.E;
     [SerializeField] AudioClip meleeAudio;
-    
+    [SerializeField] AudioClip enemyHitAudio;
+
     [Space(10)]
-    
+
     [SerializeField] Animator playerAnimator;
-    
+
     [Space(10)]
-    
+
     [SerializeField] int AttackCoolDown = 2;
     private float AttackCoolDownCounter;
 
@@ -47,6 +48,7 @@ public class MeleeAttack : MonoBehaviour
         playerAnimator.SetTrigger("tr_Melee"); // start player melee animation
 
         Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(transform.position, AttackRange, EnemyLayers);
+
         foreach (Collider2D enemy in hitEnemys)
         {
             enemy.gameObject.transform.parent.gameObject.GetComponent<OnHit>().Hit();

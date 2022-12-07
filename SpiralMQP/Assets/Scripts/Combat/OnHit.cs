@@ -6,29 +6,42 @@ public class OnHit : MonoBehaviour
 {
     public Sprite hitSprite;
     public Sprite idleSprite;
+
+    [Space(10)]
+
+    public AudioClip onHitAudio;
+    
     bool IsHit = false;
     float HitTime = 0.3f;
 
 
-    
-    void Start(){
+    void Start()
+    {
         idleSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
-    
-    public void Hit(){
+
+    public void Hit()
+    {
         Debug.Log("enemy hit");
-        if(!IsHit)
+        if (!IsHit)
             StartCoroutine(HitAnimation());
     }
 
-    IEnumerator HitAnimation(){
+    IEnumerator HitAnimation()
+    {
         IsHit = true;
+
         GetComponent<SpriteRenderer>().color = Color.red;
         gameObject.GetComponent<SpriteRenderer>().sprite = hitSprite;
+
+        SoundManager.PlayOneShot(onHitAudio, gameObject);
+
         yield return new WaitForSeconds(HitTime);
+
         GetComponent<SpriteRenderer>().color = Color.white;
         gameObject.GetComponent<SpriteRenderer>().sprite = idleSprite;
+        
         IsHit = false;
     }
 }
