@@ -22,12 +22,14 @@ public class ChestController : MonoBehaviour
 
     public void Open()
     {
-        ChestAnimator.SetBool("Open", true);
-        Opened = true;
-        Vector3 pos = transform.position + new Vector3(-1.0f,-1.0f,0.0f);
-        Quaternion rotation = transform.rotation;
-        GameObject CollectableItem = Instantiate(CollectableItemPrefab, pos, rotation);
-        CollectableItem.GetComponent<CollectableItemController>().Item = Item;
+        if(!Opened){
+            ChestAnimator.SetBool("Open", true);
+            Opened = true;
+            Vector3 pos = transform.position + new Vector3(-1.0f,-1.0f,0.0f);
+            Quaternion rotation = transform.rotation;
+            GameObject CollectableItem = Instantiate(CollectableItemPrefab, pos, rotation);
+            CollectableItem.GetComponent<CollectableItemController>().Item = Item;
+        }
     }
 
     public void Close()

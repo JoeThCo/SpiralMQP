@@ -1,39 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class OnHit : MonoBehaviour
+
+public class PlayerHit: MonoBehaviour
 {
-    public Sprite hitSprite;
-    public Sprite idleSprite;
     public int MaxHP = 1000;
     public int HP;
     bool IsHit = false;
     float HitTime = 0.3f;
+
     
     void Start(){
-        idleSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
         HP = MaxHP;
     }
 
     
     public void Hit(){
         Debug.Log("enemy hit");
-        if(!IsHit && hitSprite)
+        if(!IsHit)
             StartCoroutine(HitAnimation());
         HP --;
         if(HP<=0){
-            Destroy(gameObject, 0.1f);
+            GameObject.Find("Canvas").GetComponent<MenuController>().ShowMenu("GameOver");
         }
     }
 
     IEnumerator HitAnimation(){
         IsHit = true;
         GetComponent<SpriteRenderer>().color = Color.red;
-        gameObject.GetComponent<SpriteRenderer>().sprite = hitSprite;
         yield return new WaitForSeconds(HitTime);
         GetComponent<SpriteRenderer>().color = Color.white;
-        gameObject.GetComponent<SpriteRenderer>().sprite = idleSprite;
         IsHit = false;
     }
 }

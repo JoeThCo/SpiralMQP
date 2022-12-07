@@ -14,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
     public float AvoidDistance;
 
     public float NoiseValue;
+    public float RandomNoise;
+
     public float MovementFrequency = 0.5f;
 
     private Vector3 InitPoint;
@@ -33,16 +35,20 @@ public class EnemyMovement : MonoBehaviour
             PlayerObject = GameObject.FindWithTag("Player");
         }
         NoiseValue = Random.Range(0.0f,10.0f);
+        RandomNoise = Random.Range(0.0f,10.0f);
+
         UpdateSortingOrder();
     }
 
     private void Update(){
         NoiseValue += Time.deltaTime * MovementFrequency;
+        RandomNoise += Time.deltaTime * MovementFrequency;
+
         float distance = Vector2.Distance(PlayerObject.transform.position, transform.position);
         // Outside detection range, rest mode
         if(distance > DetectDistance){
-            MovementDirection.x = Mathf.PerlinNoise(NoiseValue, 0.5f) - 0.5f;
-            MovementDirection.y = Mathf.PerlinNoise(0.5f, NoiseValue) - 0.5f;
+            MovementDirection.x = Mathf.PerlinNoise(NoiseValue, RandomNoise) - 0.5f;
+            MovementDirection.y = Mathf.PerlinNoise(RandomNoise, NoiseValue) - 0.5f;
             MovementDirection.Normalize();
 
             // Getting back to initial point
