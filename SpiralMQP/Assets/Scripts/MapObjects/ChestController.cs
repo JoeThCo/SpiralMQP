@@ -10,13 +10,14 @@ public class ChestController : MonoBehaviour
     [SerializeField] bool Opened = false;
     [SerializeField] ItemSO Item;
     [SerializeField] GameObject CollectableItemPrefab;
+    [SerializeField] AudioClip chestOpenAudio;
 
     void Start()
     {
         Sprite = GetComponent<SpriteRenderer>();
         if (Sprite)
         {
-            Sprite.sortingOrder = (int)(-transform.position.y*100.0f);
+            Sprite.sortingOrder = (int)(-transform.position.y * 100.0f);
         }
     }
 
@@ -25,7 +26,10 @@ public class ChestController : MonoBehaviour
         if(!Opened){
             ChestAnimator.SetBool("Open", true);
             Opened = true;
-            Vector3 pos = transform.position + new Vector3(-1.0f,-1.0f,0.0f);
+    
+            SoundManager.PlayOneShot(chestOpenAudio, gameObject);
+
+            Vector3 pos = transform.position + new Vector3(-1.0f, -1.0f, 0.0f);
             Quaternion rotation = transform.rotation;
             GameObject CollectableItem = Instantiate(CollectableItemPrefab, pos, rotation);
             CollectableItem.GetComponent<CollectableItemController>().Item = Item;

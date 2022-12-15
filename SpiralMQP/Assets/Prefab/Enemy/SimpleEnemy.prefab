@@ -211,6 +211,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 5c0ef099904fc48b7966cc8df13dab14, type: 3}
   MaxHP: 2
   HP: 0
+  onHitAudio: {fileID: 8300000, guid: 07409e4f0f7685f48b852e38f97a5195, type: 3}
 --- !u!114 &7418213026998033454
 MonoBehaviour:
   m_ObjectHideFlags: 0

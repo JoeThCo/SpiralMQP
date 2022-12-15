@@ -16,8 +16,9 @@ public class OnHit : MonoBehaviour
         HP = MaxHP;
     }
 
-    
-    public void Hit(){
+
+    public void Hit()
+    {
         Debug.Log("enemy hit");
         if(!IsHit && hitSprite)
             StartCoroutine(HitAnimation());
@@ -27,13 +28,20 @@ public class OnHit : MonoBehaviour
         }
     }
 
-    IEnumerator HitAnimation(){
+    IEnumerator HitAnimation()
+    {
         IsHit = true;
+
         GetComponent<SpriteRenderer>().color = Color.red;
         gameObject.GetComponent<SpriteRenderer>().sprite = hitSprite;
+
+        SoundManager.PlayOneShot(onHitAudio, gameObject);
+
         yield return new WaitForSeconds(HitTime);
+
         GetComponent<SpriteRenderer>().color = Color.white;
         gameObject.GetComponent<SpriteRenderer>().sprite = idleSprite;
+        
         IsHit = false;
     }
 }
