@@ -10,6 +10,7 @@ public class OnHit : MonoBehaviour
     public int HP;
     bool IsHit = false;
     float HitTime = 0.3f;
+    [SerializeField] AudioClip onHitAudio;
     
     void Start(){
         idleSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
