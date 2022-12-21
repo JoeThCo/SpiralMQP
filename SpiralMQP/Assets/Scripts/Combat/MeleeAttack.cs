@@ -5,15 +5,22 @@ using UnityEngine;
 public class MeleeAttack : MonoBehaviour
 {
     public KeyCode MeleeKey = KeyCode.E;
+    [SerializeField] AudioClip meleeAudio;
+    [SerializeField] AudioClip enemyHitAudio;
+
+    [Space(10)]
 
     [SerializeField] Animator playerAnimator;
 
-    public int AttackCoolDown = 2;
+    [Space(10)]
+
+    [SerializeField] int AttackCoolDown = 2;
     private float AttackCoolDownCounter;
 
-    public float AttackRange = 1.0f;
+    [Space(10)]
 
-    public LayerMask EnemyLayers;
+    [SerializeField] float AttackRange = 1.0f;
+    [SerializeField] LayerMask EnemyLayers;
 
     void Start()
     {
@@ -30,20 +37,24 @@ public class MeleeAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(MeleeKey))
             {
-                playerAnimator.SetTrigger("tr_Melee"); // start player melee animation
                 Attack();
-                AttackCoolDownCounter = 0;
             }
         }
     }
 
     void Attack()
     {
+        SoundManager.PlayOneShot(meleeAudio, gameObject);
+        playerAnimator.SetTrigger("tr_Melee"); // start player melee animation
+
         Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(transform.position, AttackRange, EnemyLayers);
+
         foreach (Collider2D enemy in hitEnemys)
         {
             enemy.gameObject.transform.parent.gameObject.GetComponent<OnHit>().Hit();
         }
+
+        AttackCoolDownCounter = 0;
     }
 
     void OnDrawGizmosSelected()

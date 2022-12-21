@@ -18,8 +18,8 @@ TagManager:
   - Friendly Fire
   - MapObjects
   - CollectableItem
-  - 
-  - 
+  - Enemy Fire
+  - PlayerHitbox
   - 
   - 
   - 

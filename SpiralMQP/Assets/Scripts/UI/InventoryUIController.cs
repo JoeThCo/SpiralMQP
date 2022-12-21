@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Inventory.Model;
 using Inventory.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 namespace Inventory
 {
@@ -109,11 +111,18 @@ namespace Inventory
                         if(inventoryData.AddItem(item.gameObject.GetComponent<CollectableItemController>().Item,1))
                         {
                             Destroy(item.gameObject);
+                            GameObject.Find("Canvas").GetComponent<MenuController>().ShowMenu("Win");
+                            StartCoroutine(ReStart());
                         }
                     }
                 }
             }
+        }
 
+        private IEnumerator ReStart(){
+            yield return new WaitForSeconds(0.5f);
+            SceneManager.LoadScene("Game");
+            Time.timeScale = 1;
         }
     }
 }
