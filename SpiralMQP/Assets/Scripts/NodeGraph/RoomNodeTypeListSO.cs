@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RoomNodeTypeList", menuName = "Scriptable Objects/Dungeon/Room Node Type List")]
 public class RoomNodeTypeListSO : ScriptableObject 
 {
+    [Space(10)]
+    [Header("ROOM NODE TYPE LIST")]
     [Tooltip("This list should be created with all the RoomNodeTypeSO for the game - it is used instead of an enum")]
     public List<RoomNodeTypeSO> list;
 

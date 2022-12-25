@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// This serves as a game resources repository so that if other objects want to have access to a certain resource, they can search here
+/// So pretty much this is just a way to centralize any resources that we need to share and make them easily accessible
+/// </summary>
+public class GameResources : MonoBehaviour
+{
+    private static GameResources instance;
+
+    // Singleton design
+    public static GameResources Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = Resources.Load<GameResources>("GameResources"); // Unity will look for the "Resources" folder to load its content
+            }
+            return instance;
+        }
+    }
+
+    [Space(10)]
+    [Header("DUNGEON")]
+    [Tooltip("Populate with the dungeon RoomNodeTypeListSO")]
+    public RoomNodeTypeListSO roomNodeTypeList;
+}
