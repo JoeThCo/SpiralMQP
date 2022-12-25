@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "RoomNodeTypeList", menuName = "Scriptable Objects/Dungeon/Room Node Type List")]
-public class RoomNodeTypeListSO : ScriptableObject 
+public class RoomNodeTypeListSO : ScriptableObject
 {
     [Space(10)]
     [Header("ROOM NODE TYPE LIST")]
@@ -11,13 +11,13 @@ public class RoomNodeTypeListSO : ScriptableObject
     public List<RoomNodeTypeSO> list;
 
     // Compiler directive: only runs in the unity editor
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     /// <summary>
     /// Editor-only function that Unity calls when the script is loaded or a value changes in the inspector
     /// </summary>
-    private void OnValidate() 
+    private void OnValidate()
     {
-        HelperUtilities.ValidateCheckEnumerableValues(this, nameof(list), list);    
+        HelperUtilities.ValidateCheckEnumerableValues(this, nameof(list), list);
     }
-    #endif
+#endif
 }

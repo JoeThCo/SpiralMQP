@@ -17,7 +17,8 @@ public class GameResources : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = Resources.Load<GameResources>("GameResources"); // Unity will look for the "Resources" folder to load its content
+                // "Resources.Load" function is only intended for loading assets at runtime
+                instance = Resources.Load<GameResources>("GameResources"); // Unity will look for the "Resources" folder to load "GameResources" item
             }
             return instance;
         }
