@@ -12,7 +12,7 @@ public class RoomNodeGraphEditor : EditorWindow
 {
     // Define a customized GUI style
     private GUIStyle roomNodeStyle;
-
+    private GUIStyle roomNodeSelectedStyle;
     private static RoomNodeGraphSO currentRoomNodeGraph;
     private RoomNodeTypeListSO roomNodeTypeList;
     private RoomNodeSO currentRoomNode = null; // Current selected room node SO
@@ -42,6 +42,9 @@ public class RoomNodeGraphEditor : EditorWindow
 
     private void OnEnable()
     {
+        // Subscribe to the inspector selection changed event
+        Selection.selectionChanged += InspectorSelectionChanged; // Selection.selectionChanged: Delegate callback triggered when currently active/selected itme has changed
+
         // Define node layout style
         roomNodeStyle = new GUIStyle();
         roomNodeStyle.normal.background = EditorGUIUtility.Load("node5") as Texture2D;
@@ -49,8 +52,36 @@ public class RoomNodeGraphEditor : EditorWindow
         roomNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         roomNodeStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
 
+        // Define selected node layout style
+        roomNodeSelectedStyle = new GUIStyle();
+        roomNodeSelectedStyle.normal.background = EditorGUIUtility.Load("node5 on") as Texture2D;
+        roomNodeSelectedStyle.normal.textColor = Color.white;
+        roomNodeSelectedStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
+        roomNodeSelectedStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
+
         // Load Room Node Types
         roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
+    }
+
+    private void OnDisable() 
+    {
+        // Unsubscribe from the inspector selection changed event
+        Selection.selectionChanged -= InspectorSelectionChanged;
+    }
+
+    /// <summary>
+    /// Selection changed in the inspector
+    /// </summary>
+    private void InspectorSelectionChanged()
+    {
+        RoomNodeGraphSO roomNodeGraph = Selection.activeObject as RoomNodeGraphSO; // Detecting the selection in the inspector and see if the new selection is a RoomNodeGraphSO type
+
+        if (roomNodeGraph != null) // If we detect such selection
+        {
+            currentRoomNodeGraph = roomNodeGraph; // Update the new currentRoomNodeGraph
+            GUI.changed = true;
+        }
+
     }
 
 
@@ -164,7 +195,7 @@ public class RoomNodeGraphEditor : EditorWindow
         {
             // Draw line from node to line position
             // This fucntion draws texured bezier line through start and end points with the given tangents
-            Handles.DrawBezier(currentRoomNodeGraph.roomNodeToDrawLineFrom.rect.center, currentRoomNodeGraph.linePosition, 
+            Handles.DrawBezier(currentRoomNodeGraph.roomNodeToDrawLineFrom.rect.center, currentRoomNodeGraph.linePosition,
                 currentRoomNodeGraph.roomNodeToDrawLineFrom.rect.center, currentRoomNodeGraph.linePosition, Color.yellow, null, connectingLineWidth);
         }
     }
@@ -177,7 +208,12 @@ public class RoomNodeGraphEditor : EditorWindow
         // Loop through all room nodes and draw them
         foreach (RoomNodeSO roomNode in currentRoomNodeGraph.roomNodeList)
         {
-          roomNode.Draw(roomNodeStyle);
+            if (roomNode.isSelected)
+            {
+                roomNode.Draw(roomNodeSelectedStyle);
+            }
+
+            else roomNode.Draw(roomNodeStyle);
         }
 
         GUI.changed = true; // Mark the change to true
@@ -232,11 +268,11 @@ public class RoomNodeGraphEditor : EditorWindow
             case EventType.MouseDown:
                 ProcessMouseDownEvent(currentEvent);
                 break;
-            
+
             case EventType.MouseUp:
                 ProcessMouseUpEvent(currentEvent);
                 break;
-            
+
             case EventType.MouseDrag:
                 ProcessMouseDragEvent(currentEvent);
                 break;
@@ -323,11 +359,34 @@ public class RoomNodeGraphEditor : EditorWindow
         {
             ShowContextMenu(currentEvent.mousePosition);
         }
+
+        // Process left mouse down on graph event
+        else if (currentEvent.button == 0)
+        {
+            ClearLineDrag();
+            ClearAllSelectedRoomNodes();
+        }
     }
 
-     /// <summary>
-     /// Show the context menu
-     /// </summary>
+    /// <summary>
+    /// Clear selection from all room nodes
+    /// </summary>
+    private void ClearAllSelectedRoomNodes()
+    {
+        foreach (RoomNodeSO roomNode in currentRoomNodeGraph.roomNodeList)
+        {
+            if (roomNode.isSelected)
+            {
+                roomNode.isSelected = false;
+
+                GUI.changed = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Show the context menu
+    /// </summary>
     private void ShowContextMenu(Vector2 mousePosition)
     {
         GenericMenu menu = new GenericMenu(); // GenericMenu lets you create custom context menus and dropdown menus
@@ -335,17 +394,23 @@ public class RoomNodeGraphEditor : EditorWindow
         menu.ShowAsContext();
     }
 
-     /// <summary>
-     /// Create a room node at the mouse position
-     /// </summary>
+    /// <summary>
+    /// Create a room node at the mouse position
+    /// </summary>
     private void CreateRoomNode(object mousePositionObject)
     {
-        CreateRoomNode(mousePositionObject, roomNodeTypeList.list.Find(x => x.isNone)); // Using predicate and we are only interested in the unassigned room node
+        // If current node graph empty then add entrance room node first
+        if (currentRoomNodeGraph.roomNodeList.Count == 0)
+        {
+            CreateRoomNode(new Vector2(200f, 200f), roomNodeTypeList.list.Find(x => x.isEntrance));
+        }
+
+        CreateRoomNode(mousePositionObject, roomNodeTypeList.list.Find(x => x.isNone)); // Using predicate and we are setting the new created node as unassigned or isNone type
     }
 
-     /// <summary>
-     /// Create a room node at the mouse position - overloaded to also pass in RoomNodeTypeSO
-     /// </summary>
+    /// <summary>
+    /// Create a room node at the mouse position - overloaded to also pass in RoomNodeTypeSO
+    /// </summary>
     private void CreateRoomNode(object mousePositionObject, RoomNodeTypeSO roomNodeType)
     {
         Vector2 mousePosition = (Vector2)mousePositionObject;
