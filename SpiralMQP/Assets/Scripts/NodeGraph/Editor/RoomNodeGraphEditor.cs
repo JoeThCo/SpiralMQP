@@ -15,6 +15,7 @@ public class RoomNodeGraphEditor : EditorWindow
 
     private static RoomNodeGraphSO currentRoomNodeGraph;
     private RoomNodeTypeListSO roomNodeTypeList;
+    private RoomNodeSO currentRoomNode = null; // Current selected room node SO
 
     // Node layout values
     private const float nodeWidth = 160f;
@@ -24,7 +25,7 @@ public class RoomNodeGraphEditor : EditorWindow
 
     // Add a menu item named "Room Node Graph Editor" 
     // And define a PATH that we can call the menuitem 
-    [MenuItem("Room Node Graph Editor", menuItem = "Window/Dungeon Editor/Room Node Graph Editor")]
+    [MenuItem("Room Node Graph Editor", menuItem = "Window/Dungeon Editor/Room Node Graph Editor")] // FYI: Not necessary, but it's cool, thus we keep it
 
     //  Only static functions can use the MenuItem attribute.
     private static void OpenWindow()
@@ -75,7 +76,7 @@ public class RoomNodeGraphEditor : EditorWindow
         // If a scriptable object of type RoomNodeGraphSO has been selected then process
         if (currentRoomNodeGraph != null)
         {
-            // Process Events
+            // Process Events - one event at a time
             ProcessEvents(Event.current);
 
             // Draw Room Nodes
@@ -101,7 +102,41 @@ public class RoomNodeGraphEditor : EditorWindow
 
     private void ProcessEvents(Event currentEvent)
     {
-        ProcessRoomNodeGraphEvents(currentEvent);
+        // Get room node that mouse is over if it's null or not curerntly being dragged
+        if (currentRoomNode == null || currentRoomNode.isLeftClickDragging == false)
+        {
+            currentRoomNode = IsMouseOverRoomNode(currentEvent);
+        }
+
+        // If mouse isn't over a room node
+        if (currentRoomNode == null)
+        {
+            ProcessRoomNodeGraphEvents(currentEvent);
+        }
+
+        // Else process room node events
+        else
+        {
+            // Process room node events
+            currentRoomNode.ProcessEvents(currentEvent);
+        }
+
+    }
+
+    /// <summary>
+    /// Check to see the mouse is over a room node - if so then return the room node else return null
+    /// </summary>
+    private RoomNodeSO IsMouseOverRoomNode(Event currentEvent)
+    {
+        for (int i = currentRoomNodeGraph.roomNodeList.Count - 1; i >= 0; i--)
+        {
+            if (currentRoomNodeGraph.roomNodeList[i].rect.Contains(currentEvent.mousePosition)) // Check to see the mouse is over a room node
+            {
+                return currentRoomNodeGraph.roomNodeList[i];
+            }
+        }
+
+        return null;
     }
 
     /// <summary>

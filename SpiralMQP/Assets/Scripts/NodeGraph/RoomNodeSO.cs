@@ -20,6 +20,8 @@ public class RoomNodeSO : ScriptableObject
 #if UNITY_EDITOR
 
     [HideInInspector] public Rect rect;
+    [HideInInspector] public bool isLeftClickDragging = false;
+    [HideInInspector] public bool isSelected = false;
 
     public void Initialize(Rect rect, RoomNodeGraphSO nodeGraph, RoomNodeTypeSO roomNodeType)
     {
@@ -51,7 +53,7 @@ public class RoomNodeSO : ScriptableObject
         if (EditorGUI.EndChangeCheck()) EditorUtility.SetDirty(this); // save the changes we do in the popup
 
         GUILayout.EndArea();
-        
+
     }
 
     /// <summary>
@@ -70,6 +72,111 @@ public class RoomNodeSO : ScriptableObject
         }
 
         return roomArray;
+    }
+
+    /// <summary>
+    /// Process events for the node
+    /// </summary>
+    public void ProcessEvents(Event currentEvent)
+    {
+        switch (currentEvent.type)
+        {
+            // Process Mouse Down Event
+            case EventType.MouseDown:
+                ProcessMouseDownEvent(currentEvent);
+                break;
+            
+            // Process Mouse Up Event
+            case EventType.MouseUp:
+                ProcessMouseUpEvent(currentEvent);
+                break;
+            
+            // Process Mouse Drag Event
+            case EventType.MouseDrag:
+                ProcessMouseDragEvent(currentEvent);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Process mouse drag event
+    /// </summary>
+    private void ProcessMouseDragEvent(Event currentEvent)
+    {
+        // Left click drag event
+        if (currentEvent.button == 0)
+        {
+            ProcessLeftMouseDragEvent(currentEvent);
+        }
+    }
+
+    /// <summary>
+    /// Process left mouse drag event
+    /// </summary>
+    private void ProcessLeftMouseDragEvent(Event currentEvent)
+    {
+        isLeftClickDragging = true;
+
+        DragNode(currentEvent.delta); // well, this delta variable captures the relative movement of the mouse compared to the last event (just like the "difference")
+        GUI.changed = true;
+    }
+
+    /// <summary>
+    /// Drag the Node
+    /// </summary>
+    private void DragNode(Vector2 delta)
+    {
+        rect.position += delta; // Calculate and store the new position
+        EditorUtility.SetDirty(this);
+    }
+
+    /// <summary>
+    /// Process mouse up event
+    /// </summary>
+    private void ProcessMouseUpEvent(Event currentEvent)
+    {
+        // Left click up
+        if (currentEvent.button == 0)
+        {
+            ProcessLeftClickUpEvent();
+        }
+    }
+
+    /// <summary>
+    /// Process left click up event
+    /// </summary>
+    private void ProcessLeftClickUpEvent()
+    {
+        if (isLeftClickDragging)
+        {
+            isLeftClickDragging = false;
+        }
+    }
+
+    /// <summary>
+    /// Process mouse down events
+    /// </summary>
+    private void ProcessMouseDownEvent(Event currentEvent)
+    {
+        // Left click down
+        if (currentEvent.button == 0)
+        {
+            ProcessLeftClickDownEvent();
+        }
+    }
+
+    /// <summary>
+    /// Process left click down event
+    /// </summary>
+    private void ProcessLeftClickDownEvent()
+    {
+        Selection.activeObject = this; // When left click the node in Editor, the actual object will also be selected in the inspector
+
+        // Toggle node selection
+        isSelected = !isSelected;
     }
 
 #endif
