@@ -10,6 +10,8 @@ public class RoomNodeTypeListSO : ScriptableObject
     [Tooltip("This list should be created with all the RoomNodeTypeSO for the game - it is used instead of an enum")]
     public List<RoomNodeTypeSO> list;
 
+    #region Editor Code
+
     // Compiler directive: only runs in the unity editor
 #if UNITY_EDITOR
     /// <summary>
@@ -20,4 +22,6 @@ public class RoomNodeTypeListSO : ScriptableObject
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(list), list);
     }
 #endif
+
+    #endregion
 }

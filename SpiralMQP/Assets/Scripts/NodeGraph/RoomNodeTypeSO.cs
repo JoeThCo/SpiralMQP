@@ -14,6 +14,8 @@ public class RoomNodeTypeSO : ScriptableObject
     public bool isBossRoom; // One Type should be a boss room
     public bool isNone; // One Type should be none (unassigned)
 
+    #region Editor Code
+
     // Compiler directive: only runs in the unity editor
 #if UNITY_EDITOR
     /// <summary>
@@ -24,4 +26,6 @@ public class RoomNodeTypeSO : ScriptableObject
         HelperUtilities.ValidateCheckEmptyString(this, nameof(roomNodeTypeName), roomNodeTypeName);
     }
 #endif
+
+    #endregion
 }
