@@ -60,6 +60,36 @@ public class RoomNodeSO : ScriptableObject
             int selection = EditorGUILayout.Popup("", selected, GetRoomNodeTypesToDisplay());
 
             roomNodeType = roomNodeTypeList.list[selection];
+
+            // If the room type selection has changed making child connections potentially invalid
+            // Following conditions will break the validation rules
+            // 1. a corridor -> a room
+            // 2. a room -> a corridor
+            // 3. a non-boss room - > a boss room
+            if (roomNodeTypeList.list[selected].isCorridor && !roomNodeTypeList.list[selection].isCorridor 
+                || !roomNodeTypeList.list[selected].isCorridor && roomNodeTypeList.list[selection].isCorridor 
+                || !roomNodeTypeList.list[selected].isBossRoom && roomNodeTypeList.list[selection].isBossRoom)
+            {
+                // If a room node type has been changed and it already has children then delete the parent child links since we need to revalidate any
+                if (childRoomNodeIDList.Count > 0)
+                {
+                    for (int i = childRoomNodeIDList.Count - 1; i >= 0; i--)
+                    {
+                        // Get child room node 
+                        RoomNodeSO childRoomNode = roomNodeGraph.GetRoomNode(childRoomNodeIDList[i]);
+
+                        // If the child room node is not null
+                        if (childRoomNode != null)
+                        {
+                            // Remove childID from parent room node
+                            RemoveChildRoomNodeIDFromRoomNode(childRoomNode.id);
+
+                            // Remove parentID from child room node
+                            childRoomNode.RemoveParentRoomNodeIDFromRoomNode(id);
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -255,7 +285,7 @@ public class RoomNodeSO : ScriptableObject
 
         // If the node already has a child with this child ID return false
         if (childRoomNodeIDList.Contains(childID)) return false;
-        
+
         // If this node ID and the child node ID are the same return false
         if (id == childID) return false;
 
@@ -267,7 +297,7 @@ public class RoomNodeSO : ScriptableObject
 
         // If child is a corridor and this node is also a corridor return false
         if (roomNodeGraph.GetRoomNode(childID).roomNodeType.isCorridor && roomNodeType.isCorridor) return false;
-      
+
         // If child is not a corridor and this node is not a corridor either return false
         if (!roomNodeGraph.GetRoomNode(childID).roomNodeType.isCorridor && !roomNodeType.isCorridor) return false;
 
@@ -291,6 +321,34 @@ public class RoomNodeSO : ScriptableObject
     {
         parentRoomNodeIDList.Add(parentID);
         return true;
+    }
+
+    /// <summary>
+    /// Romove the childID from the node (returns true if the ndoe has been removed, false otherwise)
+    /// </summary>
+    public bool RemoveChildRoomNodeIDFromRoomNode(string childID)
+    {
+        // If the node contains the child ID then remove it
+        if (childRoomNodeIDList.Contains(childID))
+        {
+            childRoomNodeIDList.Remove(childID);
+            return true;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Romove the parentID from the node (returns true if the ndoe has been removed, false otherwise)
+    /// </summary>
+    public bool RemoveParentRoomNodeIDFromRoomNode(string parentID)
+    {
+        // If the node contains the parent ID then remove it
+        if (parentRoomNodeIDList.Contains(parentID))
+        {
+            parentRoomNodeIDList.Remove(parentID);
+            return true;
+        }
+        return false;
     }
 
 #endif
