@@ -11,21 +11,27 @@ using System;
 public class RoomNodeGraphEditor : EditorWindow
 {
     // Define a customized GUI style
-    private GUIStyle roomNodeStyle;
-    private GUIStyle roomNodeSelectedStyle;
+    private GUIStyles _GUIStyles = new GUIStyles();
+
+    // Graph
+    private Vector2 graphOffset;
+    private Vector2 graphDrag;
+
     private static RoomNodeGraphSO currentRoomNodeGraph;
     private RoomNodeTypeListSO roomNodeTypeList;
     private RoomNodeSO currentRoomNode = null; // Current selected room node SO
 
     // Node layout values
-    private const float nodeWidth = 160f;
-    private const float nodeHeight = 75f;
-    private const int nodePadding = 25;
-    private const int nodeBorder = 12;
+    private const float nodeWidth = 150f;
+    private const float nodeHeight = 65f;
 
     // Connecting line values
     private const float connectingLineWidth = 3f;
     private const float connectingLineArrowSize = 6f;
+
+    // Grid Spacing
+    private const float gridLarge = 100f;
+    private const float gridSmall = 25f;
 
     // Add a menu item named "Room Node Graph Editor" 
     // And define a PATH that we can call the menuitem 
@@ -45,25 +51,14 @@ public class RoomNodeGraphEditor : EditorWindow
         // Subscribe to the inspector selection changed event
         Selection.selectionChanged += InspectorSelectionChanged; // Selection.selectionChanged: Delegate callback triggered when currently active/selected itme has changed
 
-        // Define node layout style
-        roomNodeStyle = new GUIStyle();
-        roomNodeStyle.normal.background = EditorGUIUtility.Load("node5") as Texture2D;
-        roomNodeStyle.normal.textColor = Color.white;
-        roomNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
-        roomNodeStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
-
-        // Define selected node layout style
-        roomNodeSelectedStyle = new GUIStyle();
-        roomNodeSelectedStyle.normal.background = EditorGUIUtility.Load("node5 on") as Texture2D;
-        roomNodeSelectedStyle.normal.textColor = Color.white;
-        roomNodeSelectedStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
-        roomNodeSelectedStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
+        // Initialize all GUI styles
+        _GUIStyles.Initialize();
 
         // Load Room Node Types
         roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
         // Unsubscribe from the inspector selection changed event
         Selection.selectionChanged -= InspectorSelectionChanged;
@@ -105,6 +100,8 @@ public class RoomNodeGraphEditor : EditorWindow
 
     /// <summary>
     /// Draw Editor GUI
+    /// OnGUI() is a special method that is called automatically by the Unity engine to allow you to draw custom GUI elements on the screen.
+    /// This method is called every frame
     /// </summary>
     private void OnGUI()
     {
@@ -112,6 +109,10 @@ public class RoomNodeGraphEditor : EditorWindow
         // IMPORTANT: The order of function execution matters
         if (currentRoomNodeGraph != null)
         {
+            // Draw Grid
+            DrawBackgroundGrid(gridSmall, 0.2f, Color.grey);
+            DrawBackgroundGrid(gridLarge, 0.3f, Color.grey);
+
             // Draw line if being dragged
             DrawDraggedLine();
 
@@ -126,6 +127,42 @@ public class RoomNodeGraphEditor : EditorWindow
         }
 
         if (GUI.changed) Repaint();
+    }
+
+    /// <summary>
+    /// Draw a background grid for the room node graph editor
+    /// </summary>
+    private void DrawBackgroundGrid(float gridSize, float girdOpacity, Color gridColor)
+    {
+        // Calculate the number of vetical and horizontal lines we need to draw 
+        int verticalLineCount = Mathf.CeilToInt((position.width + gridSize) / gridSize);
+        int horizontalLineCount = Mathf.CeilToInt((position.height + gridSize) / gridSize);
+
+        // Set the line color
+        Handles.color = new Color(gridColor.r, gridColor.g, gridColor.b, girdOpacity);
+
+        // Set up the graph offset with half of the graphdrag
+        // The * 0.5f is a bit tricky here, since DrawBackgroundGrid() is being called two timesand every time this function gets called, 
+        // graphOffset will add up the graphDrag, to maintain the same drag amount, the graphOffset value needs to be divided by two.
+        graphOffset += graphDrag * 0.5f;
+
+        // Set up grid offset
+        Vector3 gridOffset = new Vector3(graphOffset.x % gridSize, graphOffset.y % gridSize, 0);
+
+        // Draw vertical lines
+        for (int i = 0; i < verticalLineCount; i++)
+        {
+            Handles.DrawLine(new Vector3(gridSize * i, -gridSize, 0) + gridOffset, new Vector3(gridSize * i, position.height + gridSize, 0f) + gridOffset);
+        }
+
+        // Draw horizontal lines
+        for (int i = 0; i < horizontalLineCount; i++)
+        {
+            Handles.DrawLine(new Vector3(-gridSize, gridSize * i, 0) + gridOffset, new Vector3(position.width + gridSize, gridSize * i, 0f) + gridOffset);
+        }
+
+        Handles.color = Color.white;
+
     }
 
 
@@ -208,19 +245,44 @@ public class RoomNodeGraphEditor : EditorWindow
         // Loop through all room nodes and draw them
         foreach (RoomNodeSO roomNode in currentRoomNodeGraph.roomNodeList)
         {
-            if (roomNode.isSelected)
-            {
-                roomNode.Draw(roomNodeSelectedStyle);
-            }
+            // If this room node is a corridor, set the new corridor width and height
+            if (roomNode.roomNodeType.isCorridor) roomNode.rect.size = new Vector2(_GUIStyles.corridorNodeWidth,_GUIStyles.corridorNodeHeight); 
+           
+            // Else, set to normal width and height
+            else roomNode.rect.size = new Vector2(nodeWidth,nodeHeight);
 
-            else roomNode.Draw(roomNodeStyle);
+            // Draw the room node with its corresponding GUI style
+            roomNode.Draw(GetRoomNodeStyle(roomNode));     
         }
 
         GUI.changed = true; // Mark the change to true
     }
 
+    /// <summary>
+    /// Get the corresponding room node GUI style
+    /// </summary>
+    private GUIStyle GetRoomNodeStyle(RoomNodeSO roomNode)
+    {
+        if (roomNode.roomNodeType.isEntrance)
+        {
+            return roomNode.isSelected ? _GUIStyles.entranceNodeSelectedStyle : _GUIStyles.entranceNodeStyle;
+        }
+        if (roomNode.roomNodeType.isCorridor)
+        {
+            return roomNode.isSelected ? _GUIStyles.corridorNodeSelectedStyle : _GUIStyles.corridorNodeStyle;
+        }
+        if (roomNode.roomNodeType.isBossRoom)
+        {
+            return roomNode.isSelected ? _GUIStyles.bossRoomNodeSelectedStyle : _GUIStyles.bossRoomNodeStyle;
+        }
+        return roomNode.isSelected ? _GUIStyles.roomNodeSelectedStyle : _GUIStyles.roomNodeStyle;
+    }
+
     private void ProcessEvents(Event currentEvent)
     {
+        // Reset graph drag
+        graphDrag = Vector2.zero;
+
         // Get room node that mouse is over if it's null or not curerntly being dragged
         if (currentRoomNode == null || currentRoomNode.isLeftClickDragging == false)
         {
@@ -327,6 +389,27 @@ public class RoomNodeGraphEditor : EditorWindow
         {
             ProcessRightMouseDragEvent(currentEvent);
         }
+
+        // Process left click drag event - drag node graph
+        else if (currentEvent.button == 0)
+        {
+            ProcessLeftMouseDragEvent(currentEvent.delta);
+        }
+    }
+
+    /// <summary>
+    /// Process left mouse drag event - draw line
+    /// </summary>
+    private void ProcessLeftMouseDragEvent(Vector2 dragDelta)
+    {
+        graphDrag = dragDelta;
+
+        for (int i = 0; i < currentRoomNodeGraph.roomNodeList.Count; i++)
+        {
+            currentRoomNodeGraph.roomNodeList[i].DragNode(dragDelta);
+        }
+
+        GUI.changed = true;
     }
 
     /// <summary>
@@ -440,7 +523,7 @@ public class RoomNodeGraphEditor : EditorWindow
                     }
                 }
             }
-        } 
+        }
 
         // Delete queued room nodes
         while (roomNodeDeletionQueue.Count > 0)
@@ -515,10 +598,11 @@ public class RoomNodeGraphEditor : EditorWindow
         // If current node graph empty then add entrance room node first
         if (currentRoomNodeGraph.roomNodeList.Count == 0)
         {
-            CreateRoomNode(new Vector2(200f, 200f), roomNodeTypeList.list.Find(x => x.isEntrance));
+            CreateRoomNode(mousePositionObject, roomNodeTypeList.list.Find(x => x.isEntrance));
+            CreateRoomNode((object)((Vector2)mousePositionObject + new Vector2(200f, 0)), roomNodeTypeList.list.Find(x => x.isNone));
         }
 
-        CreateRoomNode(mousePositionObject, roomNodeTypeList.list.Find(x => x.isNone)); // Using predicate and we are setting the new created node as unassigned or isNone type
+        else CreateRoomNode(mousePositionObject, roomNodeTypeList.list.Find(x => x.isNone)); // Using predicate and we are setting the new created node as unassigned or isNone type
     }
 
     /// <summary>
@@ -544,4 +628,5 @@ public class RoomNodeGraphEditor : EditorWindow
         // Refresh graph node dictionary
         currentRoomNodeGraph.OnValidate();
     }
+
 }

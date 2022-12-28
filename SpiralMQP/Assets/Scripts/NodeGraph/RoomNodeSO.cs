@@ -170,7 +170,7 @@ public class RoomNodeSO : ScriptableObject
     /// <summary>
     /// Drag the Node
     /// </summary>
-    private void DragNode(Vector2 delta)
+    public void DragNode(Vector2 delta)
     {
         rect.position += delta; // Calculate and store the new position
         EditorUtility.SetDirty(this);
