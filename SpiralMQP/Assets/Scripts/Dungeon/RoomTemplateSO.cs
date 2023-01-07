@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Room_", menuName = "Scriptable Objects/Dungeon/Room")]
 public class RoomTemplateSO : ScriptableObject
 {
-    [HideInInspector] public string guid;
+    [HideInInspector] public string guid; // A global unique ID for this SO
 
     #region Header ROOM PREFAB
 
@@ -22,7 +22,7 @@ public class RoomTemplateSO : ScriptableObject
 
     public GameObject prefab;
 
-    [HideInInspector] public GameObject previousPrefab; // this is used to regenerate the guid if the so is copied and the prefab is changed
+    [HideInInspector] public GameObject previousPrefab; // This is used to regenerate the guid if the SO is copied and the prefab is changed
 
 
     #region Header ROOM CONFIGURATION
@@ -85,6 +85,7 @@ public class RoomTemplateSO : ScriptableObject
 #if UNITY_EDITOR
 
     // Validate SO fields
+    // Set GUID and previousPrefab
     private void OnValidate()
     {
         // Set unique GUID if empty or the prefab changes
