@@ -25,6 +25,13 @@ public static class HelperUtilities
         bool error = false;
         int count = 0;
 
+        // Check for null case
+        if (enumerableObjectToCheck == null)
+        {
+            Debug.Log(fieldName + " is null in object " + obj.name.ToString());
+            return true;
+        }
+
         foreach (var item in enumerableObjectToCheck)
         {
             // In SO lists, if you delete a value, it retains a null value in the inspector, so this check is necessary
