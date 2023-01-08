@@ -14,8 +14,8 @@ public class RoomNodeTypeSO : ScriptableObject
     public bool isBossRoom; // One Type should be a boss room
     public bool isNone; // One Type should be none (unassigned)
 
-    #region Editor Code
 
+    #region Editor Code
     // Compiler directive: only runs in the unity editor
 #if UNITY_EDITOR
     /// <summary>

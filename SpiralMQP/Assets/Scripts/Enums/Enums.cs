@@ -1,9 +1,24 @@
 ﻿public enum Orientation
 {
-    NORTH,
-    EAST,
-    SOUTH,
-    WEST,
-    NONE
+    north,
+    east,
+    south,
+    west,
+    none
+}
+
+public enum GameState
+{
+    gameStarted,
+    playingLevel,
+    engagingEnemies,
+    bossStage,
+    engagingBoss,
+    levelCompleted,
+    gameWon,
+    gameLost,
+    gamePause,
+    dungeonOverviewMap,
+    restartGame
 }
 
