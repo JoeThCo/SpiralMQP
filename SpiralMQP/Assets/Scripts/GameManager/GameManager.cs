@@ -12,26 +12,26 @@ public class GameManager : SingletonAbstract<GameManager>
     [SerializeField] private List<DungeonLevelSO> dungeonLevelList;
 
     [Tooltip("Create with the starting dungeon level for testing, first level = 0")]
-    [SerializeField] private int currentDungeonLevelListIndex = 0; 
+    [SerializeField] private int currentDungeonLevelListIndex = 0;
 
     [HideInInspector] public GameState gameState;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         gameState = GameState.gameStarted;
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        HandleGameState();
 
         // For testing only
         if (Input.GetKeyDown(KeyCode.R))
         {
             gameState = GameState.gameStarted;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        HandleGameState();
     }
 
     /// <summary>
@@ -47,13 +47,19 @@ public class GameManager : SingletonAbstract<GameManager>
                 PlayDungeonLevel(currentDungeonLevelListIndex);
                 gameState = GameState.playingLevel;
                 break;
-            
+
         }
     }
 
-    private void PlayDungeonLevel(int currentDungeonLevelListIndex)
+    private void PlayDungeonLevel(int dungeonLevelListIndex)
     {
-        throw new NotImplementedException();
+        // Build dungeon for level
+        bool dungeonBuiltSuccessfully = DungeonBuilder.Instance.GenerateDungeon(dungeonLevelList[dungeonLevelListIndex]);
+
+        if (!dungeonBuiltSuccessfully)
+        {
+            Debug.LogError("Couldn't build dungeon from specified rooms and node graphs");
+        }
     }
 
 
