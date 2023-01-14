@@ -14,6 +14,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(PolygonCollider2D))] // Used as a trigger for detecting enemy ammo collision
+[RequireComponent(typeof(Health))]
 #endregion
 public class Player : MonoBehaviour // Master reference class for all these components and variables
 {

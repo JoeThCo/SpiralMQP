@@ -97,4 +97,31 @@ public static class HelperUtilities
 
         return error;
     }
+
+
+    /// <summary>
+    /// Get the nearest spawn position to player
+    /// </summary>
+    public static Vector3 GetSpawnPositionNearestToPlayer(Vector3 playerPosition)
+    {
+        Room currentRoom = GameManager.Instance.GetCurrentRoom(); 
+
+        Grid grid = currentRoom.instantiatedRoom.grid;
+
+        Vector3 nearestSpawnPosition = new Vector3(10000f, 10000f, 0f); // Set the initial value to a large vector and in the comparison process, the value will be updated with smaller vectors
+
+        // Loop through room spawn positions
+        foreach (Vector2Int spawnPositionGrid in currentRoom.spawnPositionArray)
+        {
+            // Convert the spawn grid positions to world positions
+            Vector3 spawnPositionWorld = grid.CellToWorld((Vector3Int)spawnPositionGrid);
+
+            if (Vector3.Distance(spawnPositionWorld, playerPosition) < Vector3.Distance(nearestSpawnPosition, playerPosition))
+            {
+                nearestSpawnPosition = spawnPositionWorld;
+            }
+        }
+
+        return nearestSpawnPosition;
+    }
 }

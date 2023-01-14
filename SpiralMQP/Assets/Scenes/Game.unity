@@ -577,9 +577,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.115384616
+    y: 0.113879
     width: 1
-    height: 0.76802886
+    height: 0.77268684
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -715,6 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 919417051}
   - component: {fileID: 919417050}
+  - component: {fileID: 919417052}
   m_Layer: 0
   m_Name: CinemachineTargetGroup
   m_TagString: Untagged
@@ -753,6 +754,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &919417052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919417049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aca981523cd2bf49beeba6ccfcf16cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2020732478
 GameObject:
   m_ObjectHideFlags: 0
