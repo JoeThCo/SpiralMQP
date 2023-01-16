@@ -14,13 +14,21 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(PolygonCollider2D))] // Used as a trigger for detecting enemy ammo collision
+[RequireComponent(typeof(PlayerControl))]
 [RequireComponent(typeof(Health))]
+[RequireComponent(typeof(IdleEvent))]
+[RequireComponent(typeof(Idle))]
+[RequireComponent(typeof(AimWeaponEvent))]
+[RequireComponent(typeof(AimWeapon))]
+[RequireComponent(typeof(AnimatePlayer))]
 #endregion
 public class Player : MonoBehaviour // Master reference class for all these components and variables
 {
     // Comment out the "HideInInspector" for debugging if you want
     [HideInInspector] public PlayerDetailsSO playerDetails; 
     [HideInInspector] public Health health;
+    [HideInInspector] public IdleEvent idleEvent;
+    [HideInInspector] public AimWeaponEvent aimWeaponEvent;
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Animator animator;
 
@@ -29,6 +37,8 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     {
         // Load components
         health = GetComponent<Health>();
+        idleEvent = GetComponent<IdleEvent>();
+        aimWeaponEvent = GetComponent<AimWeaponEvent>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
