@@ -1,0 +1,110 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "DungeonLevel", menuName = "Scriptable Objects/Dungeon Level")]
+public class DungeonLevelSO : ScriptableObject
+{
+    [Space(10)]
+    [Header("BASIC LEVEL DETAILS")]
+    [Tooltip("The name for the level")]
+    public string levelName;
+
+    [Space(10)]
+    [Header("ROOM TEMPLATES FOR LEVEL")]
+    [Tooltip("Create the list with the room templates that you want to be part of the level. You need to ensure that the room templates are included for all room node types that are specified in the Room Node Graphs for the level.")]
+    public List<RoomTemplateSO> roomTemplateList;
+
+    [Space(10)]
+    [Header("ROOM NODE GRAPHS FOR LEVEL")]
+    [Tooltip("Create this list with the room node graphs which should be randomly selected from for the level.")]
+    public List<RoomNodeGraphSO> roomNodeGraphList;
+
+
+    #region Editor Code
+    // Compiler directive: only runs in the unity editor
+#if UNITY_EDITOR
+    /// <summary>
+    /// Editor-only function that Unity calls when the script is loaded or a value changes in the inspector
+    /// </summary>
+    private void OnValidate()
+    {
+        HelperUtilities.ValidateCheckEmptyString(this, nameof(levelName), levelName);
+        if (HelperUtilities.ValidateCheckEnumerableValues(this,nameof(roomTemplateList), roomTemplateList)) return;
+        if (HelperUtilities.ValidateCheckEnumerableValues(this,nameof(roomNodeGraphList), roomNodeGraphList)) return;
+
+        // Check to make sure that room templates are specified for all the node types in the specified node graphs
+        // First check that north/south corridor, east/west corridor and entrance types have been specified
+        bool isEWCorridor = false;
+        bool isNSCorridor = false;
+        bool isEntrance = false;
+
+        // Loop through all room templates to check that this node type has been specified
+        foreach (RoomTemplateSO roomTemplateSO in roomTemplateList)
+        {
+            if (roomTemplateSO == null) return; // Just in case somehow the HelperUtilities.ValidateCheckEnumerableValues function didn't catch the null values
+
+            if (roomTemplateSO.roomNodeType.isCorridorEW) isEWCorridor = true;
+
+            if (roomTemplateSO.roomNodeType.isCorridorNS) isNSCorridor = true;
+
+            if (roomTemplateSO.roomNodeType.isEntrance) isEntrance = true;
+        }
+
+        // Send log regarding the issue
+        if (isEWCorridor == false)
+        {
+            Debug.Log("In " + this.name.ToString() + " : No E/W Corridor Room Type Specified");
+        }
+         if (isNSCorridor == false)
+        {
+            Debug.Log("In " + this.name.ToString() + " : No N/S Corridor Room Type Specified");
+        }
+         if (isEntrance == false)
+        {
+            Debug.Log("In " + this.name.ToString() + " : No Entrance Room Type Specified");
+        }
+
+        // Loop through all node graphs
+        foreach (RoomNodeGraphSO roomNodeGraph in roomNodeGraphList)
+        {
+            if (roomNodeGraph == null) return;
+
+            // Loop through all nodes in node graph
+            foreach (RoomNodeSO roomNodeSO in roomNodeGraph.roomNodeList)
+            {
+                if (roomNodeSO == null) continue;
+
+                // Check that a room template has been specified for each roomNode type
+                // Corridors and entrance already checked
+                if (roomNodeSO.roomNodeType.isEntrance || roomNodeSO.roomNodeType.isCorridorEW || roomNodeSO.roomNodeType.isCorridorNS || roomNodeSO.roomNodeType.isCorridor 
+                    || roomNodeSO.roomNodeType.isNone) continue;
+                
+                bool isRoomNodeTypeFound = false;
+
+                // Loop through all room templates to check that this node type has been specified
+                foreach (RoomTemplateSO roomTemplateSO in roomTemplateList)
+                {
+                    if (roomTemplateSO == null) continue;
+                    if (roomTemplateSO.roomNodeType == roomNodeSO.roomNodeType)
+                    {
+                        isRoomNodeTypeFound = true;
+                        break;
+                    }
+                }
+
+                // Send message
+                if (!isRoomNodeTypeFound)
+                {
+                    Debug.Log("In " + this.name.ToString() + " : No room templates " + roomNodeSO.roomNodeType.name.ToString() + " found for node graph " + roomNodeGraph.name.ToString());
+                }
+            }
+           
+        }
+       
+    }
+#endif
+
+    #endregion
+
+}
