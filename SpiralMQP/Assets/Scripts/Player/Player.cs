@@ -20,8 +20,11 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(Idle))]
 [RequireComponent(typeof(AimWeaponEvent))]
 [RequireComponent(typeof(AimWeapon))]
+[RequireComponent(typeof(MovementByVelocityEvent))]
+[RequireComponent(typeof(MovementByVelocity))]
 [RequireComponent(typeof(AnimatePlayer))]
 #endregion
+
 public class Player : MonoBehaviour // Master reference class for all these components and variables
 {
     // Comment out the "HideInInspector" for debugging if you want
@@ -29,6 +32,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     [HideInInspector] public Health health;
     [HideInInspector] public IdleEvent idleEvent;
     [HideInInspector] public AimWeaponEvent aimWeaponEvent;
+    [HideInInspector] public MovementByVelocityEvent movementByVelocityEvent;
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Animator animator;
 
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
         health = GetComponent<Health>();
         idleEvent = GetComponent<IdleEvent>();
         aimWeaponEvent = GetComponent<AimWeaponEvent>();
+        movementByVelocityEvent = GetComponent<MovementByVelocityEvent>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }

@@ -131,7 +131,7 @@ public static class HelperUtilities
 
 
     /// <summary>
-    /// Positive value debug check
+    /// Positive value debug check - for the integer value
     /// </summary>
     public static bool ValidateCheckPositiveValue(Object thisObject, string fieldName, int valueToCheck, bool isZeroAllowed)
     {
@@ -153,6 +153,52 @@ public static class HelperUtilities
                 error = true;
             }
         }
+
+        return error;
+    }
+
+    /// <summary>
+    /// Positive value debug check - for the float value
+    /// </summary>
+    public static bool ValidateCheckPositiveValue(Object thisObject, string fieldName, float valueToCheck, bool isZeroAllowed)
+    {
+        bool error = false;
+
+        if (isZeroAllowed)
+        {
+            if (valueToCheck < 0)
+            {
+                Debug.Log(fieldName + " must contain a positive value or zero in object " + thisObject.name.ToString());
+                error = true;
+            }
+        }
+        else
+        {
+            if (valueToCheck <= 0)
+            {
+                Debug.Log(fieldName + " must contain a positive value in object " + thisObject.name.ToString());
+                error = true;
+            }
+        }
+
+        return error;
+    }
+
+    /// <summary>
+    /// Positive range debug check - set isZeroAllowed to true if the min and max range values can both be zero.
+    /// </summary>
+    /// <returns>true if there is an error</returns>
+    public static bool ValidateCheckPositiveRange(Object thisObject, string fieldNameMin, float valueToCheckMin, string fieldNameMax, float valueToCheckMax, bool isZeroAllowed)
+    {
+        bool error = false;
+        if (valueToCheckMin > valueToCheckMax)
+        {
+            Debug.Log(fieldNameMin + " must be less than or equal to " + fieldNameMax + " in object " + thisObject.name.ToString());
+            error = true;
+        }
+
+        if (ValidateCheckPositiveValue(thisObject, fieldNameMin, valueToCheckMin, isZeroAllowed)) error = true; // Check if the min value is positive
+        if (ValidateCheckPositiveValue(thisObject, fieldNameMax, valueToCheckMax, isZeroAllowed)) error = true; // Check if the max value is positive
 
         return error;
     }

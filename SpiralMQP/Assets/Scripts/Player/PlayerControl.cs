@@ -8,12 +8,21 @@ public class PlayerControl : MonoBehaviour
     [Tooltip("The player WeaponShootPosition gameobject in the hierarchy")]
     [SerializeField] private Transform weaponShootPosition;
 
+
+    [Tooltip("MovementDetailsSO containing movement details such as speed.")]
+    [SerializeField] private MovementDetailsSO movementDetails;
+
+
     private Player player;
+    private float moveSpeed;
+
 
     private void Awake()
     {
         // load components
         player = GetComponent<Player>();
+
+        moveSpeed = movementDetails.GetMoveSpeed();
     }
 
     private void Update()
@@ -30,7 +39,29 @@ public class PlayerControl : MonoBehaviour
     /// </summary>
     private void MovementInput()
     {
-        player.idleEvent.CallIdleEvent();
+        // Get movement input (tracks not only the arrows keys but also the WASD)
+        float horizontalMovement = Input.GetAxisRaw("Horizontal"); // On keyboard, only return -1(left), 0(no horizontal movement) or 1(right) 
+        float verticalMovement = Input.GetAxisRaw("Vertical"); // On keyboard, only return -1(down), 0(no vertical movement) or 1(up)
+
+        // Create a direction vector based on the input
+        Vector2 direction = new Vector2(horizontalMovement, verticalMovement);
+
+        // Adjust distance for diagonal movement (pythagoras approximation)
+        if (horizontalMovement != 0f && verticalMovement !=0f) // Going in a diagonal direction
+        {
+            direction *= 0.7f; // By doing this we maintain the distance of 1 in all direction
+        }
+
+        // If there is movement
+        if (direction != Vector2.zero)
+        {
+            // Trigger movement event
+            player.movementByVelocityEvent.CallMovementByVelocityEvent(direction, moveSpeed);
+        }
+        else // Trigger idle event
+        {
+            player.idleEvent.CallIdleEvent();
+        }
     }
 
     /// <summary>
@@ -72,4 +103,14 @@ public class PlayerControl : MonoBehaviour
         // Trigger weapon aim event
         player.aimWeaponEvent.CallAimWeaponEvent(playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
     }
+
+
+    #region Validation
+#if UNITY_EDITOR
+    private void OnValidate() 
+    {
+       HelperUtilities.ValidateCheckNullValue(this, nameof(movementDetails), movementDetails);
+    }
+#endif
+    #endregion
 }
