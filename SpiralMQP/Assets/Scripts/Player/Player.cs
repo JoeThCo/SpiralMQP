@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+
 #region REQUIRED COMPONENTS
 [DisallowMultipleComponent]
 
@@ -22,6 +23,8 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(AimWeapon))]
 [RequireComponent(typeof(MovementByVelocityEvent))]
 [RequireComponent(typeof(MovementByVelocity))]
+[RequireComponent(typeof(MovementToPositionEvent))]
+[RequireComponent(typeof(MovementToPosition))]
 [RequireComponent(typeof(AnimatePlayer))]
 #endregion
 
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     [HideInInspector] public IdleEvent idleEvent;
     [HideInInspector] public AimWeaponEvent aimWeaponEvent;
     [HideInInspector] public MovementByVelocityEvent movementByVelocityEvent;
+    [HideInInspector] public MovementToPositionEvent movementToPositionEvent;
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Animator animator;
 
@@ -44,6 +48,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
         idleEvent = GetComponent<IdleEvent>();
         aimWeaponEvent = GetComponent<AimWeaponEvent>();
         movementByVelocityEvent = GetComponent<MovementByVelocityEvent>();
+        movementToPositionEvent = GetComponent<MovementToPositionEvent>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
