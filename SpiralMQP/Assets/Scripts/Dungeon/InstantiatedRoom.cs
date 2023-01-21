@@ -28,6 +28,20 @@ public class InstantiatedRoom : MonoBehaviour
         roomColliderBounds = boxCollider2D.bounds;
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // If the player triggered the collider
+        if (other.tag == Settings.playerTag && room != GameManager.Instance.GetCurrentRoom())
+        {
+            // Set this room as visited
+            this.room.isPreviouslyVisited = true;
+
+            // Call room changed event
+            StaticEventHandler.CallRoomChangedEvent(room);
+        }
+    }
+
     /// <summary>
     /// Initialize the instantiated room
     /// </summary>
@@ -37,7 +51,76 @@ public class InstantiatedRoom : MonoBehaviour
 
         BlockOffUnusedDoorways();
 
+        AddDoorsToRooms();
+
         DisableCollisionTilemapRenderer();
+    }
+
+
+    /// <summary>
+    /// Add opening doors if this is not a corridor room
+    /// </summary>
+    private void AddDoorsToRooms()
+    {
+        // If the room is a corridor then return
+        if (room.roomNodeType.isCorridorEW || room.roomNodeType.isCorridorNS) return;
+
+        // Instantiate door prefabs at doorway positions
+        foreach (Doorway doorway in room.doorWayList)
+        {
+            // If the doorway prefab isn't null and the doorway is connected
+            if (doorway.doorPrefab != null && doorway.isConnected)
+            {
+                float tileDistance = Settings.tileSizePixels / Settings.pixelsPerUnit;
+
+                GameObject door = null;
+
+                if (doorway.orientation == Orientation.north)
+                {
+                    // Create door with parent as the room
+                    door = Instantiate(doorway.doorPrefab, gameObject.transform);
+
+                    // The position is case specific, for differnt doors, we might need different calculation
+                    door.transform.localPosition = new Vector3(doorway.position.x + tileDistance / 2f, doorway.position.y + tileDistance, 0f);
+                }
+                else if (doorway.orientation == Orientation.south)
+                {
+                    // Create door with parent as the room
+                    door = Instantiate(doorway.doorPrefab, gameObject.transform);
+
+                    // The position is case specific, for differnt doors, we might need different calculation
+                    door.transform.localPosition = new Vector3(doorway.position.x + tileDistance / 2f, doorway.position.y, 0f);
+                }
+                else if (doorway.orientation == Orientation.east)
+                {
+                    // Create door with parent as the room
+                    door = Instantiate(doorway.doorPrefab, gameObject.transform);
+
+                    // The position is case specific, for differnt doors, we might need different calculation
+                    door.transform.localPosition = new Vector3(doorway.position.x + tileDistance, doorway.position.y + tileDistance * 1.25f, 0f);
+                }
+                else if (doorway.orientation == Orientation.west)
+                {
+                    // Create door with parent as the room
+                    door = Instantiate(doorway.doorPrefab, gameObject.transform);
+
+                    // The position is case specific, for differnt doors, we might need different calculation
+                    door.transform.localPosition = new Vector3(doorway.position.x, doorway.position.y + tileDistance * 1.25f, 0f);
+                }
+
+                // Get door component
+                Door doorComponent = door.GetComponent<Door>();
+
+                // Set if door is part of a boss room
+                if (room.roomNodeType.isBossRoom)
+                {
+                    doorComponent.isBossRoomDoor = true;
+
+                    // Lock the door to prevent access to the boss room when first instantiated
+                    doorComponent.LockDoor();
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -70,15 +153,15 @@ public class InstantiatedRoom : MonoBehaviour
             {
                 BlockADoorwayOnTilemapLayer(decoration1Tilemap, doorway);
             }
-             if (decoration2Tilemap != null)
+            if (decoration2Tilemap != null)
             {
                 BlockADoorwayOnTilemapLayer(decoration2Tilemap, doorway);
             }
-             if (frontTilemap != null)
+            if (frontTilemap != null)
             {
                 BlockADoorwayOnTilemapLayer(frontTilemap, doorway);
             }
-            
+
         }
     }
 
@@ -94,12 +177,12 @@ public class InstantiatedRoom : MonoBehaviour
             case Orientation.south:
                 BlockDoorwayHorizontally(tilemap, doorway);
                 break;
-            
+
             case Orientation.east:
             case Orientation.west:
                 BlockDoorwayVertically(tilemap, doorway);
                 break;
-            
+
             case Orientation.none:
                 break;
         }

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public static class Settings
 {
+    #region UNITES
+    public const float pixelsPerUnit = 16f;
+    public const float tileSizePixels = 16f;
+    #endregion
+
+
     #region DUNGEON BUILD SETTINGS
     public const int maxDungeonRebuildAttemptsForRoomGraph = 1000;
     public const int maxDungeonBuildAttempt = 10; // To prevent the dungeon generation algorithm getting into an infinite loop
@@ -14,6 +20,7 @@ public static class Settings
     // Max number of child corridors leading from a room 
     // Maximum should be 3 although this is not recommended since it can cause the dungeon building to fail and the rooms are more likely NOT fit together
     public const int maxChildCorridor = 3;
+    public const float fadeInTime = 0.3f; // Time to fade in the room and door
     #endregion
 
 
@@ -32,6 +39,16 @@ public static class Settings
     public static int rollDown = Animator.StringToHash("rollDown");
     public static int rollLeft = Animator.StringToHash("rollLeft");
     public static int rollRight = Animator.StringToHash("rollRight");
+    public static float baseSpeedForPlayerAnimations = 8f;
 
+    // Animator parameters - Door
+    public static int open = Animator.StringToHash("open");
+
+    #endregion
+
+
+    #region GAMEOBJECT TAGS
+    public const string playerTag = "Player";
+    public const string playerWeapon = "playerWeapon";
     #endregion
 }
