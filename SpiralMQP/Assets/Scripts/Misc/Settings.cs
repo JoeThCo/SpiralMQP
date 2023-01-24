@@ -51,4 +51,11 @@ public static class Settings
     public const string playerTag = "Player";
     public const string playerWeapon = "playerWeapon";
     #endregion
+
+
+    #region FIRING CONTROL
+    // If the target distance is less than this value then aim angle will be used(calculated from player pivot point)
+    // Else the weapon aim angle will be used (calculated from weapon pivot point)
+    public const float useAimAngleDistance = 3.5f;
+    #endregion
 }

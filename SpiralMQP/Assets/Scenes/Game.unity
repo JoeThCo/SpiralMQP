@@ -323,7 +323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2696003a54ae5844187d8137c2cde810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolArray: []
+  poolArray:
+  - poolSize: 30
+    prefab: {fileID: 5891719235356115971, guid: 4dd74f46a4c79794eafebd550d3b2b1f, type: 3}
+    componentType: IFireable
 --- !u!4 &349196746
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,7 +1043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934304174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.417279, y: 11.875114, z: -0.32478172}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
