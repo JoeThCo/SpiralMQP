@@ -3,17 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Player))]
+[DisallowMultipleComponent]
 public class PlayerControl : MonoBehaviour
 {
-    [Tooltip("The player WeaponShootPosition gameobject in the hierarchy")]
-    [SerializeField] private Transform weaponShootPosition;
-
-
     [Tooltip("MovementDetailsSO containing movement details such as speed.")]
     [SerializeField] private MovementDetailsSO movementDetails;
 
 
     private Player player;
+    private int currentWeaponIndex = 1;
     private float moveSpeed;
     private Coroutine playerRollCoroutine;
     private WaitForFixedUpdate waitForFixedUpdate; // Dealing with physics we use fixed update (cuz that's how unity does it)
@@ -34,8 +33,39 @@ public class PlayerControl : MonoBehaviour
         // Create WaitForFixedUpdate for use in coroutine
         waitForFixedUpdate = new WaitForFixedUpdate();
 
+        // Set starting weapon
+        SetStartingWeapon();
+
         // Set player animation speed at start
         SetPlayerAnimationSpeed();
+    }
+
+    /// <summary>
+    /// Set the player starting weapon
+    /// </summary>
+    private void SetStartingWeapon()
+    {
+        int index = 1;
+
+        foreach (Weapon weapon in player.weaponList)
+        {
+            if (weapon.weaponDetails == player.playerDetails.startingWeapon) // Looking for the matched weapon
+            {
+                SetWeaponByIndex(index);
+                break;
+            }
+
+            index++;
+        }
+    }
+
+    private void SetWeaponByIndex(int weaponIndex)
+    {
+        if (weaponIndex - 1 < player.weaponList.Count) // Sanity check
+        {
+            currentWeaponIndex = weaponIndex; // Update the index value
+            player.setActiveWeaponEvent.CallSetActiveWeaponEvent(player.weaponList[weaponIndex - 1]); // Publish the event
+        }
     }
 
     /// <summary>
@@ -165,6 +195,19 @@ public class PlayerControl : MonoBehaviour
 
         // Aim weapon input
         AimWeaponInput(out weaponDirection, out weaponAngleDegrees, out playerAngleDegrees, out playerAimDirection);
+
+        // Fire weapon input
+        FireWeaponInput(weaponDirection, weaponAngleDegrees, playerAngleDegrees, playerAimDirection);
+    }
+
+    private void FireWeaponInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
+    {
+        // Fire when left mouse button is clicked
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Trigger fire weapon event
+            player.fireWeaponEvent.CallFireWeaponEvent(true, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
+        }
     }
 
     private void AimWeaponInput(out Vector3 weaponDirection, out float weaponAngleDegrees, out float playerAngleDegrees, out AimDirection playerAimDirection)
@@ -176,7 +219,7 @@ public class PlayerControl : MonoBehaviour
         // For example: we have point A(2,2) and B(4,4)
         // B - A = (2,2) which means from point A, it need a dispacement value of (2,2) to get to point B
         // You can think of A represents the "weaponShootPosition.position" and B represents the "mouseWorldPosition"
-        weaponDirection = (mouseWorldPosition - weaponShootPosition.position);
+        weaponDirection = (mouseWorldPosition - player.activeWeapon.GetShootPosition());
 
         // Similarly, calculate direction vector of mouse cursor from player transform position
         Vector3 playerDirection = (mouseWorldPosition - transform.position);
