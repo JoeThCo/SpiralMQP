@@ -198,6 +198,29 @@ public class PlayerControl : MonoBehaviour
 
         // Fire weapon input
         FireWeaponInput(weaponDirection, weaponAngleDegrees, playerAngleDegrees, playerAimDirection);
+
+        //Relaod waepon input
+        ReloadWeaponInput();
+    }
+
+    private void ReloadWeaponInput()
+    {
+        Weapon currentWeapon = player.activeWeapon.GetCurrentWeapon();
+
+        // If current waepon is reloading return
+        if (currentWeapon.isWeaponReloading) return;
+
+        // No remaining ammo and not infinite ammo then return
+        if (currentWeapon.weaponRemainingAmmo < 1 && !currentWeapon.weaponDetails.hasInfiniteAmmo) return;
+
+        // If ammo in clip is full
+        if (currentWeapon.weaponClipRemainingAmmo == currentWeapon.weaponDetails.weaponClipAmmoCapacity) return;
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            // Call the reload weapon event
+            player.reloadWeaponEvent.CallReloadWeaponEvent(player.activeWeapon.GetCurrentWeapon(), 0);
+        }
     }
 
     private void FireWeaponInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
