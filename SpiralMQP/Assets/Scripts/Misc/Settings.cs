@@ -58,4 +58,9 @@ public static class Settings
     // Else the weapon aim angle will be used (calculated from weapon pivot point)
     public const float useAimAngleDistance = 3.5f;
     #endregion
+
+
+    #region UI PARAMETERS
+    public const float uiAmmoIconSpacing = 4f;
+    #endregion    
 }

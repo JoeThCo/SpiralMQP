@@ -32,6 +32,9 @@ GameObject:
   - component: {fileID: 9156049969737474357}
   - component: {fileID: 690791758939228092}
   - component: {fileID: 1986060699514775176}
+  - component: {fileID: 5419814149073630722}
+  - component: {fileID: -6397895211098409743}
+  - component: {fileID: -7252268560625333556}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -261,6 +264,8 @@ MonoBehaviour:
   setActiveWeaponEvent: {fileID: 0}
   fireWeaponEvent: {fileID: 0}
   weaponFiredEvent: {fileID: 0}
+  reloadWeaponEvent: {fileID: 0}
+  weaponReloadedEvent: {fileID: 0}
   activeWeapon: {fileID: 0}
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
@@ -448,6 +453,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4eebabd11dc229f46a0b424a54fe5f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5419814149073630722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161765408381564467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f511dc5c581769489be0d755d5e0325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6397895211098409743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161765408381564467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db7de56baa4dab4f81b2f77c44658b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7252268560625333556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161765408381564467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8613e05a851468544b189f8594d428f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2964970503994507206

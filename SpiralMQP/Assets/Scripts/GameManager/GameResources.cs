@@ -51,6 +51,12 @@ public class GameResources : MonoBehaviour
 
 
 
+    [Space(10)]
+    [Header("UI")]
+    [Tooltip("Populate with ammo icon prefab")]
+    public GameObject ammoIconPrefab;
+
+
     #region Validation
 #if UNITY_EDITOR
     private void OnValidate()

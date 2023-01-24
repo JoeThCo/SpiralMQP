@@ -81,7 +81,7 @@ public class GameManager : SingletonAbstract<GameManager>
         HandleGameState();
 
         // For testing only
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             gameState = GameState.gameStarted;
         }
