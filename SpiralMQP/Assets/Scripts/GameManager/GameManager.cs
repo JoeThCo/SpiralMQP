@@ -34,6 +34,26 @@ public class GameManager : SingletonAbstract<GameManager>
         InstantiatePlayer();
     }
 
+    private void OnEnable() 
+    {
+        // Subscribe to room changed event
+        StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;    
+    }
+
+    private void OnDisable() 
+    {
+        // Unsubscribe from room changed event
+        StaticEventHandler.OnRoomChanged -= StaticEventHandler_OnRoomChanged;    
+    }
+
+    /// <summary>
+    /// Handle room changed event
+    /// </summary>
+    private void StaticEventHandler_OnRoomChanged(RoomChangedEventArgs roomChangedEventArgs)
+    {
+        SetCurrentRoom(roomChangedEventArgs.room);
+    }
+
 
     /// <summary>
     /// Create player in scene at position
@@ -61,7 +81,7 @@ public class GameManager : SingletonAbstract<GameManager>
         HandleGameState();
 
         // For testing only
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             gameState = GameState.gameStarted;
         }
@@ -106,6 +126,9 @@ public class GameManager : SingletonAbstract<GameManager>
         {
             Debug.LogError("Couldn't build dungeon from specified rooms and node graphs");
         }
+
+        // Call static event that room has changed
+        StaticEventHandler.CallRoomChangedEvent(currentRoom);
 
         // First, Set player position in about mid-room area
         player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y) / 2f, 0f);

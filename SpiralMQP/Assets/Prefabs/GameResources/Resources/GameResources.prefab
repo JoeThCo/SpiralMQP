@@ -47,3 +47,6 @@ MonoBehaviour:
   roomNodeTypeList: {fileID: 11400000, guid: fb074f709ee30f94796aa29b0ba3f1b1, type: 2}
   currentPlayer: {fileID: 11400000, guid: 34a04f10e3e91b345aea16611b15ae2e, type: 2}
   dimmedMaterial: {fileID: 2100000, guid: fd5ae752e16da36428c7ae98c49dc19e, type: 2}
+  litMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  variableLitShader: {fileID: -6465566751694194690, guid: 59fffc1d4affc3d42b40c0d903a76268, type: 3}
+  ammoIconPrefab: {fileID: 6728264352581736675, guid: 9460aa811006bbc4eb5c390a7066178c, type: 3}

@@ -9,35 +9,46 @@ public class AnimatePlayer : MonoBehaviour
 {
     private Player player;
 
-    private void Awake() 
+    private void Awake()
     {
         // Load components
         player = GetComponent<Player>();
     }
 
-    private void OnEnable() 
+
+    // The order matters here
+    private void OnEnable()
     {
         // Subscribe to movement by velocity event
         player.movementByVelocityEvent.OnMovementByVelocity += MovementByVelocityEvent_OnMovementByVelocity;
+
+        // Subscribe to movement to position event
+        player.movementToPositionEvent.OnMovementToPosition += MovementToPositionEvent_OnMovementToPosition;
 
         // Subscribe to idle event
         player.idleEvent.OnIdle += IdleEvent_OnIdle;
 
         // Subscribe to weapon aim event
-        player.aimWeaponEvent.OnWeaponAim += AimWeaponEvent_OnWeaponAim; 
+        player.aimWeaponEvent.OnWeaponAim += AimWeaponEvent_OnWeaponAim;
     }
 
-    private void OnDisable() 
+
+    private void OnDisable()
     {
         // Unsubscribe from movement by velocity event
         player.movementByVelocityEvent.OnMovementByVelocity -= MovementByVelocityEvent_OnMovementByVelocity;
+
+        // Unsubscribe to movement to position event
+        player.movementToPositionEvent.OnMovementToPosition -= MovementToPositionEvent_OnMovementToPosition;
 
         // Unsubscribe from idle event
         player.idleEvent.OnIdle -= IdleEvent_OnIdle;
 
         // Unsubscribe from weapon aim event
-        player.aimWeaponEvent.OnWeaponAim -= AimWeaponEvent_OnWeaponAim; 
+        player.aimWeaponEvent.OnWeaponAim -= AimWeaponEvent_OnWeaponAim;
     }
+
+
 
     /// <summary>
     /// On weapon aim event handler
@@ -45,19 +56,57 @@ public class AnimatePlayer : MonoBehaviour
     private void AimWeaponEvent_OnWeaponAim(AimWeaponEvent aimWeaponEvent, AimWeaponEventArgs aimWeaponEventArgs)
     {
         InitializeAimAnimationParameters();
-
+        InitializeRollAnimationParameters();
         SetAimWeaponAnimationParameters(aimWeaponEventArgs.aimDirection);
     }
 
     /// <summary>
     /// On movement by velocity event handler
     /// </summary>
-    /// <param name="movementByVelocityEvent"></param>
-    /// <param name="movementByVelocityArgs"></param>
     private void MovementByVelocityEvent_OnMovementByVelocity(MovementByVelocityEvent movementByVelocityEvent, MovementByVelocityArgs movementByVelocityArgs)
     {
+        InitializeRollAnimationParameters();
         SetMovementAnimationParameters();
     }
+
+
+    /// <summary>
+    /// On movement to position event handler
+    /// </summary>
+    private void MovementToPositionEvent_OnMovementToPosition(MovementToPositionEvent movementToPositionEvent, MovementToPositionArgs movementToPositionArgs)
+    {
+        InitializeAimAnimationParameters();
+        InitializeRollAnimationParameters();
+        SetMovementToPositionAnimationParameters(movementToPositionArgs);
+    }
+
+    /// <summary>
+    /// Set movement to position animation parameters
+    /// </summary>
+    private void SetMovementToPositionAnimationParameters(MovementToPositionArgs movementToPositionArgs)
+    {
+        // Animate roll
+        if (movementToPositionArgs.isRolling)
+        {
+            if (movementToPositionArgs.moveDirection.x > 0f)
+            {
+                player.animator.SetBool(Settings.rollRight, true);
+            }
+            else if (movementToPositionArgs.moveDirection.x < 0f)
+            {
+                player.animator.SetBool(Settings.rollLeft, true);
+            }
+            else if (movementToPositionArgs.moveDirection.y > 0f)
+            {
+                player.animator.SetBool(Settings.rollUp, true);
+            }
+            else if (movementToPositionArgs.moveDirection.y < 0f)
+            {
+                player.animator.SetBool(Settings.rollDown, true);
+            }
+        }
+    }
+
 
     /// <summary>
     /// Set movement animation parameters
@@ -82,9 +131,19 @@ public class AnimatePlayer : MonoBehaviour
     }
 
     /// <summary>
+    /// Initialize roll animation parameters
+    /// </summary>
+    private void InitializeRollAnimationParameters()
+    {
+        player.animator.SetBool(Settings.rollDown,false);
+        player.animator.SetBool(Settings.rollLeft,false);
+        player.animator.SetBool(Settings.rollRight,false);
+        player.animator.SetBool(Settings.rollUp,false);
+    }
+
+    /// <summary>
     /// Set aim animation parameters
     /// </summary>
-    /// <param name="aimDirection"></param>
     private void SetAimWeaponAnimationParameters(AimDirection aimDirection)
     {
         // Set aim direction
@@ -117,6 +176,7 @@ public class AnimatePlayer : MonoBehaviour
     /// </summary>
     private void IdleEvent_OnIdle(IdleEvent idleEvent)
     {
+        InitializeRollAnimationParameters();
         SetIdleAnimationParameters();
     }
 
