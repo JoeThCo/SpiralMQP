@@ -20,9 +20,9 @@ public class GameManager : SingletonAbstract<GameManager>
 
     [HideInInspector] public GameState gameState;
 
+    bool isPaused = false;
 
-
-    protected override void Awake() 
+    protected override void Awake()
     {
         // Call base class
         base.Awake();
@@ -108,8 +108,8 @@ public class GameManager : SingletonAbstract<GameManager>
         }
 
         // First, Set player position in about mid-room area
-        player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x)/2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y)/2f, 0f);
-        
+        player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y) / 2f, 0f);
+
         // Second, Get nearest spawn point in room nearest to player
         player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
 
@@ -129,6 +129,27 @@ public class GameManager : SingletonAbstract<GameManager>
     public Player GetPlayer()
     {
         return player;
+    }
+
+    /// <summary>
+    /// Pauses the game
+    /// </summary>
+    public void Pause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            gameState = GameState.gamePause;
+            MenuController.Instance.ShowMenu("Pause");
+            Time.timeScale = 0;
+        }
+        else
+        {
+            gameState = GameState.playingLevel;
+            MenuController.Instance.ShowMenu("Game");
+            Time.timeScale = 1;
+        }
     }
 
 
