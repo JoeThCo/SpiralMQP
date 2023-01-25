@@ -16,7 +16,8 @@ public class FireWeapon : MonoBehaviour
     private ReloadWeaponEvent reloadWeaponEvent;
     private WeaponFiredEvent weaponFiredEvent;
 
-    private void Awake() {
+    private void Awake()
+    {
         // Load components
         activeWeapon = GetComponent<ActiveWeapon>();
         fireWeaponEvent = GetComponent<FireWeaponEvent>();
@@ -24,18 +25,18 @@ public class FireWeapon : MonoBehaviour
         weaponFiredEvent = GetComponent<WeaponFiredEvent>();
     }
 
-    private void OnEnable() 
+    private void OnEnable()
     {   // Subscribe to fire weapon event
         fireWeaponEvent.OnFireWeapon += FireWeaponEvent_OnFireWeapon;
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
         // Unsubscribe from fire weapon event
         fireWeaponEvent.OnFireWeapon -= FireWeaponEvent_OnFireWeapon;
     }
 
-    private void Update() 
+    private void Update()
     {
         // Decrease cooldown timer
         fireRateCoolDownTimer -= Time.deltaTime;
@@ -117,7 +118,40 @@ public class FireWeapon : MonoBehaviour
 
         if (currentAmmo != null)
         {
-            // Get ammo prefab from array
+            // Fire ammo routine
+            StartCoroutine(FireAmmoRoutine(currentAmmo, aimAngle, weaponAimAngle, weaponAimDirectionVector));
+        }
+    }
+
+
+    /// <summary>
+    /// Coroutine to spawn multiple ammo per shot if specified in the ammo details
+    /// </summary>
+    private IEnumerator FireAmmoRoutine(AmmoDetailsSO currentAmmo, float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector)
+    {
+        int ammoCounter = 0;
+
+        // Get random ammo per shot
+        int ammoPerShot = Random.Range(currentAmmo.ammoSpawnAmoutMin, currentAmmo.ammoSpawnAmoutMax + 1);
+
+        // Get random interval between ammo
+        float ammoSpawnInterval;
+
+        if (ammoPerShot > 1)
+        {
+            ammoSpawnInterval = Random.Range(currentAmmo.ammoSpawnIntervalMin, currentAmmo.ammoSpawnIntervalMax);
+        }
+        else
+        {
+            ammoSpawnInterval = 0f;
+        }
+
+        // Loop for number of ammo per shot
+        while (ammoCounter < ammoPerShot)
+        {
+            ammoCounter++;
+
+            // Get random ammo prefab from array 
             GameObject ammoPrefab = currentAmmo.ammoPrefabArray[Random.Range(0, currentAmmo.ammoPrefabArray.Length)];
 
             // Get random speed value
@@ -129,18 +163,20 @@ public class FireWeapon : MonoBehaviour
             // Initialize Ammo
             ammo.InitializeAmmo(currentAmmo, aimAngle, weaponAimAngle, ammoSpeed, weaponAimDirectionVector);
 
-            // Reduce ammo clip count if not infinite clip capacity
-            if (!activeWeapon.GetCurrentWeapon().weaponDetails.hasInfiniteClipCapacity)
-            {
-                activeWeapon.GetCurrentWeapon().weaponClipRemainingAmmo--;
-                activeWeapon.GetCurrentWeapon().weaponRemainingAmmo--;
-            }
-
-            // Call weapon fired event
-            weaponFiredEvent.CallWeaponFiredEvent(activeWeapon.GetCurrentWeapon());
+            // Wait for ammo per shot time gap
+            yield return new WaitForSeconds(ammoSpawnInterval);
         }
-    }
 
+        // Reduce ammo clip count if not infinite clip capacity
+        if (!activeWeapon.GetCurrentWeapon().weaponDetails.hasInfiniteClipCapacity)
+        {
+            activeWeapon.GetCurrentWeapon().weaponClipRemainingAmmo--;
+            activeWeapon.GetCurrentWeapon().weaponRemainingAmmo--;
+        }
+
+        // Call weapon fired event
+        weaponFiredEvent.CallWeaponFiredEvent(activeWeapon.GetCurrentWeapon());
+    }
 
     /// <summary>
     /// Return true if the weapon is ready to fire, return false otherwise
@@ -164,9 +200,9 @@ public class FireWeapon : MonoBehaviour
             reloadWeaponEvent.CallReloadWeaponEvent(activeWeapon.GetCurrentWeapon(), 0);
 
             return false;
-        } 
+        }
 
         // Weapon is ready to fire - return true
-        return true; 
+        return true;
     }
 }

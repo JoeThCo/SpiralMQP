@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73a4a4a91c7eef544abb7ecfda945c17, type: 3}
-  m_Name: AmmoDetails_Revolver
+  m_Name: AmmoDetails_Shotgun
   m_EditorClassIdentifier: 
-  ammoName: Revolver Ammo
+  ammoName: Shotgun Ammo
   isPlayerAmmo: 1
-  ammoSprite: {fileID: 21300000, guid: 4df9cc7131cd27f4288bca5e76c82034, type: 3}
+  ammoSprite: {fileID: 21300000, guid: c3be09077243891458bdbf46a57d2e8a, type: 3}
   ammoPrefabArray:
-  - {fileID: 5891719235356115971, guid: 4dd74f46a4c79794eafebd550d3b2b1f, type: 3}
-  ammoMaterial: {fileID: 2100000, guid: 33a55999e44f4724191171c59fc64319, type: 2}
+  - {fileID: 5891719235356115971, guid: 0deb1cc2300b6d945936e2fd29d63734, type: 3}
+  ammoMaterial: {fileID: 2100000, guid: c92da765fb7cca448a71d99956fe00bd, type: 2}
   ammoChargeTime: 0
   ammoChargeMaterial: {fileID: 0}
-  ammoDamage: 7
-  ammoSpeedMin: 13
-  ammoSpeedMax: 13
-  ammoRange: 15
+  ammoDamage: 5
+  ammoSpeedMin: 8
+  ammoSpeedMax: 15
+  ammoRange: 8
   ammoRotationSpeed: 1
   ammoSpreadMin: 1
-  ammoSpreadMax: 3
-  ammoSpawnAmoutMin: 1
-  ammoSpawnAmoutMax: 1
+  ammoSpreadMax: 30
+  ammoSpawnAmoutMin: 6
+  ammoSpawnAmoutMax: 8
   ammoSpawnIntervalMin: 0
-  ammoSpawnIntervalMax: 0
+  ammoSpawnIntervalMax: 0.01
   isAmmoTrail: 0
   ammoTrailTime: 0
   ammoTrailMaterial: {fileID: 0}

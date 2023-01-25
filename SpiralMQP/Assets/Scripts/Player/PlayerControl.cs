@@ -200,8 +200,109 @@ public class PlayerControl : MonoBehaviour
         // Fire weapon input
         FireWeaponInput(weaponDirection, weaponAngleDegrees, playerAngleDegrees, playerAimDirection);
 
+        // Switch weapon input
+        SwitchWeaponInput();
+
         //Relaod waepon input
         ReloadWeaponInput();
+    }
+
+    private void SwitchWeaponInput()
+    {
+        // Switch waepon if mouse scroll wheel selected
+        if (Input.mouseScrollDelta.y < 0f)
+        {
+            PreviousWeapon();
+        }
+
+        if (Input.mouseScrollDelta.y > 0f)
+        {
+            NextWeapon();
+        }
+
+        // Switch weapon using number keys (from 1 to 0)
+        if (Input.GetKeyDown(KeyCode.Alpha1)) SetWeaponByIndex(1);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) SetWeaponByIndex(2);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) SetWeaponByIndex(3);
+        if (Input.GetKeyDown(KeyCode.Alpha4)) SetWeaponByIndex(4);
+        if (Input.GetKeyDown(KeyCode.Alpha5)) SetWeaponByIndex(5);
+        if (Input.GetKeyDown(KeyCode.Alpha6)) SetWeaponByIndex(6);
+        if (Input.GetKeyDown(KeyCode.Alpha7)) SetWeaponByIndex(7);
+        if (Input.GetKeyDown(KeyCode.Alpha8)) SetWeaponByIndex(8);
+        if (Input.GetKeyDown(KeyCode.Alpha9)) SetWeaponByIndex(9);
+        if (Input.GetKeyDown(KeyCode.Alpha0)) SetWeaponByIndex(0);
+
+        // Set one weapon to the first of the list using "-" key
+        if (Input.GetKeyDown(KeyCode.Minus))
+        {
+            SetCurrentWeaponToFirstInTheList();
+        }
+    }
+
+
+    /// <summary>
+    /// Set the current weapon to be first in the player weapon list
+    /// </summary>
+    private void SetCurrentWeaponToFirstInTheList()
+    {
+        // Create new temporary list
+        List<Weapon> tempWeaponList = new List<Weapon>();
+
+        // Add the current weapon to first in the temp list
+        Weapon currentWeapon = player.weaponList[currentWeaponIndex - 1];
+        currentWeapon.weaponListPosition = 1;
+        tempWeaponList.Add(currentWeapon);
+
+        // Loop through existing weapon list and add - skipping current weapon
+        int index = 2;
+
+        foreach (Weapon weapon in player.weaponList)
+        {
+            if (weapon == currentWeapon) continue;
+
+            tempWeaponList.Add(weapon);
+            weapon.weaponListPosition = index;
+            index++;
+        }
+
+        // Assign new list
+        player.weaponList = tempWeaponList;
+
+        // Update the current weapon index
+        currentWeaponIndex = 1;
+
+        // Set current weapon
+        SetWeaponByIndex(currentWeaponIndex);
+    }
+
+    private void NextWeapon()
+    {
+        // Increment index count
+        currentWeaponIndex++;
+
+        // Reset back to the first weapon
+        if (currentWeaponIndex > player.weaponList.Count)
+        {
+            currentWeaponIndex = 1;
+        }
+
+        // Set active weapon
+        SetWeaponByIndex(currentWeaponIndex);
+    }
+
+    private void PreviousWeapon()
+    {
+        // Decrement index count
+        currentWeaponIndex--;
+
+        // Set to the last weapon
+        if (currentWeaponIndex < 1)
+        {
+            currentWeaponIndex = player.weaponList.Count;
+        }
+
+        // Set active weapon
+        SetWeaponByIndex(currentWeaponIndex);
     }
 
     private void ReloadWeaponInput()

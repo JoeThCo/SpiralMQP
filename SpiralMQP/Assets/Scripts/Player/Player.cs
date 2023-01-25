@@ -107,7 +107,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
 
 
     /// <summary>
-    /// Add a weapon to the player weapon dictionary
+    /// Add a weapon to the player weapon list
     /// </summary>
     public Weapon AddWeaponToPlayer(WeaponDetailsSO weaponDetails)
     {
