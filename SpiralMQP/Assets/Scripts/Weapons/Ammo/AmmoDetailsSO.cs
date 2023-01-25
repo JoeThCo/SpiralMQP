@@ -23,10 +23,10 @@ public class AmmoDetailsSO : ScriptableObject
     [Tooltip("The material to be used for the ammo")]
     public Material ammoMaterial;
 
-    [Tooltip("If the ammo should 'charge' briefly before moving then set the time in seconds that the ammo is held charging after firing before release")]
+    [Tooltip("(For Pattern)If the ammo should 'charge' briefly before moving then set the time in seconds that the ammo is held charging after firing before release")]
     public float ammoChargeTime = 0.1f;
 
-    [Tooltip("If the ammo has a charge time then specify what material should be used to render the ammo while charging")]
+    [Tooltip("(For Pattern)If the ammo has a charge time then specify what material should be used to render the ammo while charging")]
     public Material ammoChargeMaterial;
 
 
@@ -43,7 +43,7 @@ public class AmmoDetailsSO : ScriptableObject
     [Tooltip("The range of the ammo (or ammo pattern) in unity units")]
     public float ammoRange = 20f;
 
-    [Tooltip("The rotation speed in degrees per second of the ammo pattern")]
+    [Tooltip("(For Pattern)The rotation speed in degrees per second of the ammo pattern")]
     public float ammoRotationSpeed = 1f;
 
 
