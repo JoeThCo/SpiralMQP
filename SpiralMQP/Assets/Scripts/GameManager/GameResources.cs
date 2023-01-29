@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 /// <summary>
 /// This serves as a game resources repository so that if other objects want to have access to a certain resource, they can search here
@@ -36,6 +37,13 @@ public class GameResources : MonoBehaviour
     [Tooltip("The current player scriptable object - this is used to reference the current player between scenes")]
     public CurrentPlayerSO currentPlayer;
 
+
+    [Space(10)]
+    [Header("SOUNDS")]
+    [Tooltip("Fill with the sounds master mixer group")]
+    public AudioMixerGroup soundsMasterMixerGroup;
+    [Tooltip("Door open and close sound effect")] // In the future we can sound effect for each event, but for now we are using the same one for both events
+    public SoundEffectSO doorOpenCloseSoundEffect;
 
 
     [Space(10)]

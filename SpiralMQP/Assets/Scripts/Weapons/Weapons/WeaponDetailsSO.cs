@@ -19,6 +19,10 @@ public class WeaponDetailsSO : ScriptableObject
     public Vector3 weaponShootPosition;
     [Tooltip("Weapon current ammo")]
     public AmmoDetailsSO weaponCurrentAmmo;
+    [Tooltip("The firing sound effect SO for the weapon")]
+    public SoundEffectSO weaponFiringSoundEffect;
+    [Tooltip("The reloading sound effect SO for the weapon")]
+    public SoundEffectSO weaponReloadingSoundEffect;
 
 
     [Space(10)]
