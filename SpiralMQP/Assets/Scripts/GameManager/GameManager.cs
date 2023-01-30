@@ -154,6 +154,13 @@ public class GameManager : SingletonAbstract<GameManager>
         return player;
     }
 
+    /// <summary>
+    /// Get the player minimap icon
+    /// </summary>
+    public Sprite GetPlayerMinimapIcon()
+    {
+        return playerDetails.playerMinimapIcon;
+    }
 
     #region Validation
     // Compiler directive: only runs in the unity editor
@@ -166,6 +173,5 @@ public class GameManager : SingletonAbstract<GameManager>
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(dungeonLevelList), dungeonLevelList);
     }
 #endif
-
     #endregion
 }
