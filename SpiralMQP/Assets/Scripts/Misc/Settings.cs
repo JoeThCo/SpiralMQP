@@ -35,10 +35,10 @@ public static class Settings
     public static int aimLeft = Animator.StringToHash("aimLeft");
     public static int isIdle = Animator.StringToHash("isIdle");
     public static int isMoving = Animator.StringToHash("isMoving");
-    public static int rollUp = Animator.StringToHash("rollUp");
-    public static int rollDown = Animator.StringToHash("rollDown");
-    public static int rollLeft = Animator.StringToHash("rollLeft");
-    public static int rollRight = Animator.StringToHash("rollRight");
+    public static int rollUp = Animator.StringToHash("rollUp"); // For Dreamy this is a up dash
+    public static int rollDown = Animator.StringToHash("rollDown"); // For Dreamy this is a down dash
+    public static int rollLeft = Animator.StringToHash("rollLeft"); // For Dreamy this is a left dash
+    public static int rollRight = Animator.StringToHash("rollRight"); // For Dreamy this is a right dash
     public static float baseSpeedForPlayerAnimations = 8f;
 
     // Animator parameters - Door
