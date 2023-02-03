@@ -18,20 +18,20 @@ public class Ammo : MonoBehaviour, IFireable
     private bool isAmmoMaterialSet = false;
     private bool overrideAmmoMovement;
 
-    private void Awake() 
+    private void Awake()
     {
         // Cache sprite renderer
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 
-    private void Update() 
+    private void Update()
     {
         // Ammo charge effect
         if (ammoChargeTimer > 0f)
         {
             ammoChargeTimer -= Time.deltaTime;
-            return;            
+            return;
         }
         else if (!isAmmoMaterialSet)
         {
@@ -48,14 +48,39 @@ public class Ammo : MonoBehaviour, IFireable
 
         if (ammoRange < 0f)
         {
+            // Return ammo back to the pool
             DisableAmmo();
         }
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        // Show ammo hit effect
+        AmmoHitEffect();
+
+        // Return ammo back to the pool
         DisableAmmo();
+    }
+
+
+    /// <summary>
+    /// Display the ammo hit effect
+    /// </summary>
+    private void AmmoHitEffect()
+    {
+        // Process if a hit effect has been specified
+        if (ammoDetails.ammoHitEffect != null && ammoDetails.ammoHitEffect.ammoHitEffectPrefab != null)
+        {
+            // Get ammo hit effect gameobject from the pool (with particle system component)
+            AmmoHitEffect ammoHitEffect = (AmmoHitEffect)PoolManager.Instance.ReuseComponent(ammoDetails.ammoHitEffect.ammoHitEffectPrefab, transform.position, Quaternion.identity);
+
+            // Set Hit Effect
+            ammoHitEffect.SetHitEffect(ammoDetails.ammoHitEffect);
+
+            // Set gameobject active (the particle system is set to automatically disable the gameobject once finished)
+            ammoHitEffect.gameObject.SetActive(true);
+        }
     }
 
 
@@ -153,7 +178,7 @@ public class Ammo : MonoBehaviour, IFireable
         float randomSpread = UnityEngine.Random.Range(ammoDetails.ammoSpreadMin, ammoDetails.ammoSpreadMax);
 
         // Get a random spread toggle of 1 or -1
-        int spreadToggle = Random.Range(0,2) * 2 - 1;
+        int spreadToggle = Random.Range(0, 2) * 2 - 1;
 
         // Check to see which angle we are using
         if (weaponAimDirectionVector.magnitude < Settings.useAimAngleDistance)
@@ -183,7 +208,7 @@ public class Ammo : MonoBehaviour, IFireable
 
     #region Validation
 #if UNITY_EDITOR
-    private void OnValidate() 
+    private void OnValidate()
     {
         HelperUtilities.ValidateCheckNullValue(this, nameof(trailRenderer), trailRenderer);
     }
