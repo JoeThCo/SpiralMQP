@@ -31,6 +31,12 @@ public class AmmoDetailsSO : ScriptableObject
 
 
     [Space(10)]
+    [Header("AMMO HIT EFFECT")]
+    [Tooltip("The scriptable object that defines the parameters for the hit effect prefab.")]
+    public AmmoHitEffectSO ammoHitEffect;
+
+
+    [Space(10)]
     [Header("AMMO BASE PARAMETERS")]
     [Tooltip("The damage each ammo deals")]
     public int ammoDamage = 1;
