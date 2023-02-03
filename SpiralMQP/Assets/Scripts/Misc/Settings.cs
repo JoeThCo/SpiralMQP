@@ -60,6 +60,12 @@ public static class Settings
     #endregion
 
 
+    #region ASTAR PATHFINDING PARAMETERS
+    public const int defaultAstarMovementPenalty = 40;
+    public const int preferredPathAStarMovementPenalty = 1;
+    #endregion ASTAR PATHFINDING PARAMETERS
+
+
     #region UI PARAMETERS
     public const float uiAmmoIconSpacing = 4f;
     #endregion    

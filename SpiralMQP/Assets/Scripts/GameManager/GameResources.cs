@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Tilemaps;
 
 /// <summary>
 /// This serves as a game resources repository so that if other objects want to have access to a certain resource, they can search here
@@ -57,6 +58,14 @@ public class GameResources : MonoBehaviour
     [Tooltip("Create with the Variable Lit Shader")]
     public Shader variableLitShader;
 
+
+    [Space(10)]
+    [Header("SPECIAL TILEMAP TILES")]
+    [Tooltip("Collision tiles that the enemies can navigate to")]
+    public TileBase[] enemyUnwalkableCollisionTilesArray;
+
+    [Tooltip("Preferred path tile for enemy navigation")]
+    public TileBase preferredEnemyPathTile;
 
 
     [Space(10)]
