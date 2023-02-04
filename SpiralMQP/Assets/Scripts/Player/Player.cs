@@ -140,4 +140,12 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     {
         health.SetStartingHealth(playerDetails.playerHealthAmount);
     }
+
+    /// <summary>
+    /// Returns the player position
+    /// </summary>
+    public Vector3 GetPlayerPosition()
+    {
+        return transform.position;
+    }
 }

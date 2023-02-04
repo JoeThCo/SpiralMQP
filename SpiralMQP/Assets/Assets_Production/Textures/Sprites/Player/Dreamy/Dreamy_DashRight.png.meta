@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ca1563875cae474887bbbbec7683cda
+guid: 65e22e14d609afd4bb47c867fedaf4fe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 57
+        width: 77.6
         height: 58
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40784eb098663404d95d0eb8ace99482
-      internalID: -1647017090
+      spriteID: 73ae9009843fa374eb3a00908ab9c9f8
+      internalID: -1689854355
       vertices: []
       indices: 
       edges: []
@@ -129,9 +129,9 @@ TextureImporter:
       name: Dreamy_DashRight_1
       rect:
         serializedVersion: 2
-        x: 57
+        x: 77
         y: 0
-        width: 57
+        width: 77.6
         height: 58
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6864d675299601542bdaa4276e815b75
-      internalID: 1603459424
+      spriteID: 8667b7abbd1586a479098c1f46a481ca
+      internalID: -2047474812
       vertices: []
       indices: 
       edges: []
@@ -150,9 +150,9 @@ TextureImporter:
       name: Dreamy_DashRight_2
       rect:
         serializedVersion: 2
-        x: 114
+        x: 154
         y: 0
-        width: 57
+        width: 77.6
         height: 58
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63acce0e9fd933941980a8e9736c90b8
-      internalID: -203367883
+      spriteID: 48fe20dd601bf1443af537e5e4017f18
+      internalID: -284174501
       vertices: []
       indices: 
       edges: []
@@ -171,9 +171,9 @@ TextureImporter:
       name: Dreamy_DashRight_3
       rect:
         serializedVersion: 2
-        x: 171
+        x: 231
         y: 0
-        width: 57
+        width: 77.6
         height: 58
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -182,8 +182,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b1513568cdef5547bf60098505ec2f2
-      internalID: -1842909227
+      spriteID: 8b31c154544a4844cb2c66201b838605
+      internalID: 447220144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dreamy_DashRight_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 77.6
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79dd90bf803401c4380d96788ca6a197
+      internalID: 219797308
       vertices: []
       indices: 
       edges: []
@@ -199,10 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dreamy_DashRight_2: -203367883
-      Dreamy_DashRight_0: -1647017090
-      Dreamy_DashRight_3: -1842909227
-      Dreamy_DashRight_1: 1603459424
+      Dreamy_DashRight_2: -284174501
+      Dreamy_DashRight_0: -1689854355
+      Dreamy_DashRight_3: 447220144
+      Dreamy_DashRight_4: 219797308
+      Dreamy_DashRight_1: -2047474812
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
