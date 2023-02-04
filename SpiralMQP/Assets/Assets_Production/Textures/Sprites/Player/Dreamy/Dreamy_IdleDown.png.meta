@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef8e8d6577d01c84bb31fdfa90e549f4
+guid: 1edadc98afe4ae14697f7783cd2ad3b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,8 +110,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 32
+        width: 25
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abace67b83a908349acc607dac799c7b
-      internalID: 664216613
+      spriteID: 4af29da1fc7d4fd4d99e4c0f4257db17
+      internalID: -2102119682
       vertices: []
       indices: 
       edges: []
@@ -129,10 +129,10 @@ TextureImporter:
       name: Dreamy_IdleDown_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 25
         y: 0
-        width: 31
-        height: 32
+        width: 25
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d37fff9c6d360e4c81356faabc3b0f5
-      internalID: 1044297805
+      spriteID: bb1b2ccf3b415cf45ab9850b82beb31c
+      internalID: -335061875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dreamy_IdleDown_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbfe0ddf94418b64dac286bd4996d278
+      internalID: -1794315513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dreamy_IdleDown_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26710bb42d77bbd41a5cc819cc31ff9d
+      internalID: 1469234137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dreamy_IdleDown_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9691b5541b369947ab53f20f1f237ab
+      internalID: 255903754
       vertices: []
       indices: 
       edges: []
@@ -157,8 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dreamy_IdleDown_1: 1044297805
-      Dreamy_IdleDown_0: 664216613
+      Dreamy_IdleDown_1: -335061875
+      Dreamy_IdleDown_2: -1794315513
+      Dreamy_IdleDown_3: 1469234137
+      Dreamy_IdleDown_4: 255903754
+      Dreamy_IdleDown_0: -2102119682
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
