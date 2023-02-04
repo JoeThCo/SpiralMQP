@@ -63,6 +63,8 @@ public static class Settings
     #region ASTAR PATHFINDING PARAMETERS
     public const int defaultAstarMovementPenalty = 40;
     public const int preferredPathAStarMovementPenalty = 1;
+    public const float playerMoveDistanceToRebuildPath = 3f; // If the player moves more than 3 Unity units, start rebuilding the path
+    public const float enemyPathRebuildCooldown = 2f; // We don't want the enemy to keep rebuilding the path
     #endregion ASTAR PATHFINDING PARAMETERS
 
 
