@@ -162,6 +162,15 @@ public class GameManager : SingletonAbstract<GameManager>
         return playerDetails.playerMinimapIcon;
     }
 
+    /// <summary>
+    /// Get the current dungeon level
+    /// </summary>
+    public DungeonLevelSO GetCurrentDungeonLevel()
+    {
+        return dungeonLevelList[currentDungeonLevelListIndex];
+    }
+
+
     #region Validation
     // Compiler directive: only runs in the unity editor
 #if UNITY_EDITOR
