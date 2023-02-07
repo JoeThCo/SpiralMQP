@@ -200,6 +200,7 @@ Transform:
   m_Children:
   - {fileID: 1180530197}
   - {fileID: 141580280}
+  - {fileID: 716119446}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -218,6 +219,7 @@ MonoBehaviour:
   startMenu: Game
   allMenus:
   - {fileID: 1180530198}
+  - {fileID: 141580281}
 --- !u!1 &211922691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,8 +1524,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1321219831}
-  m_Father: {fileID: 1180530197}
-  m_RootOrder: 0
+  m_Father: {fileID: 160410983}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2303,7 +2305,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 716119446}
   - {fileID: 1247360760}
   m_Father: {fileID: 160410983}
   m_RootOrder: 0
@@ -2572,7 +2573,7 @@ RectTransform:
   m_Children:
   - {fileID: 1307079985}
   m_Father: {fileID: 1180530197}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
