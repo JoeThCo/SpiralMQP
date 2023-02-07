@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent] // Just making sure no duplicate component for this script is allowed in any object
 public class GameManager : SingletonAbstract<GameManager>
@@ -19,8 +20,6 @@ public class GameManager : SingletonAbstract<GameManager>
     private Player player;
 
     [HideInInspector] public GameState gameState;
-
-
 
     protected override void Awake() 
     {
@@ -170,6 +169,28 @@ public class GameManager : SingletonAbstract<GameManager>
         return dungeonLevelList[currentDungeonLevelListIndex];
     }
 
+
+    public void PauseGame(bool isPausingGame) 
+    {
+        if (isPausingGame)
+        {
+            gameState = GameState.gamePause;
+            MenuController.Instance.ShowMenu("Pause");
+            Time.timeScale = 0;
+        }
+        else 
+        {
+            gameState = GameState.playingLevel;
+            MenuController.Instance.ShowMenu("Game");
+            Time.timeScale = 1;
+        }
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+        Time.timeScale = 1;
+    }
 
     #region Validation
     // Compiler directive: only runs in the unity editor

@@ -23,16 +23,4 @@ public class MenuController : MonoBehaviour
             m.gameObject.SetActive(m.MenuName.Equals(searchName));
         }
     }
-
-    public void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
-        Time.timeScale = 1;
-    }
-
-    public void QuitGame()
-    {
-        Debug.LogError("Quitting...");
-        Application.Quit();
-    }
 }
