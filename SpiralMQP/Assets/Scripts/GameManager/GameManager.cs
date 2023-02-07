@@ -19,7 +19,7 @@ public class GameManager : SingletonAbstract<GameManager>
     private Player player;
 
     [HideInInspector] public GameState gameState;
-
+    [HideInInspector] public GameState previousGameState;
 
 
     protected override void Awake() 
@@ -72,6 +72,7 @@ public class GameManager : SingletonAbstract<GameManager>
     // Start is called before the first frame update
     private void Start()
     {
+        previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
     }
 

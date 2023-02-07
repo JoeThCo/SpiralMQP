@@ -15,6 +15,7 @@ public class EnemyMovementAI : MonoBehaviour
     private float currentEnemyPathRebuildCooldown;
     private WaitForFixedUpdate waitForFixedUpdate;
     [HideInInspector] public float moveSpeed;
+    [HideInInspector] public int updateFrameNumber = 1; // Default value. This is set by the enemy spawner
     private bool chasePlayer = false; // If the enemy should chase the player (depends on the enemy player distance)
 
     private void Awake()
@@ -57,6 +58,9 @@ public class EnemyMovementAI : MonoBehaviour
         if (!chasePlayer)
             return;
 
+        // Only process AStar path rebuild on certain frames to spread the load between enemies
+        if (Time.frameCount % Settings.targetFrameRateToSpreadPathfindingOver != updateFrameNumber) return;
+        
 
         // If the movement cooldown timer reached or player has moved more than required distance
         // Then rebuild the enemy path and move the enemy
@@ -146,6 +150,15 @@ public class EnemyMovementAI : MonoBehaviour
             // Trigger idle event - no path
             enemy.idleEvent.CallIdleEvent();
         }
+    }
+
+
+    /// <summary>
+    /// Set the frame number that the enemy path will be recalculated on - to avoid performance spikes
+    /// </summary>
+    public void SetUpdateFrameNumber(int updateFrameNumber)
+    {
+        this.updateFrameNumber = updateFrameNumber;
     }
 
 
