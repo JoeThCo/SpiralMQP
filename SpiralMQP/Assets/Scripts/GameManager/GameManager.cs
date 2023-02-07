@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent] // Just making sure no duplicate component for this script is allowed in any object
 public class GameManager : SingletonAbstract<GameManager>
@@ -20,8 +19,10 @@ public class GameManager : SingletonAbstract<GameManager>
     private Player player;
 
     [HideInInspector] public GameState gameState;
+    [HideInInspector] public GameState previousGameState;
 
-    protected override void Awake()
+
+    protected override void Awake() 
     {
         // Call base class
         base.Awake();
@@ -33,16 +34,16 @@ public class GameManager : SingletonAbstract<GameManager>
         InstantiatePlayer();
     }
 
-    private void OnEnable()
+    private void OnEnable() 
     {
         // Subscribe to room changed event
-        StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;
+        StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;    
     }
 
-    private void OnDisable()
+    private void OnDisable() 
     {
         // Unsubscribe from room changed event
-        StaticEventHandler.OnRoomChanged -= StaticEventHandler_OnRoomChanged;
+        StaticEventHandler.OnRoomChanged -= StaticEventHandler_OnRoomChanged;    
     }
 
     /// <summary>
@@ -71,18 +72,20 @@ public class GameManager : SingletonAbstract<GameManager>
     // Start is called before the first frame update
     private void Start()
     {
+        previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
-    }
-
-    void printGameState()
-    {
-        Debug.Log("In State:" + gameState);
     }
 
     // Update is called once per frame
     private void Update()
     {
         HandleGameState();
+
+        // For testing only
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            gameState = GameState.gameStarted;
+        }
     }
 
     /// <summary>
@@ -129,8 +132,8 @@ public class GameManager : SingletonAbstract<GameManager>
         StaticEventHandler.CallRoomChangedEvent(currentRoom);
 
         // First, Set player position in about mid-room area
-        player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y) / 2f, 0f);
-
+        player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x)/2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y)/2f, 0f);
+        
         // Second, Get nearest spawn point in room nearest to player
         player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
 
@@ -168,27 +171,6 @@ public class GameManager : SingletonAbstract<GameManager>
         return dungeonLevelList[currentDungeonLevelListIndex];
     }
 
-    public void PauseGame(bool isPausingGame)
-    {
-        if (isPausingGame)
-        {
-            gameState = GameState.gamePause;
-            MenuController.Instance.ShowMenu("Pause");
-            Time.timeScale = 0;
-        }
-        else
-        {
-            gameState = GameState.playingLevel;
-            MenuController.Instance.ShowMenu("Game");
-            Time.timeScale = 1;
-        }
-    }
-
-    public void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
-        Time.timeScale = 1;
-    }
 
     #region Validation
     // Compiler directive: only runs in the unity editor

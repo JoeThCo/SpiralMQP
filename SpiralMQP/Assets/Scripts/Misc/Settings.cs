@@ -41,6 +41,9 @@ public static class Settings
     public static int rollRight = Animator.StringToHash("rollRight"); // For Dreamy this is a right dash
     public static float baseSpeedForPlayerAnimations = 8f;
 
+    // Animator parameters - Enemy
+    public static float baseSpeedForEnemyAnimations = 3f;
+
     // Animator parameters - Door
     public static int open = Animator.StringToHash("open");
 
@@ -65,6 +68,10 @@ public static class Settings
     public const int preferredPathAStarMovementPenalty = 1;
     public const float playerMoveDistanceToRebuildPath = 3f; // If the player moves more than 3 Unity units, start rebuilding the path
     public const float enemyPathRebuildCooldown = 2f; // We don't want the enemy to keep rebuilding the path
+
+    // This is used for optimizing the AStar pathfinding, we want to split the pathfinding calculation into different frames for each enemy to achieve better performance
+    public const int targetFrameRateToSpreadPathfindingOver = 60; 
+
     #endregion ASTAR PATHFINDING PARAMETERS
 
 
