@@ -9,6 +9,7 @@ public class WeaponDetailsSO : ScriptableObject
     [Header("WEAPON BASE DETAILS")]
     [Tooltip("Weapon name")]
     public string weaponName;
+
     [Tooltip("The sprite for the weapon - the sprite should have the 'generated physics shape' option selected")]
     public Sprite weaponSprite;
 
@@ -17,8 +18,18 @@ public class WeaponDetailsSO : ScriptableObject
     [Header("WEAPON CONFIGURATION")]
     [Tooltip("Weapon Shoot Position - the offset position for the end of the weapon from the sprite pivot point")]
     public Vector3 weaponShootPosition;
+
     [Tooltip("Weapon current ammo")]
     public AmmoDetailsSO weaponCurrentAmmo;
+
+    [Tooltip("Weapon Shoot Effect SO - contains particle effect parameters to be used in conjunction with the WeaponShootEffect prefab")]
+    public WeaponShootEffectSO weaponShootEffect;
+
+    [Tooltip("The firing sound effect SO for the weapon")]
+    public SoundEffectSO weaponFiringSoundEffect;
+    
+    [Tooltip("The reloading sound effect SO for the weapon")]
+    public SoundEffectSO weaponReloadingSoundEffect;
 
 
     [Space(10)]

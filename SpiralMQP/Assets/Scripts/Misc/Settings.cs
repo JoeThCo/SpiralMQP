@@ -35,10 +35,10 @@ public static class Settings
     public static int aimLeft = Animator.StringToHash("aimLeft");
     public static int isIdle = Animator.StringToHash("isIdle");
     public static int isMoving = Animator.StringToHash("isMoving");
-    public static int rollUp = Animator.StringToHash("rollUp");
-    public static int rollDown = Animator.StringToHash("rollDown");
-    public static int rollLeft = Animator.StringToHash("rollLeft");
-    public static int rollRight = Animator.StringToHash("rollRight");
+    public static int rollUp = Animator.StringToHash("rollUp"); // For Dreamy this is a up dash
+    public static int rollDown = Animator.StringToHash("rollDown"); // For Dreamy this is a down dash
+    public static int rollLeft = Animator.StringToHash("rollLeft"); // For Dreamy this is a left dash
+    public static int rollRight = Animator.StringToHash("rollRight"); // For Dreamy this is a right dash
     public static float baseSpeedForPlayerAnimations = 8f;
 
     // Animator parameters - Door
@@ -58,6 +58,14 @@ public static class Settings
     // Else the weapon aim angle will be used (calculated from weapon pivot point)
     public const float useAimAngleDistance = 3.5f;
     #endregion
+
+
+    #region ASTAR PATHFINDING PARAMETERS
+    public const int defaultAstarMovementPenalty = 40;
+    public const int preferredPathAStarMovementPenalty = 1;
+    public const float playerMoveDistanceToRebuildPath = 3f; // If the player moves more than 3 Unity units, start rebuilding the path
+    public const float enemyPathRebuildCooldown = 2f; // We don't want the enemy to keep rebuilding the path
+    #endregion ASTAR PATHFINDING PARAMETERS
 
 
     #region UI PARAMETERS

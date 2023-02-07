@@ -20,9 +20,9 @@ public class GameManager : SingletonAbstract<GameManager>
 
     [HideInInspector] public GameState gameState;
 
-    bool isPaused = false;
 
-    protected override void Awake()
+
+    protected override void Awake() 
     {
         // Call base class
         base.Awake();
@@ -131,8 +131,8 @@ public class GameManager : SingletonAbstract<GameManager>
         StaticEventHandler.CallRoomChangedEvent(currentRoom);
 
         // First, Set player position in about mid-room area
-        player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y) / 2f, 0f);
-
+        player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x)/2f, (currentRoom.lowerBounds.y + currentRoom.upperBounds.y)/2f, 0f);
+        
         // Second, Get nearest spawn point in room nearest to player
         player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
 
@@ -155,24 +155,19 @@ public class GameManager : SingletonAbstract<GameManager>
     }
 
     /// <summary>
-    /// Pauses the game
+    /// Get the player minimap icon
     /// </summary>
-    public void Pause()
+    public Sprite GetPlayerMinimapIcon()
     {
-        isPaused = !isPaused;
+        return playerDetails.playerMinimapIcon;
+    }
 
-        if (isPaused)
-        {
-            gameState = GameState.gamePause;
-            MenuController.Instance.ShowMenu("Pause");
-            Time.timeScale = 0;
-        }
-        else
-        {
-            gameState = GameState.playingLevel;
-            MenuController.Instance.ShowMenu("Game");
-            Time.timeScale = 1;
-        }
+    /// <summary>
+    /// Get the current dungeon level
+    /// </summary>
+    public DungeonLevelSO GetCurrentDungeonLevel()
+    {
+        return dungeonLevelList[currentDungeonLevelListIndex];
     }
 
 
@@ -187,6 +182,5 @@ public class GameManager : SingletonAbstract<GameManager>
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(dungeonLevelList), dungeonLevelList);
     }
 #endif
-
     #endregion
 }
