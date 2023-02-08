@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 356a98b22a982154ca9061dcb989004f, type: 3}
-  m_Name: WeaponShootEffect_Gumbrella
+  m_Name: WeaponShootEffect_Pistol_Enemy
   m_EditorClassIdentifier: 
   colorGradient:
     serializedVersion: 2
-    key0: {r: 0.9254902, g: 0.8449942, b: 0.48235294, a: 1}
+    key0: {r: 0.8962264, g: 0.59371215, b: 0.31706125, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0.85882354, g: 0.6971248, b: 0.28627455, a: 0}
+    key2: {r: 0.8584906, g: 0.28751338, b: 0.28751338, a: 0}
     key3: {r: 1, g: 1, b: 1, a: 0}
-    key4: {r: 0.9433962, g: 0.43117476, b: 0.20914915, a: 0}
+    key4: {r: 0.28261834, g: 0.5526511, b: 0.8207547, a: 0}
     key5: {r: 1, g: 1, b: 1, a: 0}
     key6: {r: 0.7735849, g: 0.74074405, b: 0.74074405, a: 0}
     key7: {r: 1, g: 1, b: 1, a: 0}
@@ -41,15 +41,15 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 8
     m_NumAlphaKeys: 3
-  duration: 0.5
-  startParticleSize: 0.2
+  duration: 0.4
+  startParticleSize: 0.5
   startParticleSpeed: 0.4
-  startLifetime: 0.8
+  startLifetime: 1.1
   maxParticleNumber: 100
   emissionRate: 100
   burstParticleNumber: 30
   effectGravity: -0.03
-  sprite: {fileID: 21300000, guid: 21c463da8d2a32246a23981f95285672, type: 3}
+  sprite: {fileID: 21300000, guid: ecf6e010769abce4cb1e7c60e0f3b3d8, type: 3}
   velocityOverLifetimeMin: {x: 0, y: 0, z: 0}
   velocityOverLifetimeMax: {x: 0, y: 0, z: 0}
   weaponShootEffectPrefab: {fileID: 5801418724654200722, guid: e7c476d4c7dc12c42a665a6e5e03c8bc, type: 3}
