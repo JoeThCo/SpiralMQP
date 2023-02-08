@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
     [Tooltip("MovementDetailsSO containing movement details such as speed.")]
     [SerializeField] private MovementDetailsSO movementDetails;
 
-
+    private GameManager gameManager;
     private Player player;
     private bool leftMouseDownPreviousFrame = false;
     private int currentWeaponIndex = 1;
@@ -25,6 +25,7 @@ public class PlayerControl : MonoBehaviour
     {
         // load components
         player = GetComponent<Player>();
+        gameManager = FindObjectOfType<GameManager>();
 
         moveSpeed = movementDetails.GetMoveSpeed();
     }
@@ -327,16 +328,19 @@ public class PlayerControl : MonoBehaviour
 
     private void FireWeaponInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
     {
-        // Fire when left mouse button is clicked
-        if (Input.GetMouseButton(0))
+        if (gameManager.gameState == GameState.playingLevel)
         {
-            // Trigger fire weapon event
-            player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
-            leftMouseDownPreviousFrame = true;
-        }
-        else
-        {
-            leftMouseDownPreviousFrame = false;
+            // Fire when left mouse button is clicked
+            if (Input.GetMouseButton(0))
+            {
+                // Trigger fire weapon event
+                player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
+                leftMouseDownPreviousFrame = true;
+            }
+            else
+            {
+                leftMouseDownPreviousFrame = false;
+            }
         }
     }
 
