@@ -71,17 +71,15 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
     private void SpawnEnemies()
     {
         // Set gamestate engaging boss
-        if (GameManager.Instance.gameState == GameState.bossStage)
+        if (GameManager.Instance.GetCurrentGameState() == GameState.bossStage)
         {
-            GameManager.Instance.previousGameState = GameState.bossStage;
-            GameManager.Instance.gameState = GameState.engagingBoss;
+            GameManager.Instance.ChangeGameState(GameState.engagingBoss);
         }
 
         // Set gamestate engaging enemies
-        else if (GameManager.Instance.gameState == GameState.playingLevel)
+        else if (GameManager.Instance.GetCurrentGameState() == GameState.playingLevel)
         {
-            GameManager.Instance.previousGameState = GameState.playingLevel;
-            GameManager.Instance.gameState = GameState.engagingEnemies;
+            GameManager.Instance.ChangeGameState(GameState.engagingEnemies);
         }
 
         StartCoroutine(SpawnEnemiesRoutine());

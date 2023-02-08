@@ -19,9 +19,10 @@ public class GameManager : SingletonAbstract<GameManager>
     private PlayerDetailsSO playerDetails;
     private Player player;
 
-    [HideInInspector] public GameState gameState;
-    [HideInInspector] public GameState previousGameState;
+    private GameState gameState;
+    private GameState previousGameState;
 
+    public GameState GetCurrentGameState() { return gameState; }
 
     protected override void Awake()
     {
@@ -102,10 +103,14 @@ public class GameManager : SingletonAbstract<GameManager>
                 PlayDungeonLevel(currentDungeonLevelListIndex);
                 gameState = GameState.playingLevel;
                 break;
-
         }
     }
 
+    /// <summary>
+    /// Updates the current game state. 
+    /// Old state gets updated as the state before the update
+    /// </summary>
+    /// <param name="newState">New State the game will be in</param>
     public void ChangeGameState(GameState newState)
     {
         previousGameState = gameState;
@@ -205,10 +210,10 @@ public class GameManager : SingletonAbstract<GameManager>
     /// <param name="name"></param>
     public void LoadScene(string name)
     {
-        SceneManager.LoadScene(name);
         Time.timeScale = 1;
-    }
 
+        SceneManager.LoadScene(name);
+    }
 
     #region Validation
     // Compiler directive: only runs in the unity editor

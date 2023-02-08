@@ -328,19 +328,16 @@ public class PlayerControl : MonoBehaviour
 
     private void FireWeaponInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
     {
-        if (gameManager.gameState == GameState.playingLevel)
+        // Fire when left mouse button is clicked
+        if (Input.GetMouseButton(0))
         {
-            // Fire when left mouse button is clicked
-            if (Input.GetMouseButton(0))
-            {
-                // Trigger fire weapon event
-                player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
-                leftMouseDownPreviousFrame = true;
-            }
-            else
-            {
-                leftMouseDownPreviousFrame = false;
-            }
+            // Trigger fire weapon event
+            player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
+            leftMouseDownPreviousFrame = true;
+        }
+        else
+        {
+            leftMouseDownPreviousFrame = false;
         }
     }
 
@@ -371,8 +368,6 @@ public class PlayerControl : MonoBehaviour
         player.aimWeaponEvent.CallAimWeaponEvent(playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
     }
 
-
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         // If collided with something, stop player roll coroutine
@@ -398,7 +393,6 @@ public class PlayerControl : MonoBehaviour
             // playerRollCooldownTimer = movementDetails.rollCooldownTime;
         }
     }
-
 
 
     #region Validation
