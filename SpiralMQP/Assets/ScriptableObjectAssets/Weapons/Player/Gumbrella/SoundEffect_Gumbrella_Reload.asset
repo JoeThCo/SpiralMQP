@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffectName: Gumbrella Fire
   soundPrefab: {fileID: 9197661179648785526, guid: 9a5e81869d09bc642ab26e9282f63d54, type: 3}
-  soundEffectClip: {fileID: 8300000, guid: 28a2b6d663b81204a8dfb1dd072eefe1, type: 3}
+  soundEffectClip: {fileID: 8300000, guid: 68017df84c8afc04390c474cf1ffbaca, type: 3}
   soundEffectPitchRandomVariationMin: 0.8
   soundEffectPitchRandomVariationMax: 1.2
   soundEffectVolume: 1

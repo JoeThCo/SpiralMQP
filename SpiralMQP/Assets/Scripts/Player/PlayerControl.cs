@@ -17,7 +17,7 @@ public class PlayerControl : MonoBehaviour
     private float moveSpeed;
     private Coroutine playerRollCoroutine;
     private WaitForFixedUpdate waitForFixedUpdate; // Dealing with physics we use fixed update (cuz that's how unity does it)
-    private bool isPlayerRolling = false;
+    [HideInInspector] public bool isPlayerRolling = false;
     private float playerRollCooldownTimer = 0f;
 
 

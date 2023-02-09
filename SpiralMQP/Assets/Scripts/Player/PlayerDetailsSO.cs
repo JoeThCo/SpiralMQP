@@ -22,6 +22,12 @@ public class PlayerDetailsSO : ScriptableObject
     [Tooltip("Player starting health")]
     public int playerHealthAmount;
 
+    [Tooltip("Select if has immunity period immediately after being hit. If so specify the immunity time in seconds in the other field")]
+    public bool isImmuneAfterHit = false;
+
+    [Tooltip("Immunity time in seconds after being hit")]
+    public float hitImmunityTime;
+
 
     [Space(10)]
     [Header("WEAPON")]
@@ -52,6 +58,11 @@ public class PlayerDetailsSO : ScriptableObject
         HelperUtilities.ValidateCheckNullValue(this, nameof(playerMinimapIcon), playerMinimapIcon);
         HelperUtilities.ValidateCheckNullValue(this, nameof(playerHandSprite), playerHandSprite);
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(startingWeaponList), startingWeaponList);
+
+        if (isImmuneAfterHit)
+        {
+            HelperUtilities.ValidateCheckPositiveValue(this, nameof(hitImmunityTime), hitImmunityTime, false);
+        }
     }
 #endif
     #endregion
