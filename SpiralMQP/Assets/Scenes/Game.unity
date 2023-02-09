@@ -395,8 +395,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c22502f545881644aea6b1c07a21849, type: 2}
   - {fileID: 11400000, guid: 148bfddd15549e74ba41920d95b849e0, type: 2}
   currentDungeonLevelListIndex: 0
-  gameState: 0
-  previousGameState: 0
 --- !u!4 &211922693
 Transform:
   m_ObjectHideFlags: 0
@@ -2322,7 +2320,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9989224
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -3986,7 +3984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129078201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 490.87875, y: 408.6651, z: -5.852822}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
