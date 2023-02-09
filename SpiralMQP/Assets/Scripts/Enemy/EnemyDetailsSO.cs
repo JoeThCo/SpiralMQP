@@ -58,4 +58,43 @@ public class EnemyDetailsSO : ScriptableObject
 
     [Tooltip("Select this if line of sight is required of the player before the enemy fires. If line of sight isn't selected the enemy will fire regardless of obstacles whenever the player is 'in range'")]
     public bool firingLineOfSightRequired;
+
+
+
+    [Space(10)]
+    [Header("ENEMY HEALTH")]
+    [Tooltip("The health of the enemy for each level")]
+    public EnemyHealthDetails[] enemyHealthDetailsArray;
+
+    [Tooltip("Select if has immunity period immediately after being hit. If so specify the immunity time in seconds in the other field")]
+    public bool isImmuneAfterHit = false;
+
+    [Tooltip("Immunity time in seconds after being hit")]
+    public float hitImmunityTime;
+
+    [Tooltip("Select to display a health bar for the enemy")]
+    public bool isHealthBarDisplayed = false;
+
+
+
+    #region Validation
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        HelperUtilities.ValidateCheckEmptyString(this, nameof(enemyName), enemyName);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(enemyPrefab), enemyPrefab);
+        HelperUtilities.ValidateCheckPositiveValue(this, nameof(chaseDistance), chaseDistance, false);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(enemyStandardMaterial), enemyStandardMaterial);
+        HelperUtilities.ValidateCheckPositiveValue(this, nameof(enemyMaterializeTime), enemyMaterializeTime, true);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(enemyMaterializeShader), enemyMaterializeShader);
+        HelperUtilities.ValidateCheckPositiveRange(this, nameof(firingIntervalMin), firingIntervalMin, nameof(firingIntervalMax), firingIntervalMax, false);
+        HelperUtilities.ValidateCheckPositiveRange(this, nameof(firingDurationMin), firingDurationMin, nameof(firingDurationMax), firingDurationMax, false);
+        HelperUtilities.ValidateCheckEnumerableValues(this, nameof(enemyHealthDetailsArray), enemyHealthDetailsArray);
+        if (isImmuneAfterHit)
+        {
+            HelperUtilities.ValidateCheckPositiveValue(this, nameof(hitImmunityTime), hitImmunityTime, false);
+        }
+    }
+#endif
+    #endregion
 }

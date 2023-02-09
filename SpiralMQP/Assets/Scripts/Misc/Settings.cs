@@ -21,6 +21,7 @@ public static class Settings
     // Maximum should be 3 although this is not recommended since it can cause the dungeon building to fail and the rooms are more likely NOT fit together
     public const int maxChildCorridor = 3;
     public const float fadeInTime = 0.3f; // Time to fade in the room and door
+    public const float doorUnlockDelay = 1f;
     #endregion
 
 
@@ -46,7 +47,6 @@ public static class Settings
 
     // Animator parameters - Door
     public static int open = Animator.StringToHash("open");
-
     #endregion
 
 
@@ -71,11 +71,22 @@ public static class Settings
 
     // This is used for optimizing the AStar pathfinding, we want to split the pathfinding calculation into different frames for each enemy to achieve better performance
     public const int targetFrameRateToSpreadPathfindingOver = 60; 
-
     #endregion ASTAR PATHFINDING PARAMETERS
 
 
+    #region ENEMY PARAMETERS
+    public const int defaultEnemyHealth = 20;
+    #endregion
+
+
     #region UI PARAMETERS
+    public const float uiHeartSpacing = 16f; // We can use something else in the future, heart for health is too generic
     public const float uiAmmoIconSpacing = 4f;
     #endregion    
+
+
+    #region CONTACT DAMAGE PARAMETERS
+    public const float contactDamageCollisionResetDelay = 0.5f;
+    #endregion
+
 }

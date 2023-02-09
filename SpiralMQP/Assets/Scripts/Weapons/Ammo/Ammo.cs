@@ -17,6 +17,7 @@ public class Ammo : MonoBehaviour, IFireable
     private float ammoChargeTimer; // This is used if we want to use an ammo pattern instead of a single bullet
     private bool isAmmoMaterialSet = false;
     private bool overrideAmmoMovement;
+    private bool isColliding = false; // This boolean value is used to prevent a single bullet triggering multiple collisions and causing player or enemy dealt more damage from the ammo
 
     private void Awake()
     {
@@ -53,14 +54,32 @@ public class Ammo : MonoBehaviour, IFireable
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // If already colliding with something, return
+        if (isColliding) return;
+
+        // Deal damage to collision object
+        DealDamage(other);
+
         // Show ammo hit effect
         AmmoHitEffect();
 
         // Return ammo back to the pool
         DisableAmmo();
+    }
+
+    private void DealDamage(Collider2D other)
+    {
+        Health health = other.GetComponent<Health>();
+
+        if (health != null)
+        {
+            // Set isColliding to prevent ammo dealing damage multiple times
+            isColliding = true;
+
+            health.TakeDamage(ammoDetails.ammoDamage);
+        }
     }
 
 
@@ -110,6 +129,9 @@ public class Ammo : MonoBehaviour, IFireable
         #region Ammo 
 
         this.ammoDetails = ammoDetails;
+
+        // Initialize isColliding to false
+        isColliding = false;
 
         // Set fire direction
         SetFireDirection(ammoDetails, aimAngle, weaponAimAngle, weaponAimDirectionVector);

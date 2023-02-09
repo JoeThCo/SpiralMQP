@@ -576,22 +576,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolArray:
-  - poolSize: 30
+  - poolSize: 60
     prefab: {fileID: 5891719235356115971, guid: 4dd74f46a4c79794eafebd550d3b2b1f, type: 3}
     componentType: IFireable
-  - poolSize: 30
+  - poolSize: 60
     prefab: {fileID: 5891719235356115971, guid: 0deb1cc2300b6d945936e2fd29d63734, type: 3}
     componentType: IFireable
-  - poolSize: 40
+  - poolSize: 60
     prefab: {fileID: 9197661179648785526, guid: 9a5e81869d09bc642ab26e9282f63d54, type: 3}
     componentType: SoundEffect
-  - poolSize: 30
+  - poolSize: 60
     prefab: {fileID: 5801418724654200722, guid: e7c476d4c7dc12c42a665a6e5e03c8bc, type: 3}
     componentType: WeaponShootEffect
-  - poolSize: 30
+  - poolSize: 60
     prefab: {fileID: 1438908454071538146, guid: 39bffd5b2acbbdf4eb536050f9df62a3, type: 3}
     componentType: WeaponShootEffect
-  - poolSize: 30
+  - poolSize: 60
     prefab: {fileID: 1438908454071538146, guid: 0025121a07e007e43a8ed4aa70e85d29, type: 3}
     componentType: AmmoHitEffect
   - poolSize: 300
@@ -789,6 +789,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 822104452}
   - {fileID: 707527640}
   - {fileID: 1357668739}
   - {fileID: 1879901805}
@@ -1789,7 +1790,7 @@ RectTransform:
   m_Children:
   - {fileID: 1549688473}
   m_Father: {fileID: 461009214}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2085,6 +2086,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740508981}
   m_CullTransparentMesh: 0
+--- !u!1 &822104451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 822104452}
+  - component: {fileID: 822104453}
+  m_Layer: 5
+  m_Name: HealthUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &822104452
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822104451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 461009214}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &822104453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822104451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b90365485543994682bdf74dc6b5e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &825980082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,7 +3014,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -3050,7 +3100,7 @@ RectTransform:
   m_Children:
   - {fileID: 406860615}
   m_Father: {fileID: 461009214}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
