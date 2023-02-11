@@ -49,6 +49,13 @@ public class Ammo : MonoBehaviour, IFireable
 
         if (ammoRange < 0f)
         {
+            // Only interested in player ammo
+            if (ammoDetails.isPlayerAmmo)
+            {
+                // No multiplier
+                StaticEventHandler.CallMultiplierEvent(false);
+            }
+
             // Return ammo back to the pool
             DisableAmmo();
         }
@@ -73,12 +80,35 @@ public class Ammo : MonoBehaviour, IFireable
     {
         Health health = other.GetComponent<Health>();
 
+        bool enemyHit = false; // A boolean value to check if this the damage is given to the enemy
+
         if (health != null)
         {
             // Set isColliding to prevent ammo dealing damage multiple times
             isColliding = true;
 
             health.TakeDamage(ammoDetails.ammoDamage);
+
+            // Enemy hit
+            if (health.enemy != null)
+            {
+                enemyHit = true;
+            }
+        }
+
+        // If player ammo then update multiplier
+        if (ammoDetails.isPlayerAmmo)
+        {
+            if (enemyHit)
+            {
+                // Multiplier 
+                StaticEventHandler.CallMultiplierEvent(true);
+            }
+            else
+            {
+                // No multiplier
+                StaticEventHandler.CallMultiplierEvent(false);
+            }
         }
     }
 

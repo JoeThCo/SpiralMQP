@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
     private void EnemyDestroyed()
     {
         DestroyedEvent destroyedEvent = GetComponent<DestroyedEvent>();
-        destroyedEvent.CallDestroyedEvent(false);
+        destroyedEvent.CallDestroyedEvent(false, Mathf.CeilToInt(health.GetStartingHealth() / 2f)); // Half of the enemy's health will convert into soul count when destroyed
     }
 
 

@@ -20,6 +20,8 @@ public class GameManager : SingletonAbstract<GameManager>
 
     [HideInInspector] public GameState gameState;
     [HideInInspector] public GameState previousGameState;
+    private long totalSoul;
+    private int soulMultiplier;
 
 
     protected override void Awake() 
@@ -38,12 +40,59 @@ public class GameManager : SingletonAbstract<GameManager>
     {
         // Subscribe to room changed event
         StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;    
+
+        // Subscribe to soul collected event
+        StaticEventHandler.OnSoulsCollected += StaticEventHandler_OnSoulsCollected;
+
+        // Subscribe to multiplier event
+        StaticEventHandler.OnMultiplier += StaticEventHandler_OnMultiplier;
     }
 
     private void OnDisable() 
     {
         // Unsubscribe from room changed event
         StaticEventHandler.OnRoomChanged -= StaticEventHandler_OnRoomChanged;    
+
+        // Unsubscribe from soul collected event
+        StaticEventHandler.OnSoulsCollected -= StaticEventHandler_OnSoulsCollected;
+
+        // Unsubscribe from multiplier event
+        StaticEventHandler.OnMultiplier -= StaticEventHandler_OnMultiplier;
+    }
+
+
+    /// <summary>
+    /// Handle soul multiplier event
+    /// </summary>
+    private void StaticEventHandler_OnMultiplier(MultiplierArgs multiplierArgs)
+    {
+        if (multiplierArgs.multiplier)
+        {
+            soulMultiplier++;
+        }
+        else
+        {
+            soulMultiplier--;
+        }
+
+        // Clamp between 1 and 10
+        soulMultiplier = Mathf.Clamp(soulMultiplier, 1, 10);
+
+        // Call soul amount changed event
+        StaticEventHandler.CallSoulAmountChangedEvent(totalSoul, soulMultiplier);
+    }
+
+
+    /// <summary>
+    /// Handle total soul amount changed event
+    /// </summary>
+    private void StaticEventHandler_OnSoulsCollected(SoulsCollectedArgs soulsCollectedArgs)
+    {
+        // Increase total soul amount
+        totalSoul += soulsCollectedArgs.soulCount * soulMultiplier;
+
+        // Call total soul amount changed event
+        StaticEventHandler.CallSoulAmountChangedEvent(totalSoul, soulMultiplier);
     }
 
     /// <summary>
@@ -74,6 +123,12 @@ public class GameManager : SingletonAbstract<GameManager>
     {
         previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
+
+        // Set total soul to zero
+        totalSoul = 0;
+
+        // Set the multiplier to 1
+        soulMultiplier = 1;
     }
 
     // Update is called once per frame

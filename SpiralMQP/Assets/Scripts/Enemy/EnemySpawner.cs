@@ -171,6 +171,8 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
         // Reduce current enemy count
         currentEnemyCount--;
 
+        // Soul collected
+        StaticEventHandler.CallSoulsCollectedEvent(destroyedEventArgs.soulCount);
 
         if (currentEnemyCount <= 0 && enemiesSpawnedSoFar == enemiesToSpawn)
         {
