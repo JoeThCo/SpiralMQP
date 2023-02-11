@@ -59,7 +59,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     [HideInInspector] public ReloadWeaponEvent reloadWeaponEvent;
     [HideInInspector] public WeaponReloadedEvent weaponReloadedEvent;
     [HideInInspector] public ActiveWeapon activeWeapon;
-    [HideInInspector] public SpriteRenderer spriteRenderer;
+    [HideInInspector] public SpriteRenderer[] spriteRendererArray;
     [HideInInspector] public Animator animator;
 
     public List<Weapon> weaponList = new List<Weapon>(); // To hold player weapons
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
         reloadWeaponEvent = GetComponent<ReloadWeaponEvent>();
         weaponReloadedEvent = GetComponent<WeaponReloadedEvent>();
         activeWeapon = GetComponent<ActiveWeapon>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRendererArray = GetComponentsInChildren<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
@@ -108,9 +108,8 @@ public class Player : MonoBehaviour // Master reference class for all these comp
         // If player has died
         if (healthEventArgs.healthAmount <= 0f)
         {
-            destroyedEvent.CallDestroyedEvent(true);
+            destroyedEvent.CallDestroyedEvent(true, 0); // Player doesn't get soul when die
         }
-
     }
 
     /// <summary>
