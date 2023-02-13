@@ -13,7 +13,7 @@ public class SoundEffectManager : SingletonAbstract<SoundEffectManager>
         {
             soundsVolume = PlayerPrefs.GetInt("soundsVolume"); // If so, use that value
         }
-       
+
         SetSoundsVolume(soundsVolume);
     }
 
