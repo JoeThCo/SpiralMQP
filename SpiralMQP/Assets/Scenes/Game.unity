@@ -2239,6 +2239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b553bd55d4c12fc4194416324ba94967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioFadeTime: 0.25
+  noStateAudio: {fileID: 8300000, guid: 7c65c6045b7ddae45aa34ecdc3810f34, type: 3}
   allStateMusic:
   - musicStates: 0000000001000000
     stateMusics:
@@ -2251,9 +2253,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 70298172d88ca2b4fb08d70a5c52c99b, type: 3}
     - {fileID: 8300000, guid: 425cfc0bbc6ccf147bc7247e8c04f367, type: 3}
   - musicStates: 0500000006000000
-    stateMusics: []
-  - musicStates: 06000000
-    stateMusics: []
+    stateMusics:
+    - {fileID: 8300000, guid: cbebb64a953d47441be2e3a7eac340a8, type: 3}
   mainMusic: {fileID: 1118855720}
 --- !u!1 &860303794
 GameObject:
@@ -2766,7 +2767,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
