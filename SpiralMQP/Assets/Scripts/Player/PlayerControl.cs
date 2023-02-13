@@ -17,8 +17,10 @@ public class PlayerControl : MonoBehaviour
     private float moveSpeed;
     private Coroutine playerRollCoroutine;
     private WaitForFixedUpdate waitForFixedUpdate; // Dealing with physics we use fixed update (cuz that's how unity does it)
-    [HideInInspector] public bool isPlayerRolling = false;
     private float playerRollCooldownTimer = 0f;
+    private bool isPlayerMovementDisabled = false;
+
+    [HideInInspector] public bool isPlayerRolling = false;
 
 
     private void Awake()
@@ -80,6 +82,9 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        // If player movement disabled, then return
+        if (isPlayerMovementDisabled) return;
+
         // If player is rolling then return (player can't perform anything else in a rolling movement)
         if (isPlayerRolling) return;
 
@@ -395,6 +400,18 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enable/Disable the player movement
+    /// </summary>
+    public void EnablePlayer(bool isEnabled)
+    {
+        isPlayerMovementDisabled = !isEnabled;
+
+        if (!isEnabled)
+        {
+            player.idleEvent.CallIdleEvent();
+        }
+    }
 
 
     #region Validation

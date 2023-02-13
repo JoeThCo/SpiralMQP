@@ -7,6 +7,11 @@ using UnityEngine;
 [DisallowMultipleComponent] // Good practice
 public class Health : MonoBehaviour  // This class is used for anything that needs health
 {
+    [Space(10)]
+    [Header("REFERENCE")]
+    [Tooltip("Populate with the HealthBar component on the HealthBar gameobject")]
+    [SerializeField] private HealthBar healthBar;
+
     private int startingHealth;
     private int currentHealth;
     private HealthEvent healthEvent;
@@ -55,6 +60,17 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
                 spriteRendererArray = enemy.spriteRendererArray;
             }
         }
+
+
+        // Enable/Disable the health bar
+        if (enemy != null && enemy.enemyDetails.isHealthBarDisplayed == true && healthBar != null)
+        {
+            healthBar.EnableHealthBar(true);
+        }
+        else if (healthBar != null)
+        {
+            healthBar.EnableHealthBar(false);
+        }
     }
 
     private void CallHealthEvent(int damageAmount)
@@ -80,17 +96,23 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
 
             // Do the flash and be immune for some time
             PostHitImmunity();
+
+            // Set health bar as the percentage of health remaining
+            if (healthBar != null)
+            {
+                healthBar.SetHealthBarValue((float)currentHealth / (float)startingHealth);
+            }
         }
 
-        // Testing
-        if (isDamageable && isRolling)
-        {
-            Debug.Log("Bullet Dodged by Dashing/Rolling");
-        }
-        if (!isDamageable && !isRolling)
-        {
-            Debug.Log("Avoided Damage");
-        }
+        // // Testing
+        // if (isDamageable && isRolling)
+        // {
+        //     Debug.Log("Bullet Dodged by Dashing/Rolling");
+        // }
+        // if (!isDamageable && !isRolling)
+        // {
+        //     Debug.Log("Avoided Damage");
+        // }
     }
 
     /// <summary>

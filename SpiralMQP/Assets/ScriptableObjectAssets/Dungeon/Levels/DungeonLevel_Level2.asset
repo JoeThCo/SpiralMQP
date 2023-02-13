@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12bc04a11e2fa946b454d986cce879d, type: 3}
   m_Name: DungeonLevel_Level2
   m_EditorClassIdentifier: 
-  levelName: Level 2
+  levelName: Dragon
   roomTemplateList:
   - {fileID: 11400000, guid: 3cdc996eae718644dad8dad24ae2c39f, type: 2}
   - {fileID: 11400000, guid: 03fb8e6e180566844b9c3942a093676e, type: 2}

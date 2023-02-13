@@ -19,6 +19,12 @@ public class InstantiatedRoom : MonoBehaviour
     [HideInInspector] public Bounds roomColliderBounds;
     [HideInInspector] public int[,] aStarMovementPenalty; // Use this 2d array to store movement penalties from the tilemaps to be used in AStar pathfinding
 
+
+    [Space(10)]
+    [Header("OBJECT REFERENCES")]
+    [Tooltip("Populate with the environment child placeholder gameobject")]
+    [SerializeField] private GameObject environmentGameObject;
+
     private BoxCollider2D boxCollider2D;
 
     private void Awake()
@@ -339,6 +345,15 @@ public class InstantiatedRoom : MonoBehaviour
 
 
     /// <summary>
+    /// Activate/Deactivate environment gameobject
+    /// </summary>
+    public void ActivateEnvironmentGameObjects(bool isActivated)
+    {
+        if (environmentGameObject != null) environmentGameObject.SetActive(isActivated);
+    }
+
+
+    /// <summary>
     /// Lock the room doors
     /// </summary>
     public void LockDoors()
@@ -383,5 +398,12 @@ public class InstantiatedRoom : MonoBehaviour
         EnableRoomCollider(true);
     }
 
-
+    #region Validation
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        HelperUtilities.ValidateCheckNullValue(this, nameof(environmentGameObject), environmentGameObject);
+    }
+#endif
+    #endregion
 }

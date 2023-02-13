@@ -21,7 +21,7 @@ public class ReceiveContactDamage : MonoBehaviour
         if (contactDamageAmount > 0)  damageAmount = contactDamageAmount;
 
         // For testing
-        Debug.Log("Receive Potential damage of: " + damageAmount);
+        // Debug.Log("Receive Potential damage of: " + damageAmount);
 
         health.TakeDamage(damageAmount);
     }
