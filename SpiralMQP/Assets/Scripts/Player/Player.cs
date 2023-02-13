@@ -103,7 +103,8 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     /// </summary>
     private void HealthEvent_OnHealthChanged(HealthEvent healthEvent, HealthEventArgs healthEventArgs)
     {
-        Debug.Log("Player Health Amount: " + healthEventArgs.healthAmount);
+        // Testing
+        // Debug.Log("Player Health Amount: " + healthEventArgs.healthAmount);
 
         // If player has died
         if (healthEventArgs.healthAmount <= 0f)

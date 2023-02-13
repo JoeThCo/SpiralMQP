@@ -83,6 +83,14 @@ PrefabInstance:
       propertyPath: movementDetails
       value: 
       objectReference: {fileID: 11400000, guid: 678e1b2eec2c035478aff7d1085a11f0, type: 2}
+    - target: {fileID: 7928917273978657655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928917273978657655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8202506532416982395, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Size.x
       value: 0.25

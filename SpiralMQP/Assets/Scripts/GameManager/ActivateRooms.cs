@@ -4,9 +4,8 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class ActivateRooms : MonoBehaviour
 {
-    #region Header POPULATE WITH MINIMAP CAMERA
+    [Space(10)]
     [Header("POPULATE WITH MINIMAP CAMERA")]
-    #endregion Header
     [SerializeField] private Camera miniMapCamera;
 
     private Camera cameraMain;
@@ -39,16 +38,16 @@ public class ActivateRooms : MonoBehaviour
             {
                 room.instantiatedRoom.gameObject.SetActive(true);
 
-                // // If room is within main camera viewport, then activate environment game objects
-                // if ((room.lowerBounds.x <= mainCameraWorldPositionUpperBounds.x && room.lowerBounds.y <= mainCameraWorldPositionUpperBounds.y) 
-                //     && (room.upperBounds.x >= mainCameraWorldPositionLowerBounds.x && room.upperBounds.y >= mainCameraWorldPositionLowerBounds.y))
-                // {
-                //     room.instantiatedRoom.ActivateEnvironmentGameObjects();
-                // }
-                // else
-                // {
-                //     room.instantiatedRoom.DeactivateEnvironmentGameObjects();
-                // }
+                // If room is within main camera viewport, then activate environment game objects
+                if ((room.lowerBounds.x <= mainCameraWorldPositionUpperBounds.x && room.lowerBounds.y <= mainCameraWorldPositionUpperBounds.y) 
+                    && (room.upperBounds.x >= mainCameraWorldPositionLowerBounds.x && room.upperBounds.y >= mainCameraWorldPositionLowerBounds.y))
+                {
+                    room.instantiatedRoom.ActivateEnvironmentGameObjects(true);
+                }
+                else
+                {
+                    room.instantiatedRoom.ActivateEnvironmentGameObjects(false);
+                }
             }
             else
             {
