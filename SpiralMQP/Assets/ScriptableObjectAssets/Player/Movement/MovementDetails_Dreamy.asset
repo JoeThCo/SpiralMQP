@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd417ce2b80bb94ea3e8a0d3c817a5c, type: 3}
   m_Name: MovementDetails_Dreamy
   m_EditorClassIdentifier: 
-  minMoveSpeed: 8
-  maxMoveSpeed: 8
-  rollSpeed: 12
+  minMoveSpeed: 10
+  maxMoveSpeed: 10
+  rollSpeed: 15
   rollDistance: 6
   rollCooldownTime: 0.2

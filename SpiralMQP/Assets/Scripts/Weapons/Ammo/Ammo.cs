@@ -36,7 +36,7 @@ public class Ammo : MonoBehaviour, IFireable
         }
         else if (!isAmmoMaterialSet)
         {
-            SetAmmoMaterial(ammoDetails.ammoChargeMaterial);
+            SetAmmoMaterial(ammoDetails.ammoMaterial);
             isAmmoMaterialSet = true;
         }
 
