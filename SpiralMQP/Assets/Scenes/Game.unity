@@ -2240,7 +2240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioFadeTime: 0.25
-  noStateAudio: {fileID: 8300000, guid: 7c65c6045b7ddae45aa34ecdc3810f34, type: 3}
+  defaultAudioClip: {fileID: 8300000, guid: 7c65c6045b7ddae45aa34ecdc3810f34, type: 3}
   allStateMusic:
   - musicStates: 0000000001000000
     stateMusics:

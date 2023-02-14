@@ -5,8 +5,11 @@ using DG.Tweening;
 
 public class MusicController : MonoBehaviour
 {
+    [Tooltip("Total time it will take the old audio to fade out into the new audio")]
     [SerializeField] float audioFadeTime = .15f;
-    [SerializeField] AudioClip noStateAudio;
+
+    [Tooltip("If the game state either has 0 audio or doesnt exist, use this as a default song")]
+    [SerializeField] AudioClip defaultAudioClip;
     [Space(10)]
     [SerializeField] StateMusic[] allStateMusic;
     [Space(10)]
@@ -16,12 +19,6 @@ public class MusicController : MonoBehaviour
     private GameState previousGameState = GameState.gameStarted;
     Coroutine musicFade;
 
-    //check what state the game is in
-    //if the state is the same as last frame or last check in, keep playing the music
-    //else pick a new song, set volume to 0
-    //fade in the new music and fade out the old music
-    //when it is done, stop the old music
-
     private void Awake()
     {
         Instance = this;
@@ -30,6 +27,7 @@ public class MusicController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //if there is a change in states
         if (previousGameState != GameManager.Instance.GetCurrentGameState())
         {
             OnGameStateChange();
@@ -38,6 +36,9 @@ public class MusicController : MonoBehaviour
         previousGameState = GameManager.Instance.GetCurrentGameState();
     }
 
+    /// <summary>
+    /// What to do on state change
+    /// </summary>
     public void OnGameStateChange()
     {
         Debug.Log("New State!");
@@ -67,19 +68,27 @@ public class MusicController : MonoBehaviour
     /// Gets the audio clip based on the state.
     /// If no state, plays a default audio clip
     /// </summary>
-    /// <param name="state"></param>
+    /// <param name="searchState"></param>
     /// <returns></returns>
-    AudioClip GetStateSong(GameState state)
+    AudioClip GetStateSong(GameState searchState)
     {
         foreach (StateMusic currentState in allStateMusic)
         {
-            if (currentState.ContainsState(state))
+            //if the current state has the state we are searching for
+            if (currentState.ContainsState(searchState))
             {
-                return currentState.GetRandomClip();
+                StateMusic hasState = currentState;
+
+                //if there is an actual song to pick
+                if (hasState.stateMusics.Count > 0) 
+                {
+                    return currentState.GetRandomClip();
+                }
             }
         }
 
-        return noStateAudio;
+        //if nothing, play the default music
+        return defaultAudioClip;
     }
 
     [System.Serializable]
