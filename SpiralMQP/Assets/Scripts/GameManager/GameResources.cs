@@ -45,6 +45,8 @@ public class GameResources : MonoBehaviour
     public AudioMixerGroup soundsMasterMixerGroup;
     [Tooltip("Door open and close sound effect")] // In the future we can sound effect for each event, but for now we are using the same one for both events
     public SoundEffectSO doorOpenCloseSoundEffect;
+    [Tooltip("Populate with the table flip sound effect")]
+    public SoundEffectSO tableFlip;
 
 
     [Space(10)]
