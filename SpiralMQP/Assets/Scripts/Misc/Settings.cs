@@ -40,6 +40,10 @@ public static class Settings
     public static int rollDown = Animator.StringToHash("rollDown"); // For Dreamy this is a down dash
     public static int rollLeft = Animator.StringToHash("rollLeft"); // For Dreamy this is a left dash
     public static int rollRight = Animator.StringToHash("rollRight"); // For Dreamy this is a right dash
+    public static int flipUp = Animator.StringToHash("flipUp");
+    public static int flipRight = Animator.StringToHash("flipRight");
+    public static int flipLeft = Animator.StringToHash("flipLeft");
+    public static int flipDown = Animator.StringToHash("flipDown");
     public static float baseSpeedForPlayerAnimations = 8f;
 
     // Animator parameters - Enemy

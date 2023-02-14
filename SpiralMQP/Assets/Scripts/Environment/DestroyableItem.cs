@@ -16,22 +16,26 @@ public class DestroyableItem : MonoBehaviour
     [Tooltip("The sound effect when this item is destroyed")]
     [SerializeField] private SoundEffectSO destroySoundEffect;
 
+    private SpriteRenderer spriteRenderer;
     private Animator animator;
     private BoxCollider2D boxCollider2D; 
     private PolygonCollider2D polygonCollider2D;
     private HealthEvent healthEvent;
     private Health health;
-    //private ReceiveContactDamage receiveContactDamage;
+    private ReceiveContactDamage receiveContactDamage;
+    private Rigidbody2D itemRigidbody2D; // Only Moveable item will need this, so when destroy disable this component
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         healthEvent = GetComponent<HealthEvent>();
         health = GetComponent<Health>();
         health.SetStartingHealth(startingHealthAmount);
-        //receiveContactDamage = GetComponent<ReceiveContactDamage>();
+        receiveContactDamage = GetComponent<ReceiveContactDamage>();
+        itemRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -55,9 +59,13 @@ public class DestroyableItem : MonoBehaviour
 
     private IEnumerator PlayAnimation()
     {
-        // Destroy the trigger collider and collider
-        Destroy(boxCollider2D);
+        // Destroy the trigger collider and deactivate collider
         Destroy(polygonCollider2D);
+        boxCollider2D.enabled = false;
+
+        // Disable the rigidbody 2d component if exist
+        if (itemRigidbody2D != null) itemRigidbody2D.simulated = false;
+        
 
         // Play sound effect
         if (destroySoundEffect != null)
@@ -74,12 +82,14 @@ public class DestroyableItem : MonoBehaviour
             yield return null;
         }
 
+        // Set the sorting order to -1 (we need to make it lower than the player sorting layer)
+        spriteRenderer.sortingOrder = -1;
+
         // Then destroy all components other than the Sprite Renderer to just display the final sprite in the animation
-        //Destroy(receiveContactDamage);
+        if (receiveContactDamage != null) Destroy(receiveContactDamage);
         Destroy(animator);
         Destroy(health);
         Destroy(healthEvent);
         Destroy(this);
-
     }
 }

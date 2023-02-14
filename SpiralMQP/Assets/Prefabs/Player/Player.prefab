@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: -7252268560625333556}
   - component: {fileID: -78574553824682977}
   - component: {fileID: 6669798305535523567}
-  - component: {fileID: 9136052844180136100}
   - component: {fileID: 5431106142663089638}
   m_Layer: 10
   m_Name: Player
@@ -248,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899e1e0cae6ba81469479089745caa15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   isDamageable: 1
   enemy: {fileID: 0}
 --- !u!114 &-2737017028358926387
@@ -289,7 +289,7 @@ MonoBehaviour:
   reloadWeaponEvent: {fileID: 0}
   weaponReloadedEvent: {fileID: 0}
   activeWeapon: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  spriteRendererArray: []
   animator: {fileID: 0}
 --- !u!114 &-3461680387138051679
 MonoBehaviour:
@@ -538,22 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4043dc0bb527e944da8355baaba97f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9136052844180136100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161765408381564467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e1e22279cd37f49ab081edfa9942c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contactDamageAmount: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 131072
 --- !u!114 &5431106142663089638
 MonoBehaviour:
   m_ObjectHideFlags: 0
