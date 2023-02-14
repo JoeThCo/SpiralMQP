@@ -172,6 +172,23 @@ public class Player : MonoBehaviour // Master reference class for all these comp
 
 
     /// <summary>
+    /// Return true if the weapon is held by the player - otherwise returns false
+    /// </summary>
+    public bool IsWeaponHeldByPlayer(WeaponDetailsSO weaponDetails)
+    {
+        foreach (Weapon weapon in weaponList)
+        {
+            if (weapon.weaponDetails = weaponDetails)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    /// <summary>
     /// Set player health from playerDetails SO
     /// </summary>
     private void SetPlayerHealth()

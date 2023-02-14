@@ -17,6 +17,30 @@ public enum AimDirection
     Down
 }
 
+
+// How do we want the chest to spawn
+public enum ChestSpawnEvent
+{
+    onRoomEntry,
+    onEnemiesDefeated
+}
+
+public enum ChestSpawnPosition
+{
+    atSpawnerPosition,
+    atPlayerPosition
+}
+
+public enum ChestState
+{
+    closed,
+    healthItem,
+    ammoItem,
+    weaponItem,
+    empty
+}
+
+
 // Used as statemachine for the game
 public enum GameState
 {

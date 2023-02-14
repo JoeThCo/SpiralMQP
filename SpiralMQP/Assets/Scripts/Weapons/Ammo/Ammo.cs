@@ -36,28 +36,32 @@ public class Ammo : MonoBehaviour, IFireable
         }
         else if (!isAmmoMaterialSet)
         {
-            SetAmmoMaterial(ammoDetails.ammoChargeMaterial);
+            SetAmmoMaterial(ammoDetails.ammoMaterial);
             isAmmoMaterialSet = true;
         }
 
-        // Calculate distance vector to move ammo for each frame or each update
-        Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
-        transform.position += distanceVector;
-
-        // Distance after max range reached
-        ammoRange -= distanceVector.magnitude;
-
-        if (ammoRange < 0f)
+        // Don't move ammo if movement has been overriden - e.g. this ammo is part of an ammo pattern
+        if (!overrideAmmoMovement)
         {
-            // Only interested in player ammo
-            if (ammoDetails.isPlayerAmmo)
-            {
-                // No multiplier
-                StaticEventHandler.CallMultiplierEvent(false);
-            }
+            // Calculate distance vector to move ammo for each frame or each update
+            Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
+            transform.position += distanceVector;
 
-            // Return ammo back to the pool
-            DisableAmmo();
+            // Distance after max range reached
+            ammoRange -= distanceVector.magnitude;
+
+            if (ammoRange < 0f)
+            {
+                // Only interested in player ammo
+                if (ammoDetails.isPlayerAmmo)
+                {
+                    // No multiplier
+                    StaticEventHandler.CallMultiplierEvent(false);
+                }
+
+                // Return ammo back to the pool
+                DisableAmmo();
+            }
         }
     }
 

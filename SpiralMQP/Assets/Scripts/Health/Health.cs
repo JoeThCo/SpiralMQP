@@ -185,4 +185,26 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
     {
         return startingHealth;
     }
+
+
+    /// <summary>
+    /// Increase health by specified percent
+    /// </summary>
+    public void AddHealth(int healthPercent)
+    {
+        int healthIncrease = Mathf.RoundToInt((startingHealth * healthPercent) / 100f);
+
+        int totalHealth = currentHealth + healthIncrease;
+
+        if (totalHealth > startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
+        else
+        {
+            currentHealth = totalHealth;
+        }
+
+        CallHealthEvent(0);
+    }
 }
