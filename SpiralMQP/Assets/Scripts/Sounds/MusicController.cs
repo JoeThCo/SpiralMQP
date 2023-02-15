@@ -41,7 +41,6 @@ public class MusicController : MonoBehaviour
     /// </summary>
     public void OnGameStateChange()
     {
-        Debug.Log("New State!");
         StopCoroutine(musicFade);
         musicFade = StartCoroutine(SwitchClips(GameManager.Instance.GetCurrentGameState()));
     }
