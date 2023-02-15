@@ -17,7 +17,7 @@ public class PlayerControl : MonoBehaviour
     private float moveSpeed;
     private Coroutine playerRollCoroutine;
     private WaitForFixedUpdate waitForFixedUpdate; // Dealing with physics we use fixed update (cuz that's how unity does it)
-    private bool isPlayerRolling = false;
+    [HideInInspector] public bool isPlayerRolling = false;
     private float playerRollCooldownTimer = 0f;
 
 
@@ -206,6 +206,9 @@ public class PlayerControl : MonoBehaviour
 
         //Relaod waepon input
         ReloadWeaponInput();
+
+        // Process ability input
+        UseAbilityInput(weaponDirection, weaponAngleDegrees, playerAngleDegrees, playerAimDirection);
     }
 
     private void SwitchWeaponInput()
@@ -338,6 +341,19 @@ public class PlayerControl : MonoBehaviour
         else
         {
             leftMouseDownPreviousFrame = false;
+        }
+    }
+    
+    private void UseAbilityInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
+    {
+        if (gameManager.gameState == GameState.playingLevel)
+        {
+            // Use ability when Q is pressed
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                // Trigger Ability event
+                player.useAbilityEvent.CallOnUseAbilityEvent(true, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
+            }
         }
     }
 

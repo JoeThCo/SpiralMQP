@@ -73,6 +73,9 @@ public class GameResources : MonoBehaviour
     [Tooltip("Populate with ammo icon prefab")]
     public GameObject ammoIconPrefab;
 
+    [Tooltip("Populate with the heart image prefab")]
+    public GameObject heartPrefab;
+
 
     #region Validation
 #if UNITY_EDITOR
