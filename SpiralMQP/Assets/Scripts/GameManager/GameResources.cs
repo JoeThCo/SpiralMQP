@@ -39,6 +39,7 @@ public class GameResources : MonoBehaviour
     public CurrentPlayerSO currentPlayer;
 
 
+
     [Space(10)]
     [Header("SOUNDS")]
     [Tooltip("Fill with the sounds master mixer group")]
@@ -89,6 +90,7 @@ public class GameResources : MonoBehaviour
     public TileBase preferredEnemyPathTile;
 
 
+
     [Space(10)]
     [Header("UI")]
     [Tooltip("Populate with ammo icon prefab")]
@@ -96,7 +98,6 @@ public class GameResources : MonoBehaviour
 
     [Tooltip("Populate with the heart image prefab")]
     public GameObject heartPrefab;
-
 
 
 
@@ -110,6 +111,13 @@ public class GameResources : MonoBehaviour
 
     [Tooltip("Populate with bullet icon sprite")]
     public Sprite bulletIcon;
+
+
+
+    [Space(10)]
+    [Header("MINIMAP")]
+    [Tooltip("Minimap Boss Icon Gameobject")]
+    public GameObject minimapBossIconPrefab;
 
 
 

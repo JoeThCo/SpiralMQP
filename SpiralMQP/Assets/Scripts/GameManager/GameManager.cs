@@ -17,6 +17,9 @@ public class GameManager : SingletonAbstract<GameManager>
     [Tooltip("Populate with the FadeImage CanvasGroup component in the FadeScreenUI")]
     [SerializeField] private CanvasGroup canvasGroup;
 
+    [Tooltip("Populate with pause menu gameobject in hierarchy")]
+    [SerializeField] private GameObject pauseMenu;
+
 
     [Space(10)]
     [Header("DUNGEON LEVELS")]
@@ -35,6 +38,7 @@ public class GameManager : SingletonAbstract<GameManager>
     private long totalSoul;
     private int soulMultiplier;
     private InstantiatedRoom bossRoom;
+    private bool isFading = false;
 
 
     protected override void Awake()
@@ -276,6 +280,8 @@ public class GameManager : SingletonAbstract<GameManager>
         // Handle game states
         switch (gameState)
         {
+            // ----------------------------------------------------- GAME STARTED -----------------------------------------------------------
+
             case GameState.gameStarted:
                 // Play first level
                 PlayDungeonLevel(currentDungeonLevelListIndex);
@@ -285,6 +291,99 @@ public class GameManager : SingletonAbstract<GameManager>
                 RoomEnemiesDefeated();
                 break;
 
+            // ----------------------------------------------------- GAME STARTED -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- PLAYING LEVEL -----------------------------------------------------------
+
+            // While playing the level handle the tab key for the dungeon overview map / esc key for pause menu
+            case GameState.playingLevel:
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    //PauseGameMenu();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    DisplayDungeonOverviewMap();
+                }
+                break;
+
+            // ----------------------------------------------------- PLAYING LEVEL -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- ENGAGING ENEMIES -----------------------------------------------------------
+
+            // While engaging enemies handle the escape key for the pause menu
+            case GameState.engagingEnemies:
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    //PauseGameMenu();
+                }
+                break;
+
+            // ----------------------------------------------------- ENGAGING ENEMIES -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- DUNGEON OVERVIEW MAP -----------------------------------------------------------
+
+            // if in the dungeon overview map handle the release of the tab key to clear the map
+            case GameState.dungeonOverviewMap:
+
+                // Key released
+                if (Input.GetKeyUp(KeyCode.Tab))
+                {
+                    // Clear dungeonOverviewMap
+                    DungeonMap.Instance.ClearDungeonOverViewMap();
+                }
+                break;
+
+            // ----------------------------------------------------- DUNGEON OVERVIEW MAP -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- BOSS STAGE -----------------------------------------------------------
+
+            // While playing the level and before the boss is engaged, handle the tab key for the dungeon overview map.
+            case GameState.bossStage:
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    //PauseGameMenu();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    DisplayDungeonOverviewMap();
+                }
+                break;
+
+            // ----------------------------------------------------- BOSS STAGE -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- ENGAGING BOSS -----------------------------------------------------------
+
+            // While engaging the boss handle the escape key for the pause menu
+            case GameState.engagingBoss:
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    //PauseGameMenu();
+                }
+                break;
+
+            // ----------------------------------------------------- ENGAGING BOSS -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- LEVEL COMPLETED -----------------------------------------------------------
+
             // Handle the level being completed
             case GameState.levelCompleted:
 
@@ -292,10 +391,22 @@ public class GameManager : SingletonAbstract<GameManager>
                 StartCoroutine(LevelCompleted());
                 break;
 
+            // ----------------------------------------------------- LEVEL COMPLETED -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- GAME WON -----------------------------------------------------------
+
             case GameState.gameWon:
 
                 if (previousGameState != GameState.gameWon) StartCoroutine(GameWon()); // Make sure we only call this once when won (since this function will be constantly calling in Update)
                 break;
+
+            // ----------------------------------------------------- GAME WON -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- GAME LOST -----------------------------------------------------------
 
             // Handle the game being lost (only trigger this once - test the previous game state to do this)
             case GameState.gameLost:
@@ -305,14 +416,73 @@ public class GameManager : SingletonAbstract<GameManager>
                     StopAllCoroutines(); // Prevent messages if you clear the level just as you get killed
                     StartCoroutine(GameLost());
                 }
-
                 break;
+
+            // ----------------------------------------------------- GAME LOST -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- RESTART GAME -----------------------------------------------------------
 
             // restart the game
             case GameState.restartGame:
 
                 RestartGame();
                 break;
+
+            // ----------------------------------------------------- RESTART GAME -----------------------------------------------------------
+
+
+
+            // ----------------------------------------------------- GAME PAUSE -----------------------------------------------------------
+
+            // if the game is paused and the pause menu showing, then pressing escape again will clear the pause menu
+            case GameState.gamePause:
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    //PauseGameMenu();
+                }
+                break;
+
+                // ----------------------------------------------------- GAME PAUSE -----------------------------------------------------------
+        }
+    }
+
+    /// <summary>
+    /// Dungeon Map Screen Display
+    /// </summary>
+    private void DisplayDungeonOverviewMap()
+    {
+        // Return if fading
+        if (isFading) return;
+
+        // Display dungeonOverviewMap
+        DungeonMap.Instance.DisplayDungeonOverViewMap();
+    }
+
+
+    /// <summary>
+    /// Pause game menu - also called from resume game button on pause menu
+    /// </summary>
+    public void PauseGameMenu()
+    {
+        if (gameState != GameState.gamePause)
+        {
+            pauseMenu.SetActive(true);
+            GetPlayer().playerControl.EnablePlayer(false);
+
+            // Set game state
+            previousGameState = gameState;
+            gameState = GameState.gamePause;
+        }
+        else if (gameState == GameState.gamePause)
+        {
+            pauseMenu.SetActive(false);
+            GetPlayer().playerControl.EnablePlayer(true);
+
+            // Set game state
+            gameState = previousGameState;
+            previousGameState = GameState.gamePause;
 
         }
     }
@@ -323,7 +493,7 @@ public class GameManager : SingletonAbstract<GameManager>
     /// </summary>
     public IEnumerator Fade(float startFadeAlpha, float targetFadeAlpha, float fadeSeconds, Color backgroundColor)
     {
-        //isFading = true;
+        isFading = true;
 
         Image image = canvasGroup.GetComponent<Image>();
         image.color = backgroundColor;
@@ -337,8 +507,7 @@ public class GameManager : SingletonAbstract<GameManager>
             yield return null;
         }
 
-        //isFading = false;
-
+        isFading = false;
     }
 
 

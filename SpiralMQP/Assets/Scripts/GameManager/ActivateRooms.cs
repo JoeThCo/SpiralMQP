@@ -19,6 +19,10 @@ public class ActivateRooms : MonoBehaviour
         InvokeRepeating(nameof(EnableRooms), 0.5f, 0.75f);
     }
 
+
+    /// <summary>
+    /// Enable rooms (along with all the environment gameobjects) within the camera viewport
+    /// </summary>
     private void EnableRooms()
     {
         // if currently showing the dungeon map UI, don't process
