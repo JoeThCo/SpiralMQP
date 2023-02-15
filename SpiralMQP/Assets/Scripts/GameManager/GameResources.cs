@@ -41,6 +41,25 @@ public class GameResources : MonoBehaviour
 
 
     [Space(10)]
+    [Header("MUSIC")]
+    [Tooltip("Populate with the music master mixer group")]
+    public AudioMixerGroup musicMasterMixerGroup;
+    
+    [Tooltip("Main menu music scriptable object")]
+    public MusicTrackSO mainMenuMusic;
+
+    [Tooltip("music on full snapshot")]
+    public AudioMixerSnapshot musicOnFullSnapshot;
+   
+    [Tooltip("music low snapshot")]
+    public AudioMixerSnapshot musicLowSnapshot;
+    
+    [Tooltip("music off snapshot")]
+    public AudioMixerSnapshot musicOffSnapshot;
+
+
+
+    [Space(10)]
     [Header("SOUNDS")]
     [Tooltip("Fill with the sounds master mixer group")]
     public AudioMixerGroup soundsMasterMixerGroup;
