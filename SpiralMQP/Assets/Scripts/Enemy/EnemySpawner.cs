@@ -175,16 +175,14 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
             currentRoom.isClearedOfEnemies = true;
 
             // Set game state
-            if (GameManager.Instance.gameState == GameState.engagingEnemies)
+            if (GameManager.Instance.GetCurrentGameState() == GameState.engagingEnemies)
             {
-                GameManager.Instance.gameState = GameState.playingLevel;
-                GameManager.Instance.previousGameState = GameState.engagingEnemies;
+                GameManager.Instance.ChangeGameState(GameState.playingLevel);
             }
 
-            else if (GameManager.Instance.gameState == GameState.engagingBoss)
+            else if (GameManager.Instance.GetCurrentGameState() == GameState.engagingBoss)
             {
-                GameManager.Instance.gameState = GameState.bossStage;
-                GameManager.Instance.previousGameState = GameState.engagingBoss;
+                GameManager.Instance.ChangeGameState(GameState.bossStage);
             }
 
             // Unlock doors

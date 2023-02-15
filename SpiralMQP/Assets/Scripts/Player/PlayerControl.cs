@@ -343,10 +343,10 @@ public class PlayerControl : MonoBehaviour
             leftMouseDownPreviousFrame = false;
         }
     }
-    
+
     private void UseAbilityInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
     {
-        if (gameManager.gameState == GameState.playingLevel)
+        if (gameManager.GetCurrentGameState() == GameState.playingLevel)
         {
             // Use ability when Q is pressed
             if (Input.GetKeyDown(KeyCode.Q))
