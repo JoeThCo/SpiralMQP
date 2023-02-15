@@ -206,6 +206,9 @@ public class PlayerControl : MonoBehaviour
 
         //Relaod waepon input
         ReloadWeaponInput();
+
+        // Process ability input
+        UseAbilityInput(weaponDirection, weaponAngleDegrees, playerAngleDegrees, playerAimDirection);
     }
 
     private void SwitchWeaponInput()
@@ -340,6 +343,19 @@ public class PlayerControl : MonoBehaviour
             else
             {
                 leftMouseDownPreviousFrame = false;
+            }
+        }
+    }
+    
+    private void UseAbilityInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
+    {
+        if (gameManager.gameState == GameState.playingLevel)
+        {
+            // Use ability when Q is pressed
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                // Trigger Ability event
+                player.useAbilityEvent.CallOnUseAbilityEvent(true, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
             }
         }
     }

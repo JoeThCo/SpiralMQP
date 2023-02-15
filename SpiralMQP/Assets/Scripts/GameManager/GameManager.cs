@@ -67,6 +67,7 @@ public class GameManager : SingletonAbstract<GameManager>
         // Initialize player
         player = playerGameObject.GetComponent<Player>();
         player.Initialize(playerDetails);
+        player.transform.position = new Vector3(0,0,0);
     }
 
 

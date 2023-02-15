@@ -34,6 +34,8 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(ActiveWeapon))]
 [RequireComponent(typeof(FireWeaponEvent))]
 [RequireComponent(typeof(FireWeapon))]
+[RequireComponent(typeof(UseAbilityEvent))]
+[RequireComponent(typeof(UseAbility))]
 [RequireComponent(typeof(ReloadWeaponEvent))]
 [RequireComponent(typeof(WeaponFiredEvent))]
 [RequireComponent(typeof(WeaponReloadedEvent))]
@@ -59,6 +61,8 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     [HideInInspector] public ReloadWeaponEvent reloadWeaponEvent;
     [HideInInspector] public WeaponReloadedEvent weaponReloadedEvent;
     [HideInInspector] public ActiveWeapon activeWeapon;
+    [HideInInspector] public UseAbilityEvent useAbilityEvent;
+    [HideInInspector] public UseAbility useAbility;
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Animator animator;
 
@@ -82,6 +86,8 @@ public class Player : MonoBehaviour // Master reference class for all these comp
         reloadWeaponEvent = GetComponent<ReloadWeaponEvent>();
         weaponReloadedEvent = GetComponent<WeaponReloadedEvent>();
         activeWeapon = GetComponent<ActiveWeapon>();
+        useAbilityEvent = GetComponent<UseAbilityEvent>();
+        useAbility = GetComponent<UseAbility>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
