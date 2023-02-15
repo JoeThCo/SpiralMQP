@@ -302,7 +302,7 @@ public class GameManager : SingletonAbstract<GameManager>
 
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    //PauseGameMenu();
+                    PauseGameMenu();
                 }
 
                 if (Input.GetKeyDown(KeyCode.Tab))
@@ -322,7 +322,7 @@ public class GameManager : SingletonAbstract<GameManager>
 
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    //PauseGameMenu();
+                    PauseGameMenu();
                 }
                 break;
 
@@ -354,7 +354,7 @@ public class GameManager : SingletonAbstract<GameManager>
 
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    //PauseGameMenu();
+                    PauseGameMenu();
                 }
 
                 if (Input.GetKeyDown(KeyCode.Tab))
@@ -374,7 +374,7 @@ public class GameManager : SingletonAbstract<GameManager>
 
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    //PauseGameMenu();
+                    PauseGameMenu();
                 }
                 break;
 
@@ -440,7 +440,7 @@ public class GameManager : SingletonAbstract<GameManager>
             case GameState.gamePause:
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    //PauseGameMenu();
+                    PauseGameMenu();
                 }
                 break;
 
