@@ -26,6 +26,5 @@ public class RoomNodeTypeSO : ScriptableObject
         HelperUtilities.ValidateCheckEmptyString(this, nameof(roomNodeTypeName), roomNodeTypeName);
     }
 #endif
-
     #endregion
 }
