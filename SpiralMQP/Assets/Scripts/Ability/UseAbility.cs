@@ -7,14 +7,20 @@ using UnityEngine;
 public class UseAbility : MonoBehaviour{
     private float abilityCoolDownTimer = 0f;
     private UseAbilityEvent useAbilityEvent;
+    private ChangeAbilityEvent changeAbilityEvent;
+    [SerializeField] private AbilitySO ability;
     private void Awake()
     {
         // Load components
         useAbilityEvent = GetComponent<UseAbilityEvent>();
+        changeAbilityEvent = GetComponent<ChangeAbilityEvent>();
+
     }
     private void OnEnable()
     {   // Subscribe to event
         useAbilityEvent.OnUseAbility += UseAbilityEvent_OnUseAbility;
+        changeAbilityEvent.OnChangeAbility += ChangeAbilityEvent_OnChangeAbility;
+        
     }
 
     private void OnDisable()
@@ -33,6 +39,12 @@ public class UseAbility : MonoBehaviour{
         ExecuteAbility(useAbilityEventArgs);
     }
 
+    private void ChangeAbilityEvent_OnChangeAbility(ChangeAbilityEvent changeAbilityEvent, ChangeAbilityEventArgs changeAbilityEventArgs)
+    {
+        ability = changeAbilityEventArgs.newAbility;
+        ResetCoolDownTimer();
+    }
+
     private void ExecuteAbility(UseAbilityEventArgs useAbilityEventArgs)
     {
         // Use active ability
@@ -49,7 +61,7 @@ public class UseAbility : MonoBehaviour{
     private void ResetCoolDownTimer()
     {
         // Reset cooldown timer
-        abilityCoolDownTimer = 10f;
+        abilityCoolDownTimer = ability.AbilityCoolDown;
     }
 
 
@@ -62,5 +74,9 @@ public class UseAbility : MonoBehaviour{
 
     public float GetAbilityCD(){
         return abilityCoolDownTimer;
+    }
+
+    public AbilitySO GetCurrentAbility(){
+        return ability;
     }
 }

@@ -32,5 +32,12 @@ public enum GameState
     restartGame
 }
 
+public enum AbilityType
+{
+    DirectDamage,
+    AmmoBuff,
+    DashBuff,
+    CreateObjects
+}
 
 

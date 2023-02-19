@@ -29,18 +29,21 @@ public class AbilityStatusUI : MonoBehaviour
     {
         // Subscribe to ability use event
         player.useAbilityEvent.OnUseAbility += UseAbilityEvent_OnUseAbility;
+        player.changeAbilityEvent.OnChangeAbility += ChangeAbilityEvent_OnChangeAbility;
     }
 
     private void OnDisable()
     {
         // Unsubscribe from ability use event
         player.useAbilityEvent.OnUseAbility -= UseAbilityEvent_OnUseAbility;
+        player.changeAbilityEvent.OnChangeAbility -= ChangeAbilityEvent_OnChangeAbility;
+
     }
 
     private void Start()
     {
         // Update ability status on the UI
-        // SetActiveWeapon(player.activeWeapon.GetCurrentWeapon());
+        UpdateAbility(useAbility.GetCurrentAbility());
     }
 
     private void Update()
@@ -55,13 +58,19 @@ public class AbilityStatusUI : MonoBehaviour
 
     }
 
+    private void ChangeAbilityEvent_OnChangeAbility(ChangeAbilityEvent changeAbilityEvent, ChangeAbilityEventArgs changeAbilityEventArgs)
+    {
+        UpdateAbility(changeAbilityEventArgs.newAbility);
+    }
+
+
     /// <summary>
     /// Update ability CD bar
     /// </summary>
     private void UpdateAbilityCoolDownBar()
     {
         // Update CDbar
-        float barFill =  1-useAbility.GetAbilityCD()/ 10.0f; // Calculate the percentage progress of the cd bar
+        float barFill =  1-useAbility.GetAbilityCD()/ useAbility.GetCurrentAbility().AbilityCoolDown; // Calculate the percentage progress of the cd bar
         if(barFill >= 1f) barFill = 1f;
         // Update bar fill
         cooldownBar.transform.localScale = new Vector3(barFill, 1f, 1f);
@@ -72,5 +81,9 @@ public class AbilityStatusUI : MonoBehaviour
         } else{
             barImage.color = Color.red;
         }
+    }
+
+    private void UpdateAbility(AbilitySO newAbility){
+
     }
 }
