@@ -46,6 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNodeTypeList: {fileID: 11400000, guid: fb074f709ee30f94796aa29b0ba3f1b1, type: 2}
   currentPlayer: {fileID: 11400000, guid: 34a04f10e3e91b345aea16611b15ae2e, type: 2}
+  musicMasterMixerGroup: {fileID: -7206380732494497733, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
+  mainMenuMusic: {fileID: 11400000, guid: d6b53c1ede93f5f45bdb3eb34351ccad, type: 2}
+  musicOnFullSnapshot: {fileID: 24500006, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
+  musicLowSnapshot: {fileID: 8893122114324796974, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
+  musicOffSnapshot: {fileID: -3084740370723268673, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
   soundsMasterMixerGroup: {fileID: -4734643798044506327, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
   doorOpenCloseSoundEffect: {fileID: 11400000, guid: 38d748174649db94699563587dc0bf56, type: 2}
   tableFlip: {fileID: 11400000, guid: cd3ad2b03f288d74788f107f029c1c59, type: 2}

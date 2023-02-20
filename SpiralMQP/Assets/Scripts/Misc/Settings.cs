@@ -56,12 +56,18 @@ public static class Settings
     // Animator parameters - Damageable Decoration
     public static int destroy = Animator.StringToHash("destroy");
     public static string stateDestroyed = "Destroyed";
-    #endregion
+    #endregion ANIMATOR PARAMETERS
 
 
     #region GAMEOBJECT TAGS
     public const string playerTag = "Player";
     public const string playerWeapon = "playerWeapon";
+    #endregion
+
+
+    #region AUDIO
+    public const float musicFadeOutTime = 0.5f; // Default music fade out transition
+    public const float musicFadeInTime = 0.5f; // Default music fade in transition
     #endregion
 
 
