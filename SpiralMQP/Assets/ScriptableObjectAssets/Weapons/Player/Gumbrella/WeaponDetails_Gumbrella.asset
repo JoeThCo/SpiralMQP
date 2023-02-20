@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7386c1523c004ab4aba34834d828f5cb, type: 3}
+  m_Name: WeaponDetails_Gumbrella
+  m_EditorClassIdentifier: 
+  weaponName: Gumbrella
+  weaponSprite: {fileID: 21300000, guid: 94c3043460b285e428e7bc0cbabf2d6c, type: 3}
+  weaponShootPosition: {x: 1.8, y: 0, z: 0}
+  weaponCurrentAmmo: {fileID: 11400000, guid: 5e4c368d2a897fa48b5d145510c2fd4c, type: 2}
+  weaponShootEffect: {fileID: 11400000, guid: 58560c243a13e0b4590a9fbdae5449cd, type: 2}
+  weaponFiringSoundEffect: {fileID: 11400000, guid: b90f97d4e40b0f64ca55bf21291c8960, type: 2}
+  weaponReloadingSoundEffect: {fileID: 11400000, guid: 2735e7e2f0101b54395097aabb5fce0d, type: 2}
+  hasInfiniteAmmo: 1
+  hasInfiniteClipCapacity: 1
+  weaponClipAmmoCapacity: 10
+  weaponAmmoCapacity: 50
+  weaponFireRate: 0.1
+  weaponPrechargeTime: 0
+  weaponReloadTime: 1.5
