@@ -7,7 +7,7 @@ public class MenuButtonManager : MonoBehaviour
     public void onClick(string ButtonName)
     {
         switch (ButtonName)
-        {
+        {/*
             case "NewGame":
                 SceneLoader.LoadScene(SceneLoader.Scene.Game);
                 break;
@@ -19,7 +19,7 @@ public class MenuButtonManager : MonoBehaviour
                 break;
             case "QuitGame":
                 Application.Quit();
-                break;
+                break;*/
         }
     }
 }
