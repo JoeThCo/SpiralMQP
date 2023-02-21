@@ -15,6 +15,8 @@ MonoBehaviour:
   guid: c6f2bd6894e8ae947b8677a49ba9d8f8
   prefab: {fileID: 4327421925113694216, guid: 9fb6f8f004f241940b9e1447a0f4570a, type: 3}
   previousPrefab: {fileID: 4327421925113694216, guid: 9fb6f8f004f241940b9e1447a0f4570a, type: 3}
+  battleMusic: {fileID: 11400000, guid: f5a9c0f06f40630449943c1088be190b, type: 2}
+  ambientMusic: {fileID: 11400000, guid: 08292741750d14043b0e380112d479a7, type: 2}
   roomNodeType: {fileID: 11400000, guid: f4048641841e458499f488ac967ad611, type: 2}
   lowerBounds: {x: -24, y: -2}
   upperBounds: {x: 34, y: 63}
@@ -60,6 +62,8 @@ MonoBehaviour:
     spawnableObjectRatioList:
     - dungeonObject: {fileID: 11400000, guid: 5aea025ed1d0e8c448ae2de13414d17d, type: 2}
       ratio: 10
+    - dungeonObject: {fileID: 11400000, guid: bb387c0353af0504d92c7dcf43705c3f, type: 2}
+      ratio: 5
   - dungeonLevel: {fileID: 11400000, guid: 0c22502f545881644aea6b1c07a21849, type: 2}
     spawnableObjectRatioList:
     - dungeonObject: {fileID: 11400000, guid: 5aea025ed1d0e8c448ae2de13414d17d, type: 2}
@@ -76,10 +80,10 @@ MonoBehaviour:
       ratio: 4
   roomEnemySpawnParametersList:
   - dungeonLevel: {fileID: 11400000, guid: 1ef7026737e1ea34c8182403d74cf22d, type: 2}
-    minTotalEnemiesToSpawn: 1
-    maxTotalEnemiesToSpawn: 1
-    minConcurrentEnemies: 1
-    maxConcurrentEnemies: 1
+    minTotalEnemiesToSpawn: 4
+    maxTotalEnemiesToSpawn: 6
+    minConcurrentEnemies: 2
+    maxConcurrentEnemies: 3
     minSpawnInterval: 2
     maxSpawnInterval: 4
   - dungeonLevel: {fileID: 11400000, guid: 0c22502f545881644aea6b1c07a21849, type: 2}

@@ -10,7 +10,7 @@ public static class AStar // Make this static so that it's easier to call whenev
     public static Stack<Vector3> BuildPath(Room room, Vector3Int startGridPosition, Vector3Int endGridPosition)
     {
         // Adjust positions by lower bounds
-        startGridPosition -= (Vector3Int)room.templateLowerBounds; ;
+        startGridPosition -= (Vector3Int)room.templateLowerBounds; 
         endGridPosition -= (Vector3Int)room.templateLowerBounds;
 
         // Create open list and closed hashset
@@ -187,9 +187,11 @@ public static class AStar // Make this static so that it's easier to call whenev
         // Check for obstacle at that position
         int movementPenaltyForGridSpace = instantiatedRoom.aStarMovementPenalty[neighborNodeXPosition, neighborNodeYPosition];
 
+        // Check for moveable obstacle at that position
+        int itemObstacleForGridSpace = instantiatedRoom.aStarItemObstacles[neighborNodeXPosition, neighborNodeYPosition];
 
         // If neighbor is an obstacle or neighbor is in the closed list then skip
-        if (movementPenaltyForGridSpace == 0 || closedNodeHashSet.Contains(neighborNode))
+        if (movementPenaltyForGridSpace == 0 || itemObstacleForGridSpace == 0 || closedNodeHashSet.Contains(neighborNode))
         {
             return null;
         }

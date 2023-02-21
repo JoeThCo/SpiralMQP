@@ -30,6 +30,20 @@ public static class HelperUtilities
         return worldPosition;
     }
 
+
+    /// <summary>
+    /// Get the camera viewport lower and upper bounds
+    /// </summary>
+    public static void CameraWorldPositionBounds(out Vector2Int cameraWorldPositionLowerBounds, out Vector2Int cameraWorldPositionUpperBounds, Camera camera)
+    {
+        Vector3 worldPositionViewportBottomLeft = camera.ViewportToWorldPoint(new Vector3(0f, 0f, 0f)); // Get the camera bottom left world position
+        Vector3 worldPositionViewportTopRight = camera.ViewportToWorldPoint(new Vector3(1f, 1f, 0f)); // Get the camera top right world position
+
+        cameraWorldPositionLowerBounds = new Vector2Int((int)worldPositionViewportBottomLeft.x, (int)worldPositionViewportBottomLeft.y);
+        cameraWorldPositionUpperBounds = new Vector2Int((int)worldPositionViewportTopRight.x, (int)worldPositionViewportTopRight.y);
+    }
+
+
     /// <summary>
     /// Get the angle in degrees from a direction vector
     /// Say we have a vector (x,y) 
@@ -100,7 +114,7 @@ public static class HelperUtilities
         {
             aimDirection = AimDirection.Right;
         }
-        
+
         // if we somehow messed up, just aim right
         else
         {
@@ -118,7 +132,7 @@ public static class HelperUtilities
         float linearScaleRange = 20f; // This is the referenced amplitude level
 
         // Formula to convert from the linear scale to the logarithmic decibel scale
-        return Mathf.Log10((float) linear / linearScaleRange) * 20f;
+        return Mathf.Log10((float)linear / linearScaleRange) * 20f;
     }
 
 
@@ -224,6 +238,27 @@ public static class HelperUtilities
         return error;
     }
 
+
+    /// <summary>
+    /// positive range debug check - set isZeroAllowed to true if the min and max range values can both be zero. Returns true if there is an error
+    /// </summary>
+    public static bool ValidateCheckPositiveRange(Object thisObject, string fieldNameMinimum, int valueToCheckMinimum, string fieldNameMaximum,int valueToCheckMaximum, bool isZeroAllowed)
+    {
+        bool error = false;
+        if (valueToCheckMinimum > valueToCheckMaximum)
+        {
+            Debug.Log(fieldNameMinimum + " must be less than or equal to " + fieldNameMaximum + " in object " + thisObject.name.ToString());
+            error = true;
+        }
+
+        if (ValidateCheckPositiveValue(thisObject, fieldNameMinimum, valueToCheckMinimum, isZeroAllowed)) error = true;
+
+        if (ValidateCheckPositiveValue(thisObject, fieldNameMaximum, valueToCheckMaximum, isZeroAllowed)) error = true;
+
+        return error;
+    }
+
+
     /// <summary>
     /// List empty or contains null value check - returns true if there is a error
     /// </summary>
@@ -268,7 +303,7 @@ public static class HelperUtilities
     /// </summary>
     public static Vector3 GetSpawnPositionNearestToPlayer(Vector3 playerPosition)
     {
-        Room currentRoom = GameManager.Instance.GetCurrentRoom(); 
+        Room currentRoom = GameManager.Instance.GetCurrentRoom();
 
         Grid grid = currentRoom.instantiatedRoom.grid;
 

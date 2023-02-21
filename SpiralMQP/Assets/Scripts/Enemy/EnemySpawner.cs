@@ -33,6 +33,11 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
         currentEnemyCount = 0;
         currentRoom = roomChangedEventArgs.room;
 
+        // Update music for room
+        if (currentRoom.ambientMusic != null)
+        {
+            MusicManager.Instance.PlayMusic(currentRoom.ambientMusic, 0.2f,1f);
+        }
 
         // If the room is a corridor or the entrance then return
         if (currentRoom.roomNodeType.isCorridorEW || currentRoom.roomNodeType.isCorridorNS || currentRoom.roomNodeType.isEntrance) return;
@@ -57,6 +62,12 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
 
         // Get concurrent number of enemies to spawn
         enemyMaxConcurrentSpawnNumber = GetConcurrentEnemies();
+
+        // Update music for room
+        if (currentRoom.battleMusic != null)
+        {
+            MusicManager.Instance.PlayMusic(currentRoom.battleMusic, 0.2f,0.5f);
+        }
 
         // Lock doors - if we get here, there are enemies in the room
         currentRoom.instantiatedRoom.LockDoors();
@@ -169,6 +180,8 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
         // Reduce current enemy count
         currentEnemyCount--;
 
+        // Soul collected
+        StaticEventHandler.CallSoulsCollectedEvent(destroyedEventArgs.soulCount);
 
         if (currentEnemyCount <= 0 && enemiesSpawnedSoFar == enemiesToSpawn)
         {
@@ -187,6 +200,12 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
 
             // Unlock doors
             currentRoom.instantiatedRoom.UnlockDoors(Settings.doorUnlockDelay);
+
+            // Update music for room
+            if (currentRoom.ambientMusic != null)
+            {
+                MusicManager.Instance.PlayMusic(currentRoom.ambientMusic, 0.2f,2f);
+            }
             
             // Trigger room enemies defeated event
             StaticEventHandler.CallRoomEnemiesDefeatedEvent(currentRoom);

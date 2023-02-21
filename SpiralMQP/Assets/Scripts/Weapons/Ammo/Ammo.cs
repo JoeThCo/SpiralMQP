@@ -36,21 +36,32 @@ public class Ammo : MonoBehaviour, IFireable
         }
         else if (!isAmmoMaterialSet)
         {
-            SetAmmoMaterial(ammoDetails.ammoChargeMaterial);
+            SetAmmoMaterial(ammoDetails.ammoMaterial);
             isAmmoMaterialSet = true;
         }
 
-        // Calculate distance vector to move ammo for each frame or each update
-        Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
-        transform.position += distanceVector;
-
-        // Distance after max range reached
-        ammoRange -= distanceVector.magnitude;
-
-        if (ammoRange < 0f)
+        // Don't move ammo if movement has been overriden - e.g. this ammo is part of an ammo pattern
+        if (!overrideAmmoMovement)
         {
-            // Return ammo back to the pool
-            DisableAmmo();
+            // Calculate distance vector to move ammo for each frame or each update
+            Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
+            transform.position += distanceVector;
+
+            // Distance after max range reached
+            ammoRange -= distanceVector.magnitude;
+
+            if (ammoRange < 0f)
+            {
+                // Only interested in player ammo
+                if (ammoDetails.isPlayerAmmo)
+                {
+                    // No multiplier
+                    StaticEventHandler.CallMultiplierEvent(false);
+                }
+
+                // Return ammo back to the pool
+                DisableAmmo();
+            }
         }
     }
 
@@ -73,12 +84,35 @@ public class Ammo : MonoBehaviour, IFireable
     {
         Health health = other.GetComponent<Health>();
 
+        bool enemyHit = false; // A boolean value to check if this the damage is given to the enemy
+
         if (health != null)
         {
             // Set isColliding to prevent ammo dealing damage multiple times
             isColliding = true;
 
             health.TakeDamage(ammoDetails.ammoDamage);
+
+            // Enemy hit
+            if (health.enemy != null)
+            {
+                enemyHit = true;
+            }
+        }
+
+        // If player ammo then update multiplier
+        if (ammoDetails.isPlayerAmmo)
+        {
+            if (enemyHit)
+            {
+                // Multiplier 
+                StaticEventHandler.CallMultiplierEvent(true);
+            }
+            else
+            {
+                // No multiplier
+                StaticEventHandler.CallMultiplierEvent(false);
+            }
         }
     }
 

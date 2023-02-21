@@ -474,6 +474,8 @@ public class DungeonBuilder : SingletonAbstract<DungeonBuilder>
         room.id = roomNode.id;
         room.prefab = roomTemplate.prefab;
         room.roomNodeType = roomTemplate.roomNodeType;
+        room.ambientMusic = roomTemplate.ambientMusic;
+        room.battleMusic = roomTemplate.battleMusic;
         room.lowerBounds = roomTemplate.lowerBounds;
         room.upperBounds = roomTemplate.upperBounds;
         room.spawnPositionArray = roomTemplate.spawnPositionArray;

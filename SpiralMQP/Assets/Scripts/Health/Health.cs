@@ -7,6 +7,11 @@ using UnityEngine;
 [DisallowMultipleComponent] // Good practice
 public class Health : MonoBehaviour  // This class is used for anything that needs health
 {
+    [Space(10)]
+    [Header("REFERENCE")]
+    [Tooltip("Populate with the HealthBar component on the HealthBar gameobject")]
+    [SerializeField] private HealthBar healthBar;
+
     private int startingHealth;
     private int currentHealth;
     private HealthEvent healthEvent;
@@ -14,7 +19,7 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
     private Coroutine immunityCoroutine;
     private bool isImmuneAfterHit = false;
     private float immunityTime = 0f;
-    private SpriteRenderer spriteRenderer = null;
+    private SpriteRenderer[] spriteRendererArray = null;
     private const float spriteFlashInterval = 0.2f;
     private WaitForSeconds WaitForSecondsSpriteFlashInterval = new WaitForSeconds(spriteFlashInterval);
 
@@ -43,7 +48,7 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
             {
                 isImmuneAfterHit = true;
                 immunityTime = player.playerDetails.hitImmunityTime;
-                spriteRenderer = player.spriteRenderer;
+                spriteRendererArray = player.spriteRendererArray;
             }
         }
         else if (enemy != null)
@@ -52,8 +57,19 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
             {
                 isImmuneAfterHit = true;
                 immunityTime = enemy.enemyDetails.hitImmunityTime;
-                spriteRenderer = enemy.spriteRendererArray[0];
+                spriteRendererArray = enemy.spriteRendererArray;
             }
+        }
+
+
+        // Enable/Disable the health bar
+        if (enemy != null && enemy.enemyDetails.isHealthBarDisplayed == true && healthBar != null)
+        {
+            healthBar.EnableHealthBar(true);
+        }
+        else if (healthBar != null)
+        {
+            healthBar.EnableHealthBar(false);
         }
     }
 
@@ -80,17 +96,23 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
 
             // Do the flash and be immune for some time
             PostHitImmunity();
+
+            // Set health bar as the percentage of health remaining
+            if (healthBar != null)
+            {
+                healthBar.SetHealthBarValue((float)currentHealth / (float)startingHealth);
+            }
         }
 
-        // Testing
-        if (isDamageable && isRolling)
-        {
-            Debug.Log("Bullet Dodged by Dashing/Rolling");
-        }
-        if (!isDamageable && !isRolling)
-        {
-            Debug.Log("Avoided Damage");
-        }
+        // // Testing
+        // if (isDamageable && isRolling)
+        // {
+        //     Debug.Log("Bullet Dodged by Dashing/Rolling");
+        // }
+        // if (!isDamageable && !isRolling)
+        // {
+        //     Debug.Log("Avoided Damage");
+        // }
     }
 
     /// <summary>
@@ -107,14 +129,14 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
             if (immunityCoroutine != null) StopCoroutine(immunityCoroutine);
 
             // Flash red and give period of immunity
-            immunityCoroutine = StartCoroutine(PostHitImmunityRoutine(immunityTime, spriteRenderer));
+            immunityCoroutine = StartCoroutine(PostHitImmunityRoutine(immunityTime, spriteRendererArray));
         }
     }
 
     /// <summary>
     /// Coroutine to indicate a hit and give some post hit immunity
     /// </summary>
-    private IEnumerator PostHitImmunityRoutine(float immunityTime, SpriteRenderer spriteRenderer)
+    private IEnumerator PostHitImmunityRoutine(float immunityTime, SpriteRenderer[] spriteRendererArray)
     {
         int iterations = Mathf.RoundToInt(immunityTime / spriteFlashInterval / 2f);
 
@@ -122,18 +144,25 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
 
         while (iterations > 0)
         {
-            spriteRenderer.color = Color.red;
+            // Set all player sprites to transparent
+            foreach (SpriteRenderer sr in spriteRendererArray)
+            {
+                sr.color = new Color(1f, 1f, 1f, 0.4f);
+            }
 
             yield return WaitForSecondsSpriteFlashInterval;
 
-            spriteRenderer.color = Color.white;
+            // Set all player sprites back to normal
+            foreach (SpriteRenderer sr in spriteRendererArray)
+            {
+                sr.color = Color.white;
+            }
 
             yield return WaitForSecondsSpriteFlashInterval;
 
             iterations--;
 
             yield return null;
-
         }
 
         isDamageable = true;
@@ -155,5 +184,27 @@ public class Health : MonoBehaviour  // This class is used for anything that nee
     public int GetStartingHealth()
     {
         return startingHealth;
+    }
+
+
+    /// <summary>
+    /// Increase health by specified percent
+    /// </summary>
+    public void AddHealth(int healthPercent)
+    {
+        int healthIncrease = Mathf.RoundToInt((startingHealth * healthPercent) / 100f);
+
+        int totalHealth = currentHealth + healthIncrease;
+
+        if (totalHealth > startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
+        else
+        {
+            currentHealth = totalHealth;
+        }
+
+        CallHealthEvent(0);
     }
 }

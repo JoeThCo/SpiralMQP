@@ -18,7 +18,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(PlayerControl))]
 [RequireComponent(typeof(HealthEvent))]
 [RequireComponent(typeof(Health))]
-[RequireComponent(typeof(DealContactDamage))]
+//[RequireComponent(typeof(DealContactDamage))]
 [RequireComponent(typeof(ReceiveContactDamage))]
 [RequireComponent(typeof(DestroyedEvent))]
 [RequireComponent(typeof(Destroyed))]
@@ -66,6 +66,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     [HideInInspector] public UseAbility useAbility;
     [HideInInspector] public ChangeAbilityEvent changeAbilityEvent;
     [HideInInspector] public SpriteRenderer spriteRenderer;
+    [HideInInspector] public SpriteRenderer[] spriteRendererArray;
     [HideInInspector] public Animator animator;
 
     public List<Weapon> weaponList = new List<Weapon>(); // To hold player weapons
@@ -92,6 +93,7 @@ public class Player : MonoBehaviour // Master reference class for all these comp
         useAbility = GetComponent<UseAbility>();
         changeAbilityEvent = GetComponent<ChangeAbilityEvent>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRendererArray = GetComponentsInChildren<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
@@ -112,14 +114,14 @@ public class Player : MonoBehaviour // Master reference class for all these comp
     /// </summary>
     private void HealthEvent_OnHealthChanged(HealthEvent healthEvent, HealthEventArgs healthEventArgs)
     {
-        Debug.Log("Player Health Amount: " + healthEventArgs.healthAmount);
+        // Testing
+        // Debug.Log("Player Health Amount: " + healthEventArgs.healthAmount);
 
         // If player has died
         if (healthEventArgs.healthAmount <= 0f)
         {
-            destroyedEvent.CallDestroyedEvent(true);
+            destroyedEvent.CallDestroyedEvent(true, 0); // Player doesn't get soul when die
         }
-
     }
 
     /// <summary>
@@ -177,6 +179,23 @@ public class Player : MonoBehaviour // Master reference class for all these comp
         setActiveWeaponEvent.CallSetActiveWeaponEvent(weapon);
 
         return weapon;
+    }
+
+
+    /// <summary>
+    /// Return true if the weapon is held by the player - otherwise returns false
+    /// </summary>
+    public bool IsWeaponHeldByPlayer(WeaponDetailsSO weaponDetails)
+    {
+        foreach (Weapon weapon in weaponList)
+        {
+            if (weapon.weaponDetails = weaponDetails)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 

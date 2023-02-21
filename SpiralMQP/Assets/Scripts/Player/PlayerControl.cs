@@ -17,8 +17,10 @@ public class PlayerControl : MonoBehaviour
     private float moveSpeed;
     private Coroutine playerRollCoroutine;
     private WaitForFixedUpdate waitForFixedUpdate; // Dealing with physics we use fixed update (cuz that's how unity does it)
-    [HideInInspector] public bool isPlayerRolling = false;
     private float playerRollCooldownTimer = 0f;
+    private bool isPlayerMovementDisabled = false;
+
+    [HideInInspector] public bool isPlayerRolling = false;
 
 
     private void Awake()
@@ -81,6 +83,9 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        // If player movement disabled, then return
+        if (isPlayerMovementDisabled) return;
+
         // If player is rolling then return (player can't perform anything else in a rolling movement)
         if (isPlayerRolling) return;
 
@@ -89,6 +94,9 @@ public class PlayerControl : MonoBehaviour
 
         // Process the player weapon input
         WeaponInput();
+
+        // Process player use item input
+        UseItemInput();
 
         // Player roll cooldown timer
         PlayerRollCooldownTimer();
@@ -329,6 +337,31 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+
+    private void UseItemInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            float useItemRadius = 2f;
+
+            // Get any collidable item near the player
+            Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(player.GetPlayerPosition(), useItemRadius);
+
+            // Loop through detected items to see if any are "useable"
+            foreach (Collider2D collider2D in collider2DArray)
+            {
+                IUseable iUseable = collider2D.GetComponent<IUseable>();
+
+                if (iUseable != null)
+                {
+                    iUseable.UseItem();
+                }
+            }
+        }
+    }
+
+
+
     private void FireWeaponInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
     {
         // Fire when left mouse button is clicked
@@ -410,6 +443,18 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enable/Disable the player movement
+    /// </summary>
+    public void EnablePlayer(bool isEnabled)
+    {
+        isPlayerMovementDisabled = !isEnabled;
+
+        if (!isEnabled)
+        {
+            player.idleEvent.CallIdleEvent();
+        }
+    }
 
     #region Validation
 #if UNITY_EDITOR
