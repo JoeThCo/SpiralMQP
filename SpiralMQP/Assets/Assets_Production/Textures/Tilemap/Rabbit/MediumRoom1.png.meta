@@ -1,0 +1,7339 @@
+fileFormatVersion: 2
+guid: c94ace718e04d704d8be2c2306233f0f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MediumRoom1_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 788
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa221571a0b5b84aa61e91ad461f0ca
+      internalID: -2055672311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_1
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 788
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f34a7ea7eaae6348b06c2a7f08e0a93
+      internalID: -1510880415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 788
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a6b20e379a6fa4aa5cebef664ac023
+      internalID: 1485997664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_3
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 788
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15dc206016ee8fe4498d8d96efb0a0b4
+      internalID: 626838918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 788
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19e774ce2f27cf4588deac28ce1a440
+      internalID: 2087509885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 788
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d430147cd8e345e44819e62e647c8ad5
+      internalID: 1303031702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 772
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d656511ae65d3f24db44ead86912c485
+      internalID: 1299261144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 772
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1def8c9fae8839849b772e481e178cc2
+      internalID: -496043029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 772
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c259ef990a04cc248b196255a69248a1
+      internalID: 1552011310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_9
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 772
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b813d18f660a2645b96b695abf553fe
+      internalID: -1116965540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_10
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 772
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e328e430f0ee8d44287cabe541c7c317
+      internalID: 1871752127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_11
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 772
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8af9c602c12ec44aacbb975b7bc310
+      internalID: -374720582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_12
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 756
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415c33fc8a723e841991e6ce55922384
+      internalID: 634501276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_13
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 756
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9044f5b3f4c0fc5409f9c39858cdd8f6
+      internalID: -1364107009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_14
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22a349250ffc274783538f6d695ac7e
+      internalID: 114536434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_15
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b2d2ba3a4a0924fbd3ea048bcacb4f
+      internalID: -1668185391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_16
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033b37baa36eacc4192da14cf8ce2522
+      internalID: 858586936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_17
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2338d76d891328e47afaba725fb1b45a
+      internalID: -752151140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_18
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9bf87a48ee682342b7888e591212b36
+      internalID: -1427518276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_19
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59704b3b43ab8242aad1e3ebd03e986
+      internalID: -1980070903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_20
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31ed268fc624e7409348ca7af6bc8da
+      internalID: 1293226710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_21
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58f9e3caeee9e047921acdb020b3954
+      internalID: -1291719965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_22
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9f5adc0b51cb74983f077599614d9e
+      internalID: -67764453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_23
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 740
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3af2819f037a414fb0e56082ef891cc
+      internalID: 372190028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_24
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca9b40a24005bc488d4e9a215c11a86
+      internalID: 1867823213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_25
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9835f53e605194995bd553a8ea128c
+      internalID: 1744350435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_26
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024987413dd2663469f28dcebb1b434a
+      internalID: -162030090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_27
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06c3efd260514e408630dd9b8ef77fa
+      internalID: 1216141566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_28
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91309877add3b964ba8124042d9e0c73
+      internalID: 683138186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_29
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b1f77fd9cdf9c4a8c9c3b66317c4d7
+      internalID: 1432877053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_30
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502cace09d01015439722c7f1cb938e2
+      internalID: -277605906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_31
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b130f7148d26a5048a80a9930327a04f
+      internalID: 1607298151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_32
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b1023dcf136214d98ef599fd4a5057
+      internalID: -1799410781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_33
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 724
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2e82fe5ee4c894285473d80adace43
+      internalID: 1619323899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_34
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71fae2c9b0ed80479d954edfd1f8bcb
+      internalID: -1491369231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_35
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5046e7cad5d4844799f55a641840f61
+      internalID: -2094450166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_36
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450ecaea2768cbe408f6e4fc2f409f3d
+      internalID: -1657156396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_37
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d47e383946fd54eae43d7edfaf52c0
+      internalID: 1172893526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_38
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3815d0803705342bc6dd405fa80090
+      internalID: 253890404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_39
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29767acadb07ce43bf2b7bd748a9956
+      internalID: 990062116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_40
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b7c20c308ed4f4d94de7093d2500f7
+      internalID: 2068503065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_41
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 708
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867dc1b80e2dd9c408fadf039b5ee68c
+      internalID: -1869166383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_42
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e20ce713209eca4395621b7a46956cf
+      internalID: 1739181925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_43
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e75dcf5b5f69d246a0a9f11a3ae3c7c
+      internalID: -79276876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_44
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b86497d710344f47a6bbdb2752707ee
+      internalID: -602283389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_45
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff70e558959ae442b8148ac54ecc13e
+      internalID: -1836489413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_46
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76f08f41069b364fb323e4691c030b4
+      internalID: 112856977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_47
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6ea1ab464c9e648a40e9a3823f731c
+      internalID: -843022988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_48
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb21cd45bf470f45b6a9e4832692e6e
+      internalID: -293550721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_49
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9db326619de12f4399368ee8d145d3c
+      internalID: 2146480666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_50
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 676
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cca9418da7b0244083a9616ff78f716
+      internalID: -954392398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_51
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 676
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f2965793d724748aff3094ef761838
+      internalID: 1432725680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_52
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79c101e8a1e6f143a81caf110b950b8
+      internalID: -109882361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_53
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9ff1975e9fd0146b961df2b0681c4c
+      internalID: -1111288952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_54
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780a7604bab9d03479084a7d52ac8a09
+      internalID: 1216457438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_55
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e3b0ef140554140b5a85e89aa3c178
+      internalID: 1641372741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_56
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18b976a52e706e4cb28b9bb9186bfe7
+      internalID: 507098278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_57
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c6e8551db66a44d93e372f606d9198
+      internalID: 1307282783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_58
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8935b3baa25a44594d77c0ceb6ab52
+      internalID: 1879207341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_59
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84dcd670d53a5f4c850b7e51bf1607d
+      internalID: -1013922162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_60
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f73891f750009e94796434eac03451b5
+      internalID: -877442983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_61
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a10cfa3dd8c53c4ab7603a9208fa2ff
+      internalID: -2096501489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_62
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4222c5c1f99bb349a21512b0e7ba841
+      internalID: -1522221209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_63
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3a7532bf8ba0f41a491bd9d8c9a9f3
+      internalID: -863701297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_64
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff532c06252cd774ab53816b2761dffd
+      internalID: -64507815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_65
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ed4ab71b4fea54b80100ae4e1bdd7b
+      internalID: -1026366938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_66
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30be841fd1780eb4b925dd9b9839950f
+      internalID: 356439260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_67
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73c91f70943a07448ad4296fb6aab08
+      internalID: 33563929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_68
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f238f22021bc7654b96de131fb6fe263
+      internalID: 251444049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_69
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f827b30c30116f49a0b4f6a6df0fb38
+      internalID: -976086890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_70
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f369faebdeb9a4b940b68fd8990673
+      internalID: -1782436260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_71
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cebf891792d18514bb84f6491fa26748
+      internalID: 507709203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_72
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098d08a80ebb8304a8ac3d9bfcacf7f9
+      internalID: 1630700029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_73
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcfd50b6dfee54e488fe00801a6a89f8
+      internalID: -1412184009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_74
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cf95ac5d1f7804c87b919fe1bea246
+      internalID: -1658438045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_75
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea850396e04f40e4c8a5b58e76f90e9e
+      internalID: 529420163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_76
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8608e3c1719fe4290e2c82c2a302d8
+      internalID: 501226580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_77
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961427feddf1b0142aa8f31730b3ace3
+      internalID: 1076939841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_78
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97c12a37297bd841a7b94dfac7c1a5b
+      internalID: -625249745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_79
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2cb23a095e9ac5449375b28d001f0c3
+      internalID: 877547939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_80
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1a9472e61695248b82ba5a2abd7b10
+      internalID: -1613927929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_81
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a137c72f60a567b4eb3cda136579c999
+      internalID: 802403556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_82
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c9c7f2ac2d6e8459aa4577f3abb23a
+      internalID: 130602275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_83
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0009ff2a8dd4b47a9e1482086dc881
+      internalID: -1776869778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_84
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5857da1511535c740a82feeb28eb9986
+      internalID: -2131013518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_85
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6062e2fbf91c9a44b989c3ca4f67c40
+      internalID: 799882390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_86
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c01cd0eee91644e8707fccf3585bfc
+      internalID: 2027783747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_87
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b7a0c7f77baab4198e2947e2e3190b
+      internalID: 1133935909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_88
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fceff2ab03bdcf4b8bd74c2cd528842
+      internalID: 1548366265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_89
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec3cc9ff95331b4285ac1d156d3c000
+      internalID: -56158313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_90
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9e10ad15dd56a44ab9d56538767171
+      internalID: -676932805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_91
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252fa924771dfa741b2a6a5a27e07f83
+      internalID: -2032059750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_92
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b259b97223b3b43ba6ed8b69a2ae78
+      internalID: 105010459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_93
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7ce992e58aade4ba0eaa51f1f6c517
+      internalID: -987600235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_94
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86160c6f62cbdbb40b1ee3cc66e4919a
+      internalID: 1974814088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_95
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19cd08ce1658f0c4e917ccedb5baa11c
+      internalID: -316810319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_96
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e237746c4648c945bea44223107d773
+      internalID: -1731650532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_97
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b0327de2dc9e34e8c9f6db1dcd8c90
+      internalID: -1949941619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_98
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb271327dd8c95545a11b0cef3141db9
+      internalID: 779600493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_99
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a9c606e0235894aa965240cd2507ca
+      internalID: -2144777279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_100
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559bcb7b2a6cdd148b3d040bec5b8754
+      internalID: -653122451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_101
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81bd938f2f6a3f47acd2ae310ee8784
+      internalID: 2140859994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_102
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ab746f7548e1d49b0ae34a185dc812
+      internalID: -404893519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_103
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580feb2904491344ba21505cc8b50a3e
+      internalID: -106091422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_104
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7a2d84f0131854191921b299ef343c
+      internalID: -671126346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_105
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307ef1215d7de424a934f2b0bd1aefb3
+      internalID: 968448715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_106
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfd392a821c28646941cd8fc5ba59e2
+      internalID: 392887879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_107
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18df9a810ddfcd4c840c102628e198e
+      internalID: 793902169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_108
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bff26fdf592c3148a216dd02b6760e2
+      internalID: 1778836312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_109
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f767ae2c2e21188488d333e6561228d2
+      internalID: -1297984460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_110
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78954cb45dfbfe14681e2643444eee50
+      internalID: 1880736948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_111
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389add2b179163340b30175e357f32ec
+      internalID: -50958011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_112
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ce80681ddeee84fbdfbe02c8d0b231
+      internalID: -1461177982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_113
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e59bee76bdd69744b260d8d87afebd1
+      internalID: 1145486362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_114
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d764c5e40eb8b5641920d62368a218d3
+      internalID: 255089378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_115
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007f679001ba8b641b4cca3433bbefa0
+      internalID: -819537570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_116
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9348780766b1f4b8d4d2902e0786cd
+      internalID: -598854544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_117
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66889e8a4bbb53749a6be83d14f21c3c
+      internalID: -1226074882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_118
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1202068ba6c9148bc878eae372dd90
+      internalID: 1470343515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_119
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb58e2cb6b99ce74c94bad79d8fbd2b3
+      internalID: 1516848923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_120
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba1a3f106658cd40ab3b7883d91be16
+      internalID: 1268911621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_121
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c777d8f8ef9669345b55d80609889536
+      internalID: -1247015005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_122
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0c6a9a1720460479f10f515ec1464f
+      internalID: 1941270569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_123
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0986d96d8257a364894bd3418baa0302
+      internalID: -2006352840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_124
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95fdb2021c4765d4f8f2c72d1ef6ab03
+      internalID: -1767226786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_125
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729d5c341bc04b4409611f8ed9b98fb1
+      internalID: 1532391991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_126
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d19528ad6b0a204895c5cba19537d18
+      internalID: 1467312594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_127
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69f20be44498a948abff045d7b62785
+      internalID: -1175734835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_128
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c003072a7484440bdea5d6d0d28f07
+      internalID: -653020752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_129
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3245a647e43f274da58353d35fdce05
+      internalID: 980481542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_130
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c712d2f82cfc7946bbf7864d7ff063d
+      internalID: -1757082292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_131
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a87a0404832f364c8dffdaa14458bdf
+      internalID: 295724131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_132
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaebcdaea3fcc144faead0a95110935f
+      internalID: 1600137890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_133
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd38f006545e2642abc395fc63ab3f3
+      internalID: -302305705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_134
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4d546cade622e4197f9626da7d9da5
+      internalID: -1302521342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_135
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3c405f13c60694d8d52f5ecf370dc2
+      internalID: -1590302618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_136
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597bc9d212736524e87fd668a722c86a
+      internalID: -831850596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_137
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e02a893b5efad146ab44c51b68c1528
+      internalID: 1901195237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_138
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed6a27139d40444a8fa783a5932587d
+      internalID: -46461370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_139
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921b94fd1f76eab4b98dfb8e2abfa827
+      internalID: 972532833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_140
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c847acba87377ab4392849c75aa24497
+      internalID: 777904894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_141
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c39dd7138aa12a45abb869f3a6519fd
+      internalID: 1979376508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_142
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5cae8f0c53e114bb9f98bd35ca845b
+      internalID: -832934692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_143
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87e8c86862a28d4190607c4d32ef472
+      internalID: -1581813684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_144
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bd3ab1c4fe8a24cad18e00b3bb40ee
+      internalID: -106758502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_145
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de8e3adb84dd5d4fa970325572d805c
+      internalID: -2086879505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_146
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b298043860be80e419bb2d10ba821192
+      internalID: -1582110433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_147
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6e057b30b855744abf7ace8ef79bad
+      internalID: -1408281749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_148
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482d9742b1096f4419b8087ad003383f
+      internalID: -635959993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_149
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87789fc4bf896af4da2573a8c4897104
+      internalID: 1452523246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_150
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26d3b68db9922a44b62b8d2b9f68bf0
+      internalID: -1018897952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_151
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bcc3d91e304304c8da6c7e0de8a8ea
+      internalID: -818774675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_152
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf828697a04c814a8ffb6859911465c
+      internalID: 78535053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_153
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898061a85fc4db048862380125d6d812
+      internalID: 1442346431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_154
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74a093ae240d2541ae4e173942e8bd5
+      internalID: 890529184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_155
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f1e24ece089d5479ef9ddd195426a0
+      internalID: -1963867850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_156
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb48a9416219d054c845ca599aa32139
+      internalID: -470241537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_157
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc062d1e9e734fb4598f1ddf4b9d690a
+      internalID: 1678324576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_158
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 972604bc3e05d0547a07c24346bcbb1e
+      internalID: -2030349327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_159
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a50b12c172f9974dab36006b32306c3
+      internalID: 793123806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_160
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bf080e1049a6a4c8f881814606a283
+      internalID: 1603454243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_161
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb56e1bebab1bb74abf8f2b637a30f11
+      internalID: 898666814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_162
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1e7ac82c301f849b75fd9d0596d364
+      internalID: 1775810215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_163
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6055714c71f9f44b3f6031b6b8b948
+      internalID: -1578256600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_164
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a59983dac9932419ca49ac67550171
+      internalID: -1695507909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_165
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18e912d4b9ba414ca9c74ca318b2873
+      internalID: -17776809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_166
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfbebf4e12cc4a4d805cd0700a864c8
+      internalID: 1696775392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_167
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631ad5e4e22831943b2fc4a1a1d1ab95
+      internalID: 477950493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_168
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18493710c1355664e9594007bb9b475d
+      internalID: -1397866532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_169
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432922549c6304e4b8d8c6d641624ff3
+      internalID: 1974556558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_170
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c148f96cd98c6e14e9c1f4abce81800c
+      internalID: -1068082517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_171
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97905bb37e4ecdc4f912e9b1cb6de2c0
+      internalID: -1456662979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_172
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c00f9f16e389b04b852d8bb247cc958
+      internalID: -405646488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_173
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21f6a8f854ac364789731689b192c80
+      internalID: -899135701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_174
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a353588dc0ec84f8ee127626080d24
+      internalID: -751645314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_175
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3038b26cbaa26b94b9abb8df019e918e
+      internalID: 688816843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_176
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20aae8e1fe5d0e4eb36327ef834f21a
+      internalID: 467067799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_177
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4f6f5c72b5e2f42b3fcf466a1d8836
+      internalID: 518323462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_178
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fd00f5923f58e4eb924e24bcf6230e
+      internalID: -602896236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_179
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902ebf658736e7040adb59624bf5bb0d
+      internalID: -1347937471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_180
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad7d06bb0067dc41857b23f37306449
+      internalID: 1081466141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_181
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de4951567e874a43b9a5faa57b07261
+      internalID: 1540117222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_182
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657566ced4a90fe4c9204cdb1d4de207
+      internalID: -910028354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_183
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b9032276ed0e749a520e49ba7c8cc1
+      internalID: 2083013321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_184
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fd8b091ffddb54ba82c57f38da9d0c
+      internalID: -1502430205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_185
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d6e34b4a17503499d2fe40ba5d0315
+      internalID: -2130700920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_186
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2bb9aa3bbad8b43abf9b8c19c0acbe
+      internalID: 1825883433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_187
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81856f6051972da4585c27fa659e73ec
+      internalID: -1675556726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_188
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 516
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e2000a26c392042999c041b758515f
+      internalID: -421450309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_189
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 516
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3cf84983a5fcd4583b8ae495e0d4df
+      internalID: 703799248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_190
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 516
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3967021c19e732a47b7be960c9ab2b7b
+      internalID: -983367207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_191
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 516
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37df3da0faec5a7499d043dda6848b3f
+      internalID: 1238029799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_192
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 516
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3353d37494958574ea18d1cf34e7af5a
+      internalID: -1725844981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_193
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 516
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f75349f5318d3448894be4c668e3ca5
+      internalID: 548073258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_194
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 500
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a65c3767e3e7684f8b8983a4091bab8
+      internalID: -1785632403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_195
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 500
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d050ff04c6b9f4942b39279aa747ce92
+      internalID: 2023500781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_196
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 500
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f726f16a53c4c4a8595d871bb031d2
+      internalID: 1401002125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_197
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 500
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05a40f138f6a1d4abea5422a1e406f7
+      internalID: 1452569237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_198
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 500
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0df76851985ad4895890b885e8ead0
+      internalID: 862846387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_199
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 500
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27db2a0c210ebd2418ffdf02b1dcc21c
+      internalID: -1190270274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_200
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 484
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6257de3d0473ec42b91b32b77fd547c
+      internalID: 848389290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_201
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 484
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22dbc9b36999b44a83f34eb609fb327
+      internalID: -452469219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_202
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 484
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b264e2fecc7f043bbe2522559834c4
+      internalID: 4864644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_203
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 484
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f05978b0c846142b58acad1102d4c0
+      internalID: -456859832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_204
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 484
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6a5a85d42127545964f9dfc7ca1a2b
+      internalID: 1987354451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_205
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 484
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70dcd33eea3c8fc4fb1054ef5d726f4d
+      internalID: 1480275107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_206
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 468
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7406ff44558634c827db800176498c
+      internalID: -247774360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_207
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 468
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b41e9817f937e43b6fe85155915a3d
+      internalID: -39582181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_208
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 452
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b608ff1404d51e47990f67eb6501bb0
+      internalID: -1020334916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_209
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 452
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4b23329b6f7de48a40d36d3617e31a
+      internalID: 982976061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_210
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 436
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b915224e2ba47c84aa08fd172bddc3ba
+      internalID: -722934283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_211
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 436
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa9db727d33d0f489771ec23c9d5bfc
+      internalID: 1304282372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_212
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 420
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17000f4d2f6fe1941948213b72d70790
+      internalID: -864763571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_213
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 420
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed42eeaa6369c04a8ee0bd6890022ce
+      internalID: 274057469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_214
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 404
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0b1d911f0a920448f5e608afe52a35
+      internalID: 108103526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_215
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 404
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e978d79b053d44a48b6eb3a9b8a28b53
+      internalID: -2013459419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_216
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 388
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094d047e36040e540b73611cd0e0742b
+      internalID: 1939431926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_217
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 388
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97e5467412b7d34cb53d639257cfd42
+      internalID: 326877708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_218
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 372
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4a8eb249947984dac6f883e076fcc4
+      internalID: -1552856249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_219
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 372
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc869760f2f9e04bab81c017e411fa8
+      internalID: 179909852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_220
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 356
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5707cd8921091c54283c158b82145ec0
+      internalID: -233406999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_221
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 356
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33213fd7a0d758748af471048db64879
+      internalID: 1470581573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_222
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33173ff89f635342b14d927abe80da7
+      internalID: 850879753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_223
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b76c7edb4a3b34788d2bb50bbbcb0c
+      internalID: 1152660476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_224
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 324
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7988ce3e928df4a881331d97349761
+      internalID: -1308015855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_225
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 308
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e8fdef6ed065249b6e23b9b74cca2a
+      internalID: -274567191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_226
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc5b5cb3f438074aa4c01b2c107654d
+      internalID: -973262035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_227
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccbe892a35074a4c8f0a250d60790ea
+      internalID: 1961155659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_228
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fb37ed689a0a948b4d7cd1a55533be
+      internalID: 1821314599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_229
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde3224c3250ffa4b89c85f1c2019f1a
+      internalID: 933382660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_230
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12886c97532f6ec4f966639f59e3d35a
+      internalID: 550195310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_231
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb02c852a87c3714796c688b9537d183
+      internalID: 881706870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_232
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35deeab5c44523040900067f743a7204
+      internalID: 2057246244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_233
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae8a486ea00f594b97c7de41998ef38
+      internalID: -1297568288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_234
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881694ac644f32b4f9e4fc33e29373a9
+      internalID: 1762189851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_235
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17102d5e8a115624cb67fada65ae4704
+      internalID: -1324552161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_236
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9723f0e3c7df64b81fd0d70c4c2c55
+      internalID: 1027340354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_237
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cf3e41bfe5ee44da55ed76bf225a97
+      internalID: 900263752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_238
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19cd60582cfcf334a93a85225a45eb80
+      internalID: 18623696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_239
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2f55d36770668498c11106366c5226
+      internalID: 1441117304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_240
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f193a440b9f6848b975d5f3a37e400
+      internalID: -444158097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_241
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250b5cd8520c2ad479cc47dd346e1f16
+      internalID: -673488761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_242
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751f33d30581110428d59be4e58c6474
+      internalID: 617771655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_243
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd01ec514593a8246b8db73a4b8e4468
+      internalID: -1865810883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_244
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9d733e3231560489882b1b12007228
+      internalID: -1388293851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_245
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a706aaaa5ebb547a1d3f44b10d0ebe
+      internalID: -1200099804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_246
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11f4cb07906a6145862b9f0677f3bd3
+      internalID: -379152380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_247
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09833e48a3c2b7948857813ed52d127d
+      internalID: 341555903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_248
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dea921686db85e4c86c78538d58b62a
+      internalID: -90838503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_249
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3070f350aeb947a499e3cd5e628c2658
+      internalID: 1246170390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_250
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5f1e8fcce50494c8c09fcff921bf5d
+      internalID: 1910377881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_251
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85695f19317e6a94195db4afe1d399f9
+      internalID: -741342344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_252
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836226b071e37dc4986f72fba4a374a0
+      internalID: 1738878280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_253
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a822038508c4654bb3940aee18832d0
+      internalID: 1919082225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_254
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df393b6ea35dbe34c86360c765d10735
+      internalID: 389359449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_255
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8e4862473431a45bb2b5f31c25665e
+      internalID: -913585755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_256
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44086601e28d1849a4a289c5e7fe622
+      internalID: -1770606349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_257
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bddb45b6b610bc438dd1bdbb5e154e8
+      internalID: -1232814557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_258
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c71227f98d991498b9f7d69a2c8394
+      internalID: 1932836307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_259
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe456d818c20d74e8fafda8ab041d02
+      internalID: 441409860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_260
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c78abfbbf09954bb62535f2e40cc77
+      internalID: -2087417041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_261
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4739e260a74166240b357e19bb73596e
+      internalID: -850496123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_262
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22211a52c4d214e40b5d83c7875856e2
+      internalID: 17008910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_263
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c36588720f2a5642b7bf453c2404638
+      internalID: 1283696219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_264
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a0bee0dbdf5284bbc4aed12766d4ae
+      internalID: -1318761302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_265
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de2a1a03974d3841801de071be329a7
+      internalID: -933595936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_266
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c8dab802938ed4b88c784a1ecf36ee
+      internalID: -1286713303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_267
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d5df135dc492d4a8a49ab68c63f722
+      internalID: -1661147774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_268
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ba4090405120b45aa6a3d1398245a5
+      internalID: -840879474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_269
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292848ff9634ffa4f872eef1f8a84bac
+      internalID: 1391133831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_270
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560e2edb3e160b24e85562dc26ca8187
+      internalID: 385476262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_271
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db571c9626d86874595235d628ce4f06
+      internalID: 872510880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_272
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2558c959cf6d24b8d7a02f136c123d
+      internalID: -916313635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_273
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9bb9b1cc5a19d43a0d9aef2dbd07d8
+      internalID: 1889282058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_274
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873d92faf018fa94b9c916c82ed07a6a
+      internalID: -994262894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_275
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5524282f6732cb947890903ceb12e4a7
+      internalID: -801207054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_276
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46988a5d9c70d074092eccbbb825d813
+      internalID: 1275597854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_277
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f246f9377bcf9334eb21b084e17abcc3
+      internalID: -95300436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_278
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed327045e6616f4181a6003a0cd9057
+      internalID: -314013100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_279
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95a19f27da577e4b98a79909fecb5d7
+      internalID: 1851271770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_280
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b7e77708141c3489afe1ee21e5d2ed
+      internalID: -2017201331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_281
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d627505d47037ab40901ae4faaf610b0
+      internalID: 1255515807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_282
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c7b68c476edc141a68baf0a205f6cb
+      internalID: 1461481521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_283
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2dced5dd4fba2c4caa886f7b6429072
+      internalID: -436189101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_284
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6949e8e8bc503a04b88150d492b47967
+      internalID: -955416389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_285
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45221e711866774a85e6aea19af70da
+      internalID: 946051820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_286
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36fa72c2e4bccb4e88c824f3fce09d0
+      internalID: 1618972725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_287
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3af7788bb5bbd448a9c7d009831915
+      internalID: -1037933336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_288
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d04a1abc01e45438cfe2b07540a940
+      internalID: 928594481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_289
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50dcef0ea745e1540898dacba1c5577d
+      internalID: 533581033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_290
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1faf651ead038742a5ab6604ea838d0
+      internalID: -520212105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_291
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc14a9075a0fab4387170929c27de4c
+      internalID: 1003707571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_292
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dced311e275dc1c42887dcf09205a395
+      internalID: -1744681840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_293
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60664b4d13e9c944a708c7ad83dba53
+      internalID: 1830114104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_294
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d6d457f8545a8438ece7feb5520ba8
+      internalID: -1110310249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_295
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f706f22109705e428e4e2177855eab8
+      internalID: 44990912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_296
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7ccf6cbf15fdd42b90432561c3b1a0
+      internalID: 1028101521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_297
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3291785b1017a0a4bb138abbd499879d
+      internalID: -469484420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_298
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820a31872ba77a8428fbf5b6ab1edf61
+      internalID: 2077565578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_299
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f275c345c95fe4c8168056ea742fbc
+      internalID: -1293860775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_300
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7573c13254e3fa94ca816d514e9ed5d1
+      internalID: -1652183850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_301
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e48763728ea17a4a92b54733497319d
+      internalID: 387778470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_302
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45dff1af75e94b47a862758a13530ab
+      internalID: 235320433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_303
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b845c5b9fcb144ab63197f128a691a
+      internalID: 905878604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_304
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bce2995381294b42a03a1d6a37ab1cd
+      internalID: 787203781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_305
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d78ff6c1b6e8b47a147eb035373cc7
+      internalID: -2037925048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_306
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0cff9d4a2148e4197f0ae889bef0ac
+      internalID: 753219758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_307
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc1e9782b3a81d4181dda300b3069bc
+      internalID: 2008300041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_308
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 826af3ab79e9d174ba596a2e6f582978
+      internalID: -1020042706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_309
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad31803cf97d5214b92baec7c80b679c
+      internalID: 398935814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_310
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd8db6d115596b428a7677b09d86ad1
+      internalID: 1477684616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_311
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0064300f1989f4a81352666024b8e0
+      internalID: -520268716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_312
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8e1c57486783446b842d7b5474ac63
+      internalID: 820251895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_313
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bcd06cbb7849f844a5aec4ac7f9bade
+      internalID: -882598088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_314
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01525ed48b9683d4bb0fa6f5d3121ed4
+      internalID: 596616426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_315
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e951d742e8b9cf04dac94b8bfc6b441b
+      internalID: 181330126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_316
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0a7307a385a174aa9869ad58100b33
+      internalID: 1378991535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_317
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e097267761e756499e562fdfd59ec03
+      internalID: 734325160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_318
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77af2bb8b6b28df43afb801ea3b40740
+      internalID: -902360483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_319
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bda5a76195d08d45b9338d65de96ae9
+      internalID: 2025303274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_320
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229cde5d494840a4c9628473fac018cf
+      internalID: -813155347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_321
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015f0951951f74c428376cd4bb803206
+      internalID: -1624466768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_322
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9185c10fa39a27c418a6d9e4d8b4ada9
+      internalID: -875542329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_323
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ce6af59a2f5ee4ca669ccdae0cc63c
+      internalID: 1058954289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_324
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c684bc1c48661b46bc04578441399e9
+      internalID: -1877068468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_325
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee1cee992593b149834005a9377e503
+      internalID: 988975405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_326
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2dc0c7b7aa6d247be12bbbe56bf275
+      internalID: -659752762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumRoom1_327
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a411f4ed97607149b11f4cf310e40ea
+      internalID: 133287356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MediumRoom1_244: -1388293851
+      MediumRoom1_324: -1877068468
+      MediumRoom1_295: 44990912
+      MediumRoom1_277: -95300436
+      MediumRoom1_160: 1603454243
+      MediumRoom1_259: 441409860
+      MediumRoom1_249: 1246170390
+      MediumRoom1_135: -1590302618
+      MediumRoom1_127: -1175734835
+      MediumRoom1_176: 467067799
+      MediumRoom1_309: 398935814
+      MediumRoom1_149: 1452523246
+      MediumRoom1_145: -2086879505
+      MediumRoom1_139: 972532833
+      MediumRoom1_164: -1695507909
+      MediumRoom1_146: -1582110433
+      MediumRoom1_22: -67764453
+      MediumRoom1_204: 1987354451
+      MediumRoom1_168: -1397866532
+      MediumRoom1_256: -1770606349
+      MediumRoom1_226: -973262035
+      MediumRoom1_169: 1974556558
+      MediumRoom1_258: 1932836307
+      MediumRoom1_294: -1110310249
+      MediumRoom1_73: -1412184009
+      MediumRoom1_80: -1613927929
+      MediumRoom1_198: 862846387
+      MediumRoom1_159: 793123806
+      MediumRoom1_10: 1871752127
+      MediumRoom1_313: -882598088
+      MediumRoom1_43: -79276876
+      MediumRoom1_229: 933382660
+      MediumRoom1_117: -1226074882
+      MediumRoom1_246: -379152380
+      MediumRoom1_105: 968448715
+      MediumRoom1_30: -277605906
+      MediumRoom1_49: 2146480666
+      MediumRoom1_308: -1020042706
+      MediumRoom1_209: 982976061
+      MediumRoom1_221: 1470581573
+      MediumRoom1_303: 905878604
+      MediumRoom1_322: -875542329
+      MediumRoom1_26: -162030090
+      MediumRoom1_54: 1216457438
+      MediumRoom1_85: 799882390
+      MediumRoom1_190: -983367207
+      MediumRoom1_280: -2017201331
+      MediumRoom1_112: -1461177982
+      MediumRoom1_95: -316810319
+      MediumRoom1_318: -902360483
+      MediumRoom1_173: -899135701
+      MediumRoom1_253: 1919082225
+      MediumRoom1_8: 1552011310
+      MediumRoom1_314: 596616426
+      MediumRoom1_178: -602896236
+      MediumRoom1_4: 2087509885
+      MediumRoom1_37: 1172893526
+      MediumRoom1_147: -1408281749
+      MediumRoom1_156: -470241537
+      MediumRoom1_153: 1442346431
+      MediumRoom1_230: 550195310
+      MediumRoom1_40: 2068503065
+      MediumRoom1_89: -56158313
+      MediumRoom1_106: 392887879
+      MediumRoom1_0: -2055672311
+      MediumRoom1_243: -1865810883
+      MediumRoom1_272: -916313635
+      MediumRoom1_305: -2037925048
+      MediumRoom1_72: 1630700029
+      MediumRoom1_76: 501226580
+      MediumRoom1_124: -1767226786
+      MediumRoom1_122: 1941270569
+      MediumRoom1_19: -1980070903
+      MediumRoom1_14: 114536434
+      MediumRoom1_300: -1652183850
+      MediumRoom1_304: 787203781
+      MediumRoom1_75: 529420163
+      MediumRoom1_2: 1485997664
+      MediumRoom1_155: -1963867850
+      MediumRoom1_59: -1013922162
+      MediumRoom1_141: 1979376508
+      MediumRoom1_270: 385476262
+      MediumRoom1_275: -801207054
+      MediumRoom1_223: 1152660476
+      MediumRoom1_35: -2094450166
+      MediumRoom1_81: 802403556
+      MediumRoom1_151: -818774675
+      MediumRoom1_285: 946051820
+      MediumRoom1_211: 1304282372
+      MediumRoom1_74: -1658438045
+      MediumRoom1_143: -1581813684
+      MediumRoom1_161: 898666814
+      MediumRoom1_217: 326877708
+      MediumRoom1_71: 507709203
+      MediumRoom1_46: 112856977
+      MediumRoom1_265: -933595936
+      MediumRoom1_163: -1578256600
+      MediumRoom1_7: -496043029
+      MediumRoom1_69: -976086890
+      MediumRoom1_325: 988975405
+      MediumRoom1_48: -293550721
+      MediumRoom1_248: -90838503
+      MediumRoom1_123: -2006352840
+      MediumRoom1_187: -1675556726
+      MediumRoom1_33: 1619323899
+      MediumRoom1_128: -653020752
+      MediumRoom1_158: -2030349327
+      MediumRoom1_191: 1238029799
+      MediumRoom1_3: 626838918
+      MediumRoom1_133: -302305705
+      MediumRoom1_207: -39582181
+      MediumRoom1_142: -832934692
+      MediumRoom1_236: 1027340354
+      MediumRoom1_292: -1744681840
+      MediumRoom1_315: 181330126
+      MediumRoom1_196: 1401002125
+      MediumRoom1_250: 1910377881
+      MediumRoom1_132: 1600137890
+      MediumRoom1_225: -274567191
+      MediumRoom1_20: 1293226710
+      MediumRoom1_61: -2096501489
+      MediumRoom1_119: 1516848923
+      MediumRoom1_181: 1540117222
+      MediumRoom1_215: -2013459419
+      MediumRoom1_70: -1782436260
+      MediumRoom1_79: 877547939
+      MediumRoom1_99: -2144777279
+      MediumRoom1_64: -64507815
+      MediumRoom1_88: 1548366265
+      MediumRoom1_67: 33563929
+      MediumRoom1_199: -1190270274
+      MediumRoom1_267: -1661147774
+      MediumRoom1_247: 341555903
+      MediumRoom1_269: 1391133831
+      MediumRoom1_66: 356439260
+      MediumRoom1_288: 928594481
+      MediumRoom1_150: -1018897952
+      MediumRoom1_13: -1364107009
+      MediumRoom1_234: 1762189851
+      MediumRoom1_144: -106758502
+      MediumRoom1_162: 1775810215
+      MediumRoom1_97: -1949941619
+      MediumRoom1_166: 1696775392
+      MediumRoom1_262: 17008910
+      MediumRoom1_264: -1318761302
+      MediumRoom1_21: -1291719965
+      MediumRoom1_91: -2032059750
+      MediumRoom1_311: -520268716
+      MediumRoom1_261: -850496123
+      MediumRoom1_18: -1427518276
+      MediumRoom1_44: -602283389
+      MediumRoom1_320: -813155347
+      MediumRoom1_78: -625249745
+      MediumRoom1_233: -1297568288
+      MediumRoom1_120: 1268911621
+      MediumRoom1_317: 734325160
+      MediumRoom1_56: 507098278
+      MediumRoom1_197: 1452569237
+      MediumRoom1_1: -1510880415
+      MediumRoom1_179: -1347937471
+      MediumRoom1_94: 1974814088
+      MediumRoom1_29: 1432877053
+      MediumRoom1_193: 548073258
+      MediumRoom1_231: 881706870
+      MediumRoom1_38: 253890404
+      MediumRoom1_299: -1293860775
+      MediumRoom1_232: 2057246244
+      MediumRoom1_130: -1757082292
+      MediumRoom1_136: -831850596
+      MediumRoom1_62: -1522221209
+      MediumRoom1_82: 130602275
+      MediumRoom1_240: -444158097
+      MediumRoom1_206: -247774360
+      MediumRoom1_17: -752151140
+      MediumRoom1_28: 683138186
+      MediumRoom1_184: -1502430205
+      MediumRoom1_212: -864763571
+      MediumRoom1_98: 779600493
+      MediumRoom1_51: 1432725680
+      MediumRoom1_9: -1116965540
+      MediumRoom1_266: -1286713303
+      MediumRoom1_306: 753219758
+      MediumRoom1_189: 703799248
+      MediumRoom1_297: -469484420
+      MediumRoom1_165: -17776809
+      MediumRoom1_298: 2077565578
+      MediumRoom1_65: -1026366938
+      MediumRoom1_182: -910028354
+      MediumRoom1_302: 235320433
+      MediumRoom1_263: 1283696219
+      MediumRoom1_245: -1200099804
+      MediumRoom1_171: -1456662979
+      MediumRoom1_319: 2025303274
+      MediumRoom1_11: -374720582
+      MediumRoom1_125: 1532391991
+      MediumRoom1_52: -109882361
+      MediumRoom1_235: -1324552161
+      MediumRoom1_126: 1467312594
+      MediumRoom1_205: 1480275107
+      MediumRoom1_15: -1668185391
+      MediumRoom1_83: -1776869778
+      MediumRoom1_167: 477950493
+      MediumRoom1_157: 1678324576
+      MediumRoom1_260: -2087417041
+      MediumRoom1_108: 1778836312
+      MediumRoom1_34: -1491369231
+      MediumRoom1_102: -404893519
+      MediumRoom1_113: 1145486362
+      MediumRoom1_208: -1020334916
+      MediumRoom1_152: 78535053
+      MediumRoom1_90: -676932805
+      MediumRoom1_200: 848389290
+      MediumRoom1_201: -452469219
+      MediumRoom1_310: 1477684616
+      MediumRoom1_6: 1299261144
+      MediumRoom1_213: 274057469
+      MediumRoom1_31: 1607298151
+      MediumRoom1_291: 1003707571
+      MediumRoom1_307: 2008300041
+      MediumRoom1_39: 990062116
+      MediumRoom1_60: -877442983
+      MediumRoom1_321: -1624466768
+      MediumRoom1_238: 18623696
+      MediumRoom1_279: 1851271770
+      MediumRoom1_188: -421450309
+      MediumRoom1_45: -1836489413
+      MediumRoom1_252: 1738878280
+      MediumRoom1_41: -1869166383
+      MediumRoom1_174: -751645314
+      MediumRoom1_192: -1725844981
+      MediumRoom1_210: -722934283
+      MediumRoom1_32: -1799410781
+      MediumRoom1_301: 387778470
+      MediumRoom1_101: 2140859994
+      MediumRoom1_228: 1821314599
+      MediumRoom1_290: -520212105
+      MediumRoom1_274: -994262894
+      MediumRoom1_327: 133287356
+      MediumRoom1_203: -456859832
+      MediumRoom1_224: -1308015855
+      MediumRoom1_268: -840879474
+      MediumRoom1_282: 1461481521
+      MediumRoom1_63: -863701297
+      MediumRoom1_219: 179909852
+      MediumRoom1_271: 872510880
+      MediumRoom1_111: -50958011
+      MediumRoom1_116: -598854544
+      MediumRoom1_326: -659752762
+      MediumRoom1_154: 890529184
+      MediumRoom1_36: -1657156396
+      MediumRoom1_170: -1068082517
+      MediumRoom1_53: -1111288952
+      MediumRoom1_227: 1961155659
+      MediumRoom1_284: -955416389
+      MediumRoom1_185: -2130700920
+      MediumRoom1_220: -233406999
+      MediumRoom1_283: -436189101
+      MediumRoom1_216: 1939431926
+      MediumRoom1_323: 1058954289
+      MediumRoom1_257: -1232814557
+      MediumRoom1_180: 1081466141
+      MediumRoom1_96: -1731650532
+      MediumRoom1_241: -673488761
+      MediumRoom1_87: 1133935909
+      MediumRoom1_107: 793902169
+      MediumRoom1_222: 850879753
+      MediumRoom1_254: 389359449
+      MediumRoom1_278: -314013100
+      MediumRoom1_55: 1641372741
+      MediumRoom1_92: 105010459
+      MediumRoom1_16: 858586936
+      MediumRoom1_50: -954392398
+      MediumRoom1_296: 1028101521
+      MediumRoom1_138: -46461370
+      MediumRoom1_239: 1441117304
+      MediumRoom1_286: 1618972725
+      MediumRoom1_214: 108103526
+      MediumRoom1_109: -1297984460
+      MediumRoom1_177: 518323462
+      MediumRoom1_289: 533581033
+      MediumRoom1_316: 1378991535
+      MediumRoom1_218: -1552856249
+      MediumRoom1_42: 1739181925
+      MediumRoom1_121: -1247015005
+      MediumRoom1_237: 900263752
+      MediumRoom1_134: -1302521342
+      MediumRoom1_293: 1830114104
+      MediumRoom1_24: 1867823213
+      MediumRoom1_25: 1744350435
+      MediumRoom1_186: 1825883433
+      MediumRoom1_242: 617771655
+      MediumRoom1_148: -635959993
+      MediumRoom1_287: -1037933336
+      MediumRoom1_77: 1076939841
+      MediumRoom1_114: 255089378
+      MediumRoom1_194: -1785632403
+      MediumRoom1_115: -819537570
+      MediumRoom1_100: -653122451
+      MediumRoom1_5: 1303031702
+      MediumRoom1_273: 1889282058
+      MediumRoom1_140: 777904894
+      MediumRoom1_86: 2027783747
+      MediumRoom1_110: 1880736948
+      MediumRoom1_137: 1901195237
+      MediumRoom1_202: 4864644
+      MediumRoom1_104: -671126346
+      MediumRoom1_23: 372190028
+      MediumRoom1_93: -987600235
+      MediumRoom1_129: 980481542
+      MediumRoom1_57: 1307282783
+      MediumRoom1_281: 1255515807
+      MediumRoom1_12: 634501276
+      MediumRoom1_58: 1879207341
+      MediumRoom1_131: 295724131
+      MediumRoom1_195: 2023500781
+      MediumRoom1_84: -2131013518
+      MediumRoom1_255: -913585755
+      MediumRoom1_312: 820251895
+      MediumRoom1_27: 1216141566
+      MediumRoom1_47: -843022988
+      MediumRoom1_68: 251444049
+      MediumRoom1_103: -106091422
+      MediumRoom1_183: 2083013321
+      MediumRoom1_175: 688816843
+      MediumRoom1_172: -405646488
+      MediumRoom1_251: -741342344
+      MediumRoom1_276: 1275597854
+      MediumRoom1_118: 1470343515
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

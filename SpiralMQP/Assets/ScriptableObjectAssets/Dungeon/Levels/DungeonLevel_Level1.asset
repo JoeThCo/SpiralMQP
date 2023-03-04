@@ -14,15 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Rabbit
   roomTemplateList:
-  - {fileID: 11400000, guid: b497cf51860cc124088acdf3dfcc4bdc, type: 2}
-  - {fileID: 11400000, guid: 5e10298487db4a548a9e425ea037c915, type: 2}
+  - {fileID: 11400000, guid: 3cdc996eae718644dad8dad24ae2c39f, type: 2}
   - {fileID: 11400000, guid: 17aab39e60e31b44cbb99c260366f725, type: 2}
   - {fileID: 11400000, guid: 74c9dcaed5ec2f949878a19a2067a840, type: 2}
-  - {fileID: 11400000, guid: 3cdc996eae718644dad8dad24ae2c39f, type: 2}
   - {fileID: 11400000, guid: 5ec7c3fd29261984abd0f0a91400645d, type: 2}
   - {fileID: 11400000, guid: a513c365c6072fa4c9068779c5d2173e, type: 2}
-  - {fileID: 11400000, guid: 1cbc835c305513640970724d8b4d26ef, type: 2}
+  - {fileID: 11400000, guid: 5f8538d5e97548f41b8f1142a9f5d102, type: 2}
   roomNodeGraphList:
-  - {fileID: 11400000, guid: 71328a997e299584c82673bce802dec5, type: 2}
-  - {fileID: 11400000, guid: 4036ac6b3a54f294ab503e4dd10f2acd, type: 2}
-  - {fileID: 11400000, guid: db5f2e2189ecf384dbfa3d696d6f9bd4, type: 2}
+  - {fileID: 11400000, guid: 965d8ccdeb58d204bab29131f18d4118, type: 2}
