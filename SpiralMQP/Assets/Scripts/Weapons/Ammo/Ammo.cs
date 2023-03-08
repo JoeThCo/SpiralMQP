@@ -213,6 +213,7 @@ public class Ammo : MonoBehaviour, IFireable
             trailRenderer.material = ammoDetails.ammoTrailMaterial;
             trailRenderer.startWidth = ammoDetails.ammoTrailStartWidth;
             trailRenderer.endWidth = ammoDetails.ammoTrailEndWidth;
+            trailRenderer.colorGradient = ammoDetails.colorGradient;
             trailRenderer.time = ammoDetails.ammoTrailTime;
         }
         else

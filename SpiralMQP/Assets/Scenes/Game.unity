@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolArray:
   - poolSize: 60
-    prefab: {fileID: 5891719235356115971, guid: 4dd74f46a4c79794eafebd550d3b2b1f, type: 3}
+    prefab: {fileID: 5891719235356115971, guid: 05cb2d2d25cecc646a0d6f010802b4d3, type: 3}
     componentType: IFireable
   - poolSize: 60
     prefab: {fileID: 5891719235356115971, guid: 0deb1cc2300b6d945936e2fd29d63734, type: 3}
@@ -1357,7 +1357,7 @@ MonoBehaviour:
     prefab: {fileID: 5801418724654200722, guid: e7c476d4c7dc12c42a665a6e5e03c8bc, type: 3}
     componentType: WeaponShootEffect
   - poolSize: 60
-    prefab: {fileID: 1438908454071538146, guid: 39bffd5b2acbbdf4eb536050f9df62a3, type: 3}
+    prefab: {fileID: 1438908454071538146, guid: cf51e286ec8f7044aa29f6912e22731c, type: 3}
     componentType: WeaponShootEffect
   - poolSize: 60
     prefab: {fileID: 1438908454071538146, guid: 0025121a07e007e43a8ed4aa70e85d29, type: 3}
@@ -1367,6 +1367,9 @@ MonoBehaviour:
     componentType: IFireable
   - poolSize: 10
     prefab: {fileID: 7316854145603487671, guid: a79c02fe66efb994580f6dc9969ef653, type: 3}
+    componentType: IFireable
+  - poolSize: 60
+    prefab: {fileID: 5891719235356115971, guid: 4dd74f46a4c79794eafebd550d3b2b1f, type: 3}
     componentType: IFireable
 --- !u!4 &349196746
 Transform:
@@ -3047,9 +3050,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.3333333
-    width: 0.21093751
-    height: 0.2109375
+    y: 0.055555556
+    width: 0.33333334
+    height: 0.3333333
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4914,7 +4917,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1683824250

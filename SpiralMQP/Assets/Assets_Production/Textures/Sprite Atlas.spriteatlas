@@ -645,6 +645,7 @@ SpriteAtlas:
   - {fileID: -1196676847412359152, guid: b4d7adf8c58d46449b7f73a5dc3c868c, type: 3}
   - {fileID: 847894276046741680, guid: b4d7adf8c58d46449b7f73a5dc3c868c, type: 3}
   - {fileID: 21300000, guid: 94141c29fdd77cc4187800dd98d88dad, type: 3}
+  - {fileID: 21300000, guid: dd27f269c9c14734687e53568d9818dc, type: 3}
   - {fileID: 21300000, guid: 164ff379b97e3684eb24be7eeb641bc8, type: 3}
   - {fileID: 21300000, guid: dff74299f2cf7674eb05930ed6b07f8e, type: 3}
   - {fileID: 8985439187258846068, guid: beeb19d9abdca5b4fae733163f7ad375, type: 3}
@@ -1999,6 +2000,7 @@ SpriteAtlas:
   - SlimeBlockKingMoveUpRight_Blue_3
   - SlimeBlockKingMoveUpRight_Blue_2
   - Minimap Floor
+  - bullet8x8
   - blank1x1
   - QBZ95SMG
   - Chest_3
