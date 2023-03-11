@@ -1368,9 +1368,9 @@ MonoBehaviour:
   - poolSize: 10
     prefab: {fileID: 7316854145603487671, guid: a79c02fe66efb994580f6dc9969ef653, type: 3}
     componentType: IFireable
-  - poolSize: 60
-    prefab: {fileID: 5891719235356115971, guid: 4dd74f46a4c79794eafebd550d3b2b1f, type: 3}
-    componentType: IFireable
+  - poolSize: 10
+    prefab: {fileID: 1438908454071538146, guid: 39bffd5b2acbbdf4eb536050f9df62a3, type: 3}
+    componentType: WeaponShootEffect
 --- !u!4 &349196746
 Transform:
   m_ObjectHideFlags: 0
@@ -3050,9 +3050,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.055555556
-    width: 0.33333334
-    height: 0.3333333
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
