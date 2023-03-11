@@ -56,6 +56,10 @@ public static class Settings
     // Animator parameters - Damageable Decoration
     public static int destroy = Animator.StringToHash("destroy");
     public static string stateDestroyed = "Destroyed";
+
+    // Animator parameters - UI
+    public static string healthPercentUI = "HealthPercent";
+    public static string isHit = "Hit";
     #endregion ANIMATOR PARAMETERS
 
 
