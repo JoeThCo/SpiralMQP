@@ -100,7 +100,7 @@ public static class Settings
 
     #region UI PARAMETERS
     public const float uiHeartSpacing = 16f; // We can use something else in the future, heart for health is too generic
-    public const float uiAmmoIconSpacing = 4f;
+    public const float uiAmmoIconSpacing = 5.5f;
     #endregion    
 
 

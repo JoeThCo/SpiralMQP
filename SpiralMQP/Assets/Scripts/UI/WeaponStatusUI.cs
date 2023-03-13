@@ -193,16 +193,30 @@ public class WeaponStatusUI : MonoBehaviour
     {
         ClearAmmoLoadedIcons(); // Clear the current ammo icons
 
+        // Adding the bottom holder
+        GameObject bottomHolder = Instantiate(GameResources.Instance.ammoHolderBottom, ammoHolderTransform);
+
+        bottomHolder.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
+
+        ammoIconList.Add(bottomHolder);
+
         // Making the ammo icons list 
         for (int i = 0; i < weapon.weaponClipRemainingAmmo; i++)
         {
             // Instantiate ammo icon prefab
             GameObject ammoIcon = Instantiate(GameResources.Instance.ammoIconPrefab, ammoHolderTransform);
 
-            ammoIcon.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, Settings.uiAmmoIconSpacing * i);
+            ammoIcon.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, Settings.uiAmmoIconSpacing * (i + 1));
 
             ammoIconList.Add(ammoIcon);
         }
+
+        // Adding the bottom holder
+        GameObject topHolder = Instantiate(GameResources.Instance.ammoHolderTop, ammoHolderTransform);
+
+        topHolder.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, Settings.uiAmmoIconSpacing * (weapon.weaponClipRemainingAmmo + 1));
+
+        ammoIconList.Add(topHolder);
     }
 
     /// <summary>
