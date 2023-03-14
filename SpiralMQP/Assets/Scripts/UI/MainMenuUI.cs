@@ -21,6 +21,16 @@ public class MainMenuUI : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void LoadMenu() 
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LoadCredits() 
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
 
     /// <summary>
     /// Terminate and quit and game

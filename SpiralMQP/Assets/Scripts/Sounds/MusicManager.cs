@@ -39,8 +39,6 @@ public class MusicManager : SingletonAbstract<MusicManager>
         PlayerPrefs.SetInt("musicVolume", musicVolume);
     }
 
-
-
     public void PlayMusic(MusicTrackSO musicTrack, float fadeOutTime = Settings.musicFadeOutTime, float fadeInTime = Settings.musicFadeInTime)
     {
         // Play music track
