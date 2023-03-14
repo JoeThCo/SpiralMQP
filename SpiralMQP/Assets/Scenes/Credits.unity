@@ -227,6 +227,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5531596746387311010, guid: f4edbcf735ea50d4d85b0cad1c7fd2b8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531596746387311010, guid: f4edbcf735ea50d4d85b0cad1c7fd2b8, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -1035,7 +1039,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Oliver Chen - Programmer\nJoe Colley - Programmer\nShen Fang - Programmer\nJaden
-    Smith-Borne - Art/Music\nTina ??? - Art\n\nAdvisors\nMatthew Ahrens \nWalt Yarbrough"
+    Smith-Borne - Art/Music\nTina Guo - Art\n\nAdvisors\nMatthew Ahrens \nWalt Yarbrough"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe1ba23c638bec49a583843476bb5c9, type: 2}
   m_sharedMaterial: {fileID: 8120199949304618070, guid: dfe1ba23c638bec49a583843476bb5c9, type: 2}
