@@ -17,8 +17,8 @@ MonoBehaviour:
   chaseDistance: 40
   enemyStandardMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   enemyMaterializeTime: 2
-  enemyMaterializeShader: {fileID: -6465566751694194690, guid: 5fec8f8e6ea244648a3c6ede24a56288, type: 3}
-  enemyMaterializeColor: {r: 1.1294118, g: 0.36078432, b: 1.1137255, a: 1}
+  enemyMaterializeShader: {fileID: -6465566751694194690, guid: 452551cf68063404fbb830a5e55c48ff, type: 3}
+  enemyMaterializeColor: {r: 1.1294119, g: 0.36661538, b: 1.1234988, a: 1}
   enemyWeapon: {fileID: 11400000, guid: 46939b4e59357264faf237779b2b9e73, type: 2}
   firingIntervalMin: 1
   firingIntervalMax: 5

@@ -15,10 +15,10 @@ MonoBehaviour:
   colorGradient:
     serializedVersion: 2
     key0: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
-    key1: {r: 0.446893, g: 0.9150943, b: 0.16834284, a: 1}
-    key2: {r: 0.4427349, g: 0.9528302, b: 0.40899786, a: 0.58431375}
+    key1: {r: 0.8867924, g: 0.6190496, b: 0.09620863, a: 1}
+    key2: {r: 0.9339623, g: 0.45066735, b: 0.118948035, a: 0.58431375}
     key3: {r: 1, g: 1, b: 1, a: 0}
-    key4: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 0.9150685, g: 0.9716981, b: 0.114587024, a: 0}
     key5: {r: 1, g: 1, b: 1, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
@@ -41,10 +41,10 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 6
     m_NumAlphaKeys: 4
-  duration: 0.5
+  duration: 0.3
   startParticleSize: 0.35
   startParticleSpeed: 3.5
-  startLifetime: 0.5
+  startLifetime: 0.3
   maxParticleNumber: 25
   emissionRate: 0
   burstParticleNumber: 25

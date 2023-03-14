@@ -1,0 +1,4347 @@
+fileFormatVersion: 2
+guid: c3f8c0d189c96a846b11bc056220c9fa
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SmallRoom_0
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9e4a6dec3d83d45af0166f382a66e8
+      internalID: -1671712352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9274ed9bfe347647ad9392d1862a7d1
+      internalID: 674594134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_2
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b960181a10a5c4496af3da15e78ef6
+      internalID: -807100052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_3
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb6adb26a6294b438315df19eecc13f
+      internalID: -555347523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3cce28bad0beb544ae2b75720187882
+      internalID: 1016418623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_5
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 692
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ea03b247c9ba441a4aacdbe1f6d525
+      internalID: 860971403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 676
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4453a40872994e942b506f0ea5b08a40
+      internalID: 2016660123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 676
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89710d73351608c40aab27a8928b27db
+      internalID: -1427140054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_8
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 676
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c4b8a9128f5de4a8e5501c1e874692
+      internalID: -1473027648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_9
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 676
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14efece3a8e52ad47b7c3cf628264801
+      internalID: -1452287682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_10
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 676
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa35f2f0d38d3748b95fd71299d0712
+      internalID: -792897563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_11
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 676
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f3137c8122a464a9db989742fe7ffb
+      internalID: 1416287556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_12
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0377dd1ee97ef92429fa8634a5a53daa
+      internalID: 1976322798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_13
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa47f2019afc0ec4f94018c186dfea7d
+      internalID: -1377160904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_14
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e3125e752a6b94e8f57b5fc728b681
+      internalID: -1439477707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_15
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e550f773894434faba12e40eda3fb1
+      internalID: 1675185388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_16
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f491969e1c7ba4dac548a8702fef92
+      internalID: -1312798001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_17
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9403c372db11842a393170db6797b7
+      internalID: 1044255127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_18
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8c8a7140062ad428739c768b5a0502
+      internalID: -288901366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_19
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea51b27d9dcc71c41907f03409891f40
+      internalID: -1993352646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_20
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c504c5b0ebb40489fc00a9aa5f27e4
+      internalID: -1423390716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_21
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e382775e1f38a47bb7a89ced72eedb
+      internalID: -441448616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_22
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a30a49ced5aaf04b9c2bc6233a0b34f
+      internalID: -1570438155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_23
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 660
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b17ba6c84f14e144b912143b1c2295d
+      internalID: -739494458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_24
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ffb66eb55b6c94b9e98a5fccbd0ce5
+      internalID: -1752343068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_25
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4a36f722b4da84383b3a856623deef
+      internalID: -586905304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_26
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4581c8cc2043444b3c514d44bb9745
+      internalID: -2109849163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_27
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8c01dccbb96ae4ca8dee01dab87318
+      internalID: -937432638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_28
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02529fec22a1dc4895631902724c861
+      internalID: 95170436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_29
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0282ccee76a025d4495207c9f46d41a1
+      internalID: 1141275404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_30
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23564aa255dc1ea42a35e9420b17ce68
+      internalID: 236451725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_31
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6915d10c0238947b3c155894cccd22
+      internalID: -1713251372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_32
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e8c643e31189d4292ef49c82e33911
+      internalID: -989487338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_33
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e61532f186b042458119d11b5e90a5c
+      internalID: 1202456851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_34
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d83f9dd5569c124fadc8e0f09d1052d
+      internalID: -1913047345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_35
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4eca07f49176c84cb8d3f2855c0a56f
+      internalID: 1410176018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_36
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ef804adf3caf44e9b958c44e4adb1d
+      internalID: 1708701269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_37
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a735049e4ae4ea041ad6ab0f94e5cccd
+      internalID: -2055507206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_38
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c7655a8d1dc3b4da6da44e076f8eda
+      internalID: -1366358388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_39
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86bb9802bf781b4d80b540db631d8a4
+      internalID: -955164750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_40
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869e53ba38ba94a488ea5b3207e58663
+      internalID: -1453819541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_41
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97944773701bce541b6ded908ea3151b
+      internalID: 753035111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_42
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ccda0a5d653ab4c96ee3176cf0403a
+      internalID: 527671016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_43
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 644
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf4cf2efb431da4ea6034c624d79474
+      internalID: -671350711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_44
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adb7251ffa03b34db987b00bef8ba12
+      internalID: 1558620285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_45
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965d8ef9721c152468a1933da7d1190d
+      internalID: 16713254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_46
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5836bdeb6da29d4b9affa6b48c7e3f4
+      internalID: -736740318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_47
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75354fae24ef5944aa886e02b5ebda2
+      internalID: -28024879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_48
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13ec0d623b7cc2469e26af91f7285f9
+      internalID: -1349336588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_49
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50dc00bc82cf68488752d139bd60c30
+      internalID: -101012047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_50
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9abc5939597f1340a8d21a4d97a171c
+      internalID: 210395722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_51
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c4ad83989187445b5132ee143a8779
+      internalID: -1089347710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_52
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb8083e17e193a4cac544acc0914720
+      internalID: -1262435901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_53
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93f4b48340c47a4a89e1ecba6f6e0c7
+      internalID: 655556671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_54
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1dfce1365cfda4db0d9c881d045669
+      internalID: 1461346644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_55
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a72040b9b7497845bed3575df6073d1
+      internalID: 2092779102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_56
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d849b83ab394b4643ae57cbd7bdad997
+      internalID: 2020393730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_57
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda0946828c0c4d4d84d5b1d682196ca
+      internalID: 1258370646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_58
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7830b9cd2b09d1a4384e328b008cb9e2
+      internalID: 546264286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_59
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4e46e5255f2934eafefa6801de59e1
+      internalID: 457161986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_60
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691a488ab3393824da3323470d7ba42b
+      internalID: -1543869428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_61
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437bc4ccfc1b0314e870fed8bcf7f759
+      internalID: -1270240858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_62
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f2d2b6a6838df40b4daec59a06cdae
+      internalID: -780119724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_63
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 628
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95301880e969204ca49fd36f89eee57
+      internalID: 495104917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_64
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bad6d6dd84d244eb9ccd64209ed61b
+      internalID: -537164383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_65
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad0c9ecc66a4324fb538a7dfeb4260a
+      internalID: -448743852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_66
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d5a3a5d74ee004396a8eeb21e1767d
+      internalID: -2115259683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_67
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d779b69736238114192ab18169f8d9ed
+      internalID: -1160258671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_68
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ee4e8881731cf4388c29be44c52551
+      internalID: 737478729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_69
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666a67434e15c334782a867f3448bbd9
+      internalID: 1167017410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_70
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca289bb12fbc4f8438ea75c41427d8b2
+      internalID: 1723044912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_71
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98150f336df9c764f865b6307352326b
+      internalID: 2044184223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_72
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1f862db60961f4483c43ae895f27ff
+      internalID: 1453085424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_73
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0fa33a6d919b2d49add921b3ab78a8b
+      internalID: -433817135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_74
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e8babdf12a75249835d31640288966
+      internalID: 691095438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_75
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720b09312ce303749a1735e54d2d19d5
+      internalID: -1132410872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_76
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0151028a2af21af479e760b6b9d3f29f
+      internalID: 944811426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_77
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed14957627f9c844b98f4ffefd45ec7
+      internalID: -1448623676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_78
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad24c89d2a0be8e428839ad0a401dea8
+      internalID: 1457206400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_79
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80d8fb7e1434c54fb75bb43d5ac1807
+      internalID: -698407748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_80
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e1b92b8797b9f448b57ba28e53b056b
+      internalID: 1782885425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_81
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 612
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f975625c0c239e34d8cd1882daad0e62
+      internalID: 743477855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_82
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1738bd70e530b384eac22560328c7bdb
+      internalID: 1901299126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_83
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a0b7fd104bcb044b06ad1e9ec4258d
+      internalID: 1745106280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_84
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94877dd35a215cc4584e9b6461cf8d07
+      internalID: 583245895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_85
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9436a4667e3a081429aa445c60fdd158
+      internalID: 1678316510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_86
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd47a88c315080a45bc35361e70368ae
+      internalID: 1401126415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_87
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc1634cdf3139141b97fb5e6d408963
+      internalID: 750808352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_88
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039a68738aefabe4f9349f48f7407504
+      internalID: 2074473412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_89
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe67edf3f4415348baa6ede14286f29
+      internalID: -744166834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_90
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7543bc27fd424654abb74d6a58cd80a0
+      internalID: -545203453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_91
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5ffad02e168dc4eb74f3970954cc64
+      internalID: 1459824768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_92
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332ef928653be874680f5d0a7e9d107e
+      internalID: -1556186200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_93
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0761c9619361946a477b59275b5212
+      internalID: -985166978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_94
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085f4792374df124a9baaa411bfc46f6
+      internalID: -828803880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_95
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91088d4db3022b4da61cee6731e3b31
+      internalID: -503157945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_96
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219c8b9234531e94c880828c942c9fa8
+      internalID: -603319796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_97
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b36f7e7bc4fb0a48813e70f7e385424
+      internalID: 2022972692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_98
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41830815c65629f4f8eac925fa018d15
+      internalID: -838335180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_99
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 596
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf3de48984c0da44b75a93eb755b3e1
+      internalID: -1837145127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_100
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4601c1a1d463b1045942a81f12b20b88
+      internalID: -1755106959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_101
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 580
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00dec4fe1b503544c935df400a8e4a1b
+      internalID: -1966940851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_102
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917a1d42a888ac944a8e919ad5183aab
+      internalID: -1694534106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_103
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 564
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7154b0a4666f0184bb6aca0445a7b708
+      internalID: -85838210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_104
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bfa4439097155458cab73e1ca92145
+      internalID: 1941872351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_105
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 548
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b35e212ac3afbf4ab0298a31e7f95f6
+      internalID: 1806343079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_106
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e51dca766923044ab9db0dfccf3b23b
+      internalID: -262323792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_107
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 532
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18ca69f29ff1824ab691c2ef0f16927
+      internalID: -625274819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_108
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 516
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2755758ce0a117f4db57059cec6f7e6c
+      internalID: 182929147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_109
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 500
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb88dd6a930c4ce4bb6ef7e31eb1332e
+      internalID: 560684009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_110
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 484
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f26f1baf2489443bc96059611e4126
+      internalID: 92017572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_111
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 468
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d7369e0bbc0eb4e8b359cff396ab20
+      internalID: -530814089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_112
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 468
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27e08e438d16dd41a8a43c48341ac44
+      internalID: -543384412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_113
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 452
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df8edf33b6532744ab3befc3c37eb0b
+      internalID: -867405138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_114
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 452
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bbd8832770989418d68cde4e733dac
+      internalID: -172884808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_115
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 436
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074e04b71ece4624da807a54698f3ca4
+      internalID: -258262810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_116
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 436
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2a39ce14042cb45af65ed2f19b7200
+      internalID: -303427816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_117
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 420
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dd7fc7958f2df498080d70052d5abf
+      internalID: 1219598314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_118
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 420
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6a943789de90a4fa52ba2559b7d1a2
+      internalID: -1914478081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_119
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 404
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41243a8facced5f4fab00a0b7a4c61d8
+      internalID: -1972327646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_120
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 404
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f609a0a02917f0c4fbf0f2ed42a531bb
+      internalID: -825423106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_121
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 388
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c2d9b23466a4d4fb55fb6197c43b44
+      internalID: 972683452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_122
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 388
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ae9784b123cd447a82d4e815abe558
+      internalID: 329781710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_123
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 372
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e697f476bdfd02b459a228a90127e3f7
+      internalID: -652247588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_124
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 372
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8956e6ca7bfd546a07bb5c0b2a88ed
+      internalID: -2073778597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_125
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 356
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68c3753ffd3b9f4dad708f7f04e42d0
+      internalID: -292522473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_126
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 356
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71d65bfb1b30104387c383cf52e2df0
+      internalID: -1884841449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_127
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1bbc688203c1634c9140376c2856092
+      internalID: -1101351603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_128
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 324
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d465fad49040cc4e8e3e442252c8147
+      internalID: -692932576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_129
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 308
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0224b858578cfef44a2570c01ae06aa0
+      internalID: 1031867472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_130
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dcb4c555ec8662478399bdb68c6fcb1
+      internalID: 31701278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_131
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdfa17865279854bbebaeb3af0bb997
+      internalID: 979681829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_132
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a2486279a959b459d1b0b0c13162d6
+      internalID: 716088239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_133
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d15cc23414fcfc488f8159f931a0ca0
+      internalID: -1963230132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_134
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a5c308f1c20f4478a7965999d02ba4
+      internalID: 1638972271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_135
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77408a552490b394ba41c968f36c9ca4
+      internalID: 505597113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_136
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ef6d00f1f294946ac08f121565be4d
+      internalID: 269576358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_137
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b5b033aa6c1de479c23b781328420a
+      internalID: 368014007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_138
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8bab0780f77a7478e27b11ae6a6691
+      internalID: -1061402890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_139
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8869b30ad12a024f84575b041377e3d
+      internalID: -1800824366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_140
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db4fb9210a691246b3608f0ca0a48c2
+      internalID: -1620881085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_141
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fc3d51d6a3a6147b216e16cf01acc4
+      internalID: 1891277644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_142
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602748c82e584a340ba92b6ba20f53c2
+      internalID: -2115064650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_143
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ad5dcd74ac8e0449caf94b6aa4977b
+      internalID: 745647048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_144
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f3aacb2b6cd7341b0ae4a146e95c9b
+      internalID: 1501932999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_145
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75efa12a5a38c84ab0a2961d8cfc3c1
+      internalID: -865449746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_146
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d3219d356cb9d499bc8a90af1143ec
+      internalID: -347924810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_147
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bcdb6ab1892e204aa6298bd73a4a7d6
+      internalID: -1170097901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_148
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb05417e967a5e945822d5d1bbd7b694
+      internalID: 239469295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_149
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27afb70cc220f3c479567da2e39e9f49
+      internalID: -2070057893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_150
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144fb397bab4e02418dab16ab257f87c
+      internalID: 956572232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_151
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930f7ad4212e2c843ba03eb0282345b6
+      internalID: 689312858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_152
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bbd3afac0192c4692253716a9147c7
+      internalID: -1702384234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_153
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8abdf4efcaa8f724c85cea48ed8ddb64
+      internalID: -480336474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_154
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80dfc22bd86673b4c946e21047490dd6
+      internalID: -1353568403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_155
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce23a010baeb1b4a819c28cf27a50a6
+      internalID: -1499285290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_156
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5386534b1bfd37247886187c85246f39
+      internalID: 1621241731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_157
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db369106d001d9143b1d69907f5f22f5
+      internalID: -275793860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_158
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d36b0b94f23f1349a2e3e240a94d0fc
+      internalID: 788182201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_159
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0887904c409fbb4bb16ab31b6acff1e
+      internalID: -976333182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_160
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae19931b9a6bed14cbe9fcd5f619ef26
+      internalID: 1242188472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_161
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45eba28b14a509447b5d7f0e767b191f
+      internalID: 1181834649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_162
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545e79a0fc952b245a00ad72e1992019
+      internalID: -1735717335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_163
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a27fb3cfc01a9d479b4d1c7a2a44499
+      internalID: 482980612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_164
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1c8c587cb164f4cb69ea9364ead4a2
+      internalID: 1206471835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_165
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9958d49af374c346b418ab815597637
+      internalID: 917724663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_166
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4751fd8f21d5f47b922859bcb0a032
+      internalID: 589740010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_167
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c65a1d4968dfe74a850b9715f150347
+      internalID: 769480953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_168
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3310cd688272042a480320860846e9
+      internalID: 754365986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_169
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1509ad985cb2748a69810a69e93535
+      internalID: -1043397296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_170
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f914a08aca53f4a81c1e6815a5f9c9
+      internalID: -234654632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_171
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89223548b48b004ab9c9996cfc6bab4
+      internalID: -1968190777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_172
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6fc369dbe58b04ba254c6570294791
+      internalID: -1478847979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_173
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7705108bf4ec87d40b62ca64a6d933d5
+      internalID: -2050026210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_174
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4fb8fb1ce86d34d87320689fca2069
+      internalID: -606752160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_175
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbfb254ccb6a1347a429c7f163783db
+      internalID: -2042211375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_176
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d487b35d5e483f4eacb375831eb9c6b
+      internalID: -128383620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_177
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0ce970685dddc498d95a3140baa36d
+      internalID: 2066682159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_178
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52b011e7eac72c46a5e308967242bf5
+      internalID: -257604074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_179
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81eb3fb0fb69b64bb8f7796006e72d0
+      internalID: -1025932773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_180
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04086211b278ae4b9dc65aadf3603c2
+      internalID: 1971897056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_181
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920e7395e7bb83d41b0b1e93cf5135ff
+      internalID: -2065130054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_182
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9de7f0a2ce83e54eb0b99056612b85b
+      internalID: 1797010596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_183
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96cef688eed14304c98231e6089940f4
+      internalID: -1825006713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_184
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 299de3367ec6f2a4381fbb0b597941f4
+      internalID: 1488711351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_185
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259bfd47ab2ca4847801d0f580924b8c
+      internalID: -1496797341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_186
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8136c8d964292534eb93d79fdbd8cfce
+      internalID: -1156754619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_187
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7877fc49eac6eca4ea44d2a122577722
+      internalID: -812612751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_188
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b390d5565a3db5043aaec008d27ec266
+      internalID: -1062867376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_189
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2ee3d32126fe44690d1e93de72a9d3
+      internalID: -382613612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_190
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64eb6d56c9ad7844864c0e3bd720d40
+      internalID: -13440890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRoom_191
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99d3bd0444c34844b6fc1bbf1585d78
+      internalID: 1223963862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SmallRoom_177: 2066682159
+      SmallRoom_189: -382613612
+      SmallRoom_129: 1031867472
+      SmallRoom_37: -2055507206
+      SmallRoom_149: -2070057893
+      SmallRoom_32: -989487338
+      SmallRoom_33: 1202456851
+      SmallRoom_17: 1044255127
+      SmallRoom_65: -448743852
+      SmallRoom_128: -692932576
+      SmallRoom_13: -1377160904
+      SmallRoom_170: -234654632
+      SmallRoom_64: -537164383
+      SmallRoom_178: -257604074
+      SmallRoom_76: 944811426
+      SmallRoom_50: 210395722
+      SmallRoom_62: -780119724
+      SmallRoom_160: 1242188472
+      SmallRoom_55: 2092779102
+      SmallRoom_113: -867405138
+      SmallRoom_132: 716088239
+      SmallRoom_45: 16713254
+      SmallRoom_19: -1993352646
+      SmallRoom_23: -739494458
+      SmallRoom_87: 750808352
+      SmallRoom_8: -1473027648
+      SmallRoom_46: -736740318
+      SmallRoom_164: 1206471835
+      SmallRoom_98: -838335180
+      SmallRoom_180: 1971897056
+      SmallRoom_6: 2016660123
+      SmallRoom_94: -828803880
+      SmallRoom_39: -955164750
+      SmallRoom_95: -503157945
+      SmallRoom_181: -2065130054
+      SmallRoom_81: 743477855
+      SmallRoom_123: -652247588
+      SmallRoom_111: -530814089
+      SmallRoom_83: 1745106280
+      SmallRoom_78: 1457206400
+      SmallRoom_53: 655556671
+      SmallRoom_147: -1170097901
+      SmallRoom_168: 754365986
+      SmallRoom_165: 917724663
+      SmallRoom_100: -1755106959
+      SmallRoom_140: -1620881085
+      SmallRoom_49: -101012047
+      SmallRoom_154: -1353568403
+      SmallRoom_96: -603319796
+      SmallRoom_143: 745647048
+      SmallRoom_134: 1638972271
+      SmallRoom_103: -85838210
+      SmallRoom_41: 753035111
+      SmallRoom_157: -275793860
+      SmallRoom_176: -128383620
+      SmallRoom_28: 95170436
+      SmallRoom_131: 979681829
+      SmallRoom_29: 1141275404
+      SmallRoom_137: 368014007
+      SmallRoom_27: -937432638
+      SmallRoom_1: 674594134
+      SmallRoom_112: -543384412
+      SmallRoom_89: -744166834
+      SmallRoom_190: -13440890
+      SmallRoom_51: -1089347710
+      SmallRoom_36: 1708701269
+      SmallRoom_148: 239469295
+      SmallRoom_153: -480336474
+      SmallRoom_185: -1496797341
+      SmallRoom_115: -258262810
+      SmallRoom_9: -1452287682
+      SmallRoom_182: 1797010596
+      SmallRoom_138: -1061402890
+      SmallRoom_12: 1976322798
+      SmallRoom_5: 860971403
+      SmallRoom_86: 1401126415
+      SmallRoom_92: -1556186200
+      SmallRoom_69: 1167017410
+      SmallRoom_82: 1901299126
+      SmallRoom_74: 691095438
+      SmallRoom_4: 1016418623
+      SmallRoom_107: -625274819
+      SmallRoom_142: -2115064650
+      SmallRoom_90: -545203453
+      SmallRoom_79: -698407748
+      SmallRoom_40: -1453819541
+      SmallRoom_108: 182929147
+      SmallRoom_68: 737478729
+      SmallRoom_187: -812612751
+      SmallRoom_15: 1675185388
+      SmallRoom_54: 1461346644
+      SmallRoom_104: 1941872351
+      SmallRoom_99: -1837145127
+      SmallRoom_52: -1262435901
+      SmallRoom_34: -1913047345
+      SmallRoom_150: 956572232
+      SmallRoom_161: 1181834649
+      SmallRoom_146: -347924810
+      SmallRoom_106: -262323792
+      SmallRoom_167: 769480953
+      SmallRoom_119: -1972327646
+      SmallRoom_110: 92017572
+      SmallRoom_162: -1735717335
+      SmallRoom_183: -1825006713
+      SmallRoom_121: 972683452
+      SmallRoom_188: -1062867376
+      SmallRoom_173: -2050026210
+      SmallRoom_171: -1968190777
+      SmallRoom_18: -288901366
+      SmallRoom_38: -1366358388
+      SmallRoom_191: 1223963862
+      SmallRoom_124: -2073778597
+      SmallRoom_10: -792897563
+      SmallRoom_186: -1156754619
+      SmallRoom_130: 31701278
+      SmallRoom_179: -1025932773
+      SmallRoom_155: -1499285290
+      SmallRoom_71: 2044184223
+      SmallRoom_26: -2109849163
+      SmallRoom_85: 1678316510
+      SmallRoom_141: 1891277644
+      SmallRoom_105: 1806343079
+      SmallRoom_145: -865449746
+      SmallRoom_116: -303427816
+      SmallRoom_7: -1427140054
+      SmallRoom_67: -1160258671
+      SmallRoom_122: 329781710
+      SmallRoom_118: -1914478081
+      SmallRoom_42: 527671016
+      SmallRoom_158: 788182201
+      SmallRoom_31: -1713251372
+      SmallRoom_30: 236451725
+      SmallRoom_56: 2020393730
+      SmallRoom_88: 2074473412
+      SmallRoom_22: -1570438155
+      SmallRoom_169: -1043397296
+      SmallRoom_48: -1349336588
+      SmallRoom_166: 589740010
+      SmallRoom_75: -1132410872
+      SmallRoom_2: -807100052
+      SmallRoom_24: -1752343068
+      SmallRoom_102: -1694534106
+      SmallRoom_43: -671350711
+      SmallRoom_25: -586905304
+      SmallRoom_172: -1478847979
+      SmallRoom_174: -606752160
+      SmallRoom_175: -2042211375
+      SmallRoom_61: -1270240858
+      SmallRoom_151: 689312858
+      SmallRoom_159: -976333182
+      SmallRoom_139: -1800824366
+      SmallRoom_21: -441448616
+      SmallRoom_101: -1966940851
+      SmallRoom_66: -2115259683
+      SmallRoom_133: -1963230132
+      SmallRoom_80: 1782885425
+      SmallRoom_57: 1258370646
+      SmallRoom_126: -1884841449
+      SmallRoom_20: -1423390716
+      SmallRoom_93: -985166978
+      SmallRoom_136: 269576358
+      SmallRoom_47: -28024879
+      SmallRoom_114: -172884808
+      SmallRoom_63: 495104917
+      SmallRoom_84: 583245895
+      SmallRoom_77: -1448623676
+      SmallRoom_11: 1416287556
+      SmallRoom_152: -1702384234
+      SmallRoom_163: 482980612
+      SmallRoom_70: 1723044912
+      SmallRoom_59: 457161986
+      SmallRoom_135: 505597113
+      SmallRoom_120: -825423106
+      SmallRoom_72: 1453085424
+      SmallRoom_184: 1488711351
+      SmallRoom_58: 546264286
+      SmallRoom_14: -1439477707
+      SmallRoom_60: -1543869428
+      SmallRoom_91: 1459824768
+      SmallRoom_125: -292522473
+      SmallRoom_0: -1671712352
+      SmallRoom_109: 560684009
+      SmallRoom_144: 1501932999
+      SmallRoom_3: -555347523
+      SmallRoom_97: 2022972692
+      SmallRoom_156: 1621241731
+      SmallRoom_16: -1312798001
+      SmallRoom_117: 1219598314
+      SmallRoom_35: 1410176018
+      SmallRoom_44: 1558620285
+      SmallRoom_73: -433817135
+      SmallRoom_127: -1101351603
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

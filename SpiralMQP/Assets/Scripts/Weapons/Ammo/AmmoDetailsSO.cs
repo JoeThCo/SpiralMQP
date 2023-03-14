@@ -80,6 +80,9 @@ public class AmmoDetailsSO : ScriptableObject
     [Tooltip("Selected if an ammo trail is required - If selected then the rest of the ammo trail values should be created")]
     public bool isAmmoTrail = false;
 
+    [Tooltip("Color gradient for the ammo trail")]
+    public Gradient colorGradient;
+
     [Tooltip("Ammo trail lifetime in seconds")]
     public float ammoTrailTime = 3f;
 

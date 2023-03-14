@@ -56,6 +56,10 @@ public static class Settings
     // Animator parameters - Damageable Decoration
     public static int destroy = Animator.StringToHash("destroy");
     public static string stateDestroyed = "Destroyed";
+
+    // Animator parameters - UI
+    public static string healthPercentUI = "HealthPercent";
+    public static string isHit = "Hit";
     #endregion ANIMATOR PARAMETERS
 
 
@@ -96,7 +100,7 @@ public static class Settings
 
     #region UI PARAMETERS
     public const float uiHeartSpacing = 16f; // We can use something else in the future, heart for health is too generic
-    public const float uiAmmoIconSpacing = 4f;
+    public const float uiAmmoIconSpacing = 5.5f;
     #endregion    
 
 

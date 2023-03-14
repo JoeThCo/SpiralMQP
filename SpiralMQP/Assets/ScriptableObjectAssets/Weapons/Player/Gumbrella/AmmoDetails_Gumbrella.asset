@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoName: Pistol Ammo
   isPlayerAmmo: 1
-  ammoSprite: {fileID: 21300000, guid: 4df9cc7131cd27f4288bca5e76c82034, type: 3}
+  ammoSprite: {fileID: 21300000, guid: dd27f269c9c14734687e53568d9818dc, type: 3}
   ammoPrefabArray:
-  - {fileID: 5891719235356115971, guid: 4dd74f46a4c79794eafebd550d3b2b1f, type: 3}
-  ammoMaterial: {fileID: 2100000, guid: 8906ff5d458c0ba4d8d1d0177dfd5df5, type: 2}
+  - {fileID: 5891719235356115971, guid: 05cb2d2d25cecc646a0d6f010802b4d3, type: 3}
+  ammoMaterial: {fileID: 2100000, guid: c1368499fdf39ea4687698e7f4aa2cf1, type: 2}
   ammoChargeTime: 0
   ammoChargeMaterial: {fileID: 0}
   ammoHitEffect: {fileID: 11400000, guid: a071313f6d97f114bbec4ba87e35a507, type: 2}
   ammoDamage: 20
   ammoSpeedMin: 18
   ammoSpeedMax: 18
-  ammoRange: 12
+  ammoRange: 20
   ammoRotationSpeed: 1
   ammoSpreadMin: 2
   ammoSpreadMax: 4
@@ -32,8 +32,37 @@ MonoBehaviour:
   ammoSpawnAmoutMax: 1
   ammoSpawnIntervalMin: 0
   ammoSpawnIntervalMax: 0
-  isAmmoTrail: 0
-  ammoTrailTime: 0
-  ammoTrailMaterial: {fileID: 0}
-  ammoTrailStartWidth: 0
-  ammoTrailEndWidth: 0
+  isAmmoTrail: 1
+  colorGradient:
+    serializedVersion: 2
+    key0: {r: 0.9245283, g: 0.5751019, b: 0.11774653, a: 1}
+    key1: {r: 0.9254902, g: 0.4104432, b: 0.27450988, a: 1}
+    key2: {r: 0.8392157, g: 0.16168785, b: 0.050980408, a: 0.5803922}
+    key3: {r: 1, g: 0.13482326, b: 0, a: 0.36078432}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 23708
+    ctime2: 39899
+    ctime3: 65342
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 32382
+    atime2: 52043
+    atime3: 65535
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 4
+  ammoTrailTime: 0.06
+  ammoTrailMaterial: {fileID: 2100000, guid: f2635b1c99527994cba54b32fd7e9836, type: 2}
+  ammoTrailStartWidth: 0.3
+  ammoTrailEndWidth: 0.1

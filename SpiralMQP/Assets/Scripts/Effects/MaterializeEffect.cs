@@ -26,10 +26,9 @@ public class MaterializeEffect : MonoBehaviour
         {
             dissolveAmount += Time.deltaTime / materializeTime;
 
-            materializeMaterial.SetFloat("_DissolveAmount", dissolveAmount);
+            materializeMaterial.SetFloat("_Fade", dissolveAmount);
 
             yield return null;
-
         }
 
         // Set standard material in sprite renderers

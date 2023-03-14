@@ -5,11 +5,11 @@ using TMPro;
 
 public class SoulScoreUI : MonoBehaviour
 {
-    private TextMeshProUGUI soulScoreTextTMP;
+    [SerializeField] private TextMeshProUGUI soulScoreTextTMP;
 
     private void Awake()
     {
-        soulScoreTextTMP = GetComponentInChildren<TextMeshProUGUI>();
+        
     }
 
     private void OnEnable()
@@ -28,7 +28,7 @@ public class SoulScoreUI : MonoBehaviour
     private void StaticEventHandler_OnSoulAmountChanged(SoulAmountChangedArgs soulAmountChangedArgs)
     {
         // Update UI
-        soulScoreTextTMP.text = "SOUL COLLECTED: " + soulAmountChangedArgs.soulAmount.ToString("#,###,##0") + "\nMULTIPLIER: x" + soulAmountChangedArgs.multiplier; // Use the US number seperating format "ToString("#,###,##0")"
+        soulScoreTextTMP.text = soulAmountChangedArgs.soulAmount.ToString("#,###,##0"); // Use the US number seperating format "ToString("#,###,##0")"
     }
 
 }

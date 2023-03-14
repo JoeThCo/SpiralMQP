@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Gumbrella
   weaponSprite: {fileID: 21300000, guid: 94c3043460b285e428e7bc0cbabf2d6c, type: 3}
-  weaponShootPosition: {x: 1.8, y: 0, z: 0}
+  weaponShootPosition: {x: 1.5, y: 0, z: 0}
   weaponCurrentAmmo: {fileID: 11400000, guid: 5e4c368d2a897fa48b5d145510c2fd4c, type: 2}
   weaponShootEffect: {fileID: 11400000, guid: 58560c243a13e0b4590a9fbdae5449cd, type: 2}
   weaponFiringSoundEffect: {fileID: 11400000, guid: b90f97d4e40b0f64ca55bf21291c8960, type: 2}
   weaponReloadingSoundEffect: {fileID: 11400000, guid: 2735e7e2f0101b54395097aabb5fce0d, type: 2}
-  hasInfiniteAmmo: 1
-  hasInfiniteClipCapacity: 1
-  weaponClipAmmoCapacity: 10
-  weaponAmmoCapacity: 50
-  weaponFireRate: 0.1
+  hasInfiniteAmmo: 0
+  hasInfiniteClipCapacity: 0
+  weaponClipAmmoCapacity: 30
+  weaponAmmoCapacity: 470
+  weaponFireRate: 0.15
   weaponPrechargeTime: 0
-  weaponReloadTime: 1.5
+  weaponReloadTime: 1

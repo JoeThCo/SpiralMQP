@@ -115,9 +115,21 @@ public class GameResources : MonoBehaviour
     [Tooltip("Populate with ammo icon prefab")]
     public GameObject ammoIconPrefab;
 
-    [Tooltip("Populate with the heart image prefab")]
-    public GameObject heartPrefab;
+    [Tooltip("Ammo holder top")]
+    public GameObject ammoHolderTop;
 
+    
+    [Tooltip("Ammo holder bottom")]
+    public GameObject ammoHolderBottom;
+
+    [Tooltip("Populate with the green health bar sprite")]
+    public Sprite healthBarGreen;
+
+    [Tooltip("Populate with the yellow health bar sprite")]
+    public Sprite healthBarYellow;
+    
+    [Tooltip("Populate with the red health bar sprite")]
+    public Sprite healthBarRed;
 
 
     [Space(10)]

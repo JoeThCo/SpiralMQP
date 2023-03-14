@@ -1,10 +1,26 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public class HealthUI : MonoBehaviour
 {
-    private List<GameObject> healthHeartsList = new List<GameObject>();
+    private Animator HeartAnimator;
+    private int playerHealthPercentage;
+    [SerializeField] private Image fill;
+    [SerializeField] private Slider slider;
+
+    private void Awake() 
+    {
+        HeartAnimator = GetComponentInChildren<Animator>();
+    }
+
+    private void Start() 
+    {
+        playerHealthPercentage = 100;
+        slider.value = 1;
+    }
 
     private void OnEnable()
     {
@@ -18,35 +34,46 @@ public class HealthUI : MonoBehaviour
 
     private void HealthEvent_OnHealthChanged(HealthEvent healthEvent, HealthEventArgs healthEventArgs)
     {
+        // Handle Heart
+        CalculateHealthPercentUI(healthEventArgs);
+        SetHitAnimation();
+        Invoke(nameof(SetHeartAnimation), 0.2f);
+
+        // Handle Health Bar
         SetHealthBar(healthEventArgs);
-    }
-
-    private void ClearHealthBar()
-    {
-        foreach (GameObject heartIcon in healthHeartsList)
-        {
-            Destroy(heartIcon);
-        }
-
-        healthHeartsList.Clear();
     }
 
     private void SetHealthBar(HealthEventArgs healthEventArgs)
     {
-        ClearHealthBar();
+        slider.value = healthEventArgs.healthPercent;
 
-        // Instantiate heart image prefabs
-        int healthHearts = Mathf.CeilToInt(healthEventArgs.healthPercent * 100f / 20f);
-
-        for (int i = 0; i < healthHearts; i++)
+        if (playerHealthPercentage >= 75)
         {
-            // Instantiate heart prefabs
-            GameObject heart = Instantiate(GameResources.Instance.heartPrefab, transform);
-
-            // Position
-            heart.GetComponent<RectTransform>().anchoredPosition = new Vector2(Settings.uiHeartSpacing * i, 0f);
-
-            healthHeartsList.Add(heart);
+            fill.sprite = GameResources.Instance.healthBarGreen;
         }
+        else if (playerHealthPercentage >= 25 && playerHealthPercentage < 75)
+        {
+            fill.sprite = GameResources.Instance.healthBarYellow;
+        }
+        else
+        {
+            fill.sprite = GameResources.Instance.healthBarRed;
+        }
+    }
+
+    private void CalculateHealthPercentUI(HealthEventArgs healthEventArgs)
+    {
+        playerHealthPercentage = Mathf.CeilToInt(healthEventArgs.healthPercent * 100f);
+    }
+
+    private void SetHeartAnimation()
+    {
+        HeartAnimator.SetBool(Settings.isHit, false);
+        HeartAnimator.SetInteger(Settings.healthPercentUI, playerHealthPercentage);
+    }
+
+    private void SetHitAnimation()
+    {
+        HeartAnimator.SetBool(Settings.isHit, true);
     }
 }
