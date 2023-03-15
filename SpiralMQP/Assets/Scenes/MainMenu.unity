@@ -301,7 +301,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.9995777
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1559,6 +1559,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988231101586685057, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988231101586685057, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: df0bbe584f0e59046a23823674e9a4a2, type: 2}
+    - target: {fileID: 1988231101586685057, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4050016596164692987, guid: df0bbe584f0e59046a23823674e9a4a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
 --- !u!1001 &7909254966053303574
