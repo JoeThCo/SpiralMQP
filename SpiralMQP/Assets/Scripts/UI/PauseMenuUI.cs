@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PauseMenuUI : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class PauseMenuUI : MonoBehaviour
 
     [Tooltip("Populate with the sounds volume level")]
     [SerializeField] private TextMeshProUGUI soundsLevelText;
+
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider soundSlider;
+
+    private int previousMusicLevel;
+    private int previousSoundLevel;
 
     private void Start()
     {
@@ -27,7 +34,12 @@ public class PauseMenuUI : MonoBehaviour
 
         // Initialise UI text
         soundsLevelText.SetText(SoundEffectManager.Instance.soundsVolume.ToString());
+        previousSoundLevel = SoundEffectManager.Instance.soundsVolume;
+        soundSlider.value = previousSoundLevel;
+
         musicLevelText.SetText(MusicManager.Instance.musicVolume.ToString());
+        previousMusicLevel = MusicManager.Instance.musicVolume;
+        musicSlider.value = previousMusicLevel;
     }
 
     private void OnEnable()
@@ -69,6 +81,34 @@ public class PauseMenuUI : MonoBehaviour
     }
 
     /// <summary>
+    /// Handle the music slider on change event
+    /// </summary>
+    public void OnMusicSliderChange()
+    {
+        // Get the current music level volume
+        int currentMusicLevel = (int)musicSlider.value;
+
+        // Adjust the volume accordingly
+        if (currentMusicLevel > previousMusicLevel)
+        {
+            for (int i = 0; i < currentMusicLevel - previousMusicLevel; i++)
+            {
+                IncreaseMusicVolume();
+            }
+        }
+        else
+        {
+            for (int i = 0; i < previousMusicLevel - currentMusicLevel; i++)  
+            {
+                DecreaseMusicVolume();
+            }
+        }
+        
+        // Update the previous music level value holder
+        previousMusicLevel = currentMusicLevel;
+    }
+
+    /// <summary>
     /// Increase sounds volume - linked to from sounds volume increase button in UI
     /// </summary>
     public void IncreaseSoundsVolume()
@@ -86,6 +126,33 @@ public class PauseMenuUI : MonoBehaviour
         soundsLevelText.SetText(SoundEffectManager.Instance.soundsVolume.ToString());
     }
 
+    /// <summary>
+    /// Handle the sound slider on change event
+    /// </summary>
+    public void OnSoundSliderChange()
+    {
+        // Get the current sound level volume
+        int currentSoundLevel = (int)soundSlider.value;
+
+        // Adjust the volume accordingly
+        if (currentSoundLevel > previousSoundLevel)
+        {
+            for (int i = 0; i < currentSoundLevel - previousSoundLevel; i++)
+            {
+                IncreaseSoundsVolume();
+            }
+        }
+        else
+        {
+            for (int i = 0; i < previousSoundLevel - currentSoundLevel; i++)  
+            {
+                DecreaseSoundsVolume();
+            }
+        }
+        
+        // Update the previous sound level value holder
+        previousSoundLevel = currentSoundLevel;
+    }
 
     #region Validation
 #if UNITY_EDITOR
