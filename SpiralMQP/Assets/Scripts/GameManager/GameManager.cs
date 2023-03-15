@@ -614,7 +614,7 @@ public class GameManager : SingletonAbstract<GameManager>
     /// </summary>
     private void RestartGame()
     {
-        LoadingManager.Instance.LoadAScene("Game");
+        LoadingManager.Instance.LoadSceneWithTransistion("Game");
     }
 
     /// <summary>

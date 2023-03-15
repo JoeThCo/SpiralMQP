@@ -23,7 +23,7 @@ public class LoadingManager : SingletonAbstract<LoadingManager>
     /// Loads a scene with a transition
     /// </summary>
     /// <param name="nextScene"></param>
-    public void LoadAScene(string nextScene)
+    public void LoadSceneWithTransistion(string nextScene)
     {
         StartCoroutine(loadASceneI(nextScene));
     }
