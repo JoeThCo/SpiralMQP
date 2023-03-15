@@ -20,6 +20,7 @@ public class MusicManager : SingletonAbstract<MusicManager>
         // Start with music off
         GameResources.Instance.musicOffSnapshot.TransitionTo(0f);
 
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
