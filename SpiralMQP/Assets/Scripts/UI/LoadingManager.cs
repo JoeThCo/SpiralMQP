@@ -34,7 +34,7 @@ public class LoadingManager : SingletonAbstract<LoadingManager>
         transitionRect.DOAnchorPosX(-movement, 0f).SetUpdate(true);
 
         //left to middle
-        transitionRect.DOAnchorPosX(0, totalTransitionTime * .5f).SetUpdate(true);
+        transitionRect.DOAnchorPosX(0, totalTransitionTime * .5f).SetUpdate(true).SetEase(Ease.InCubic);
         yield return new WaitForSecondsRealtime(totalTransitionTime * .5f);
 
         //Asyc call for scene loading
@@ -46,8 +46,10 @@ public class LoadingManager : SingletonAbstract<LoadingManager>
             yield return null;
         }
 
+        yield return new WaitForSecondsRealtime(totalTransitionTime * .25f);
+
         //middle to right
-        transitionRect.DOAnchorPosX(movement, totalTransitionTime * .5f).SetUpdate(true);
+        transitionRect.DOAnchorPosX(movement, totalTransitionTime * .5f).SetUpdate(true).SetEase(Ease.OutCubic);
         yield return new WaitForSecondsRealtime(totalTransitionTime * .5f);
     }
 }
