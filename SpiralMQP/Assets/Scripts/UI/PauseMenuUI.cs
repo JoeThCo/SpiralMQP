@@ -46,7 +46,8 @@ public class PauseMenuUI : MonoBehaviour
     // Quit and load main menu - linked to from pause menu UI button
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        LoadingManager.Instance.LoadAScene("MainMenu");
+        //SceneManager.LoadScene("MainMenu");
     }
 
     /// <summary>

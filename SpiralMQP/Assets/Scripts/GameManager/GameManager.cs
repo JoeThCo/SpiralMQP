@@ -444,7 +444,7 @@ public class GameManager : SingletonAbstract<GameManager>
                 }
                 break;
 
-            // ----------------------------------------------------- GAME PAUSE -----------------------------------------------------------
+                // ----------------------------------------------------- GAME PAUSE -----------------------------------------------------------
         }
     }
 
@@ -483,7 +483,6 @@ public class GameManager : SingletonAbstract<GameManager>
             // Set game state
             gameState = previousGameState;
             previousGameState = GameState.gamePause;
-
         }
     }
 
@@ -615,7 +614,7 @@ public class GameManager : SingletonAbstract<GameManager>
     /// </summary>
     private void RestartGame()
     {
-        SceneManager.LoadScene("Game");
+        LoadingManager.Instance.LoadAScene("Game");
     }
 
     /// <summary>

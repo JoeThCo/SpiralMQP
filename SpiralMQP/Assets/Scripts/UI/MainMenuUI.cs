@@ -18,17 +18,17 @@ public class MainMenuUI : MonoBehaviour
     /// </summary>
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        LoadingManager.Instance.LoadAScene("Game");
     }
 
-    public void LoadMenu() 
+    public void LoadMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        LoadingManager.Instance.LoadAScene("MainMenu");
     }
 
-    public void LoadCredits() 
+    public void LoadCredits()
     {
-        SceneManager.LoadScene("Credits");
+        LoadingManager.Instance.LoadAScene("Credits");
     }
 
 
