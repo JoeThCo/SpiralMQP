@@ -1447,6 +1447,9 @@ MonoBehaviour:
   - poolSize: 10
     prefab: {fileID: 1438908454071538146, guid: 39bffd5b2acbbdf4eb536050f9df62a3, type: 3}
     componentType: WeaponShootEffect
+  - poolSize: 60
+    prefab: {fileID: 5891719235356115971, guid: 4dd74f46a4c79794eafebd550d3b2b1f, type: 3}
+    componentType: IFireable
 --- !u!4 &349196746
 Transform:
   m_ObjectHideFlags: 0
@@ -3208,7 +3211,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.9991777
+    height: 0.9995353
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
