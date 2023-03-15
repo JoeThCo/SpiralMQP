@@ -21,13 +21,13 @@ public class PauseMenuUI : MonoBehaviour
     private void Start()
     {
         // Initially hide the pause menu
-        gameObject.SetActive(false);
+        StartCoroutine(InitializeUI(false));
     }
 
     /// <summary>
     /// Initialize the UI text
     /// </summary>
-    private IEnumerator InitializeUI()
+    private IEnumerator InitializeUI(bool gameObjectStateAfter)
     {
         // Wait a frame to ensure the previous music and sound levels have been set
         yield return null;
@@ -40,6 +40,8 @@ public class PauseMenuUI : MonoBehaviour
         musicLevelText.SetText(MusicManager.Instance.musicVolume.ToString());
         previousMusicLevel = MusicManager.Instance.musicVolume;
         musicSlider.value = previousMusicLevel;
+
+        gameObject.SetActive(gameObjectStateAfter);
     }
 
     private void OnEnable()
@@ -47,7 +49,7 @@ public class PauseMenuUI : MonoBehaviour
         Time.timeScale = 0f;
 
         // Initialise UI text
-        StartCoroutine(InitializeUI());
+        StartCoroutine(InitializeUI(true));
     }
 
     private void OnDisable()
@@ -59,7 +61,6 @@ public class PauseMenuUI : MonoBehaviour
     public void LoadMainMenu()
     {
         LoadingManager.Instance.LoadSceneWithTransistion("MainMenu");
-        //SceneManager.LoadScene("MainMenu");
     }
 
     /// <summary>
@@ -98,12 +99,12 @@ public class PauseMenuUI : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < previousMusicLevel - currentMusicLevel; i++)  
+            for (int i = 0; i < previousMusicLevel - currentMusicLevel; i++)
             {
                 DecreaseMusicVolume();
             }
         }
-        
+
         // Update the previous music level value holder
         previousMusicLevel = currentMusicLevel;
     }
@@ -144,12 +145,12 @@ public class PauseMenuUI : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < previousSoundLevel - currentSoundLevel; i++)  
+            for (int i = 0; i < previousSoundLevel - currentSoundLevel; i++)
             {
                 DecreaseSoundsVolume();
             }
         }
-        
+
         // Update the previous sound level value holder
         previousSoundLevel = currentSoundLevel;
     }
