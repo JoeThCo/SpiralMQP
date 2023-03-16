@@ -21,7 +21,7 @@ MonoBehaviour:
   enemyMaterializeColor: {r: 3.013336, g: 1.7300452, b: 0.5827678, a: 1}
   enemyWeapon: {fileID: 11400000, guid: 0dc8cb85b33b13a46a8378dbc0a0cb4e, type: 2}
   firingIntervalMin: 1
-  firingIntervalMax: 1.5
+  firingIntervalMax: 2
   firingDurationMin: 4
   firingDurationMax: 6
   firingLineOfSightRequired: 1

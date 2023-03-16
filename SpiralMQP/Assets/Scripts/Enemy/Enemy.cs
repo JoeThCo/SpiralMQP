@@ -54,6 +54,7 @@ public class Enemy : MonoBehaviour
     private PolygonCollider2D polygonCollider2D;
     [HideInInspector] public SpriteRenderer[] spriteRendererArray;
     [HideInInspector] public Animator animator;
+    [HideInInspector] public EnemyWeaponAI enemyWeaponAI;
 
     private void Awake()
     {
@@ -72,6 +73,7 @@ public class Enemy : MonoBehaviour
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         spriteRendererArray = GetComponentsInChildren<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        enemyWeaponAI = GetComponent<EnemyWeaponAI>();
     }
 
     private void OnEnable()

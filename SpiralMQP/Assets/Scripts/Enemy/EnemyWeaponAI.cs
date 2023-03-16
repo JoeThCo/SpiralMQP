@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Enemy))]
 [DisallowMultipleComponent]
@@ -6,9 +7,9 @@ public class EnemyWeaponAI : MonoBehaviour
 {
     [Tooltip("Select the layers that the enemy bullets will hit")]
     [SerializeField] private LayerMask layerMask;
-  
+
     [Tooltip("Populate this with the WeaponShootPosition child gameobject transform")]
-    [SerializeField] private Transform weaponShootPosition;
+    [SerializeField] public Transform weaponShootPosition;
 
     private Enemy enemy;
     private EnemyDetailsSO enemyDetails;
@@ -112,7 +113,6 @@ public class EnemyWeaponAI : MonoBehaviour
         }
 
     }
-
 
     /// <summary>
     /// Check if the player is in sight from the enemy POV
