@@ -46,7 +46,11 @@ public class LoadingManager : SingletonAbstract<LoadingManager>
             yield return null;
         }
 
-        yield return new WaitForSecondsRealtime(totalTransitionTime * .25f);
+        //make it seem like we are loading
+        if (nextScene.Equals("Game"))
+        {
+            yield return new WaitForSecondsRealtime(totalTransitionTime);
+        }
 
         //middle to right
         transitionRect?.DOAnchorPosX(movement, totalTransitionTime * .5f).SetUpdate(true).SetEase(Ease.OutCubic);

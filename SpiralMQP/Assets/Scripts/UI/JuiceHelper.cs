@@ -17,6 +17,10 @@ public class JuiceHelper : MonoBehaviour
         lerpScale = transform.localScale;
     }
 
+    private void OnDisable()
+    {
+        transform.localScale = Vector3.one;
+    }
     public void OnEnter()
     {
         gameObject?.transform.DOScale(Vector3.one * lerpSize, lerpTime).SetUpdate(true);
