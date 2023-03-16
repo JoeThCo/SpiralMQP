@@ -180,6 +180,7 @@ MonoBehaviour:
   idleEvent: {fileID: 0}
   spriteRendererArray: []
   animator: {fileID: 0}
+  enemyWeaponAI: {fileID: 0}
 --- !u!210 &6228788778726392665
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -240,7 +241,7 @@ SpriteRenderer:
   m_Size: {x: 1.5, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
 --- !u!50 &4193840866598891480
@@ -255,7 +256,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 400
+  m_Mass: 300
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -345,6 +346,7 @@ MonoBehaviour:
   movementDetails: {fileID: 11400000, guid: 27c80315de2aca946a66098bc237f4fc, type: 2}
   moveSpeed: 0
   updateFrameNumber: 1
+  isShotgunHit: 0
 --- !u!114 &8356725839827453804
 MonoBehaviour:
   m_ObjectHideFlags: 0

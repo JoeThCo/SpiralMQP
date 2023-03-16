@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponDetails_Shotgun
   m_EditorClassIdentifier: 
   weaponName: Shotbrella
-  weaponSprite: {fileID: 21300000, guid: 77bab4bf11b538f43a1da5b1ec3b7940, type: 3}
+  weaponSprite: {fileID: 21300000, guid: 35f0540e8e202284a99c88a4b6f645d8, type: 3}
   weaponShootPosition: {x: 1.376, y: 0.208, z: 0}
   weaponCurrentAmmo: {fileID: 11400000, guid: 4d074f250993eee489a42b2ad17a6195, type: 2}
   weaponShootEffect: {fileID: 11400000, guid: 7a1138c3168db534999c2cef810e31eb, type: 2}
@@ -21,8 +21,8 @@ MonoBehaviour:
   weaponReloadingSoundEffect: {fileID: 11400000, guid: c38002a6f38d32d4f995c9b2a4111eb1, type: 2}
   hasInfiniteAmmo: 0
   hasInfiniteClipCapacity: 0
-  weaponClipAmmoCapacity: 4
-  weaponAmmoCapacity: 30
+  weaponClipAmmoCapacity: 5
+  weaponAmmoCapacity: 40
   weaponFireRate: 0.4
   weaponPrechargeTime: 0
   weaponReloadTime: 1

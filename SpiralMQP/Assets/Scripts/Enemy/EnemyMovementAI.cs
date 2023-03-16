@@ -10,7 +10,7 @@ public class EnemyMovementAI : MonoBehaviour
     [SerializeField] private MovementDetailsSO movementDetails;
     private Enemy enemy;
     private Stack<Vector3> movementSteps = new Stack<Vector3>(); // The vector3 stack that contains the grid path information calculated from the AStar algo
-    private Vector3 playerReferencePosition; // The previous position that the enemy was at, for monitoring the enemy position
+    private Vector3 playerReferencePosition; // The previous position that the player was at, for monitoring the player position
     private Coroutine moveEnemyRoutine; // Coroutine for the enemy movement
     private float currentEnemyPathRebuildCooldown;
     private WaitForFixedUpdate waitForFixedUpdate;
@@ -18,6 +18,7 @@ public class EnemyMovementAI : MonoBehaviour
     [HideInInspector] public int updateFrameNumber = 1; // Default value. This is set by the enemy spawner
     private bool chasePlayer = false; // If the enemy should chase the player (depends on the enemy player distance)
     private List<Vector2Int> surroundingPositionList = new List<Vector2Int>(); // The positions surrounding the player
+    [HideInInspector] public bool isShotgunHit = false;
 
     private void Awake()
     {
@@ -38,6 +39,12 @@ public class EnemyMovementAI : MonoBehaviour
     private void Update()
     {
         MoveEnemy();
+
+        if (isShotgunHit)
+        {
+            Vector3 distanceVector = (transform.position - playerReferencePosition).normalized * 2 * Time.deltaTime;
+            transform.position += distanceVector;
+        }
     }
 
 
@@ -65,7 +72,7 @@ public class EnemyMovementAI : MonoBehaviour
 
         // If the movement cooldown timer reached or player has moved more than required distance
         // Then rebuild the enemy path and move the enemy
-        if (currentEnemyPathRebuildCooldown <= 0f || (Vector3.Distance(playerReferencePosition, GameManager.Instance.GetPlayer().GetPlayerPosition()) > Settings.playerMoveDistanceToRebuildPath))
+        if (isShotgunHit || currentEnemyPathRebuildCooldown <= 0f || (Vector3.Distance(playerReferencePosition, GameManager.Instance.GetPlayer().GetPlayerPosition()) > Settings.playerMoveDistanceToRebuildPath))
         {
             // Reset path rebuild cooldown timer
             currentEnemyPathRebuildCooldown = Settings.enemyPathRebuildCooldown;
@@ -90,6 +97,7 @@ public class EnemyMovementAI : MonoBehaviour
                 // Move enemy along the path using a coroutine
                 moveEnemyRoutine = StartCoroutine(MoveEnemyRoutine(movementSteps));
 
+                
             }
         }
     }
@@ -100,6 +108,13 @@ public class EnemyMovementAI : MonoBehaviour
     /// </summary>
     private IEnumerator MoveEnemyRoutine(Stack<Vector3> movementSteps)
     {
+        if (isShotgunHit)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        isShotgunHit = false;
+
         while (movementSteps.Count > 0)
         {
             Vector3 nextPosition = movementSteps.Pop();
@@ -213,9 +228,9 @@ public class EnemyMovementAI : MonoBehaviour
                 // See if there is an obstacle in the selected surrounding position
                 try
                 {
-                    obstacle = Mathf.Min(currentRoom.instantiatedRoom.aStarMovementPenalty[adjustedPlayerCellPositon.x + surroundingPositionList[index].x, 
-                                        adjustedPlayerCellPositon.y + surroundingPositionList[index].y], 
-                                        currentRoom.instantiatedRoom.aStarItemObstacles[adjustedPlayerCellPositon.x + surroundingPositionList[index].x, 
+                    obstacle = Mathf.Min(currentRoom.instantiatedRoom.aStarMovementPenalty[adjustedPlayerCellPositon.x + surroundingPositionList[index].x,
+                                        adjustedPlayerCellPositon.y + surroundingPositionList[index].y],
+                                        currentRoom.instantiatedRoom.aStarItemObstacles[adjustedPlayerCellPositon.x + surroundingPositionList[index].x,
                                         adjustedPlayerCellPositon.y + surroundingPositionList[index].y]);
 
                     // If no obstacle return the cell position to navigate to
