@@ -150,7 +150,10 @@ public class GameResources : MonoBehaviour
     [Tooltip("Minimap Boss Icon Gameobject")]
     public GameObject minimapBossIconPrefab;
 
-
+    [Space(10)]
+    [Header("EFFECTS")]
+    [Tooltip("The prechage effect for Black Imp")]
+    public GameObject prechargeEffect;
 
     #region Validation
 #if UNITY_EDITOR

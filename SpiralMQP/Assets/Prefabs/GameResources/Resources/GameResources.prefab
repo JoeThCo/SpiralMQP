@@ -76,3 +76,4 @@ MonoBehaviour:
   heartIcon: {fileID: 21300000, guid: 93356131eec0f44458223985928ac6e3, type: 3}
   bulletIcon: {fileID: 21300000, guid: 63387d77e214d054b9523497f44972c3, type: 3}
   minimapBossIconPrefab: {fileID: 5904600718229996845, guid: 554f5237f65ff7746a2f5c3680543d69, type: 3}
+  prechargeEffect: {fileID: 6570746148905589101, guid: 7e085a624608c0a4ca5d33bc05b76ba7, type: 3}

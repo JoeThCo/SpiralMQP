@@ -15,6 +15,8 @@ public class FireWeapon : MonoBehaviour
     private FireWeaponEvent fireWeaponEvent;
     private ReloadWeaponEvent reloadWeaponEvent;
     private WeaponFiredEvent weaponFiredEvent;
+    private GameObject prechargeEffect;
+    private Enemy enemy;
 
     private void Awake()
     {
@@ -23,6 +25,9 @@ public class FireWeapon : MonoBehaviour
         fireWeaponEvent = GetComponent<FireWeaponEvent>();
         reloadWeaponEvent = GetComponent<ReloadWeaponEvent>();
         weaponFiredEvent = GetComponent<WeaponFiredEvent>();
+
+        // Try load enemy
+        enemy = GetComponent<Enemy>();
     }
 
     private void OnEnable()
@@ -34,12 +39,23 @@ public class FireWeapon : MonoBehaviour
     {
         // Unsubscribe from fire weapon event
         fireWeaponEvent.OnFireWeapon -= FireWeaponEvent_OnFireWeapon;
+
+        if (prechargeEffect != null)
+        {
+            Destroy(prechargeEffect);
+        }
     }
 
     private void Update()
     {
         // Decrease cooldown timer
         fireRateCoolDownTimer -= Time.deltaTime;
+
+        // Set effect position
+        if (prechargeEffect != null)
+        {
+            prechargeEffect.transform.position = transform.position;
+        }
     }
 
     /// <summary>
@@ -65,13 +81,44 @@ public class FireWeapon : MonoBehaviour
             // Test if weapon is ready to fire
             if (IsWeaponReadyToFire())
             {
-                FireAmmo(fireWeaponEventArgs.aimAngle, fireWeaponEventArgs.weaponAimAngle, fireWeaponEventArgs.weaponAimDirectionVector);
+                if (enemy != null && enemy.enemyDetails.enemyWeapon.weaponName == "Plasma Blaster")
+                {
+                    StartCoroutine(PrechargeFireIndication());
+                }
+                else
+                {
+                    FireAmmo(fireWeaponEventArgs.aimAngle, fireWeaponEventArgs.weaponAimAngle, fireWeaponEventArgs.weaponAimDirectionVector);    
+                }
 
                 ResetCoolDownTimer();
 
                 ResetPreChargeTimer();
             }
         }
+    }
+
+    private IEnumerator PrechargeFireIndication()
+    {
+        // Instantiate the prechage effect on enemy
+        prechargeEffect = Instantiate(GameResources.Instance.prechargeEffect, transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(0.4f);
+
+        Destroy(prechargeEffect);
+
+        // Player distance
+        Vector3 playerDirectionVector = GameManager.Instance.GetPlayer().GetPlayerPosition() - transform.position;
+
+        // Calculate direction vector of player from weapon shoot position
+        Vector3 weaponDirection = (GameManager.Instance.GetPlayer().GetPlayerPosition() - enemy.enemyWeaponAI.weaponShootPosition.position);
+
+        // Get weapon to player angle
+        float weaponAngleDegrees = HelperUtilities.GetAngleFromVector(weaponDirection);
+
+        // Get enemy to player angle
+        float enemyAngleDegrees = HelperUtilities.GetAngleFromVector(playerDirectionVector);
+
+        FireAmmo(enemyAngleDegrees, weaponAngleDegrees, weaponDirection);
     }
 
     /// <summary>
@@ -91,6 +138,7 @@ public class FireWeapon : MonoBehaviour
             ResetPreChargeTimer();
         }
     }
+
 
     /// <summary>
     /// Reset cooldown timer
