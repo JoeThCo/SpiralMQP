@@ -66,10 +66,12 @@ MonoBehaviour:
       ratio: 10
     - dungeonObject: {fileID: 11400000, guid: bb387c0353af0504d92c7dcf43705c3f, type: 2}
       ratio: 5
+    - dungeonObject: {fileID: 11400000, guid: 1503e458c42b8e145b4e1c25b51d87d8, type: 2}
+      ratio: 5
   roomEnemySpawnParametersList:
   - dungeonLevel: {fileID: 11400000, guid: 1ef7026737e1ea34c8182403d74cf22d, type: 2}
-    minTotalEnemiesToSpawn: 4
-    maxTotalEnemiesToSpawn: 6
+    minTotalEnemiesToSpawn: 6
+    maxTotalEnemiesToSpawn: 8
     minConcurrentEnemies: 2
     maxConcurrentEnemies: 3
     minSpawnInterval: 2
