@@ -97,6 +97,11 @@ public class Ammo : MonoBehaviour, IFireable
             if (health.enemy != null)
             {
                 enemyHit = true;
+
+                if (ammoDetails.ammoPrefabArray[0].CompareTag("shotgunAmmo"))
+                {
+                    other.gameObject.GetComponent<EnemyMovementAI>().isShotgunHit = true;
+                }
             }
         }
 
@@ -115,7 +120,6 @@ public class Ammo : MonoBehaviour, IFireable
             }
         }
     }
-
 
     /// <summary>
     /// Display the ammo hit effect

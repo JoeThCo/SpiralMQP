@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 17e9d59b34e92604096e46598ac59c4c, type: 3}
     - target: {fileID: 3183131243940286156, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3254216603169130201, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Name
@@ -134,6 +134,10 @@ PrefabInstance:
     - target: {fileID: 3854721545689371842, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193840866598891480, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
+      propertyPath: m_Mass
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4667035979750213822, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Sprite
@@ -217,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 17e9d59b34e92604096e46598ac59c4c, type: 3}
     - target: {fileID: 8202506532416982395, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386504733576504904, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_LocalPosition.x

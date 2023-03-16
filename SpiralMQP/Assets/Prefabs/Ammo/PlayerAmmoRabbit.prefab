@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8382710868850177468}
   m_Layer: 14
   m_Name: PlayerAmmoRabbit
-  m_TagString: Untagged
+  m_TagString: shotgunAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.25, y: 1.3125}
+    oldSize: {x: 1.05, y: 1}
     newSize: {x: 0.375, y: 0.375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
