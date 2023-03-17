@@ -25,7 +25,7 @@ public class DungeonBuilder : SingletonAbstract<DungeonBuilder>
     private void OnEnable() 
     {
         // Set dimmed material to off
-        GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 0.15f);
+        GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 0f);
     }
 
     private void OnDisable() 
