@@ -1438,7 +1438,7 @@ MonoBehaviour:
   - poolSize: 60
     prefab: {fileID: 1438908454071538146, guid: 0025121a07e007e43a8ed4aa70e85d29, type: 3}
     componentType: AmmoHitEffect
-  - poolSize: 300
+  - poolSize: 100
     prefab: {fileID: 5891719235356115971, guid: 843ae6e19bf7e9d4c9ecd2dc5b83bf32, type: 3}
     componentType: IFireable
   - poolSize: 10
@@ -1452,6 +1452,9 @@ MonoBehaviour:
     componentType: IFireable
   - poolSize: 60
     prefab: {fileID: 5891719235356115971, guid: 3afe7dd2f60b3c54d8adad1bf5b04bd1, type: 3}
+    componentType: IFireable
+  - poolSize: 300
+    prefab: {fileID: 5891719235356115971, guid: 36570f5c4bdecd843b89ea1a780706ed, type: 3}
     componentType: IFireable
 --- !u!4 &349196746
 Transform:
@@ -3227,9 +3230,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 0.99960464
-    height: 0.99999994
+    y: 0.13015184
+    width: 0.7804878
+    height: 0.7809111
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
