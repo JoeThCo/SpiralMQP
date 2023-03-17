@@ -295,8 +295,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 0.9995777
+    width: 0.99960464
+    height: 0.99999994
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -619,6 +619,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531596746387311010, guid: f4edbcf735ea50d4d85b0cad1c7fd2b8, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531596746387311010, guid: f4edbcf735ea50d4d85b0cad1c7fd2b8, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5531596746387311010, guid: f4edbcf735ea50d4d85b0cad1c7fd2b8, type: 3}
@@ -1380,5 +1384,9 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 4050016596164692987, guid: df0bbe584f0e59046a23823674e9a4a2, type: 2}
+    - target: {fileID: 3190618742229270880, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
