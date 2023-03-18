@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2997323902524735687}
   - component: {fileID: 6194241675486804013}
   - component: {fileID: 8382710868850177468}
-  m_Layer: 14
-  m_Name: PlayerAmmoRabbit
-  m_TagString: shotgunAmmo
+  m_Layer: 16
+  m_Name: BossAmmo
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 42c61dd66eb4e8c4a916ce83d7fbd680, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_SortingLayerID: -653709415
   m_SortingLayer: 4
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: d4272996b8ca0154292edd60b6511025, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b330fb7473d046f46bed4cc7cd5593c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,7 +118,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3125, y: 1.25}
+    oldSize: {x: 0.8333333, y: 0.875}
     newSize: {x: 0.375, y: 0.375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -126,16 +126,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.2420132, y: 0.31919318}
-      - {x: -0.40259847, y: 0.12668614}
-      - {x: -0.41361362, y: -0.11567256}
-      - {x: -0.29577935, y: -0.2998562}
-      - {x: -0.052105755, y: -0.3382538}
-      - {x: 0.16054544, y: -0.25966102}
-      - {x: 0.16578105, y: -0.046250515}
-      - {x: 0.14505956, y: 0.15864074}
-      - {x: 0.1529504, y: 0.24413459}
-      - {x: 0.018643528, y: 0.32727015}
+    - - {x: 0.06734285, y: 0.20446065}
+      - {x: -0.07599455, y: 0.20269448}
+      - {x: -0.22058079, y: 0.102158524}
+      - {x: -0.225779, y: -0.085506655}
+      - {x: -0.1622226, y: -0.1718277}
+      - {x: -0.083650485, y: -0.22749151}
+      - {x: 0.024485927, y: -0.23736674}
+      - {x: 0.0861291, y: -0.22921732}
+      - {x: 0.15274847, y: -0.18085012}
+      - {x: 0.19619045, y: -0.15266943}
+      - {x: 0.23724055, y: 0.006433904}
+      - {x: 0.180958, y: 0.13177858}
 --- !u!50 &8382710868850177468
 Rigidbody2D:
   serializedVersion: 4
@@ -231,7 +233,7 @@ TrailRenderer:
   m_SortingLayerID: -653709415
   m_SortingLayer: 4
   m_SortingOrder: 10
-  m_Time: 3
+  m_Time: 5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -247,15 +249,6 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.63478994
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -263,31 +256,31 @@ TrailRenderer:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 1}
-      key3: {r: 0, g: 0, b: 0, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 193
+      ctime0: 0
       ctime1: 65535
-      ctime2: 65535
-      ctime3: 65535
+      ctime2: 0
+      ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 1349
-      atime2: 64379
-      atime3: 65535
+      atime1: 65535
+      atime2: 0
+      atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 4
+      m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
