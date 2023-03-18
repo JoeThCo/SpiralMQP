@@ -16,14 +16,14 @@ public class LoadingManager : SingletonAbstract<LoadingManager>
         base.Awake();
 
         DontDestroyOnLoad(this.gameObject);
-        transitionRect.DOAnchorPosX(-movement, 0f).SetUpdate(true);
+        transitionRect?.DOAnchorPosX(-movement, 0f).SetUpdate(true);
     }
 
     /// <summary>
     /// Loads a scene with a transition
     /// </summary>
     /// <param name="nextScene"></param>
-    public void LoadAScene(string nextScene)
+    public void LoadSceneWithTransistion(string nextScene)
     {
         StartCoroutine(loadASceneI(nextScene));
     }
@@ -31,10 +31,10 @@ public class LoadingManager : SingletonAbstract<LoadingManager>
     IEnumerator loadASceneI(string nextScene)
     {
         //sets transition to off screen left
-        transitionRect.DOAnchorPosX(-movement, 0f).SetUpdate(true);
+        transitionRect?.DOAnchorPosX(-movement, 0f).SetUpdate(true);
 
         //left to middle
-        transitionRect.DOAnchorPosX(0, totalTransitionTime * .5f).SetUpdate(true).SetEase(Ease.InCubic);
+        transitionRect?.DOAnchorPosX(0, totalTransitionTime * .5f).SetUpdate(true).SetEase(Ease.InCubic);
         yield return new WaitForSecondsRealtime(totalTransitionTime * .5f);
 
         //Asyc call for scene loading
@@ -46,10 +46,14 @@ public class LoadingManager : SingletonAbstract<LoadingManager>
             yield return null;
         }
 
-        yield return new WaitForSecondsRealtime(totalTransitionTime * .25f);
+        //make it seem like we are loading
+        if (nextScene.Equals("Game"))
+        {
+            yield return new WaitForSecondsRealtime(totalTransitionTime);
+        }
 
         //middle to right
-        transitionRect.DOAnchorPosX(movement, totalTransitionTime * .5f).SetUpdate(true).SetEase(Ease.OutCubic);
+        transitionRect?.DOAnchorPosX(movement, totalTransitionTime * .5f).SetUpdate(true).SetEase(Ease.OutCubic);
         yield return new WaitForSecondsRealtime(totalTransitionTime * .5f);
     }
 }

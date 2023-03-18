@@ -39,6 +39,7 @@ public class GameManager : SingletonAbstract<GameManager>
     private int soulMultiplier;
     private InstantiatedRoom bossRoom;
     private bool isFading = false;
+    private bool isRestarting = false;
 
 
     protected override void Awake()
@@ -399,7 +400,11 @@ public class GameManager : SingletonAbstract<GameManager>
 
             case GameState.gameWon:
 
-                if (previousGameState != GameState.gameWon) StartCoroutine(GameWon()); // Make sure we only call this once when won (since this function will be constantly calling in Update)
+                // Make sure we only call this once when won (since this function will be constantly calling in Update)
+                if (previousGameState != GameState.gameWon)
+                {
+                    StartCoroutine(GameWon());
+                }
                 break;
 
             // ----------------------------------------------------- GAME WON -----------------------------------------------------------
@@ -483,6 +488,15 @@ public class GameManager : SingletonAbstract<GameManager>
             // Set game state
             gameState = previousGameState;
             previousGameState = GameState.gamePause;
+        }
+    }
+
+    void RestartGame()
+    {
+        if (!isRestarting)
+        {
+            LoadingManager.Instance.LoadSceneWithTransistion("Game");
+            isRestarting = true;
         }
     }
 
@@ -572,6 +586,7 @@ public class GameManager : SingletonAbstract<GameManager>
 
         // Set game state to restart game
         gameState = GameState.restartGame;
+        RestartGame();
     }
 
 
@@ -607,15 +622,9 @@ public class GameManager : SingletonAbstract<GameManager>
 
         // Set game state to restart game
         gameState = GameState.restartGame;
+        RestartGame();
     }
 
-    /// <summary>
-    /// Restart the game
-    /// </summary>
-    private void RestartGame()
-    {
-        LoadingManager.Instance.LoadAScene("Game");
-    }
 
     /// <summary>
     /// Set the current room the player is in
@@ -651,7 +660,6 @@ public class GameManager : SingletonAbstract<GameManager>
 
         // Display Dungeon Level Text
         StartCoroutine(DisplayDungeonLevelText());
-
     }
 
 
