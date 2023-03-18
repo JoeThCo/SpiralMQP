@@ -85,6 +85,10 @@ public class FireWeapon : MonoBehaviour
                 {
                     StartCoroutine(PrechargeFireIndication());
                 }
+                else if (enemy != null && fireWeaponEventArgs.isBossFiring)
+                {
+                    FireBossAmmoPattern();
+                }
                 else
                 {
                     FireAmmo(fireWeaponEventArgs.aimAngle, fireWeaponEventArgs.weaponAimAngle, fireWeaponEventArgs.weaponAimDirectionVector);    
@@ -171,6 +175,13 @@ public class FireWeapon : MonoBehaviour
         }
     }
 
+    private void FireBossAmmoPattern()
+    {
+        for (int i = 0; i < 360; i = i + 9)
+        {
+            FireAmmo(i, i, Vector3.one);
+        }
+    }
 
     /// <summary>
     /// Coroutine to spawn multiple ammo per shot if specified in the ammo details

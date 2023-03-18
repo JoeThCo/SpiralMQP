@@ -1453,7 +1453,7 @@ MonoBehaviour:
   - poolSize: 60
     prefab: {fileID: 5891719235356115971, guid: 3afe7dd2f60b3c54d8adad1bf5b04bd1, type: 3}
     componentType: IFireable
-  - poolSize: 300
+  - poolSize: 500
     prefab: {fileID: 5891719235356115971, guid: 36570f5c4bdecd843b89ea1a780706ed, type: 3}
     componentType: IFireable
 --- !u!4 &349196746
@@ -3230,9 +3230,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.13015184
-    width: 0.7804878
-    height: 0.7809111
+    y: 0
+    width: 0.99945796
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

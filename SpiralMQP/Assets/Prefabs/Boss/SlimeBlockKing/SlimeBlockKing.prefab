@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeBlockKing
       objectReference: {fileID: 0}
+    - target: {fileID: 3254216603169130201, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 3659793377477182316, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: movementDetails
       value: 

@@ -364,7 +364,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             // Trigger fire weapon event
-            player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
+            player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, false, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
             leftMouseDownPreviousFrame = true;
         }
         else
