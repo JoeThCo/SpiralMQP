@@ -91,7 +91,7 @@ public class FireWeapon : MonoBehaviour
                 }
                 else
                 {
-                    FireAmmo(fireWeaponEventArgs.aimAngle, fireWeaponEventArgs.weaponAimAngle, fireWeaponEventArgs.weaponAimDirectionVector);    
+                    FireAmmo(fireWeaponEventArgs.aimAngle, fireWeaponEventArgs.weaponAimAngle, fireWeaponEventArgs.weaponAimDirectionVector);
                 }
 
                 ResetCoolDownTimer();
@@ -164,29 +164,52 @@ public class FireWeapon : MonoBehaviour
     /// <summary>
     /// Set up ammo using an ammo gameobject and component from the object pool
     /// </summary>
-    private void FireAmmo(float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector)
+    private void FireAmmo(float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector, bool isBossRectFire = false, float rectMultiplier = 1f)
     {
         AmmoDetailsSO currentAmmo = activeWeapon.GetCurrentAmmo();
 
         if (currentAmmo != null)
         {
             // Fire ammo routine
-            StartCoroutine(FireAmmoRoutine(currentAmmo, aimAngle, weaponAimAngle, weaponAimDirectionVector));
+            StartCoroutine(FireAmmoRoutine(currentAmmo, aimAngle, weaponAimAngle, weaponAimDirectionVector, isBossRectFire, rectMultiplier));
         }
     }
 
     private void FireBossAmmoPattern()
     {
-        for (int i = 0; i < 360; i = i + 9)
+        int randomPicker = Random.Range(1, 101);
+
+        if (randomPicker % 2 == 0)
         {
-            FireAmmo(i, i, Vector3.one);
+            for (int i = 0; i < 360; i = i + 9)
+            {
+                FireAmmo(i, i, Vector3.one);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 360; i = i + 15)
+            {
+                if (i % 90 == 0)
+                {
+                    FireAmmo(i, i, Vector3.one);
+                }
+                else if ((i > 0 && i < 45) || (i > 315 && i < 360) || (i > 135 && i < 180) || (i > 180 && i < 225))
+                {
+                    FireAmmo(i, i, Vector3.one, true, Mathf.Abs(1 / Mathf.Cos(Mathf.Deg2Rad * i)));
+                } 
+                else
+                {
+                    FireAmmo(i, i, Vector3.one, true, Mathf.Abs(1 / Mathf.Sin(Mathf.Deg2Rad * i)));
+                }  
+            }
         }
     }
 
     /// <summary>
     /// Coroutine to spawn multiple ammo per shot if specified in the ammo details
     /// </summary>
-    private IEnumerator FireAmmoRoutine(AmmoDetailsSO currentAmmo, float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector)
+    private IEnumerator FireAmmoRoutine(AmmoDetailsSO currentAmmo, float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector, bool isBossRectFire, float rectMultiplier)
     {
         int ammoCounter = 0;
 
@@ -215,6 +238,11 @@ public class FireWeapon : MonoBehaviour
 
             // Get random speed value
             float ammoSpeed = Random.Range(currentAmmo.ammoSpeedMin, currentAmmo.ammoSpeedMax);
+
+            if (isBossRectFire)
+            {
+                ammoSpeed *= rectMultiplier;
+            }
 
             // Get Gameobject with IFireable component
             IFireable ammo = (IFireable)PoolManager.Instance.ReuseComponent(ammoPrefab, activeWeapon.GetShootPosition(), Quaternion.identity);
