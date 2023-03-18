@@ -295,8 +295,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 0.9995777
+    width: 0.99960464
+    height: 0.99999994
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -619,6 +619,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531596746387311010, guid: f4edbcf735ea50d4d85b0cad1c7fd2b8, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531596746387311010, guid: f4edbcf735ea50d4d85b0cad1c7fd2b8, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5531596746387311010, guid: f4edbcf735ea50d4d85b0cad1c7fd2b8, type: 3}
@@ -1243,15 +1247,15 @@ SpriteRenderer:
   m_SortingLayerID: -790355531
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 47c4b60fc2d0c1d40bd9c4ab5755b6a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 882bf774f5e6dde4c8476884ff2dd6c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 120, y: 67.5}
+  m_Size: {x: 287.5653, y: 134.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1971925084
@@ -1263,7 +1267,7 @@ Transform:
   m_GameObject: {fileID: 1971925082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1380,5 +1384,9 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 4050016596164692987, guid: df0bbe584f0e59046a23823674e9a4a2, type: 2}
+    - target: {fileID: 3190618742229270880, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 967a2234245d1504cb63e143162d7bda, type: 3}

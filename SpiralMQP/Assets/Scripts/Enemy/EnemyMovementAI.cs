@@ -42,7 +42,7 @@ public class EnemyMovementAI : MonoBehaviour
 
         if (isShotgunHit)
         {
-            Vector3 distanceVector = (transform.position - playerReferencePosition).normalized * 2 * Time.deltaTime;
+            Vector3 distanceVector = (transform.position - playerReferencePosition).normalized * 3 * Time.deltaTime;
             transform.position += distanceVector;
         }
     }

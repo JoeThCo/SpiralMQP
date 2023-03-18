@@ -2964,8 +2964,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: 1
+    height: 0.9992515
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4399,6 +4399,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 4050016596164692987, guid: df0bbe584f0e59046a23823674e9a4a2, type: 2}
+    - target: {fileID: 3190618742229270880, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9008352464887660379, guid: 967a2234245d1504cb63e143162d7bda, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
