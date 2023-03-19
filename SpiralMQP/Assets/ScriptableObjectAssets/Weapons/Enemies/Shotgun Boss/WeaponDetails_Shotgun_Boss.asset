@@ -20,9 +20,9 @@ MonoBehaviour:
   weaponFiringSoundEffect: {fileID: 11400000, guid: 8cd0dd18012fd90418ec61cb16a7eb17, type: 2}
   weaponReloadingSoundEffect: {fileID: 11400000, guid: 0d03e83d66b596b458a7311519d02e9c, type: 2}
   hasInfiniteAmmo: 1
-  hasInfiniteClipCapacity: 0
+  hasInfiniteClipCapacity: 1
   weaponClipAmmoCapacity: 6
   weaponAmmoCapacity: 0
-  weaponFireRate: 0.4
+  weaponFireRate: 2
   weaponPrechargeTime: 0
   weaponReloadTime: 1

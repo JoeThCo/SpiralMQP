@@ -15,6 +15,7 @@ TagManager:
   - miniMapPlayer
   - playerWeapon
   - shotgunAmmo
+  - Boss
   layers:
   - Default
   - TransparentFX
