@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1d00cb93b304134098c3c2ab279e226, type: 3}
-  m_Name: SlimeBlockKing_Shotgun
+  m_Name: BossRabbitWeapons
   m_EditorClassIdentifier: 
   enemyName: Slime Block King
   enemyPrefab: {fileID: 895548974098735876, guid: 7782b5d0740f9d044b6b09f1c44c9456, type: 3}

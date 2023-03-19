@@ -26,22 +26,22 @@ MonoBehaviour:
     doorPrefab: {fileID: 5173120239513469292, guid: 7968432f974bdca459a16de4b37a28c7, type: 3}
     doorwayStartCopyPosition: {x: -9, y: 16}
     doorwayCopyTileWidth: 5
-    doorwayCopyTileHeight: 12
+    doorwayCopyTileHeight: 13
     isConnected: 0
     isUnavailable: 0
   - position: {x: 8, y: -25}
     orientation: 2
     doorPrefab: {fileID: 5173120239513469292, guid: 7968432f974bdca459a16de4b37a28c7, type: 3}
-    doorwayStartCopyPosition: {x: 5, y: -15}
+    doorwayStartCopyPosition: {x: 5, y: -16}
     doorwayCopyTileWidth: 5
-    doorwayCopyTileHeight: 11
+    doorwayCopyTileHeight: 10
     isConnected: 0
     isUnavailable: 0
   - position: {x: 24, y: -11}
     orientation: 1
     doorPrefab: {fileID: 1622577110363752376, guid: c82efd422a111274a9b1982328e1ec6c, type: 3}
     doorwayStartCopyPosition: {x: 13, y: -5}
-    doorwayCopyTileWidth: 13
+    doorwayCopyTileWidth: 12
     doorwayCopyTileHeight: 8
     isConnected: 0
     isUnavailable: 0

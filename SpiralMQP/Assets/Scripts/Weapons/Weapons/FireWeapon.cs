@@ -197,10 +197,10 @@ public class FireWeapon : MonoBehaviour
                 {
                     FireAmmo(i, i, Vector3.one);
                 }
-                else if (i == 45 || i == 135 || i == 225 || i == 315)
-                {
-                    continue;
-                }
+                // else if (i == 45 || i == 135 || i == 225 || i == 315)
+                // {
+                //     continue;
+                // }
                 else if ((i > 0 && i < 45) || (i > 315 && i < 360) || (i > 135 && i < 180) || (i > 180 && i < 225))
                 {
                     FireAmmo(i, i, Vector3.one, true, Mathf.Abs(1 / Mathf.Cos(Mathf.Deg2Rad * i)));

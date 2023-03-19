@@ -12,6 +12,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 372860895014884796, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 372860895014884796, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 372860895014884796, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 372860895014884796, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -89,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3254216603169130201, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Name
-      value: SlimeBlockKing
+      value: BossRabbit
       objectReference: {fileID: 0}
     - target: {fileID: 3254216603169130201, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_TagString
@@ -196,6 +208,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 3
       objectReference: {fileID: 0}
@@ -205,11 +221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3
+      value: 3.125
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 3.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -217,51 +233,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: -0.06382012
+      value: -0.01326701
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 3.2326484
+      value: 2.019374
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -0.9087989
+      value: -0.88857764
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: 2.8828125
+      value: 1.1842283
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -0.8568319
+      value: -0.40382534
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 0.40390965
+      value: -1.4584506
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: -0.050746515
+      value: 0.016365558
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 0.33324456
+      value: -1.5794497
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
-      value: 0.7345363
+      value: 0.4716602
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
-      value: 0.44838268
+      value: -1.4119716
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
-      value: 0.7256617
+      value: 0.9076528
       objectReference: {fileID: 0}
     - target: {fileID: 8784929876186463655, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
-      value: 2.9000661
+      value: 1.039712
       objectReference: {fileID: 0}
     - target: {fileID: 8970248385761054939, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Size.x
@@ -274,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 8970248385761054939, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5554664115643891341, guid: 7c7bfa40a3f24114b9b4a4224647a937, type: 3}
+      objectReference: {fileID: 423166721, guid: 72a9aa5f736a8844cb0b6b72833cdabc, type: 3}
     - target: {fileID: 8970248385761054939, guid: 4e50763718cd2c84d8a6f878260b9b11, type: 3}
       propertyPath: m_Color.b
       value: 1
