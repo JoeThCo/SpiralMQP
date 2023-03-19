@@ -18,30 +18,30 @@ MonoBehaviour:
   battleMusic: {fileID: 11400000, guid: b720447121bfc5a46ad5b75a6e4d697c, type: 2}
   ambientMusic: {fileID: 11400000, guid: 08292741750d14043b0e380112d479a7, type: 2}
   roomNodeType: {fileID: 11400000, guid: 784c19406188b5a479223c9c8c8601ce, type: 2}
-  lowerBounds: {x: -17, y: -25}
-  upperBounds: {x: 24, y: 13}
+  lowerBounds: {x: -17, y: -23}
+  upperBounds: {x: 20, y: 11}
   doorwayList:
-  - position: {x: 1, y: 13}
+  - position: {x: 1, y: 11}
     orientation: 0
     doorPrefab: {fileID: 5173120239513469292, guid: 7968432f974bdca459a16de4b37a28c7, type: 3}
-    doorwayStartCopyPosition: {x: -2, y: 13}
+    doorwayStartCopyPosition: {x: -2, y: 11}
     doorwayCopyTileWidth: 5
-    doorwayCopyTileHeight: 11
+    doorwayCopyTileHeight: 9
     isConnected: 0
     isUnavailable: 0
-  - position: {x: 1, y: -25}
+  - position: {x: 1, y: -23}
     orientation: 2
     doorPrefab: {fileID: 5173120239513469292, guid: 7968432f974bdca459a16de4b37a28c7, type: 3}
     doorwayStartCopyPosition: {x: -2, y: -15}
     doorwayCopyTileWidth: 5
-    doorwayCopyTileHeight: 11
+    doorwayCopyTileHeight: 9
     isConnected: 0
     isUnavailable: 0
-  - position: {x: 24, y: -11}
+  - position: {x: 20, y: -11}
     orientation: 1
     doorPrefab: {fileID: 1622577110363752376, guid: c82efd422a111274a9b1982328e1ec6c, type: 3}
     doorwayStartCopyPosition: {x: 13, y: -5}
-    doorwayCopyTileWidth: 13
+    doorwayCopyTileWidth: 8
     doorwayCopyTileHeight: 8
     isConnected: 0
     isUnavailable: 0

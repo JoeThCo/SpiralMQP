@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d00cb93b304134098c3c2ab279e226, type: 3}
+  m_Name: BossRabbitWeapons
+  m_EditorClassIdentifier: 
+  enemyName: Slime Block King
+  enemyPrefab: {fileID: 895548974098735876, guid: 7782b5d0740f9d044b6b09f1c44c9456, type: 3}
+  chaseDistance: 50
+  enemyStandardMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  enemyMaterializeTime: 1
+  enemyMaterializeShader: {fileID: -6465566751694194690, guid: 452551cf68063404fbb830a5e55c48ff, type: 3}
+  enemyMaterializeColor: {r: 0.10118059, g: 0.54384565, b: 2.4156864, a: 1}
+  enemyWeapon: {fileID: 11400000, guid: e81b4c96b39b994428e1db523161396f, type: 2}
+  bossWeaponList:
+  - {fileID: 11400000, guid: e81b4c96b39b994428e1db523161396f, type: 2}
+  firingIntervalMin: 1
+  firingIntervalMax: 2
+  firingDurationMin: 6
+  firingDurationMax: 8
+  firingLineOfSightRequired: 0
+  enemyHealthDetailsArray:
+  - dungeonLevel: {fileID: 11400000, guid: 1ef7026737e1ea34c8182403d74cf22d, type: 2}
+    enemyHealthAmount: 1000
+  isImmuneAfterHit: 0
+  hitImmunityTime: 0
+  isHealthBarDisplayed: 1
