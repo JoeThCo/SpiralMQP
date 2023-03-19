@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14cdaab512e966d4d9a60d8bea5d300c, type: 3}
-  m_Name: SoundEffect_Shotgun_Reload_Boss
+  m_Name: SoundEffect_BossAmmo2_Reload
   m_EditorClassIdentifier: 
-  soundEffectName: Shotgun Reload Boss
+  soundEffectName: BossAmmo2 Reload
   soundPrefab: {fileID: 9197661179648785526, guid: 9a5e81869d09bc642ab26e9282f63d54, type: 3}
-  soundEffectClip: {fileID: 8300000, guid: 8bf4219f6394996469312e55ac2af0d1, type: 3}
+  soundEffectClip: {fileID: 8300000, guid: 68017df84c8afc04390c474cf1ffbaca, type: 3}
   soundEffectPitchRandomVariationMin: 0.8
-  soundEffectPitchRandomVariationMax: 1
+  soundEffectPitchRandomVariationMax: 1.2
   soundEffectVolume: 1

@@ -87,7 +87,10 @@ public class FireWeapon : MonoBehaviour
                 }
                 else if (enemy != null && fireWeaponEventArgs.isBossFiring)
                 {
-                    FireBossAmmoPattern();
+                    if (activeWeapon.GetCurrentWeapon().weaponDetails.weaponName == "BossAmmo1")
+                    {
+                        FireBossAmmoPattern();
+                    }
                 }
                 else
                 {
@@ -188,11 +191,15 @@ public class FireWeapon : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < 360; i = i + 15)
+            for (int i = 0; i < 360; i = i + 5)
             {
                 if (i % 90 == 0)
                 {
                     FireAmmo(i, i, Vector3.one);
+                }
+                else if (i == 45 || i == 135 || i == 225 || i == 315)
+                {
+                    continue;
                 }
                 else if ((i > 0 && i < 45) || (i > 315 && i < 360) || (i > 135 && i < 180) || (i > 180 && i < 225))
                 {
