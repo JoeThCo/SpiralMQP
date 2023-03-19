@@ -23,7 +23,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 607
-    y: 620
+    y: 619
     width: 150
     height: 65
   isLeftClickDragging: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 436
-    y: 616
+    y: 615
     width: 110
     height: 65
   isLeftClickDragging: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 226
-    y: 611
+    y: 610
     width: 150
     height: 65
   isLeftClickDragging: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 212
-    y: 861
+    y: 860
     width: 150
     height: 65
   isLeftClickDragging: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 961
-    y: 621
+    y: 620
     width: 150
     height: 65
   isLeftClickDragging: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 975
-    y: 877
+    y: 876
     width: 150
     height: 65
   isLeftClickDragging: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 1415
-    y: 616
+    y: 615
     width: 150
     height: 65
   isLeftClickDragging: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 239
-    y: 710
+    y: 709
     width: 110
     height: 65
   isLeftClickDragging: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 231
-    y: 505
+    y: 504
     width: 110
     height: 65
   isLeftClickDragging: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 239
-    y: 366
+    y: 365
     width: 150
     height: 65
   isLeftClickDragging: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 804
-    y: 621
+    y: 620
     width: 110
     height: 65
   isLeftClickDragging: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 1188
-    y: 616
+    y: 615
     width: 110
     height: 65
   isLeftClickDragging: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 983
-    y: 754
+    y: 753
     width: 110
     height: 65
   isLeftClickDragging: 0
