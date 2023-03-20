@@ -10,10 +10,12 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
     private int enemyMaxConcurrentSpawnNumber;
     private Room currentRoom;
     private RoomEnemySpawnParameters roomEnemySpawnParameters;
+    private bool isBossSpawned;
 
     private void OnEnable()
     {
         // Subscribe to room changed event
+        isBossSpawned = false;
         StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;
     }
 
@@ -36,7 +38,7 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
         // Update music for room
         if (currentRoom.ambientMusic != null)
         {
-            MusicManager.Instance.PlayMusic(currentRoom.ambientMusic, 0.2f,1f);
+            MusicManager.Instance.PlayMusic(currentRoom.ambientMusic, 0.2f, 1f);
         }
 
         // If the room is a corridor or the entrance then return
@@ -66,7 +68,7 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
         // Update music for room
         if (currentRoom.battleMusic != null)
         {
-            MusicManager.Instance.PlayMusic(currentRoom.battleMusic, 0.2f,0.5f);
+            MusicManager.Instance.PlayMusic(currentRoom.battleMusic, 0.2f, 0.5f);
         }
 
         // Lock doors - if we get here, there are enemies in the room
@@ -122,8 +124,41 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
 
                 Vector3Int cellPosition = (Vector3Int)currentRoom.spawnPositionArray[Random.Range(0, currentRoom.spawnPositionArray.Length)];
 
-                // Create Enemy - Get next enemy type to spawn 
-                CreateEnemy(randomEnemyHelperClass.GetItem(), grid.CellToWorld(cellPosition));
+                EnemyDetailsSO enemyToSpawn = randomEnemyHelperClass.GetItem();
+
+                if (GameManager.Instance.gameState == GameState.engagingBoss)
+                {
+                    if (i == 0)
+                    {
+                        while (!isBossSpawned)
+                        {
+                            if (enemyToSpawn.enemyName == "Boss Rabbit")
+                            {
+                                isBossSpawned = true;
+                            }
+                            else enemyToSpawn = randomEnemyHelperClass.GetItem();
+                        }
+                    }
+                    else
+                    {
+                        bool getNormalEnemy = false;
+                        while (!getNormalEnemy)
+                        {
+                            if (enemyToSpawn.enemyName == "Boss Rabbit")
+                            {
+                                enemyToSpawn = randomEnemyHelperClass.GetItem();
+                            }
+                            else getNormalEnemy = true;
+                        }
+                    }
+
+                    CreateEnemy(enemyToSpawn, grid.CellToWorld(cellPosition));
+                }
+                else
+                {
+                    // Create Enemy - Get next enemy type to spawn 
+                    CreateEnemy(enemyToSpawn, grid.CellToWorld(cellPosition));
+                }
 
                 yield return new WaitForSeconds(GetEnemySpawnInterval());
             }
@@ -208,9 +243,9 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
             // Update music for room
             if (currentRoom.ambientMusic != null)
             {
-                MusicManager.Instance.PlayMusic(currentRoom.ambientMusic, 0.2f,2f);
+                MusicManager.Instance.PlayMusic(currentRoom.ambientMusic, 0.2f, 2f);
             }
-            
+
             // Trigger room enemies defeated event
             StaticEventHandler.CallRoomEnemiesDefeatedEvent(currentRoom);
         }
