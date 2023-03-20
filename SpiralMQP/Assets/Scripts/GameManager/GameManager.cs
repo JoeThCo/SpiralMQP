@@ -674,7 +674,8 @@ public class GameManager : SingletonAbstract<GameManager>
         GetPlayer().playerControl.EnablePlayer(false);
 
         // Message
-        string messageText = "LEVEL " + (currentDungeonLevelListIndex + 1).ToString() + "\n\n" + dungeonLevelList[currentDungeonLevelListIndex].levelName.ToUpper();
+        //string messageText = "LEVEL " + (currentDungeonLevelListIndex + 1).ToString() + "\n\n" + dungeonLevelList[currentDungeonLevelListIndex].levelName.ToUpper();
+        string messageText = "Demo LEVEL" + "\n\n" + dungeonLevelList[currentDungeonLevelListIndex].levelName.ToUpper();
 
         yield return StartCoroutine(DisplayMessageRoutine(messageText, Color.white, 3f));
 
