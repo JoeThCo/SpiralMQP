@@ -33,12 +33,12 @@ public class PauseMenuUI : MonoBehaviour
         yield return null;
 
         // Initialise UI text
-        soundsLevelText.SetText(SoundEffectManager.Instance.soundsVolume.ToString());
-        previousSoundLevel = SoundEffectManager.Instance.soundsVolume;
+        soundsLevelText.SetText((SoundEffectManager.Instance.soundsVolume/2).ToString());
+        previousSoundLevel = SoundEffectManager.Instance.soundsVolume/2;
         soundSlider.value = previousSoundLevel;
 
-        musicLevelText.SetText(MusicManager.Instance.musicVolume.ToString());
-        previousMusicLevel = MusicManager.Instance.musicVolume;
+        musicLevelText.SetText((MusicManager.Instance.musicVolume/2).ToString());
+        previousMusicLevel = MusicManager.Instance.musicVolume/2;
         musicSlider.value = previousMusicLevel;
 
         gameObject.SetActive(gameObjectStateAfter);
@@ -69,7 +69,7 @@ public class PauseMenuUI : MonoBehaviour
     public void IncreaseMusicVolume()
     {
         MusicManager.Instance.IncreaseMusicVolume();
-        musicLevelText.SetText(MusicManager.Instance.musicVolume.ToString());
+        //musicLevelText.SetText(MusicManager.Instance.musicVolume.ToString());
     }
 
     /// <summary>
@@ -78,7 +78,7 @@ public class PauseMenuUI : MonoBehaviour
     public void DecreaseMusicVolume()
     {
         MusicManager.Instance.DecreaseMusicVolume();
-        musicLevelText.SetText(MusicManager.Instance.musicVolume.ToString());
+        //musicLevelText.SetText(MusicManager.Instance.musicVolume.ToString());
     }
 
     /// <summary>
@@ -95,6 +95,7 @@ public class PauseMenuUI : MonoBehaviour
             for (int i = 0; i < currentMusicLevel - previousMusicLevel; i++)
             {
                 IncreaseMusicVolume();
+                IncreaseMusicVolume();
             }
         }
         else
@@ -102,11 +103,13 @@ public class PauseMenuUI : MonoBehaviour
             for (int i = 0; i < previousMusicLevel - currentMusicLevel; i++)
             {
                 DecreaseMusicVolume();
+                DecreaseMusicVolume();
             }
         }
 
         // Update the previous music level value holder
         previousMusicLevel = currentMusicLevel;
+        musicLevelText.SetText(currentMusicLevel.ToString());
     }
 
     /// <summary>
@@ -115,7 +118,7 @@ public class PauseMenuUI : MonoBehaviour
     public void IncreaseSoundsVolume()
     {
         SoundEffectManager.Instance.IncreaseSoundsVolume();
-        soundsLevelText.SetText(SoundEffectManager.Instance.soundsVolume.ToString());
+        //soundsLevelText.SetText(SoundEffectManager.Instance.soundsVolume.ToString());
     }
 
     /// <summary>
@@ -124,7 +127,7 @@ public class PauseMenuUI : MonoBehaviour
     public void DecreaseSoundsVolume()
     {
         SoundEffectManager.Instance.DecreaseSoundsVolume();
-        soundsLevelText.SetText(SoundEffectManager.Instance.soundsVolume.ToString());
+        //soundsLevelText.SetText(SoundEffectManager.Instance.soundsVolume.ToString());
     }
 
     /// <summary>
@@ -141,6 +144,7 @@ public class PauseMenuUI : MonoBehaviour
             for (int i = 0; i < currentSoundLevel - previousSoundLevel; i++)
             {
                 IncreaseSoundsVolume();
+                IncreaseSoundsVolume();
             }
         }
         else
@@ -148,11 +152,13 @@ public class PauseMenuUI : MonoBehaviour
             for (int i = 0; i < previousSoundLevel - currentSoundLevel; i++)
             {
                 DecreaseSoundsVolume();
+                DecreaseSoundsVolume();
             }
         }
 
         // Update the previous sound level value holder
         previousSoundLevel = currentSoundLevel;
+        soundsLevelText.SetText(currentSoundLevel.ToString());
     }
 
     #region Validation

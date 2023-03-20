@@ -222,7 +222,7 @@ public class Enemy : MonoBehaviour
     public void SetBossRandomWeapon()
     {
         // Process if enemy has a weapon
-        if (enemyDetails.bossWeaponList.Length > 0)
+        if (enemyDetails.bossWeaponList != null && enemyDetails.bossWeaponList.Length > 0)
         {
             WeaponDetailsSO selectedWeapon = enemyDetails.bossWeaponList[UnityEngine.Random.Range(0,enemyDetails.bossWeaponList.Length)];
 
