@@ -91,6 +91,10 @@ public class FireWeapon : MonoBehaviour
                     {
                         FireBossAmmoPattern();
                     }
+                    if (activeWeapon.GetCurrentWeapon().weaponDetails.weaponName == "BossAmmo2")
+                    {
+                        FireAmmo(fireWeaponEventArgs.aimAngle, fireWeaponEventArgs.weaponAimAngle, fireWeaponEventArgs.weaponAimDirectionVector);
+                    }
                 }
                 else
                 {

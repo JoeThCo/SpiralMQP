@@ -22,14 +22,15 @@ MonoBehaviour:
   enemyWeapon: {fileID: 11400000, guid: e81b4c96b39b994428e1db523161396f, type: 2}
   bossWeaponList:
   - {fileID: 11400000, guid: e81b4c96b39b994428e1db523161396f, type: 2}
+  - {fileID: 11400000, guid: 591da42db1d5eae4285ec34171098bed, type: 2}
   firingIntervalMin: 1
   firingIntervalMax: 2
-  firingDurationMin: 6
-  firingDurationMax: 8
+  firingDurationMin: 4
+  firingDurationMax: 6
   firingLineOfSightRequired: 0
   enemyHealthDetailsArray:
   - dungeonLevel: {fileID: 11400000, guid: 1ef7026737e1ea34c8182403d74cf22d, type: 2}
-    enemyHealthAmount: 5000
+    enemyHealthAmount: 6000
   isImmuneAfterHit: 0
   hitImmunityTime: 0
   isHealthBarDisplayed: 1

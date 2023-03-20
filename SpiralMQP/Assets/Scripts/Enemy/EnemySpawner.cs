@@ -11,6 +11,7 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
     private Room currentRoom;
     private RoomEnemySpawnParameters roomEnemySpawnParameters;
     private bool isBossSpawned;
+    [SerializeField] private SoundEffectSO SpawnSoundEffect;
 
     private void OnEnable()
     {
@@ -151,11 +152,15 @@ public class EnemySpawner : SingletonAbstract<EnemySpawner>
                             else getNormalEnemy = true;
                         }
                     }
-
+                    
+                    // Play spawn sound effect
+                    SoundEffectManager.Instance.PlaySoundEffect(SpawnSoundEffect);
                     CreateEnemy(enemyToSpawn, grid.CellToWorld(cellPosition));
                 }
                 else
                 {
+                    // Play spawn sound effect
+                    SoundEffectManager.Instance.PlaySoundEffect(SpawnSoundEffect);
                     // Create Enemy - Get next enemy type to spawn 
                     CreateEnemy(enemyToSpawn, grid.CellToWorld(cellPosition));
                 }

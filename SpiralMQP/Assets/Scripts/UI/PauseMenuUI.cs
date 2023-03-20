@@ -63,6 +63,11 @@ public class PauseMenuUI : MonoBehaviour
         LoadingManager.Instance.LoadSceneWithTransistion("MainMenu");
     }
 
+    public void RebuildGame()
+    {
+        LoadingManager.Instance.LoadSceneWithTransistion("Game");
+    }
+
     /// <summary>
     /// Increase music volume - linked to from music volume increase button in UI
     /// </summary>

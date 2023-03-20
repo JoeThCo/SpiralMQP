@@ -2067,13 +2067,9 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 78
     m_Data: {fileID: 11400000, guid: 37e2c9e0227bfbc409cd632b9bd0c81f, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 78
     m_Data: {fileID: 21300000, guid: abc037715b8d96d4fa8b493c9986cf2c, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 78
     m_Data:
@@ -2092,42 +2088,6 @@ Tilemap:
       e30: 0
       e31: 0
       e32: 0
-      e33: 1
-  - m_RefCount: 0
-    m_Data:
-      e00: 0.009505659
-      e01: 4e-45
-      e02: -8.708696e+11
-      e03: 0
-      e10: 1.95e-43
-      e11: 3e-45
-      e12: 4.5904e-41
-      e13: 0
-      e20: 8.4776e-41
-      e21: 0
-      e22: 0.009505644
-      e23: 0
-      e30: 0
-      e31: 7.34684e-40
-      e32: 1.95e-43
-      e33: 1
-  - m_RefCount: 0
-    m_Data:
-      e00: 0.009505659
-      e01: NaN
-      e02: -8.708696e+11
-      e03: 0
-      e10: 1.95e-43
-      e11: 3e-45
-      e12: 4.5904e-41
-      e13: 0
-      e20: 8.4776e-41
-      e21: 0
-      e22: 0.009505644
-      e23: 0
-      e30: 0
-      e31: 7.34684e-40
-      e32: 1.95e-43
       e33: 1
   m_TileColorArray:
   - m_RefCount: 78
@@ -2355,7 +2315,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.499486, y: -1.0288444}
+  m_Offset: {x: 1.499486, y: 1.4945426}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2366,7 +2326,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.033741, y: 7.961117}
+  m_Size: {x: 9.033741, y: 13.00789}
   m_EdgeRadius: 0
 --- !u!114 &-6442856438475943791
 MonoBehaviour:
