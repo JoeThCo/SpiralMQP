@@ -95,6 +95,10 @@ public class FireWeapon : MonoBehaviour
                     {
                         FireAmmo(fireWeaponEventArgs.aimAngle, fireWeaponEventArgs.weaponAimAngle, fireWeaponEventArgs.weaponAimDirectionVector);
                     }
+                    if (activeWeapon.GetCurrentWeapon().weaponDetails.weaponName == "BossAmmo3")
+                    {
+                        FireBossAmmoPattern2();
+                    }
                 }
                 else
                 {
@@ -215,6 +219,12 @@ public class FireWeapon : MonoBehaviour
                 }  
             }
         }
+    }
+
+    private void FireBossAmmoPattern2()
+    {
+        int i = Random.Range(0, 360);
+        FireAmmo(i, i, Vector3.one);
     }
 
     /// <summary>

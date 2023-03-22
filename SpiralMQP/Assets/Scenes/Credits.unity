@@ -3744,7 +3744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A72
+  m_text: lovelyA72
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df0bbe584f0e59046a23823674e9a4a2, type: 2}
   m_sharedMaterial: {fileID: 4050016596164692987, guid: df0bbe584f0e59046a23823674e9a4a2, type: 2}

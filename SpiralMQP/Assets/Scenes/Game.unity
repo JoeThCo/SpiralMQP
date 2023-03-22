@@ -1164,16 +1164,16 @@ MonoBehaviour:
   - poolSize: 60
     prefab: {fileID: 5891719235356115971, guid: 0deb1cc2300b6d945936e2fd29d63734, type: 3}
     componentType: IFireable
-  - poolSize: 60
+  - poolSize: 200
     prefab: {fileID: 9197661179648785526, guid: 9a5e81869d09bc642ab26e9282f63d54, type: 3}
     componentType: SoundEffect
-  - poolSize: 60
+  - poolSize: 100
     prefab: {fileID: 5801418724654200722, guid: e7c476d4c7dc12c42a665a6e5e03c8bc, type: 3}
     componentType: WeaponShootEffect
-  - poolSize: 60
+  - poolSize: 100
     prefab: {fileID: 1438908454071538146, guid: cf51e286ec8f7044aa29f6912e22731c, type: 3}
     componentType: WeaponShootEffect
-  - poolSize: 60
+  - poolSize: 200
     prefab: {fileID: 1438908454071538146, guid: 0025121a07e007e43a8ed4aa70e85d29, type: 3}
     componentType: AmmoHitEffect
   - poolSize: 100
@@ -1182,7 +1182,7 @@ MonoBehaviour:
   - poolSize: 10
     prefab: {fileID: 7316854145603487671, guid: a79c02fe66efb994580f6dc9969ef653, type: 3}
     componentType: IFireable
-  - poolSize: 10
+  - poolSize: 50
     prefab: {fileID: 1438908454071538146, guid: 39bffd5b2acbbdf4eb536050f9df62a3, type: 3}
     componentType: WeaponShootEffect
   - poolSize: 60
@@ -1191,8 +1191,11 @@ MonoBehaviour:
   - poolSize: 60
     prefab: {fileID: 5891719235356115971, guid: 3afe7dd2f60b3c54d8adad1bf5b04bd1, type: 3}
     componentType: IFireable
-  - poolSize: 500
+  - poolSize: 800
     prefab: {fileID: 5891719235356115971, guid: 36570f5c4bdecd843b89ea1a780706ed, type: 3}
+    componentType: IFireable
+  - poolSize: 30
+    prefab: {fileID: 5891719235356115971, guid: db79b1688b68f7d458a94ec45f306305, type: 3}
     componentType: IFireable
 --- !u!4 &349196746
 Transform:
@@ -2970,7 +2973,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9997244
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

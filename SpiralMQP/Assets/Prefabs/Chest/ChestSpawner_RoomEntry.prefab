@@ -12,6 +12,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4179714432399109986, guid: c7759acd52b95054ba987ae688ba595d, type: 3}
+      propertyPath: weaponSpawnByLevelList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179714432399109986, guid: c7759acd52b95054ba987ae688ba595d, type: 3}
       propertyPath: chestSpawnChanceByLevelList.Array.size
       value: 0
       objectReference: {fileID: 0}

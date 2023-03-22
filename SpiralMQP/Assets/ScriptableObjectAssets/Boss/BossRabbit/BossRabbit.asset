@@ -16,13 +16,14 @@ MonoBehaviour:
   enemyPrefab: {fileID: 895548974098735876, guid: 7782b5d0740f9d044b6b09f1c44c9456, type: 3}
   chaseDistance: 50
   enemyStandardMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  enemyMaterializeTime: 3
+  enemyMaterializeTime: 3.5
   enemyMaterializeShader: {fileID: -6465566751694194690, guid: 452551cf68063404fbb830a5e55c48ff, type: 3}
   enemyMaterializeColor: {r: 3.225131, g: 0.46542573, b: 0, a: 1}
   enemyWeapon: {fileID: 11400000, guid: e81b4c96b39b994428e1db523161396f, type: 2}
   bossWeaponList:
   - {fileID: 11400000, guid: e81b4c96b39b994428e1db523161396f, type: 2}
   - {fileID: 11400000, guid: 591da42db1d5eae4285ec34171098bed, type: 2}
+  - {fileID: 11400000, guid: bd830a171e0a1744a8823d95b6b7f9c6, type: 2}
   firingIntervalMin: 1
   firingIntervalMax: 2
   firingDurationMin: 4
@@ -30,7 +31,7 @@ MonoBehaviour:
   firingLineOfSightRequired: 0
   enemyHealthDetailsArray:
   - dungeonLevel: {fileID: 11400000, guid: 1ef7026737e1ea34c8182403d74cf22d, type: 2}
-    enemyHealthAmount: 6000
+    enemyHealthAmount: 10000
   isImmuneAfterHit: 0
   hitImmunityTime: 0
   isHealthBarDisplayed: 1
