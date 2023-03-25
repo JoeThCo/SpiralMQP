@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
-    private bool isPlaying = false;
-
     // Start is called before the first frame update
     void Start()
     {
