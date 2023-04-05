@@ -578,11 +578,11 @@ public class GameManager : SingletonAbstract<GameManager>
         yield return StartCoroutine(Fade(0f, 1f, 2f, Color.black));
 
         // Display game won
-        yield return StartCoroutine(DisplayMessageRoutine("WELL DONE " + GameResources.Instance.currentPlayer.playerName + "! YOU JOURNEY HAS SUCCESSFULLY ENDED", Color.white, 4f));
+        yield return StartCoroutine(DisplayMessageRoutine("WTF " + GameResources.Instance.currentPlayer.playerName + "! HOW DID YOU DO THIS??", Color.white, 4f));
 
-        yield return StartCoroutine(DisplayMessageRoutine("YOU COLLECTED " + totalSoul.ToString("#,###,##0") + " SOULS", Color.white, 3f));
+        yield return StartCoroutine(DisplayMessageRoutine("Well... YOU COLLECTED " + totalSoul.ToString("#,###,##0") + " SOULS", Color.white, 3f));
 
-        yield return StartCoroutine(DisplayMessageRoutine("PRESS RETURN TO RESTART THE GAME", Color.white, 0f));
+        yield return StartCoroutine(DisplayMessageRoutine("THANK YOU FOR PLAYING!" + "\n"+"PRESS RETURN TO RESTART THE GAME", Color.white, 0f));
 
         // Set game state to restart game
         gameState = GameState.restartGame;
@@ -674,7 +674,8 @@ public class GameManager : SingletonAbstract<GameManager>
         GetPlayer().playerControl.EnablePlayer(false);
 
         // Message
-        string messageText = "LEVEL " + (currentDungeonLevelListIndex + 1).ToString() + "\n\n" + dungeonLevelList[currentDungeonLevelListIndex].levelName.ToUpper();
+        //string messageText = "LEVEL " + (currentDungeonLevelListIndex + 1).ToString() + "\n\n" + dungeonLevelList[currentDungeonLevelListIndex].levelName.ToUpper();
+        string messageText = "Demo LEVEL" + "\n\n" + dungeonLevelList[currentDungeonLevelListIndex].levelName.ToUpper();
 
         yield return StartCoroutine(DisplayMessageRoutine(messageText, Color.white, 3f));
 

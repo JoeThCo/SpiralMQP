@@ -44,6 +44,9 @@ public class EnemyDetailsSO : ScriptableObject
     [Tooltip("The weapon for the enemy - none if the enemy doesn't have a weapon")]
     public WeaponDetailsSO enemyWeapon;
 
+    [Tooltip("List of weapons for the boss - this should only be used for boss")]
+    public WeaponDetailsSO[] bossWeaponList;
+
     [Tooltip("The minimum time delay interval in seconds between bursts of enemy shooting. This value should be greater than 0. A random value will be selected between the minimum value and the maximum value")]
     public float firingIntervalMin = 0.1f;
 

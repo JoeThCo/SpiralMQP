@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -213,6 +212,25 @@ public class Enemy : MonoBehaviour
                 weaponReloadTimer = 0f, 
                 weaponClipRemainingAmmo = enemyDetails.enemyWeapon.weaponClipAmmoCapacity, 
                 weaponRemainingAmmo = enemyDetails.enemyWeapon.weaponAmmoCapacity, 
+                isWeaponReloading = false };
+
+            //Set weapon for enemy
+            setActiveWeaponEvent.CallSetActiveWeaponEvent(weapon);
+        }
+    }
+
+    public void SetBossRandomWeapon()
+    {
+        // Process if enemy has a weapon
+        if (enemyDetails.bossWeaponList != null && enemyDetails.bossWeaponList.Length > 0)
+        {
+            WeaponDetailsSO selectedWeapon = enemyDetails.bossWeaponList[UnityEngine.Random.Range(0,enemyDetails.bossWeaponList.Length)];
+
+            Weapon weapon = new Weapon() { 
+                weaponDetails = selectedWeapon, 
+                weaponReloadTimer = 0f, 
+                weaponClipRemainingAmmo = selectedWeapon.weaponClipAmmoCapacity, 
+                weaponRemainingAmmo = selectedWeapon.weaponAmmoCapacity, 
                 isWeaponReloading = false };
 
             //Set weapon for enemy

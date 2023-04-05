@@ -15,6 +15,8 @@ public class EnemyWeaponAI : MonoBehaviour
     private EnemyDetailsSO enemyDetails;
     private float firingIntervalTimer;
     private float firingDurationTimer;
+    private bool canChangeWeapon;
+    private bool isBoss;
 
     private void Awake()
     {
@@ -25,7 +27,7 @@ public class EnemyWeaponAI : MonoBehaviour
     private void Start()
     {
         enemyDetails = enemy.enemyDetails;
-
+        isBoss = gameObject.CompareTag("Boss");
         firingIntervalTimer = WeaponShootInterval();
         firingDurationTimer = WeaponShootDuration();
     }
@@ -43,6 +45,12 @@ public class EnemyWeaponAI : MonoBehaviour
             {
                 firingDurationTimer -= Time.deltaTime;
 
+                if (canChangeWeapon)
+                {
+                    enemy.SetBossRandomWeapon();
+                    canChangeWeapon = false;
+                }
+
                 FireWeapon();
             }
             else
@@ -50,6 +58,7 @@ public class EnemyWeaponAI : MonoBehaviour
                 // Reset timers
                 firingIntervalTimer = WeaponShootInterval();
                 firingDurationTimer = WeaponShootDuration();
+                canChangeWeapon = true;
             }
         }
     }
@@ -108,7 +117,7 @@ public class EnemyWeaponAI : MonoBehaviour
                 if (enemyDetails.firingLineOfSightRequired && !IsPlayerInLineOfSight(weaponDirection, enemyAmmoRange)) return;
 
                 // Trigger fire weapon event
-                enemy.fireWeaponEvent.CallFireWeaponEvent(true, true, enemyAimDirection, enemyAngleDegrees, weaponAngleDegrees, weaponDirection);
+                enemy.fireWeaponEvent.CallFireWeaponEvent(true, true, isBoss, enemyAimDirection, enemyAngleDegrees, weaponAngleDegrees, weaponDirection);
             }
         }
 

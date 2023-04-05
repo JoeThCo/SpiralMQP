@@ -67,8 +67,16 @@ public class Ammo : MonoBehaviour, IFireable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        PlayerControl playerStatus = other.gameObject.GetComponent<PlayerControl>();
+        bool isPlayerDashing = false;
+        if (playerStatus != null)
+        {
+            isPlayerDashing = playerStatus.isPlayerRolling;
+        }
+        
+
         // If already colliding with something, return
-        if (isColliding) return;
+        if (isColliding || isPlayerDashing) return;
 
         // Deal damage to collision object
         DealDamage(other);
@@ -97,11 +105,6 @@ public class Ammo : MonoBehaviour, IFireable
             if (health.enemy != null)
             {
                 enemyHit = true;
-
-                if (ammoDetails.ammoPrefabArray[0].CompareTag("shotgunAmmo"))
-                {
-                    other.gameObject.GetComponent<EnemyMovementAI>().isShotgunHit = true;
-                }
             }
         }
 

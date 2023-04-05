@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoName: Shotgun Ammo
   isPlayerAmmo: 1
-  ammoSprite: {fileID: 21300000, guid: d4272996b8ca0154292edd60b6511025, type: 3}
+  ammoSprite: {fileID: 21300000, guid: be754d38111fe214893d3a861f53138c, type: 3}
   ammoPrefabArray:
   - {fileID: 5891719235356115971, guid: 3afe7dd2f60b3c54d8adad1bf5b04bd1, type: 3}
   ammoMaterial: {fileID: 2100000, guid: 42c61dd66eb4e8c4a916ce83d7fbd680, type: 2}

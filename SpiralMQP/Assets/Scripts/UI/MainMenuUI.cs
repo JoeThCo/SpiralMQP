@@ -12,7 +12,6 @@ public class MainMenuUI : MonoBehaviour
         MusicManager.Instance.PlayMusic(GameResources.Instance.mainMenuMusic, 0f, 2f);
     }
 
-
     /// <summary>
     /// Called from the Play Button
     /// </summary>

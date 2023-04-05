@@ -338,7 +338,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            float useItemRadius = 2f;
+            float useItemRadius = 3f;
 
             // Get any collidable item near the player
             Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(player.GetPlayerPosition(), useItemRadius);
@@ -364,7 +364,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             // Trigger fire weapon event
-            player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
+            player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, false, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
             leftMouseDownPreviousFrame = true;
         }
         else

@@ -12,10 +12,12 @@ public class DungeonMap : SingletonAbstract<DungeonMap>
 
     [Tooltip("Populate with the teleport sound effect")]
     [SerializeField] private SoundEffectSO teleportSoundEffect;
+    [SerializeField] private GameObject teleportEffect;
 
     // Need those variables for camera switching
     private Camera dungeonMapCamera;
     private Camera cameraMain;
+    private GameObject effect;
 
     private void Start()
     {
@@ -99,6 +101,10 @@ public class DungeonMap : SingletonAbstract<DungeonMap>
         // Move player to new location - spawning them at the closest spawn point
         GameManager.Instance.GetPlayer().transform.position = spawnPosition;
 
+        effect = Instantiate(teleportEffect, spawnPosition + new Vector3(0,1,0), Quaternion.identity);
+
+        Invoke(nameof(DestroyEffect), 1.2f);
+
         // Fade the screen back in
         yield return StartCoroutine(GameManager.Instance.Fade(1f, 0f, 1f, Color.black));
 
@@ -106,6 +112,10 @@ public class DungeonMap : SingletonAbstract<DungeonMap>
         GameManager.Instance.GetPlayer().playerControl.EnablePlayer(true);
     }
 
+    private void DestroyEffect()
+    {
+        Destroy(effect);
+    }
 
     /// <summary>
     /// Display dungeon overview map UI
